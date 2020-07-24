@@ -119,7 +119,13 @@ if (userSelect === '1') {
 // 	console.log(car)
 // }
 
-
+// Objects
+const person = {
+	firstName: 'Sergey',
+	lastName: 'Zagorskiy',
+	age: 22,
+	year: 1997
+}
 
 
 
