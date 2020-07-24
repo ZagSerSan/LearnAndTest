@@ -115,9 +115,9 @@ if (userSelect === '1') {
 // 	console.log(car)
 // }
 
-for (let car of cars) {
-	console.log(car)
-}
+// for (let car of cars) {
+// 	console.log(car)
+// }
 
 
 
