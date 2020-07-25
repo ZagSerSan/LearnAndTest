@@ -1,4 +1,4 @@
-//Number
+//1 Number
 
 // const num = 42 // integer
 // const float = 42.42 // float
@@ -23,10 +23,24 @@
 
 // console.log(parseFloat((0.4 + 0.2).toFixed(1)))
 
-// BigInt
-console.log(typeof 9007199254740991999999999n)
+// 2 BigInt
+// console.log(9007199254740991999999999n - 900719925474099199999999n )
+// console.log(parseInt(10n) - 4)
 
+// 3 Math
+//корень
+// console.log(Math.sqrt(25))
+//в степень
+// console.log(Math.pow(5, 3))
 
+// 4 Example
 
+/* НУжно создать функцию которая будет возращать случайное число
+в диапазоне каких-то двух целых чисел
+*/
 
+function getRandomBeetwen(min, max) {
+	return Math.random() * (max - min) + min
+}
 
+console.log(getRandomBeetwen(10, 42))
