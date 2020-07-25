@@ -1,131 +1,32 @@
-/*--------------------------------------------------------------------------------------------------------------*/
+const num = 42 // integer
+const float = 42.42 // float
+const pow = 10e3 // 10 в 3й степени = 10000
 
-/* Статус курсов
+// max and min integer in js
+console.log(Number.MAX_SAFE_INTEGER)
+console.log(Math.pow(2, 53) - 1)
+console.log(Number.MIN_SAFE_INTEGER)
 
-// переменная статуса курса 
-	let courseStatus = 'pending' // ready, fail, pending
+// max and min value
+console.log(Number.MAX_VALUE)
+console.log(Number.MIN_VALUE)
 
-	// Предложение выбрать статус для отобразения его в консоле
-	// и конвертация значения в строковый тип дынных
-	let userVariant = prompt('Выберите статус вашего курса: 1 - готов, 2 - в разработке, 3 - провалено').toString()
+// infifity
+console.log(Number.POSITIVE_INFINITY)
+console.log(Number.NEGATIVE_INFINITY)
+console.log('1/0:', 1/0)
 
-	// переменная сообщения
-	let msg
+console.log(isFinite(Infinity))
+console.log(isFinite(42))
 
-	// если user выбрал статус: 1-готов || 2-в разработке || 3-провалено
-	// то присваиваем курсам статус: 'готов' || 'в разработке' || 'провалено'
-	if (userVariant === '1') {
-		courseStatus = 'ready'
-	} else if (userVariant === '2') {
-		courseStatus = 'pending'
-	} else if (userVariant === '3') {
-		courseStatus = 'fail'
-	}
+console.log(0.4 + 0.2) // 0.600000000001 // err
+console.log(2/5 + 1/5) // 0.600000000001 // err
+const numFixed = (2/5 + 1/5).toFixed(1)
+console.log(numFixed)
 
-	// если статус кусров: 'готов' || 'в разработке' || 'провалено'
-	// то выволим в консоль смс: 'готов' || 'в разработке' || 'провалено'
-	if (courseStatus === 'ready') {
-		msg = 'Курс готов!'
-		console.log('Работает условие 1: ' +msg)
-	} else if (courseStatus === 'pending') {
-		msg = 'Курс в разработке!'
-		console.log('Работает условие 2. ' +msg)
-	} else if (courseStatus === 'fail') {
-		msg = 'Курс провалено!'
-		console.log('Работает условие 3. ' +msg)
-	}
 
-	//вывод в html
-	el = document.getElementById('text')
-	el.textContent = msg
-*/
 
-/*--------------------------------------------------------------------------------------------------------------*/
 
-/* Кто Вы?
-
-let userSelect = prompt('Кто Вы? Введите соответственную цифру: \n 1 - Работодатель; \n 2 - Заказчик; \n 3 - Пользователь; \n 4 - Что происходит?').toString()
-el = document.getElementById('text')
-
-if (userSelect === '1') {
-	el.textContent = 'Открылся сайт для работодателя'
-	console.log('Работает! Ваш выбор 1 - работодатель')
-} else if (userSelect === '2') {
-	el.textContent = 'Открылся сайт для заказчика'
-	console.log('Работает! Ваш выбор 2 - заказчик')
-} else if (userSelect === '4') {
-	alert('Это сделано для того, чтобы открылся сайт соответственно сущности посетителя.')
-	let userSelect = prompt('Кто Вы? Введите соответственную цифру: \n 1 - Работодатель; \n 2 - Заказчик; \n 3 - Пользователь;').toString()
-	console.log('Работает! Ваш выбор 4 - Что происходит')
-
-	if (userSelect === '1') {
-		el.textContent = 'Открылся сайт для работодателя'
-		console.log('Работает! Ваш выбор 1 - работодатель')
-	} else if (userSelect === '2') {
-		el.textContent = 'Открылся сайт для заказчика'
-		console.log('Работает! Ваш выбор 2 - заказчик')
-	} else {
-		el.textContent = 'Открылся сайт для пользователя'
-		console.log('Работает! Ваш выбор else - пользователь')
-	}
-} else {
-	el.textContent = 'Открылся сайт для пользователя'
-	console.log('Работает! Ваш выбор else - пользователь')
-}
-*/
-/*--------------------------------------------------------------------------------------------------------------*/
-// function calcAge (year) {
-// 	return 2020 - year
-// }
-
-// function logInfoAbout(name, year) {
-// 	const age = calcAge(year);
-// 	if (age > 0) {
-// 		console.log('Чел по имени: ' +name+ ', с возрастом: ' +age)
-// 	} else {
-// 		console.log('Вообще-то, это уже будущее')
-// 	}
-// }
-
-// logInfoAbout('Sergey', 1997)
-// logInfoAbout('Elena', 1995)
-// logInfoAbout('Гостья из будущего', 2040)
-/*--------------------------------------------------------------------------------------------------------------*/
-// Массивы
-
-// const cars = ['Мазда', 'Бентли', 'Запик'];
-
-// cars[0] = 'Porsche'
-
-// cars[3] = 'Mazda'
-// // Здесь мы обратились к статическому индексу.
-// // Если бы он был занят до добавления нового значения в массив, то произошла бы перезапись
-
-// // Обращение к динамическому индексу, всегда складывать в конец что-то
-// cars[cars.length] = 'Ford'
-
-// console.log(cars)
-
-// Циклы
-// const cars = ['Мазда', 'Бентли', 'Запик', 'Нива', 'Лада', 'Опель'];
-
-// for (let i = 0; i < cars.length; i++) {
-
-// 	const car = cars[i]
-// 	console.log(car)
-// }
-
-// for (let car of cars) {
-// 	console.log(car)
-// }
-
-// Objects
-const person = {
-	firstName: 'Sergey',
-	lastName: 'Zagorskiy',
-	age: 22,
-	year: 1997
-}
 
 
 
