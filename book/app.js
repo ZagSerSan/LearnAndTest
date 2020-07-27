@@ -9,18 +9,21 @@ let hotel = {
 	booked: 12,
 
 	getBooked: function(){
-		this.booked = parseInt(prompt('Введите кол-во занятых номеров'))
-		console.log(this.booked)
+		hotel.booked = parseInt(prompt('Введите кол-во занятых номеров'))
+		console.log(hotel.rooms)
+		console.log(hotel.booked)
 		
-		elBooked.textContent = this.booked
+		elBooked.textContent = hotel.booked
 	},
 
 	calcFreeRoom: function(){
-		let free = this.rooms - this.booked
+		let free = hotel.rooms - hotel.booked
 		console.log(free)
 		elFree.textContent = free
 	}
 }
+
+
 
 elWrite.addEventListener('click', hotel.getBooked)
 elCalc.addEventListener('click', hotel.calcFreeRoom)
