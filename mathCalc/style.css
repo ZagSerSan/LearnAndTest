@@ -1,0 +1,42 @@
+.wraper {
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+
+	justify-content: center;
+	align-items: center;
+}
+
+.block {
+	background-color: #e8e8e8;
+    border: 1px solid #000;
+
+    padding: 30px;
+}
+
+.block-title {
+	text-align: right;
+    margin: 0 0 20px 0;
+    background-color: #fff;
+    padding: 12px 5px 5px;
+}
+
+.block-table {
+	margin: 0 auto;
+
+	background-color: #b1bbd2;
+    padding: 10px;
+}
+
+button {
+	width: 100%;
+	height: 100%;
+	padding: 3px;
+}
+
+.btn_h {
+	height: 54px;
+}
+
+
