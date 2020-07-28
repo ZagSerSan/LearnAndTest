@@ -16,10 +16,14 @@
 }
 
 .block-title {
+	display: flex;
+    flex-direction: row-reverse;
 	text-align: right;
     margin: 0 0 20px 0;
     background-color: #fff;
     padding: 12px 5px 5px;
+    overflow: hidden;
+    max-width: 181px;
 }
 
 .block-table {
