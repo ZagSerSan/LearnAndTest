@@ -102,8 +102,17 @@ let calculator = {
 	},
 
 	del: function () {
-		temp = '0'
+		let temp = '0'
 		title.textContent = temp
+	},
+	back: function () {
+		if ((title.innerText).length > 1) {
+			let temp = (title.innerText).substring(0, (title.innerText).length - 1)
+			title.textContent = temp
+		} else if ((title.innerText).length = 1) {
+			let temp = '0'
+			title.textContent = temp
+		}
 	},
 	plus: function () {
 		if (title.innerText === '0') {
@@ -160,8 +169,11 @@ btnPlus.addEventListener('click', calculator.plus)
 let btnMinus = document.getElementById('btnMinus')
 btnMinus.addEventListener('click', calculator.minus)
 
-let btnCE = document.getElementById('btnCE')
-btnCE.addEventListener('click', calculator.del)
+let btnC = document.getElementById('btnC')
+btnC.addEventListener('click', calculator.del)
+
+let btnBack = document.getElementById('btnBack')
+btnBack.addEventListener('click', calculator.back)
 
 
 
