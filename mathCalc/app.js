@@ -1,11 +1,20 @@
 let title = document.getElementById('block-title')
-// let titleWithPlus = title.endsWith('+')
+
+/*
+
+10+5*2
+10+(5*2)
+
+let mult = 2
+saveNum = (saveNum*mult)
+numbers[numbers.length] = saveSum
+*/
 
 let output
-
 let temp
 let tempQ = false
 let tempM = false
+let tempMult = 1
 let saveNum
 
 let numbers = []
@@ -43,14 +52,6 @@ let calculator = {
 			}
 		}
 	},
-	// input0: function () {
-	// 	if (output === '0') {
-	// 		output = '0'
-	// 	} else {
-	// 		output = output + 0
-	// 		title.textContent = output
-	// 	}
-	// },
 	input1: function () {
 		if (tempQ === true) {
 			output = (title.innerText = '') + '1'
@@ -58,6 +59,7 @@ let calculator = {
 
 			temp = '1'
 			saveNum = parseInt(temp)
+			// tempMult = saveNum
 			tempQ = false
 
 		} else {
@@ -67,6 +69,7 @@ let calculator = {
 				
 				temp = '1'
 				saveNum = parseInt(temp)
+				// tempMult = saveNum
 
 			} else if (title.innerText === '-0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '1'
@@ -74,12 +77,14 @@ let calculator = {
 
 				temp = '1'
 				saveNum = parseInt(temp)
+				// tempMult = saveNum
 			} else {
 				output = title.innerText + '1'
 				title.innerText = output
 
 				temp += '1'
 				saveNum = parseInt(temp)
+				// tempMult = saveNum
 			}
 		}
 	},
@@ -115,7 +120,6 @@ let calculator = {
 
 				temp += '2'
 				saveNum = parseInt(temp)
-				console.log('тут где else')
 
 			}
 		}
@@ -183,7 +187,6 @@ let calculator = {
 
 				temp += '4'
 				saveNum = parseInt(temp)
-				console.log('тут где else')
 
 			}
 		}
@@ -220,7 +223,6 @@ let calculator = {
 
 				temp += '5'
 				saveNum = parseInt(temp)
-				console.log('тут где else')
 
 			}
 		}
@@ -257,7 +259,6 @@ let calculator = {
 
 				temp += '6'
 				saveNum = parseInt(temp)
-				console.log('тут где else')
 
 			}
 		}
@@ -270,8 +271,6 @@ let calculator = {
 			temp = '7'
 			saveNum = parseInt(temp)
 			tempQ = false
-				console.log('тут где tempQ')
-				console.log(`tempQ = ${tempQ}`)
 
 		} else {
 			if (title.innerText === '0') {
@@ -280,7 +279,6 @@ let calculator = {
 				
 				temp = '7'
 				saveNum = parseInt(temp)
-				console.log('тут где if===0')
 
 			} else if (title.innerText === '-0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '7'
@@ -294,7 +292,6 @@ let calculator = {
 
 				temp += '7'
 				saveNum = parseInt(temp)
-				console.log('тут где else')
 
 			}
 		}
@@ -331,7 +328,6 @@ let calculator = {
 
 				temp += '8'
 				saveNum = parseInt(temp)
-				console.log('тут где else')
 
 			}
 		}
@@ -368,7 +364,6 @@ let calculator = {
 
 				temp += '9'
 				saveNum = parseInt(temp)
-				console.log('тут где else')
 
 			}
 		}
@@ -390,6 +385,7 @@ let calculator = {
 				
 			} else if ((title.innerText.endsWith('-')) === true) {
 				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '+'
+				tempM = false
 				title.textContent = temp
 			} else if ((title.innerText.endsWith('*')) === true) {
 				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '+'
@@ -400,7 +396,7 @@ let calculator = {
 			} else {
 				saveNum *= -1
 				numbers[numbers.length] = saveNum
-				console.log(saveNum)
+				console.log(numbers)
 				saveNum=''
 				temp = ''
 
@@ -417,6 +413,7 @@ let calculator = {
 			} else if ((title.innerText.endsWith('-')) === true) {
 				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '+'
 				title.textContent = temp
+				tempM = false
 			} else if ((title.innerText.endsWith('*')) === true) {
 				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '+'
 				title.textContent = temp
@@ -425,7 +422,7 @@ let calculator = {
 				title.textContent = temp
 			} else {
 				numbers[numbers.length] = saveNum
-				console.log(saveNum)
+				console.log(numbers)
 				saveNum=''
 				temp = ''
 
@@ -465,7 +462,7 @@ let calculator = {
 			} else {
 				saveNum *= -1
 				numbers[numbers.length] = saveNum
-				console.log(saveNum)
+				console.log(numbers)
 				saveNum=''
 				temp = ''
 
@@ -482,15 +479,18 @@ let calculator = {
 			} else if ((title.innerText.endsWith('+')) === true) {
 				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '-'
 				title.textContent = temp
+				tempM = true
 			} else if ((title.innerText.endsWith('*')) === true) {
 				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '-'
 				title.textContent = temp
+				tempM = true
 			} else if ((title.innerText.endsWith('/')) === true) {
 				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '-'
 				title.textContent = temp
+				tempM = true
 			} else {
 				numbers[numbers.length] = saveNum
-				console.log(saveNum)
+				console.log(numbers)
 				saveNum=''
 				temp = ''
 
@@ -507,6 +507,8 @@ let calculator = {
 		saveNum = ''
 		tempQ = false
 		tempM = false
+		numbers.length=0
+		console.log('numbers', numbers)
 	},
 	back: function () {
 		if ((title.innerText).length > 1) {
@@ -516,6 +518,92 @@ let calculator = {
 			let temp = '0'
 			title.textContent = temp
 		}
+	},
+	multiply: function () {
+		if (title.innerText === '-0') {
+				title.innerText = 0
+				tempM = false
+			}
+		if (tempQ === true) {
+			title.innerText = 0
+			tempM = false
+			tempQ = false
+		}
+		if (tempM === true) {
+			if (title.innerText === '-0') {
+				title.innerText = 0
+			} else if ((title.innerText.endsWith('*')) === true) {
+				
+			} else if ((title.innerText.endsWith('+')) === true) {
+				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '*'
+				title.textContent = temp
+				tempM = false
+			} else if ((title.innerText.endsWith('-')) === true) {
+				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '*'
+				title.textContent = temp
+				tempM = false
+			} else if ((title.innerText.endsWith('/')) === true) {
+				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '*'
+				title.textContent = temp
+				tempM = false
+			} else {
+				saveNum *= -1
+				numbers[numbers.length] = saveNum
+				console.log(numbers)
+				saveNum=''
+				temp = ''
+
+				output = title.innerText + '*'
+				title.innerText = output
+
+				tempM = false
+			}
+		} else if (tempM === false) {
+			if (title.innerText === '0') {
+				title.innerText = 0
+			} else if ((title.innerText.endsWith('*')) === true) {
+				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '*'
+				title.textContent = temp
+			} else if ((title.innerText.endsWith('+')) === true) {
+				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '*'
+				title.textContent = temp
+			} else if ((title.innerText.endsWith('-')) === true) {
+				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '*'
+				title.textContent = temp
+				tempM = false
+			} else if ((title.innerText.endsWith('/')) === true) {
+				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '*'
+				title.textContent = temp
+			} else if (tempMult === 1) {
+				console.log('if')
+				tempMult = saveNum
+				numbers[numbers.length] = saveNum
+				saveNum=''
+				temp = ''
+				console.log(numbers)
+
+				output = title.innerText + '*'
+				title.innerText = output
+			} else {
+				console.log('тут')
+
+				numbers.pop()
+				console.log('после', numbers)
+				numbers[numbers.length] = (parseInt(tempMult) * parseInt(temp))
+				console.log(numbers)
+				// tempMult = saveNum
+				// numbers[numbers.length] = saveNum
+				// console.log(numbers)
+				
+				// saveNum=''
+				// temp = ''
+				// tempMult = ''
+
+				output = title.innerText + '*'
+				title.innerText = output
+
+			}
+		}	
 	},
 	// multiply: function () {
 	// 	if (title.innerText === '0') {
@@ -584,6 +672,7 @@ let calculator = {
 			tempQ = true
 			tempM = false
 		}
+		numbers.length=0
 	}
 }
 
@@ -621,9 +710,9 @@ btnC.addEventListener('click', calculator.del)
 // // <--
 // let btnBack = document.getElementById('btnBack')
 // btnBack.addEventListener('click', calculator.back)
-// // *
-// let btnMultiply = document.getElementById('btnMultiply')
-// btnMultiply.addEventListener('click', calculator.multiply)
+// *
+let btnMultiply = document.getElementById('btnMultiply')
+btnMultiply.addEventListener('click', calculator.multiply)
 // // /
 // let btnSplit = document.getElementById('btnSplit')
 // btnSplit.addEventListener('click', calculator.split)
