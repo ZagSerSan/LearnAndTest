@@ -587,10 +587,15 @@ let calculator = {
 			} else {
 				console.log('тут')
 
-				numbers.pop()
-				console.log('после', numbers)
+				tempMult = numbers.pop()
 				numbers[numbers.length] = (parseInt(tempMult) * parseInt(temp))
-				console.log(numbers)
+				temp = ''
+				// saveNum = numbers[length] * parseInt(temp)
+				console.log('numbers', numbers)
+				console.log('saveNum', saveNum)
+				console.log('tempMult', tempMult)
+
+
 				// tempMult = saveNum
 				// numbers[numbers.length] = saveNum
 				// console.log(numbers)
@@ -645,6 +650,12 @@ let calculator = {
 	// },
 	equally: function () {
 		var sum=0;
+
+		if (tempMult > 1) {
+				tempMult = numbers.pop()
+				numbers[numbers.length] = (parseInt(tempMult) * parseInt(temp))
+				temp = ''
+			}
 
 		if (tempM === true) {
 			saveNum *= -1
