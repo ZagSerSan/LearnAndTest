@@ -4,19 +4,18 @@ let title = document.getElementById('block-title')
 let output
 
 let temp
+let tempQ = false
 let saveNum
 
-
+/*
 temp = ''
 1
 temp += 1
 saveNum = temp
 
 output = title.innerText + temp
-
-
-
-
+title.innerText = output
+*/
 
 //let output + temp
 //let numbers[numbers.length] = temp
@@ -34,17 +33,65 @@ let calculator = {
 	// 	}
 	// },
 	input1: function () {
-		if (title.innerText === '0') {
-			temp = (title.innerText).substring(0, (title.innerText).length - 1) + 1
-			saveNum = temp
-			title.innerText = temp
-			temp = ''
-		} else {
-			temp = (title.innerText) + 1
-			saveNum = temp
-			title.innerText = temp
-			temp = ''
+		if (tempQ === true) {
+			output = (title.innerText = '') + '1'
+			title.innerText = output
 
+			temp = '1'
+			saveNum = parseInt(temp)
+			tempQ = false
+				console.log('тут где tempQ')
+				console.log(`tempQ = ${tempQ}`)
+
+		} else {
+			if (title.innerText === '0') {
+				output = (title.innerText).substring(0, (title.innerText).length - 1) + '1'
+				title.innerText = output
+				
+				temp = '1'
+				saveNum = parseInt(temp)
+				console.log('тут где if===0')
+
+			} else {
+				output = title.innerText + '1'
+				title.innerText = output
+
+				temp += '1'
+				saveNum = parseInt(temp)
+				console.log('тут где else')
+
+			}
+		}
+	},
+	input2: function () {
+		if (tempQ === true) {
+			output = (title.innerText = '') + '2'
+			title.innerText = output
+
+			temp = '2'
+			saveNum = parseInt(temp)
+			tempQ = false
+				console.log('тут где tempQ')
+				console.log(`tempQ = ${tempQ}`)
+
+		} else {
+			if (title.innerText === '0') {
+				output = (title.innerText).substring(0, (title.innerText).length - 1) + '2'
+				title.innerText = output
+				
+				temp = '2'
+				saveNum = parseInt(temp)
+				console.log('тут где if===0')
+
+			} else {
+				output = title.innerText + '2'
+				title.innerText = output
+
+				temp += '2'
+				saveNum = parseInt(temp)
+				console.log('тут где else')
+
+			}
 		}
 	},
 	// input2: function () {
@@ -142,11 +189,12 @@ let calculator = {
 			temp = (title.innerText).substring(0, (title.innerText).length - 1) + '+'
 			title.textContent = temp
 		} else {
-			numbers[numbers.length] = parseInt(saveNum)
+			numbers[numbers.length] = saveNum
 			saveNum=''
-			temp = title.innerText + '+'
-			title.textContent = temp
 			temp = ''
+
+			output = title.innerText + '+'
+			title.innerText = output
 			// temp = (temp).substring(0, (temp).length - 1)
 			// numbers[numbers.length] = temp
 		}
@@ -221,19 +269,27 @@ let calculator = {
 	// 		title.textContent = temp
 	// 	}
 	// },
-	// equally: function () {
-	// 	(title.innerText).parseInt()
-	// 	console.log(title.innerText)
-	// }
-	
+	equally: function () {
+		var sum=0;
+		numbers[numbers.length] = saveNum
+		saveNum=''
+		temp = ''
+		for(var i=0;i<numbers.length;i++){
+		    sum = sum + parseInt(numbers[i]);
+		}
+		title.innerText = sum
+		numbers.length = 0
+		tempQ = true
+		console.log(`tempQ = ${tempQ}`)
+	}
 }
 
 // let btn0 = document.getElementById('btn0')
 // btn0.addEventListener('click', calculator.input0)
 let btn1 = document.getElementById('btn1')
 btn1.addEventListener('click', calculator.input1)
-// let btn2 = document.getElementById('btn2')
-// btn2.addEventListener('click', calculator.input2)
+let btn2 = document.getElementById('btn2')
+btn2.addEventListener('click', calculator.input2)
 // let btn3 = document.getElementById('btn3')
 // btn3.addEventListener('click', calculator.input3)
 // let btn4 = document.getElementById('btn4')
@@ -268,9 +324,9 @@ btnPlus.addEventListener('click', calculator.plus)
 // // /
 // let btnSplit = document.getElementById('btnSplit')
 // btnSplit.addEventListener('click', calculator.split)
-// // =
-// // let btnEqually = document.getElementById('btnEqually')
-// // btnEqually.addEventListener('click', calculator.equally)
+// =
+let btnEqually = document.getElementById('btnEqually')
+btnEqually.addEventListener('click', calculator.equally)
 
 
 
