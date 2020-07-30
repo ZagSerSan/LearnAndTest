@@ -15,6 +15,7 @@ let temp
 let tempQ = false
 let tempM = false
 let tempMult = 1
+
 let saveNum
 
 let numbers = []
@@ -576,6 +577,16 @@ let calculator = {
 				title.textContent = temp
 			} else if (tempMult === 1) {
 				console.log('if')
+				tempMult = saveNum
+				numbers[numbers.length] = saveNum
+				saveNum=''
+				temp = ''
+				console.log(numbers)
+
+				output = title.innerText + '*'
+				title.innerText = output
+			} else if (tempMult.length > 0) {
+				console.log('tempMult.length')
 				tempMult = saveNum
 				numbers[numbers.length] = saveNum
 				saveNum=''
