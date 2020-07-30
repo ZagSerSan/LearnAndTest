@@ -14,7 +14,7 @@ let output
 let temp
 let tempQ = false
 let tempM = false
-let tempMult = 1
+let tempMult = 'firstNum'
 
 let saveNum
 
@@ -97,9 +97,6 @@ let calculator = {
 			temp = '2'
 			saveNum = parseInt(temp)
 			tempQ = false
-				console.log('тут где tempQ')
-				console.log(`tempQ = ${tempQ}`)
-
 		} else {
 			if (title.innerText === '0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '2'
@@ -107,7 +104,6 @@ let calculator = {
 				
 				temp = '2'
 				saveNum = parseInt(temp)
-				console.log('тут где if===0')
 
 			} else if (title.innerText === '-0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '2'
@@ -121,7 +117,6 @@ let calculator = {
 
 				temp += '2'
 				saveNum = parseInt(temp)
-
 			}
 		}
 	},
@@ -370,16 +365,31 @@ let calculator = {
 		}
 	},
 	plus: function () {
+		// если изначально стоит '-0'
 		if (title.innerText === '-0') {
 			title.innerText = 0
 			tempM = false
 		}
 
+		// нажатие после равно
 		if (tempQ === true) {
 			title.innerText = '0'
 		}
 
-		if (tempM === true) {
+		// для умножения
+		if (tempMult != 'firstNum') {
+			tempMult = numbers.pop()
+			numbers[numbers.length] = (parseInt(tempMult) * parseInt(temp))
+			temp = ''
+			tempMult = 'firstNum'
+
+			output = title.innerText + '+'
+			title.innerText = output
+			console.log('теперь работает это')
+		} else {
+
+		// для минуса
+		if ((tempM === true) && (tempMult = 'firstNum')) {
 			if (title.innerText === '0') {
 				title.innerText = 0
 			} else if ((title.innerText.endsWith('+')) === true) {
@@ -406,7 +416,7 @@ let calculator = {
 
 				tempM = false
 			}
-		} else if (tempM === false) {
+		} else if ((tempM === false) && (tempMult = 'firstNum')) {
 			if (title.innerText === '0') {
 				title.innerText = 0
 			} else if ((title.innerText.endsWith('+')) === true) {
@@ -424,6 +434,7 @@ let calculator = {
 			} else {
 				numbers[numbers.length] = saveNum
 				console.log(numbers)
+				console.log('рабоатет это')
 				saveNum=''
 				temp = ''
 
@@ -433,8 +444,10 @@ let calculator = {
 				tempM = false
 			}
 		}
+		}
 	},
 	minus: function () {
+		tempMult = 'minus'
 		if (title.innerText === '0') {
 				title.innerText = '-0'
 				tempM = true
@@ -575,18 +588,8 @@ let calculator = {
 			} else if ((title.innerText.endsWith('/')) === true) {
 				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '*'
 				title.textContent = temp
-			} else if (tempMult === 1) {
-				console.log('if')
-				tempMult = saveNum
-				numbers[numbers.length] = saveNum
-				saveNum=''
-				temp = ''
-				console.log(numbers)
-
-				output = title.innerText + '*'
-				title.innerText = output
-			} else if (tempMult.length > 0) {
-				console.log('tempMult.length')
+			} else if (tempMult === 'firstNum') {
+				console.log('firstNum')
 				tempMult = saveNum
 				numbers[numbers.length] = saveNum
 				saveNum=''
@@ -662,10 +665,23 @@ let calculator = {
 	equally: function () {
 		var sum=0;
 
-		if (tempMult > 1) {
+		if (tempMult != 'firstNum') {
 				tempMult = numbers.pop()
 				numbers[numbers.length] = (parseInt(tempMult) * parseInt(temp))
 				temp = ''
+				for(var i=0;i<numbers.length;i++){
+			    	sum = sum + parseInt(numbers[i]);
+				}
+				title.innerText = sum
+				console.log('и это')
+			} else if (tempMult = 'firstNum') {
+				console.log('это')
+				numbers[numbers.length] = saveNum
+				for(var i=0;i<numbers.length;i++){
+			    	sum = sum + parseInt(numbers[i]);
+				}
+				title.innerText = sum
+
 			}
 
 		if (tempM === true) {
@@ -677,7 +693,7 @@ let calculator = {
 			    sum = sum + parseInt(numbers[i]);
 			}
 			title.innerText = sum
-			console.log(numbers)
+			console.log('тутаа', numbers)
 			numbers.length = 0
 			tempQ = true
 			tempM = false
@@ -689,12 +705,16 @@ let calculator = {
 			    sum = sum + parseInt(numbers[i]);
 			}
 			title.innerText = sum
+			console.log('equally')
 			console.log(numbers)
 			numbers.length = 0
 			tempQ = true
 			tempM = false
 		}
 		numbers.length=0
+		tempQ = true
+		tempM = false
+		tempMult = 'firstNum'
 	}
 }
 
