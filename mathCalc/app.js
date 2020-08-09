@@ -13,14 +13,17 @@ numbers[numbers.length] = saveSum
 let output
 let temp
 let tempQ = false
-let tempM = false
-let tempMult = 'firstNum'
-
+let tempMult = false
+let saveMult
+let tempSplit = false
+let saveSplit
+let tempMinus = false
 let saveNum
 
 let numbers = []
 
 let calculator = {
+// input 1-9
 	input0: function () {
 		if (tempQ === true) {
 			output = (title.innerText = '') + '0'
@@ -159,8 +162,6 @@ let calculator = {
 			temp = '4'
 			saveNum = parseInt(temp)
 			tempQ = false
-				console.log('тут где tempQ')
-				console.log(`tempQ = ${tempQ}`)
 
 		} else {
 			if (title.innerText === '0') {
@@ -169,7 +170,6 @@ let calculator = {
 				
 				temp = '4'
 				saveNum = parseInt(temp)
-				console.log('тут где if===0')
 
 			} else if (title.innerText === '-0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '4'
@@ -364,6 +364,107 @@ let calculator = {
 			}
 		}
 	},
+// input cucl
+	multiply: function () {
+		if (tempMult === true) {
+			saveMult = numbers.pop()
+			numbers[numbers.length] = (parseInt(saveMult) * parseInt(temp))
+			temp = ''
+
+			output = title.innerText + '*'
+			title.innerText = output
+		} else {
+			if (tempSplit === true) {
+				saveSplit = numbers.pop()
+				numbers[numbers.length] = (parseInt(saveSplit) / parseInt(temp))
+				tempSplit = false
+				tempMult = true
+			} else if (tempMinus === true) {
+				numbers[numbers.length] = (saveNum * (-1))
+				tempMinus = false
+				tempMult - true
+			} else {
+				numbers[numbers.length] = saveNum
+				temp = ''
+
+				output = title.innerText + '*'
+				title.innerText = output
+
+				tempMinus = false
+				tempSplit = false
+				tempMult = true
+			}
+		}
+	},
+	minus: function () {
+		tempMult = 'minus'
+		if (title.innerText === '0') {
+				title.innerText = '-0'
+				tempM = true
+			}
+
+		if (tempQ === true) {
+			title.innerText = '-0'
+			tempM = true
+			tempQ = false
+		}
+
+		if (tempM === true) {
+			if (title.innerText === '-0') {
+				title.innerText = '-0'
+			} else if ((title.innerText.endsWith('-')) === true) {
+				
+			} else if ((title.innerText.endsWith('+')) === true) {
+				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '-'
+				title.textContent = temp
+			} else if ((title.innerText.endsWith('*')) === true) {
+				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '-'
+				title.textContent = temp
+			} else if ((title.innerText.endsWith('/')) === true) {
+				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '-'
+				title.textContent = temp
+			} else {
+				saveNum *= -1
+				numbers[numbers.length] = saveNum
+				console.log(numbers)
+				saveNum=''
+				temp = ''
+
+				output = title.innerText + '-'
+				title.innerText = output
+
+				tempM = true
+			}
+		} else if (tempM === false) {
+			if (title.innerText === '0') {
+				title.innerText = 0
+			} else if ((title.innerText.endsWith('-')) === true) {
+				
+			} else if ((title.innerText.endsWith('+')) === true) {
+				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '-'
+				title.textContent = temp
+				tempM = true
+			} else if ((title.innerText.endsWith('*')) === true) {
+				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '-'
+				title.textContent = temp
+				tempM = true
+			} else if ((title.innerText.endsWith('/')) === true) {
+				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '-'
+				title.textContent = temp
+				tempM = true
+			} else {
+				numbers[numbers.length] = saveNum
+				console.log(numbers)
+				saveNum=''
+				temp = ''
+
+				output = title.innerText + '-'
+				title.innerText = output
+
+				tempM = true
+			}
+		}	
+	},
 	plus: function () {
 		// если изначально стоит '-0'
 		if (title.innerText === '-0') {
@@ -446,75 +547,6 @@ let calculator = {
 		}
 		}
 	},
-	minus: function () {
-		tempMult = 'minus'
-		if (title.innerText === '0') {
-				title.innerText = '-0'
-				tempM = true
-			}
-
-		if (tempQ === true) {
-			title.innerText = '-0'
-			tempM = true
-			tempQ = false
-		}
-
-		if (tempM === true) {
-			if (title.innerText === '-0') {
-				title.innerText = '-0'
-			} else if ((title.innerText.endsWith('-')) === true) {
-				
-			} else if ((title.innerText.endsWith('+')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '-'
-				title.textContent = temp
-			} else if ((title.innerText.endsWith('*')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '-'
-				title.textContent = temp
-			} else if ((title.innerText.endsWith('/')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '-'
-				title.textContent = temp
-			} else {
-				saveNum *= -1
-				numbers[numbers.length] = saveNum
-				console.log(numbers)
-				saveNum=''
-				temp = ''
-
-				output = title.innerText + '-'
-				title.innerText = output
-
-				tempM = true
-			}
-		} else if (tempM === false) {
-			if (title.innerText === '0') {
-				title.innerText = 0
-			} else if ((title.innerText.endsWith('-')) === true) {
-				
-			} else if ((title.innerText.endsWith('+')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '-'
-				title.textContent = temp
-				tempM = true
-			} else if ((title.innerText.endsWith('*')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '-'
-				title.textContent = temp
-				tempM = true
-			} else if ((title.innerText.endsWith('/')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '-'
-				title.textContent = temp
-				tempM = true
-			} else {
-				numbers[numbers.length] = saveNum
-				console.log(numbers)
-				saveNum=''
-				temp = ''
-
-				output = title.innerText + '-'
-				title.innerText = output
-
-				tempM = true
-			}
-		}	
-	},
 	del: function () {
 		title.innerText = 0
 		temp = ''
@@ -533,135 +565,6 @@ let calculator = {
 			title.textContent = temp
 		}
 	},
-	multiply: function () {
-		if (title.innerText === '-0') {
-				title.innerText = 0
-				tempM = false
-			}
-		if (tempQ === true) {
-			title.innerText = 0
-			tempM = false
-			tempQ = false
-		}
-		if (tempM === true) {
-			if (title.innerText === '-0') {
-				title.innerText = 0
-			} else if ((title.innerText.endsWith('*')) === true) {
-				
-			} else if ((title.innerText.endsWith('+')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '*'
-				title.textContent = temp
-				tempM = false
-			} else if ((title.innerText.endsWith('-')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '*'
-				title.textContent = temp
-				tempM = false
-			} else if ((title.innerText.endsWith('/')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '*'
-				title.textContent = temp
-				tempM = false
-			} else {
-				saveNum *= -1
-				numbers[numbers.length] = saveNum
-				console.log(numbers)
-				saveNum=''
-				temp = ''
-
-				output = title.innerText + '*'
-				title.innerText = output
-
-				tempM = false
-			}
-		} else if (tempM === false) {
-			if (title.innerText === '0') {
-				title.innerText = 0
-			} else if ((title.innerText.endsWith('*')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '*'
-				title.textContent = temp
-			} else if ((title.innerText.endsWith('+')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '*'
-				title.textContent = temp
-			} else if ((title.innerText.endsWith('-')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '*'
-				title.textContent = temp
-				tempM = false
-			} else if ((title.innerText.endsWith('/')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '*'
-				title.textContent = temp
-			} else if (tempMult === 'firstNum') {
-				console.log('firstNum')
-				tempMult = saveNum
-				numbers[numbers.length] = saveNum
-				saveNum=''
-				temp = ''
-				console.log(numbers)
-
-				output = title.innerText + '*'
-				title.innerText = output
-			} else {
-				console.log('тут')
-
-				tempMult = numbers.pop()
-				numbers[numbers.length] = (parseInt(tempMult) * parseInt(temp))
-				temp = ''
-				// saveNum = numbers[length] * parseInt(temp)
-				console.log('numbers', numbers)
-				console.log('saveNum', saveNum)
-				console.log('tempMult', tempMult)
-
-
-				// tempMult = saveNum
-				// numbers[numbers.length] = saveNum
-				// console.log(numbers)
-				
-				// saveNum=''
-				// temp = ''
-				// tempMult = ''
-
-				output = title.innerText + '*'
-				title.innerText = output
-
-			}
-		}	
-	},
-	// multiply: function () {
-	// 	if (title.innerText === '0') {
-	// 		title.innerText = 0
-	// 	} else if ((title.innerText.endsWith('*')) === true) {
-			
-	// 	} else if ((title.innerText.endsWith('+')) === true) {
-	// 		let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '*'
-	// 		title.textContent = temp
-	// 	} else if ((title.innerText.endsWith('-')) === true) {
-	// 		let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '*'
-	// 		title.textContent = temp
-	// 	} else if ((title.innerText.endsWith('/')) === true) {
-	// 		let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '*'
-	// 		title.textContent = temp
-	// 	} else {
-	// 		let temp = title.innerText + '*'
-	// 		title.textContent = temp
-	// 	}
-	// },
-	// split: function () {
-	// 	if (title.innerText === '0') {
-	// 		title.innerText = 0
-	// 	} else if ((title.innerText.endsWith('/')) === true) {
-			
-	// 	} else if ((title.innerText.endsWith('+')) === true) {
-	// 		let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '/'
-	// 		title.textContent = temp
-	// 	} else if ((title.innerText.endsWith('-')) === true) {
-	// 		let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '/'
-	// 		title.textContent = temp
-	// 	} else if ((title.innerText.endsWith('*')) === true) {
-	// 		let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '/'
-	// 		title.textContent = temp
-	// 	} else {
-	// 		let temp = title.innerText + '/'
-	// 		title.textContent = temp
-	// 	}
-	// },
 	equally: function () {
 		var sum=0;
 
