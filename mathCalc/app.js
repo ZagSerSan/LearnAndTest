@@ -377,10 +377,20 @@ let calculator = {
 			if (tempSplit === true) {
 				saveSplit = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveSplit) / parseInt(temp))
+				temp = ''
+
+				output = title.innerText + '*'
+				title.innerText = output
+	
 				tempSplit = false
 				tempMult = true
 			} else if (tempMinus === true) {
 				numbers[numbers.length] = (saveNum * (-1))
+				temp = ''
+
+				output = title.innerText + '*'
+				title.innerText = output
+
 				tempMinus = false
 				tempMult - true
 			} else {
@@ -396,74 +406,51 @@ let calculator = {
 			}
 		}
 	},
-	minus: function () {
-		tempMult = 'minus'
-		if (title.innerText === '0') {
-				title.innerText = '-0'
-				tempM = true
-			}
+	split: function () {
+		if (tempSplit === true) {
+			saveSplit = numbers.pop()
+			numbers[numbers.length] = (parseInt(saveSplit) / parseInt(temp))
+			temp = ''
 
-		if (tempQ === true) {
-			title.innerText = '-0'
-			tempM = true
-			tempQ = false
+			output = title.innerText + '/'
+			title.innerText = output
+		} else {
+			if (tempMult === true) {
+				saveMult = numbers.pop()
+				numbers[numbers.length] = (parseInt(saveMult) * parseInt(temp))
+				temp = ''
+
+				output = title.innerText + '/'
+				title.innerText = output
+
+				tempMult = false
+				tempSplit = true
+			} else if (tempMinus === true) {
+				numbers[numbers.length] = (saveNum * (-1))
+				temp = ''
+
+				output = title.innerText + '/'
+				title.innerText = output
+
+				tempMinus = false
+				tempSplit - true
+			} else {
+				numbers[numbers.length] = saveNum
+				temp = ''
+
+				output = title.innerText + '/'
+				title.innerText = output
+
+				tempMinus = false
+				tempMult = false
+				tempSplit = true
+			}
 		}
-
-		if (tempM === true) {
-			if (title.innerText === '-0') {
-				title.innerText = '-0'
-			} else if ((title.innerText.endsWith('-')) === true) {
-				
-			} else if ((title.innerText.endsWith('+')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '-'
-				title.textContent = temp
-			} else if ((title.innerText.endsWith('*')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '-'
-				title.textContent = temp
-			} else if ((title.innerText.endsWith('/')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '-'
-				title.textContent = temp
-			} else {
-				saveNum *= -1
-				numbers[numbers.length] = saveNum
-				console.log(numbers)
-				saveNum=''
-				temp = ''
-
-				output = title.innerText + '-'
-				title.innerText = output
-
-				tempM = true
-			}
-		} else if (tempM === false) {
-			if (title.innerText === '0') {
-				title.innerText = 0
-			} else if ((title.innerText.endsWith('-')) === true) {
-				
-			} else if ((title.innerText.endsWith('+')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '-'
-				title.textContent = temp
-				tempM = true
-			} else if ((title.innerText.endsWith('*')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '-'
-				title.textContent = temp
-				tempM = true
-			} else if ((title.innerText.endsWith('/')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '-'
-				title.textContent = temp
-				tempM = true
-			} else {
-				numbers[numbers.length] = saveNum
-				console.log(numbers)
-				saveNum=''
-				temp = ''
-
-				output = title.innerText + '-'
-				title.innerText = output
-
-				tempM = true
-			}
-		}	
+	},
+	minus: function () {
+		if (tempMinus === true) {
+			numbers[numbers.length] = (saveNum * (-1))
+		}
 	},
 	plus: function () {
 		// если изначально стоит '-0'
@@ -658,9 +645,9 @@ btnC.addEventListener('click', calculator.del)
 // *
 let btnMultiply = document.getElementById('btnMultiply')
 btnMultiply.addEventListener('click', calculator.multiply)
-// // /
-// let btnSplit = document.getElementById('btnSplit')
-// btnSplit.addEventListener('click', calculator.split)
+// /
+let btnSplit = document.getElementById('btnSplit')
+btnSplit.addEventListener('click', calculator.split)
 // =
 let btnEqually = document.getElementById('btnEqually')
 btnEqually.addEventListener('click', calculator.equally)
