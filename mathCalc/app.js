@@ -453,7 +453,7 @@ let calculator = {
 
 				tempMultMinus = false
 				tempMult = true
-			}  else if (tempSplitPlus === true) {
+			} else if (tempSplitPlus === true) {
 				saveSplit = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveSplit) + (parseInt(saveSplitPlus) / parseInt(temp)))
 				temp = ''
@@ -462,7 +462,7 @@ let calculator = {
 				title.innerText = output
 
 				tempSplitPlus = false
-				tempSplit = true
+				tempMult = true
 			} else if (tempSplitMinus === true) {
 				saveSplit = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveSplit) - (parseInt(saveSplitMinus) / parseInt(temp)))
@@ -472,7 +472,7 @@ let calculator = {
 				title.innerText = output
 
 				tempSplitMinus = false
-				tempSplit = true
+				tempMult = true
 			} else {
 				numbers[numbers.length] = saveNum
 				temp = ''
@@ -658,6 +658,26 @@ let calculator = {
 
 				tempMultMinus = false
 				tempMinus = true
+			} else if (tempSplitPlus === true) {
+				saveSplit = numbers.pop()
+				numbers[numbers.length] = (parseInt(saveSplit) + (parseInt(saveSplitPlus) / parseInt(temp)))
+				temp = ''
+
+				output = title.innerText + '-'
+				title.innerText = output
+
+				tempSplitPlus = false
+				tempMinus = true
+			} else if (tempSplitMinus === true) {
+				saveSplit = numbers.pop()
+				numbers[numbers.length] = (parseInt(saveSplit) - (parseInt(saveSplitMinus) / parseInt(temp)))
+				temp = ''
+
+				output = title.innerText + '-'
+				title.innerText = output
+
+				tempSplitMinus = false
+				tempMinus = true
 			} else {
 				numbers[numbers.length] = saveNum
 				temp = ''
@@ -728,6 +748,26 @@ let calculator = {
 				title.innerText = output
 
 				tempMultMinus = false
+				tempPlus = true
+			} else if (tempSplitPlus === true) {
+				saveSplit = numbers.pop()
+				numbers[numbers.length] = (parseInt(saveSplit) + (parseInt(saveSplitPlus) / parseInt(temp)))
+				temp = ''
+
+				output = title.innerText + '+'
+				title.innerText = output
+
+				tempSplitPlus = false
+				tempPlus = true
+			} else if (tempSplitMinus === true) {
+				saveSplit = numbers.pop()
+				numbers[numbers.length] = (parseInt(saveSplit) - (parseInt(saveSplitMinus) / parseInt(temp)))
+				temp = ''
+
+				output = title.innerText + '+'
+				title.innerText = output
+
+				tempSplitMinus = false
 				tempPlus = true
 			} else {
 				numbers[numbers.length] = parseInt(temp)
