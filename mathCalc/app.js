@@ -15,9 +15,13 @@ let temp
 let tempQ = false
 let tempMult = false
 let saveMult
+let tempMultPlus = false
+let saveMultPlus
 let tempSplit = false
 let saveSplit
 let tempMinus = false
+let saveMinus
+let tempPlus = false
 let saveNum
 
 let numbers = []
@@ -385,14 +389,60 @@ let calculator = {
 				tempSplit = false
 				tempMult = true
 			} else if (tempMinus === true) {
-				numbers[numbers.length] = (saveNum * (-1))
+				saveMultMinus = temp
+				tempMultMinus = true
 				temp = ''
 
 				output = title.innerText + '*'
 				title.innerText = output
 
 				tempMinus = false
-				tempMult - true
+				tempMultMinus = true
+			} else if (tempPlus === true) {
+				/*если после плюса я нажимаю на умножить, то этот темп нужно занести в третью переменную и
+				для умножения, и не обновлять последнее в массиве. типа так:
+
+					saveMultPlus = temp
+					tempMultPlus = true
+
+					где-то выше там:
+					if (tempMultPlus === true) {
+						saveMult = numbers.pop()
+						numbers[numbers.length] = (parseInt(saveMult) + (parseInt(saveMultPlus) * parseInt(temp)))
+						temp = ''
+						
+					}
+
+				*/
+				saveMultPlus = temp
+				tempMultPlus = true
+				temp = ''
+
+				output = title.innerText + '*'
+				title.innerText = output
+
+				tempPlus = false
+				tempMultPlus = true
+			} else if (tempMultPlus === true) {
+				saveMult = numbers.pop()
+				numbers[numbers.length] = (parseInt(saveMult) + (parseInt(saveMultPlus) * parseInt(temp)))
+				temp = ''
+
+				output = title.innerText + '*'
+				title.innerText = output
+
+				tempMultPlus = false
+				tempMult = true
+			} else if (tempMultMinus === true) {
+				saveMult = numbers.pop()
+				numbers[numbers.length] = (parseInt(saveMult) - (parseInt(saveMultMinus) * parseInt(temp)))
+				temp = ''
+
+				output = title.innerText + '*'
+				title.innerText = output
+
+				tempMultMinus = false
+				tempMult = true
 			} else {
 				numbers[numbers.length] = saveNum
 				temp = ''
@@ -426,14 +476,26 @@ let calculator = {
 				tempMult = false
 				tempSplit = true
 			} else if (tempMinus === true) {
-				numbers[numbers.length] = (saveNum * (-1))
+				saveMinus = numbers.pop()
+				numbers[numbers.length] = (parseInt(saveMinus) - parseInt(temp))
+				// numbers[numbers.length] = (saveNum * (-1))
 				temp = ''
 
 				output = title.innerText + '/'
 				title.innerText = output
 
 				tempMinus = false
-				tempSplit - true
+				tempSplit = true
+			} else if (tempPlus === true) {
+				savePlus = numbers.pop()
+				numbers[numbers.length] = (parseInt(savePlus) + parseInt(temp))
+				temp = ''
+
+				output = title.innerText + '/'
+				title.innerText = output
+
+				tempPlus = false
+				tempSplit = true
 			} else {
 				numbers[numbers.length] = saveNum
 				temp = ''
@@ -449,89 +511,104 @@ let calculator = {
 	},
 	minus: function () {
 		if (tempMinus === true) {
-			numbers[numbers.length] = (saveNum * (-1))
+			saveMinus = numbers.pop()
+			numbers[numbers.length] = (parseInt(saveMinus) - parseInt(temp))
+			// numbers[numbers.length] = (saveNum * (-1))
+			temp = ''
+
+			output = title.innerText + '-'
+			title.innerText = output
+		} else {
+			if (tempMult === true) {
+				saveMult = numbers.pop()
+				numbers[numbers.length] = (parseInt(saveMult) * parseInt(temp))
+				temp = ''
+
+				output = title.innerText + '-'
+				title.innerText = output
+
+				tempMult = false
+				tempMinus = true
+			} else if (tempSplit === true) {
+				saveSplit = numbers.pop()
+				numbers[numbers.length] = (parseInt(saveSplit) / parseInt(temp))
+				temp = ''
+
+				output = title.innerText + '-'
+				title.innerText = output
+	
+				tempSplit = false
+				tempMinus = true
+			} else if (tempPlus === true) {
+				savePlus = numbers.pop()
+				numbers[numbers.length] = (parseInt(savePlus) + parseInt(temp))
+				temp = ''
+
+				output = title.innerText + '-'
+				title.innerText = output
+
+				tempPlus = false
+				tempMinus = true
+			} else {
+				numbers[numbers.length] = saveNum
+				temp = ''
+
+				output = title.innerText + '-'
+				title.innerText = output
+
+				tempMinus = true
+			}
 		}
 	},
 	plus: function () {
-		// если изначально стоит '-0'
-		if (title.innerText === '-0') {
-			title.innerText = 0
-			tempM = false
-		}
-
-		// нажатие после равно
-		if (tempQ === true) {
-			title.innerText = '0'
-		}
-
-		// для умножения
-		if (tempMult != 'firstNum') {
-			tempMult = numbers.pop()
-			numbers[numbers.length] = (parseInt(tempMult) * parseInt(temp))
+		if (tempPlus === true) {
+			savePlus = numbers.pop()
+			numbers[numbers.length] = (parseInt(savePlus) + parseInt(temp))
 			temp = ''
-			tempMult = 'firstNum'
 
 			output = title.innerText + '+'
 			title.innerText = output
-			console.log('теперь работает это')
 		} else {
-
-		// для минуса
-		if ((tempM === true) && (tempMult = 'firstNum')) {
-			if (title.innerText === '0') {
-				title.innerText = 0
-			} else if ((title.innerText.endsWith('+')) === true) {
-				
-			} else if ((title.innerText.endsWith('-')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '+'
-				tempM = false
-				title.textContent = temp
-			} else if ((title.innerText.endsWith('*')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '+'
-				title.textContent = temp
-			} else if ((title.innerText.endsWith('/')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '+'
-				title.textContent = temp
-			} else {
-				saveNum *= -1
-				numbers[numbers.length] = saveNum
-				console.log(numbers)
-				saveNum=''
+			if (tempMult === true) {
+				saveMult = numbers.pop()
+				numbers[numbers.length] = (parseInt(saveMult) * parseInt(temp))
 				temp = ''
 
 				output = title.innerText + '+'
 				title.innerText = output
 
-				tempM = false
-			}
-		} else if ((tempM === false) && (tempMult = 'firstNum')) {
-			if (title.innerText === '0') {
-				title.innerText = 0
-			} else if ((title.innerText.endsWith('+')) === true) {
-				
-			} else if ((title.innerText.endsWith('-')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '+'
-				title.textContent = temp
-				tempM = false
-			} else if ((title.innerText.endsWith('*')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '+'
-				title.textContent = temp
-			} else if ((title.innerText.endsWith('/')) === true) {
-				let temp = (title.innerText).substring(0, (title.innerText).length - 1) + '+'
-				title.textContent = temp
-			} else {
-				numbers[numbers.length] = saveNum
-				console.log(numbers)
-				console.log('рабоатет это')
-				saveNum=''
+				tempMult = false
+				tempPlus = true
+			} else if (tempSplit === true) {
+				saveSplit = numbers.pop()
+				numbers[numbers.length] = (parseInt(saveSplit) / parseInt(temp))
 				temp = ''
 
 				output = title.innerText + '+'
 				title.innerText = output
 
-				tempM = false
+				tempSplit = false
+				tempPlus = true
+			} else if (tempMinus === true) {
+				saveMinus = numbers.pop()
+				numbers[numbers.length] = (parseInt(saveMinus) - parseInt(temp))
+				// numbers[numbers.length] = (saveNum * (-1))
+				temp = ''
+
+				output = title.innerText + '+'
+				title.innerText = output
+
+				tempMinus = false
+				tempPlus = true
+			} else {
+				numbers[numbers.length] = parseInt(temp)
+				temp = ''
+
+				output = title.innerText + '+'
+				title.innerText = output
+
+				tempPlus = true
 			}
-		}
 		}
 	},
 	del: function () {
