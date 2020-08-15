@@ -1,15 +1,5 @@
 let title = document.getElementById('block-title')
 
-/*
-
-10+5*2
-10+(5*2)
-
-let mult = 2
-saveNum = (saveNum*mult)
-numbers[numbers.length] = saveSum
-*/
-
 let output
 let temp
 let tempQ = false
@@ -409,21 +399,6 @@ let calculator = {
 				tempMinus = false
 				tempMultMinus = true
 			} else if (tempPlus === true) {
-				/*если после плюса я нажимаю на умножить, то этот темп нужно занести в третью переменную и
-				для умножения, и не обновлять последнее в массиве. типа так:
-
-					saveMultPlus = temp
-					tempMultPlus = true
-
-					где-то выше там:
-					if (tempMultPlus === true) {
-						saveMult = numbers.pop()
-						numbers[numbers.length] = (parseInt(saveMult) + (parseInt(saveMultPlus) * parseInt(temp)))
-						temp = ''
-						
-					}
-
-				*/
 				saveMultPlus = temp
 				tempMultPlus = true
 				temp = ''
@@ -514,17 +489,6 @@ let calculator = {
 				title.innerText = output
 
 				tempMinus = false
-				// tempSplitMinus = true
-				// saveMinus = numbers.pop()
-				// numbers[numbers.length] = (parseInt(saveMinus) - parseInt(temp))
-				// // numbers[numbers.length] = (saveNum * (-1))
-				// temp = ''
-
-				// output = title.innerText + '/'
-				// title.innerText = output
-
-				// tempMinus = false
-				// tempSplit = true
 			} else if (tempPlus === true) {
 				saveSplitPlus = temp
 				tempSplitPlus = true
@@ -534,17 +498,6 @@ let calculator = {
 				title.innerText = output
 
 				tempPlus = false
-				// tempSplitPlus = true
-
-				// savePlus = numbers.pop()
-				// numbers[numbers.length] = (parseInt(savePlus) + parseInt(temp))
-				// temp = ''
-
-				// output = title.innerText + '/'
-				// title.innerText = output
-
-				// tempPlus = false
-				// tempSplit = true
 			} else if (tempMultPlus === true) {
 				saveMult = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveMult) + (parseInt(saveMultPlus) * parseInt(temp)))
@@ -602,7 +555,6 @@ let calculator = {
 		if (tempMinus === true) {
 			saveMinus = numbers.pop()
 			numbers[numbers.length] = (parseInt(saveMinus) - parseInt(temp))
-			// numbers[numbers.length] = (saveNum * (-1))
 			temp = ''
 
 			output = title.innerText + '-'
@@ -721,7 +673,6 @@ let calculator = {
 			} else if (tempMinus === true) {
 				saveMinus = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveMinus) - parseInt(temp))
-				// numbers[numbers.length] = (saveNum * (-1))
 				temp = ''
 
 				output = title.innerText + '+'
@@ -784,73 +735,83 @@ let calculator = {
 		title.innerText = 0
 		temp = ''
 		saveNum = ''
-		tempQ = false
-		tempM = false
 		numbers.length=0
-		console.log('numbers', numbers)
+
+		tempMult = false
+		tempMultPlus = false
+		tempMultMinus = false
+
+		tempSplit = false
+		tempSplitPlus = false
+		tempSplitMinus = false
+
+		tempMinus = false
+		tempPlus = false
 	},
 	back: function () {
 		if ((title.innerText).length > 1) {
 			let temp = (title.innerText).substring(0, (title.innerText).length - 1)
 			title.textContent = temp
 		} else if ((title.innerText).length = 1) {
-			let temp = '0'
+			let temp = ''
 			title.textContent = temp
 		}
 	},
 	equally: function () {
-		var sum=0;
+		
+		title.innerText = 'output...'
 
-		if (tempMult != 'firstNum') {
-				tempMult = numbers.pop()
-				numbers[numbers.length] = (parseInt(tempMult) * parseInt(temp))
-				temp = ''
-				for(var i=0;i<numbers.length;i++){
-			    	sum = sum + parseInt(numbers[i]);
-				}
-				title.innerText = sum
-				console.log('и это')
-			} else if (tempMult = 'firstNum') {
-				console.log('это')
-				numbers[numbers.length] = saveNum
-				for(var i=0;i<numbers.length;i++){
-			    	sum = sum + parseInt(numbers[i]);
-				}
-				title.innerText = sum
+		// var sum=0;
 
-			}
+		// if (tempMult != 'firstNum') {
+		// 		tempMult = numbers.pop()
+		// 		numbers[numbers.length] = (parseInt(tempMult) * parseInt(temp))
+		// 		temp = ''
+		// 		for(var i=0;i<numbers.length;i++){
+		// 	    	sum = sum + parseInt(numbers[i]);
+		// 		}
+		// 		title.innerText = sum
+		// 		console.log('и это')
+		// 	} else if (tempMult = 'firstNum') {
+		// 		console.log('это')
+		// 		numbers[numbers.length] = saveNum
+		// 		for(var i=0;i<numbers.length;i++){
+		// 	    	sum = sum + parseInt(numbers[i]);
+		// 		}
+		// 		title.innerText = sum
+		// 	}
 
-		if (tempM === true) {
-			saveNum *= -1
-			numbers[numbers.length] = saveNum
-			saveNum=''
-			temp = ''
-			for(var i=0;i<numbers.length;i++){
-			    sum = sum + parseInt(numbers[i]);
-			}
-			title.innerText = sum
-			console.log('тутаа', numbers)
-			numbers.length = 0
-			tempQ = true
-			tempM = false
-		} else if (tempM === false) {
-			numbers[numbers.length] = saveNum
-			saveNum=''
-			temp = ''
-			for(var i=0;i<numbers.length;i++){
-			    sum = sum + parseInt(numbers[i]);
-			}
-			title.innerText = sum
-			console.log('equally')
-			console.log(numbers)
-			numbers.length = 0
-			tempQ = true
-			tempM = false
-		}
-		numbers.length=0
-		tempQ = true
-		tempM = false
-		tempMult = 'firstNum'
+		// if (tempM === true) {
+		// 	saveNum *= -1
+		// 	numbers[numbers.length] = saveNum
+		// 	saveNum=''
+		// 	temp = ''
+		// 	for(var i=0;i<numbers.length;i++){
+		// 	    sum = sum + parseInt(numbers[i]);
+		// 	}
+		// 	title.innerText = sum
+		// 	console.log('тутаа', numbers)
+		// 	numbers.length = 0
+		// 	tempQ = true
+		// 	tempM = false
+		// } else if (tempM === false) {
+		// 	numbers[numbers.length] = saveNum
+		// 	saveNum=''
+		// 	temp = ''
+		// 	for(var i=0;i<numbers.length;i++){
+		// 	    sum = sum + parseInt(numbers[i]);
+		// 	}
+		// 	title.innerText = sum
+		// 	console.log('equally')
+		// 	console.log(numbers)
+		// 	numbers.length = 0
+		// 	tempQ = true
+		// 	tempM = false
+		// }
+		// numbers.length=0
+		// tempQ = true
+		// tempM = false
+		// tempMult = 'firstNum'
 	}
 }
 
@@ -885,9 +846,9 @@ btnMinus.addEventListener('click', calculator.minus)
 // C
 let btnC = document.getElementById('btnC')
 btnC.addEventListener('click', calculator.del)
-// // <--
-// let btnBack = document.getElementById('btnBack')
-// btnBack.addEventListener('click', calculator.back)
+// <--
+let btnBack = document.getElementById('btnBack')
+btnBack.addEventListener('click', calculator.back)
 // *
 let btnMultiply = document.getElementById('btnMultiply')
 btnMultiply.addEventListener('click', calculator.multiply)
