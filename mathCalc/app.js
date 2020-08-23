@@ -1,7 +1,8 @@
 let title = document.getElementById('block-title')
 
 let output
-let temp
+let temp = 0
+let tempFirstStatus = true
 let tempQ = false
 
 let tempMult = false
@@ -22,6 +23,7 @@ let tempMinus = false
 let saveMinus
 
 let tempPlus = false
+let savePlus
 let saveNum
 
 let numbers = []
@@ -62,7 +64,8 @@ let calculator = {
 	},
 	input1: function () {
 		if (tempQ === true) {
-			output = (title.innerText = '') + '1'
+			numbers[0] = parseInt(title.innerText)
+			output = title.innerText + '1'
 			title.innerText = output
 
 			temp = '1'
@@ -377,6 +380,7 @@ let calculator = {
 
 			output = title.innerText + '*'
 			title.innerText = output
+			tempFirstStatus = false
 		} else {
 			if (tempSplit === true) {
 				saveSplit = numbers.pop()
@@ -388,6 +392,7 @@ let calculator = {
 	
 				tempSplit = false
 				tempMult = true
+				tempFirstStatus = false
 			} else if (tempMinus === true) {
 				saveMultMinus = temp
 				tempMultMinus = true
@@ -398,6 +403,7 @@ let calculator = {
 
 				tempMinus = false
 				tempMultMinus = true
+				tempFirstStatus = false
 			} else if (tempPlus === true) {
 				saveMultPlus = temp
 				tempMultPlus = true
@@ -408,6 +414,7 @@ let calculator = {
 
 				tempPlus = false
 				tempMultPlus = true
+				tempFirstStatus = false
 			} else if (tempMultPlus === true) {
 				saveMult = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveMult) + (parseInt(saveMultPlus) * parseInt(temp)))
@@ -418,16 +425,19 @@ let calculator = {
 
 				tempMultPlus = false
 				tempMult = true
+				tempFirstStatus = false
 			} else if (tempMultMinus === true) {
 				saveMult = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveMult) - (parseInt(saveMultMinus) * parseInt(temp)))
 				temp = ''
+				tempFirstStatus = false
 
 				output = title.innerText + '*'
 				title.innerText = output
 
 				tempMultMinus = false
 				tempMult = true
+				tempFirstStatus = false
 			} else if (tempSplitPlus === true) {
 				saveSplit = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveSplit) + (parseInt(saveSplitPlus) / parseInt(temp)))
@@ -438,6 +448,7 @@ let calculator = {
 
 				tempSplitPlus = false
 				tempMult = true
+				tempFirstStatus = false
 			} else if (tempSplitMinus === true) {
 				saveSplit = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveSplit) - (parseInt(saveSplitMinus) / parseInt(temp)))
@@ -448,6 +459,7 @@ let calculator = {
 
 				tempSplitMinus = false
 				tempMult = true
+				tempFirstStatus = false
 			} else {
 				numbers[numbers.length] = saveNum
 				temp = ''
@@ -458,6 +470,7 @@ let calculator = {
 				tempMinus = false
 				tempSplit = false
 				tempMult = true
+				tempFirstStatus = false
 			}
 		}
 	},
@@ -469,6 +482,7 @@ let calculator = {
 
 			output = title.innerText + '/'
 			title.innerText = output
+			tempFirstStatus = false
 		} else {
 			if (tempMult === true) {
 				saveMult = numbers.pop()
@@ -480,6 +494,7 @@ let calculator = {
 
 				tempMult = false
 				tempSplit = true
+				tempFirstStatus = false
 			} else if (tempMinus === true) {
 				saveSplitMinus = temp
 				tempSplitMinus = true
@@ -489,6 +504,7 @@ let calculator = {
 				title.innerText = output
 
 				tempMinus = false
+				tempFirstStatus = false
 			} else if (tempPlus === true) {
 				saveSplitPlus = temp
 				tempSplitPlus = true
@@ -498,6 +514,7 @@ let calculator = {
 				title.innerText = output
 
 				tempPlus = false
+				tempFirstStatus = false
 			} else if (tempMultPlus === true) {
 				saveMult = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveMult) + (parseInt(saveMultPlus) * parseInt(temp)))
@@ -508,6 +525,7 @@ let calculator = {
 
 				tempMultPlus = false
 				tempSplit = true
+				tempFirstStatus = false
 			} else if (tempMultMinus === true) {
 				saveMult = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveMult) - (parseInt(saveMultMinus) * parseInt(temp)))
@@ -518,6 +536,7 @@ let calculator = {
 
 				tempMultMinus = false
 				tempSplit = true
+				tempFirstStatus = false
 			} else if (tempSplitPlus === true) {
 				saveSplit = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveSplit) + (parseInt(saveSplitPlus) / parseInt(temp)))
@@ -528,6 +547,7 @@ let calculator = {
 
 				tempSplitPlus = false
 				tempSplit = true
+				tempFirstStatus = false
 			} else if (tempSplitMinus === true) {
 				saveSplit = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveSplit) - (parseInt(saveSplitMinus) / parseInt(temp)))
@@ -538,6 +558,7 @@ let calculator = {
 
 				tempSplitMinus = false
 				tempSplit = true
+				tempFirstStatus = false
 			} else {
 				numbers[numbers.length] = saveNum
 				temp = ''
@@ -548,6 +569,7 @@ let calculator = {
 				tempMinus = false
 				tempMult = false
 				tempSplit = true
+				tempFirstStatus = false
 			}
 		}
 	},
@@ -559,6 +581,7 @@ let calculator = {
 
 			output = title.innerText + '-'
 			title.innerText = output
+			tempFirstStatus = false
 		} else {
 			if (tempMult === true) {
 				saveMult = numbers.pop()
@@ -570,6 +593,7 @@ let calculator = {
 
 				tempMult = false
 				tempMinus = true
+				tempFirstStatus = false
 			} else if (tempSplit === true) {
 				saveSplit = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveSplit) / parseInt(temp))
@@ -580,6 +604,7 @@ let calculator = {
 	
 				tempSplit = false
 				tempMinus = true
+				tempFirstStatus = false
 			} else if (tempPlus === true) {
 				savePlus = numbers.pop()
 				numbers[numbers.length] = (parseInt(savePlus) + parseInt(temp))
@@ -590,6 +615,7 @@ let calculator = {
 
 				tempPlus = false
 				tempMinus = true
+				tempFirstStatus = false
 			} else if (tempMultPlus === true) {
 				saveMult = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveMult) + (parseInt(saveMultPlus) * parseInt(temp)))
@@ -600,6 +626,7 @@ let calculator = {
 
 				tempMultPlus = false
 				tempMinus = true
+				tempFirstStatus = false
 			} else if (tempMultMinus === true) {
 				saveMult = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveMult) - (parseInt(saveMultMinus) * parseInt(temp)))
@@ -610,6 +637,7 @@ let calculator = {
 
 				tempMultMinus = false
 				tempMinus = true
+				tempFirstStatus = false
 			} else if (tempSplitPlus === true) {
 				saveSplit = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveSplit) + (parseInt(saveSplitPlus) / parseInt(temp)))
@@ -620,6 +648,7 @@ let calculator = {
 
 				tempSplitPlus = false
 				tempMinus = true
+				tempFirstStatus = false
 			} else if (tempSplitMinus === true) {
 				saveSplit = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveSplit) - (parseInt(saveSplitMinus) / parseInt(temp)))
@@ -630,6 +659,7 @@ let calculator = {
 
 				tempSplitMinus = false
 				tempMinus = true
+				tempFirstStatus = false
 			} else {
 				numbers[numbers.length] = saveNum
 				temp = ''
@@ -638,6 +668,7 @@ let calculator = {
 				title.innerText = output
 
 				tempMinus = true
+				tempFirstStatus = false
 			}
 		}
 	},
@@ -649,6 +680,7 @@ let calculator = {
 
 			output = title.innerText + '+'
 			title.innerText = output
+			tempFirstStatus = false
 		} else {
 			if (tempMult === true) {
 				saveMult = numbers.pop()
@@ -660,6 +692,7 @@ let calculator = {
 
 				tempMult = false
 				tempPlus = true
+				tempFirstStatus = false
 			} else if (tempSplit === true) {
 				saveSplit = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveSplit) / parseInt(temp))
@@ -670,6 +703,7 @@ let calculator = {
 
 				tempSplit = false
 				tempPlus = true
+				tempFirstStatus = false
 			} else if (tempMinus === true) {
 				saveMinus = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveMinus) - parseInt(temp))
@@ -680,6 +714,7 @@ let calculator = {
 
 				tempMinus = false
 				tempPlus = true
+				tempFirstStatus = false
 			} else if (tempMultPlus === true) {
 				saveMult = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveMult) + (parseInt(saveMultPlus) * parseInt(temp)))
@@ -690,6 +725,7 @@ let calculator = {
 
 				tempMultPlus = false
 				tempPlus = true
+				tempFirstStatus = false
 			} else if (tempMultMinus === true) {
 				saveMult = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveMult) - (parseInt(saveMultMinus) * parseInt(temp)))
@@ -700,6 +736,7 @@ let calculator = {
 
 				tempMultMinus = false
 				tempPlus = true
+				tempFirstStatus = false
 			} else if (tempSplitPlus === true) {
 				saveSplit = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveSplit) + (parseInt(saveSplitPlus) / parseInt(temp)))
@@ -710,6 +747,7 @@ let calculator = {
 
 				tempSplitPlus = false
 				tempPlus = true
+				tempFirstStatus = false
 			} else if (tempSplitMinus === true) {
 				saveSplit = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveSplit) - (parseInt(saveSplitMinus) / parseInt(temp)))
@@ -720,6 +758,7 @@ let calculator = {
 
 				tempSplitMinus = false
 				tempPlus = true
+				tempFirstStatus = false
 			} else {
 				numbers[numbers.length] = parseInt(temp)
 				temp = ''
@@ -728,6 +767,7 @@ let calculator = {
 				title.innerText = output
 
 				tempPlus = true
+				tempFirstStatus = false
 			}
 		}
 	},
@@ -749,69 +789,66 @@ let calculator = {
 		tempPlus = false
 	},
 	back: function () {
-		if ((title.innerText).length > 1) {
-			let temp = (title.innerText).substring(0, (title.innerText).length - 1)
-			title.textContent = temp
-		} else if ((title.innerText).length = 1) {
-			let temp = ''
-			title.textContent = temp
+		if ((title.innerText).length === 1) {
+			temp = ''
+			title.textContent = 0
+		} else {
+			temp = (temp).substring(0, (temp).length - 1)
+			title.textContent = (title.innerText).substring(0, (title.innerText).length - 1)
+				
 		}
 	},
 	equally: function () {
-		
-		title.innerText = 'output...'
+		if (tempFirstStatus === true) {
+			title.innerText = temp
+		console.log('tempFirstStatus')
+		} else if (tempQ === true) {
+			title.innerText = temp
+		} else {
+			if (tempMult === true) {
+				saveMult = numbers.pop()
+				numbers[numbers.length] = (parseInt(saveMult) * parseInt(temp))
+			} else if (tempMultPlus === true){
+				saveMult = numbers.pop()
+				numbers[numbers.length] =(parseInt(saveMultPlus) * parseInt(temp)) + parseInt(saveMult)
+			} else if (tempMultMinus === true) {
+				saveMult = numbers.pop()
+				numbers[numbers.length] = parseInt(saveMult) - (parseInt(saveMultMinus) * parseInt(temp))
+			} else if (tempSplit === true) {
+				saveSplit = numbers.pop()
+				numbers[numbers.length] = (parseInt(saveSplit) / parseInt(temp))
+			} else if (tempSplitPlus === true) {
+				saveSplit = numbers.pop()
+				numbers[numbers.length] = parseInt(saveSplit) + (parseInt(saveSplitPlus) / parseInt(temp))
+			} else if (tempSplitMinus === true) {
+				saveSplit = numbers.pop()
+				numbers[numbers.length] = parseInt(saveSplit) - (parseInt(saveSplitMinus) / parseInt(temp))
+			} else if (tempPlus === true) {
+				numbers[0] = numbers[0] + parseInt(temp)
+			} else if (tempMinus === true) {
+				numbers[0] = numbers[0] - parseInt(temp)
+			} else {
+				title.innerText = 0
+			}
+			title.innerText = numbers[0]
+			console.log('tempFirstStatus else')
+			tempQ = true
 
-		// var sum=0;
+			temp = '0'
+			saveNum = ''
+			numbers.length=0
 
-		// if (tempMult != 'firstNum') {
-		// 		tempMult = numbers.pop()
-		// 		numbers[numbers.length] = (parseInt(tempMult) * parseInt(temp))
-		// 		temp = ''
-		// 		for(var i=0;i<numbers.length;i++){
-		// 	    	sum = sum + parseInt(numbers[i]);
-		// 		}
-		// 		title.innerText = sum
-		// 		console.log('и это')
-		// 	} else if (tempMult = 'firstNum') {
-		// 		console.log('это')
-		// 		numbers[numbers.length] = saveNum
-		// 		for(var i=0;i<numbers.length;i++){
-		// 	    	sum = sum + parseInt(numbers[i]);
-		// 		}
-		// 		title.innerText = sum
-		// 	}
+			tempMult = false
+			tempMultPlus = false
+			tempMultMinus = false
 
-		// if (tempM === true) {
-		// 	saveNum *= -1
-		// 	numbers[numbers.length] = saveNum
-		// 	saveNum=''
-		// 	temp = ''
-		// 	for(var i=0;i<numbers.length;i++){
-		// 	    sum = sum + parseInt(numbers[i]);
-		// 	}
-		// 	title.innerText = sum
-		// 	console.log('тутаа', numbers)
-		// 	numbers.length = 0
-		// 	tempQ = true
-		// 	tempM = false
-		// } else if (tempM === false) {
-		// 	numbers[numbers.length] = saveNum
-		// 	saveNum=''
-		// 	temp = ''
-		// 	for(var i=0;i<numbers.length;i++){
-		// 	    sum = sum + parseInt(numbers[i]);
-		// 	}
-		// 	title.innerText = sum
-		// 	console.log('equally')
-		// 	console.log(numbers)
-		// 	numbers.length = 0
-		// 	tempQ = true
-		// 	tempM = false
-		// }
-		// numbers.length=0
-		// tempQ = true
-		// tempM = false
-		// tempMult = 'firstNum'
+			tempSplit = false
+			tempSplitPlus = false
+			tempSplitMinus = false
+
+			tempMinus = false
+			tempPlus = false
+		}
 	}
 }
 
@@ -836,7 +873,6 @@ btn8.addEventListener('click', calculator.input8)
 let btn9 = document.getElementById('btn9')
 btn9.addEventListener('click', calculator.input9)
 
-
 // +
 let btnPlus = document.getElementById('btnPlus')
 btnPlus.addEventListener('click', calculator.plus)
@@ -858,15 +894,5 @@ btnSplit.addEventListener('click', calculator.split)
 // =
 let btnEqually = document.getElementById('btnEqually')
 btnEqually.addEventListener('click', calculator.equally)
-
-
-
-
-
-
-
-
-
-
 
 
