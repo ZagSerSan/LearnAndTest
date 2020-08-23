@@ -32,11 +32,13 @@ let calculator = {
 // input 1-9
 	input0: function () {
 		if (tempQ === true) {
-			output = title.innerText + '0'
-			title.innerText = output
+			output = (title.innerText = '') + '0'
+			title.innerText += '0'
 
 			temp = title.innerText
 			saveNum = parseInt(temp)
+
+			tempQ = false
 		} else {
 			if (title.innerText === '0') {
 				output = title.innerText = 0
@@ -62,11 +64,13 @@ let calculator = {
 	},
 	input1: function () {
 		if (tempQ === true) {
-			output = title.innerText + '1'
-			title.innerText = output
+			output = (title.innerText = '') + '1'
+			title.innerText += '1'
 
 			temp = title.innerText
 			saveNum = parseInt(temp)
+
+			tempQ = false
 		} else {
 			if (title.innerText === '0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '1'
@@ -95,11 +99,13 @@ let calculator = {
 	},
 	input2: function () {
 		if (tempQ === true) {
-			output = title.innerText + '2'
-			title.innerText = output
+			output = (title.innerText = '') + '2'
+			title.innerText += '2'
 
 			temp = title.innerText
 			saveNum = parseInt(temp)
+
+			tempQ = false
 		} else {
 			if (title.innerText === '0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '2'
@@ -125,11 +131,13 @@ let calculator = {
 	},
 	input3: function () {
 		if (tempQ === true) {
-			output = title.innerText + '3'
-			title.innerText = output
+			output = (title.innerText = '') + '3'
+			title.innerText += '3'
 
 			temp = title.innerText
 			saveNum = parseInt(temp)
+
+			tempQ = false
 		} else {
 			if (title.innerText === '0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '3'
@@ -154,11 +162,13 @@ let calculator = {
 	},
 	input4: function () {
 		if (tempQ === true) {
-			output = title.innerText + '4'
-			title.innerText = output
+			output = (title.innerText = '') + '4'
+			title.innerText += '4'
 
 			temp = title.innerText
 			saveNum = parseInt(temp)
+
+			tempQ = false
 		} else {
 			if (title.innerText === '0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '4'
@@ -185,11 +195,13 @@ let calculator = {
 	},
 	input5: function () {
 		if (tempQ === true) {
-			output = title.innerText + '5'
-			title.innerText = output
+			output = (title.innerText = '') + '5'
+			title.innerText += '5'
 
 			temp = title.innerText
 			saveNum = parseInt(temp)
+
+			tempQ = false
 		} else {
 			if (title.innerText === '0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '5'
@@ -217,11 +229,13 @@ let calculator = {
 	},
 	input6: function () {
 		if (tempQ === true) {
-			output = title.innerText + '6'
-			title.innerText = output
+			output = (title.innerText = '') + '6'
+			title.innerText += '6'
 
 			temp = title.innerText
 			saveNum = parseInt(temp)
+
+			tempQ = false
 		} else {
 			if (title.innerText === '0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '6'
@@ -249,11 +263,13 @@ let calculator = {
 	},
 	input7: function () {
 		if (tempQ === true) {
-			output = title.innerText + '7'
-			title.innerText = output
+			output = (title.innerText = '') + '7'
+			title.innerText += '7'
 
 			temp = title.innerText
 			saveNum = parseInt(temp)
+
+			tempQ = false
 		} else {
 			if (title.innerText === '0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '7'
@@ -280,11 +296,13 @@ let calculator = {
 	},
 	input8: function () {
 		if (tempQ === true) {
-			output = title.innerText + '8'
-			title.innerText = output
+			output = (title.innerText = '') + '8'
+			title.innerText += '8'
 
 			temp = title.innerText
 			saveNum = parseInt(temp)
+
+			tempQ = false
 		} else {
 			if (title.innerText === '0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '8'
@@ -312,11 +330,13 @@ let calculator = {
 	},
 	input9: function () {
 		if (tempQ === true) {
-			output = title.innerText + '9'
-			title.innerText = output
+			output = (title.innerText = '') + '9'
+			title.innerText += '9'
 
 			temp = title.innerText
 			saveNum = parseInt(temp)
+
+			tempQ = false
 		} else {
 			if (title.innerText === '0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '9'
