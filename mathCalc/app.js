@@ -32,13 +32,11 @@ let calculator = {
 // input 1-9
 	input0: function () {
 		if (tempQ === true) {
-			output = (title.innerText = '') + '0'
+			output = title.innerText + '0'
 			title.innerText = output
 
-			temp = '0'
+			temp = title.innerText
 			saveNum = parseInt(temp)
-			tempQ = false
-
 		} else {
 			if (title.innerText === '0') {
 				output = title.innerText = 0
@@ -64,15 +62,11 @@ let calculator = {
 	},
 	input1: function () {
 		if (tempQ === true) {
-			numbers[0] = parseInt(title.innerText)
 			output = title.innerText + '1'
 			title.innerText = output
 
-			temp = '1'
+			temp = title.innerText
 			saveNum = parseInt(temp)
-			// tempMult = saveNum
-			tempQ = false
-
 		} else {
 			if (title.innerText === '0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '1'
@@ -101,12 +95,11 @@ let calculator = {
 	},
 	input2: function () {
 		if (tempQ === true) {
-			output = (title.innerText = '') + '2'
+			output = title.innerText + '2'
 			title.innerText = output
 
-			temp = '2'
+			temp = title.innerText
 			saveNum = parseInt(temp)
-			tempQ = false
 		} else {
 			if (title.innerText === '0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '2'
@@ -132,13 +125,11 @@ let calculator = {
 	},
 	input3: function () {
 		if (tempQ === true) {
-			output = (title.innerText = '') + '3'
+			output = title.innerText + '3'
 			title.innerText = output
 
-			temp = '3'
+			temp = title.innerText
 			saveNum = parseInt(temp)
-			tempQ = false
-
 		} else {
 			if (title.innerText === '0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '3'
@@ -163,13 +154,11 @@ let calculator = {
 	},
 	input4: function () {
 		if (tempQ === true) {
-			output = (title.innerText = '') + '4'
+			output = title.innerText + '4'
 			title.innerText = output
 
-			temp = '4'
+			temp = title.innerText
 			saveNum = parseInt(temp)
-			tempQ = false
-
 		} else {
 			if (title.innerText === '0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '4'
@@ -196,15 +185,11 @@ let calculator = {
 	},
 	input5: function () {
 		if (tempQ === true) {
-			output = (title.innerText = '') + '5'
+			output = title.innerText + '5'
 			title.innerText = output
 
-			temp = '5'
+			temp = title.innerText
 			saveNum = parseInt(temp)
-			tempQ = false
-				console.log('тут где tempQ')
-				console.log(`tempQ = ${tempQ}`)
-
 		} else {
 			if (title.innerText === '0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '5'
@@ -232,15 +217,11 @@ let calculator = {
 	},
 	input6: function () {
 		if (tempQ === true) {
-			output = (title.innerText = '') + '6'
+			output = title.innerText + '6'
 			title.innerText = output
 
-			temp = '6'
+			temp = title.innerText
 			saveNum = parseInt(temp)
-			tempQ = false
-				console.log('тут где tempQ')
-				console.log(`tempQ = ${tempQ}`)
-
 		} else {
 			if (title.innerText === '0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '6'
@@ -268,13 +249,11 @@ let calculator = {
 	},
 	input7: function () {
 		if (tempQ === true) {
-			output = (title.innerText = '') + '7'
+			output = title.innerText + '7'
 			title.innerText = output
 
-			temp = '7'
+			temp = title.innerText
 			saveNum = parseInt(temp)
-			tempQ = false
-
 		} else {
 			if (title.innerText === '0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '7'
@@ -301,15 +280,11 @@ let calculator = {
 	},
 	input8: function () {
 		if (tempQ === true) {
-			output = (title.innerText = '') + '8'
+			output = title.innerText + '8'
 			title.innerText = output
 
-			temp = '8'
+			temp = title.innerText
 			saveNum = parseInt(temp)
-			tempQ = false
-				console.log('тут где tempQ')
-				console.log(`tempQ = ${tempQ}`)
-
 		} else {
 			if (title.innerText === '0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '8'
@@ -337,15 +312,11 @@ let calculator = {
 	},
 	input9: function () {
 		if (tempQ === true) {
-			output = (title.innerText = '') + '9'
+			output = title.innerText + '9'
 			title.innerText = output
 
-			temp = '9'
+			temp = title.innerText
 			saveNum = parseInt(temp)
-			tempQ = false
-				console.log('тут где tempQ')
-				console.log(`tempQ = ${tempQ}`)
-
 		} else {
 			if (title.innerText === '0') {
 				output = (title.innerText).substring(0, (title.innerText).length - 1) + '9'
@@ -373,7 +344,16 @@ let calculator = {
 	},
 // input cucl
 	multiply: function () {
-		if (tempMult === true) {
+		if (tempQ === true) {
+			// numbers[0] = ( toString(numbers[0]) + temp )
+			numbers[numbers.length] = parseInt(title.innerText)
+			console.log(numbers[0])
+			temp = ''
+			output = title.innerText + '*'
+			title.innerText = output
+			tempMult = true
+			tempQ = false
+		} else if (tempMult === true) {
 			saveMult = numbers.pop()
 			numbers[numbers.length] = (parseInt(saveMult) * parseInt(temp))
 			temp = ''
@@ -467,9 +447,9 @@ let calculator = {
 				output = title.innerText + '*'
 				title.innerText = output
 
+				tempMult = true
 				tempMinus = false
 				tempSplit = false
-				tempMult = true
 				tempFirstStatus = false
 			}
 		}
