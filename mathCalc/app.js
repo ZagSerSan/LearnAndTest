@@ -34,223 +34,179 @@ let calculator = {
 	input0: function () {
 		if (tempQ === true) {
 			title.innerText = (title.innerText = '') + '0'
-
 			temp = parseInt(title.innerText)
 			saveNum = parseInt(temp)
-
 			tempQ = false
 		} else if (title.innerText === '0') {
 			title.innerText = 0
-			
 			temp = 0
 			saveNum = parseInt(temp)
 		} else if (title.innerText === '-0') {
 			title.innerText = 0
-
 			temp = 0
 			saveNum = parseInt(temp)
 		} else {
 			title.innerText += '0'
-
 			temp += '0'
 			saveNum = parseInt(temp)
 		}
 	},
 	input1: function () {
 		if (tempQ === true) {
-			title.innerText = (title.innerText = '') + '1'
-
+			title.innerText = '1'
 			temp = title.innerText
 			saveNum = parseInt(temp)
-
 			tempQ = false
 		} else if (title.innerText === '0') {
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1) + '1'
-			
+			title.innerText = '1'
 			temp = '1'
 			saveNum = parseInt(temp)
 		} else if (title.innerText === '-0') {
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1) + '1'
-
+			title.innerText = '-1'
 			temp = -1
 			saveNum = parseInt(temp)
 		} else {
-			title.innerText = title.innerText + '1'
-
+			title.innerText += '1'
 			temp += '1'
 			saveNum = parseInt(temp)
 		}
 	},
 	input2: function () {
 		if (tempQ === true) {
-			title.innerText = (title.innerText = '') + '2'
-
+			title.innerText = '2'
 			temp = title.innerText
 			saveNum = parseInt(temp)
-
 			tempQ = false
 		} else if (title.innerText === '0') {
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1) + '2'
-			
+			title.innerText = '2'
 			temp = '2'
 			saveNum = parseInt(temp)
 		} else if (title.innerText === '-0') {
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1) + '2'
-
+			title.innerText = '-2'
 			temp = -2
 			saveNum = parseInt(temp)
 		} else {
-			title.innerText = title.innerText + '2'
-
+			title.innerText += '2'
 			temp += '2'
 			saveNum = parseInt(temp)
 		}
 	},
 	input3: function () {
 		if (tempQ === true) {
-			title.innerText = (title.innerText = '') + '3'
-
+			title.innerText = '3'
 			temp = title.innerText
 			saveNum = parseInt(temp)
-
 			tempQ = false
 		} else if (title.innerText === '0') {
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1) + '3'
-			
+			title.innerText = '3'
 			temp = '3'
 			saveNum = parseInt(temp)
 		} else if (title.innerText === '-0') {
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1) + '3'
-
+			title.innerText = '-3'
 			temp = -3
 			saveNum = parseInt(temp)
 		} else {
-			title.innerText = title.innerText + '3'
-
+			title.innerText += '3'
 			temp += '3'
 			saveNum = parseInt(temp)
 		}
 	},
 	input4: function () {
 		if (tempQ === true) {
-			title.innerText = (title.innerText = '') + '4'
-
+			title.innerText = '4'
 			temp = title.innerText
 			saveNum = parseInt(temp)
-
 			tempQ = false
 		} else if (title.innerText === '0') {
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1) + '4'
-			
+			title.innerText = '4'
 			temp = '4'
 			saveNum = parseInt(temp)
 		} else if (title.innerText === '-0') {
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1) + '4'
-
+			title.innerText = '-4'
 			temp = -4
 			saveNum = parseInt(temp)
 		} else {
-			title.innerText = title.innerText + '4'
-
+			title.innerText += '4'
 			temp += '4'
 			saveNum = parseInt(temp)
 		}
 	},
 	input5: function () {
 		if (tempQ === true) {
-			title.innerText = (title.innerText = '') + '5'
-
+			title.innerText = '5'
 			temp = title.innerText
 			saveNum = parseInt(temp)
-
 			tempQ = false
 		} else if (title.innerText === '0') {
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1) + '5'
-			
+			title.innerText = '5'
 			temp = '5'
 			saveNum = parseInt(temp)
 		} else if (title.innerText === '-0') {
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1) + '5'
-
+			title.innerText = '-5'
 			temp = -5
 			saveNum = parseInt(temp)
 		} else {
-			title.innerText = title.innerText + '5'
-
+			title.innerText += '5'
 			temp += '5'
 			saveNum = parseInt(temp)
 		}
 	},
 	input6: function () {
 		if (tempQ === true) {
-			title.innerText = (title.innerText = '') + '6'
-
+			title.innerText = '6'
 			temp = title.innerText
 			saveNum = parseInt(temp)
-
 			tempQ = false
 		} else if (title.innerText === '0') {
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1) + '6'
-			
+			title.innerText = '6'
 			temp = '6'
 			saveNum = parseInt(temp)
 		} else if (title.innerText === '-0') {
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1) + '6'
-
+			title.innerText = '-6'
 			temp = -6
 			saveNum = parseInt(temp)
 		} else {
-			title.innerText = title.innerText + '6'
-
+			title.innerText += '6'
 			temp += '6'
 			saveNum = parseInt(temp)
 		}
 	},
 	input7: function () {
 		if (tempQ === true) {
-			title.innerText = (title.innerText = '') + '7'
-
+			title.innerText = '7'
 			temp = title.innerText
 			saveNum = parseInt(temp)
-
 			tempQ = false
 		} else if (title.innerText === '0') {
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1) + '7'
-			
+			title.innerText = '7'
 			temp = '7'
 			saveNum = parseInt(temp)
 		} else if (title.innerText === '-0') {
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1) + '7'
-
+			title.innerText = '-7'
 			temp = -7
 			saveNum = parseInt(temp)
 		} else {
-			title.innerText = title.innerText + '7'
-
+			title.innerText += '7'
 			temp += '7'
 			saveNum = parseInt(temp)
 		}
 	},
 	input8: function () {
 		if (tempQ === true) {
-			title.innerText = (title.innerText = '') + '8'
-
+			title.innerText = '8'
 			temp = title.innerText
 			saveNum = parseInt(temp)
-
 			tempQ = false
 		} else if (title.innerText === '0') {
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1) + '8'
-			
+			title.innerText = '8'
 			temp = '8'
 			saveNum = parseInt(temp)
 		} else if (title.innerText === '-0') {
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1) + '8'
-
+			title.innerText = '-8'
 			temp = -8
 			saveNum = parseInt(temp)
 		} else {
-			title.innerText = title.innerText + '8'
+			title.innerText += '8'
 
 			temp += '8'
 			saveNum = parseInt(temp)
@@ -258,25 +214,21 @@ let calculator = {
 	},
 	input9: function () {
 		if (tempQ === true) {
-			title.innerText = (title.innerText = '') + '9'
-
+			title.innerText = '9'
 			temp = title.innerText
 			saveNum = parseInt(temp)
-
 			tempQ = false
 		} else if (title.innerText === '0') {
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1) + '9'
+			title.innerText = '9'
 			
 			temp = '9'
 			saveNum = parseInt(temp)
 		} else if (title.innerText === '-0') {
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1) + '9'
-
+			title.innerText = '-9'
 			temp = -9
 			saveNum = parseInt(temp)
 		} else {
-			title.innerText = title.innerText + '9'
-
+			title.innerText += '9'
 			temp += '9'
 			saveNum = parseInt(temp)
 		}
