@@ -758,7 +758,7 @@ let calculator = {
 				tempOutput = (tempOutput).substring(0, (tempOutput).length - 1)
 				console.log('temp = ', temp)
 			}
-			
+
 			if (outLast === '+' && tempMultPlus === false && tempSplitPlus === false) {
 				numbers[0] -= parseInt(temp)
 				tempMult = false
