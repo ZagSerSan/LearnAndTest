@@ -744,7 +744,10 @@ let calculator = {
 		outLast = tempOutput.slice(-1)
 		// console.log('outLast = ', typeof outLast)
 
-		if (outLast === '*') {
+		if ((title.innerText).length === 1) {
+			title.innerText = 0
+			temp = 0
+		} else if (outLast === '*') {
 			console.log('не число')
 		} else if (outLast === '/') {
 			console.log('не число')
@@ -769,7 +772,7 @@ let calculator = {
 				// }
 				outLast = tempOutput.slice(-1)
 
-				for (outLast; outLast != '+'; outLast = tempOutput.slice(-1)) {
+				for (outLast; outLast != '+' && outLast != ''; outLast = tempOutput.slice(-1)) {
 						// outLast = title.innerText.slice(-1)
 						temp = outLast + temp
 						tempOutput = (tempOutput).substring(0, (tempOutput).length - 1)
