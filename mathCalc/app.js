@@ -820,6 +820,13 @@ let calculator = {
 				tempSplitMinus = false
 				tempMinus = true
 			} else if (outLast === '*') {
+				// 2 + 2 * 4 '+ 2'
+				// стираю '+', сканируется 4ка в temp, доходит до '*', outLast = '*'
+				// если outLast === '*' (это тот блок кода где написаны эти коментарии)
+				// то про просканировать следущее и если перед ним плюс
+				// то следущее засунуть в saveMultPlus 
+				// взять темп, умножить на следущее и отнять от массива, 
+				// включить состояние tempMultPlus
 				numbers[0] /= parseInt(temp)
 				tempSplit = false
 				tempMinus = false
