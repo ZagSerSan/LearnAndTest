@@ -766,7 +766,6 @@ let calculator = {
 				// console.log('outLast = ', outLast)
 				// console.log('нужно отнимать')
 				numbers[0] -= parseInt(temp)
-				console.log('тут')
 				tempMult = false
 				tempSplit = false
 				tempMinus = false
@@ -787,7 +786,6 @@ let calculator = {
 				// console.log('outLast = ', outLast)
 				// console.log('нужно отнимать')
 				numbers[0] -= parseInt(temp)
-				console.log('этот')
 				tempMult = false
 				tempSplit = false
 				tempMinus = false
@@ -797,7 +795,6 @@ let calculator = {
 			} else if (outLast === '+' && tempSplitPlus === true) {
 				// console.log('outLast = ', outLast)
 				// console.log('нужно отнимать')
-				console.log('тут')
 				// numbers[0] -= parseInt(temp)
 				tempMult = false
 				tempSplit = false
@@ -805,15 +802,45 @@ let calculator = {
 				tempMultPlus = false
 				tempSplitPlus = false
 				tempPlus = true
-			} else if (outLast === '-') {
+			} else if (outLast === '-' && tempMultMinus === false && tempSplitMinus === false) {
 				// console.log('outLast = ', outLast)
 				// console.log('нужно плюсовать')
 				numbers[0] += parseInt(temp)
 				tempMult = false
 				tempSplit = false
 				tempPlus = false
-				tempMultPlus = false
-				tempSplitPlus = false
+				tempMultMinus = false
+				tempSplitMinus = false
+				tempMinus = true
+			} else if (outLast === '-' && tempMultMinus === true) {
+				// console.log('outLast = ', outLast)
+				// console.log('нужно плюсовать')
+				// numbers[0] += parseInt(temp)
+				tempMult = false
+				tempSplit = false
+				tempPlus = false
+				tempMultMinus = false
+				tempSplitMinus = false
+				tempMinus = true
+			} else if (outLast === '-' && tempSplitMinus === false && tempMultMinus === false) {
+				// console.log('outLast = ', outLast)
+				// console.log('нужно плюсовать')
+				numbers[0] += parseInt(temp)
+				tempMult = false
+				tempSplit = false
+				tempPlus = false
+				tempMultMinus = false
+				tempSplitMinus = false
+				tempMinus = true
+			} else if (outLast === '-' && tempSplitMinus === true) {
+				// console.log('outLast = ', outLast)
+				// console.log('нужно плюсовать')
+				// numbers[0] += parseInt(temp)
+				tempMult = false
+				tempSplit = false
+				tempPlus = false
+				tempMultMinus = false
+				tempSplitMinus = false
 				tempMinus = true
 			} else if (outLast === '*') {
 				// console.log('outLast = ', outLast)
