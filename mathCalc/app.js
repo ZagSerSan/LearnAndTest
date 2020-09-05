@@ -747,61 +747,108 @@ let calculator = {
 		if ((title.innerText).length === 1) {
 			title.innerText = 0
 			temp = 0
-		} else if (outLast === '*') {
-			console.log('не число')
-		} else if (outLast === '/') {
-			console.log('не число')
-		} else if (outLast === '-') {
-			console.log('не число')
-		} else if (outLast === '+') {
+			saveNum = temp
+		} else if (outLast === '*' || outLast === '/' || outLast === '-' || outLast === '+') {
 			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1)
 			tempOutput = title.innerText
-			// outLast = title.innerText.slice(-1); 
+			outLast = tempOutput.slice(-1)
 
-			// outLast = tempOutput.slice(-1)
-			// temp = outLast
-			// tempOutput = (tempOutput).substring(0, (tempOutput).length - 1)
-			// outLast = tempOutput.slice(-1)
+			for (outLast; outLast != '*' && outLast != '/' && outLast != '-' && outLast != '+' && outLast != ''; outLast = tempOutput.slice(-1)) {
+					// outLast = title.innerText.slice(-1)
+					temp = outLast + temp
+					saveNum = parseInt(temp)
+					tempOutput = (tempOutput).substring(0, (tempOutput).length - 1)
 
-				// if ((tempOutput.slice(-1) != '*') === true && (tempOutput.slice(-1) != '/') === true && (tempOutput.slice(-1) != '-') === true && (tempOutput.slice(-1) != '+') === true) {
-				// 	outLast = tempOutput.slice(-1)
-				// 	temp = outLast + temp
-				// 	tempOutput = (tempOutput).substring(0, (tempOutput).length - 1)
-				// 	// outLast = tempOutput.slice(-1)
-				// 	console.log('цикл остан')
-				// }
-				outLast = tempOutput.slice(-1)
+					console.log('temp = ', temp)
+			}
 
-				for (outLast; outLast != '+' && outLast != ''; outLast = tempOutput.slice(-1)) {
-						// outLast = title.innerText.slice(-1)
-						temp = outLast + temp
-						tempOutput = (tempOutput).substring(0, (tempOutput).length - 1)
-
-						console.log('temp = ', temp)
-				}
-
+			if (outLast === '+' && tempMultPlus === false && tempSplitPlus === false) {
+				// console.log('outLast = ', outLast)
+				// console.log('нужно отнимать')
 				numbers[0] -= parseInt(temp)
-				console.log('numbers:', numbers)
+				console.log('тут')
+				tempMult = false
+				tempSplit = false
+				tempMinus = false
+				tempMultPlus = false
+				tempSplitPlus = false
+				tempPlus = true
+			} else if (outLast === '+' && tempMultPlus === true) {
+				// console.log('outLast = ', outLast)
+				// console.log('нужно отнимать')
+				// numbers[0] -= parseInt(temp)
+				tempMult = false
+				tempSplit = false
+				tempMinus = false
+				tempMultPlus = false
+				tempSplitPlus = false
+				tempPlus = true
+			} else if (outLast === '+' && tempSplitPlus === false && tempMultPlus === false) {
+				// console.log('outLast = ', outLast)
+				// console.log('нужно отнимать')
+				numbers[0] -= parseInt(temp)
+				console.log('этот')
+				tempMult = false
+				tempSplit = false
+				tempMinus = false
+				tempMultPlus = false
+				tempSplitPlus = false
+				tempPlus = true
+			} else if (outLast === '+' && tempSplitPlus === true) {
+				// console.log('outLast = ', outLast)
+				// console.log('нужно отнимать')
+				console.log('тут')
+				// numbers[0] -= parseInt(temp)
+				tempMult = false
+				tempSplit = false
+				tempMinus = false
+				tempMultPlus = false
+				tempSplitPlus = false
+				tempPlus = true
+			} else if (outLast === '-') {
+				// console.log('outLast = ', outLast)
+				// console.log('нужно плюсовать')
+				numbers[0] += parseInt(temp)
+				tempMult = false
+				tempSplit = false
+				tempPlus = false
+				tempMultPlus = false
+				tempSplitPlus = false
+				tempMinus = true
+			} else if (outLast === '*') {
+				// console.log('outLast = ', outLast)
+				// console.log('нужно делить')
+				numbers[0] /= parseInt(temp)
+				tempSplit = false
+				tempMinus = false
+				tempPlus = false
+				tempMult = true
+			} else if (outLast === '/') {
+				// console.log('outLast = ', outLast)
+				// console.log('нужно множить')
+				numbers[0] *= parseInt(temp)
+				tempMult = false
+				tempMinus = false
+				tempPlus = false
+				tempSplit = true
+			} else if (outLast === '') {
+				numbers.length = 0
+				tempMult = false
+				tempSplit = false
+				tempPlus = false
+				tempMultPlus = false
+				tempSplitPlus = false
+				tempMinus = false
+				tempFirstStatus = true
+			}
 
-			// console.log('1) отменить гл сост "плюс"')
-			// console.log('2) проскан всё след')
-			// console.log('3) отнять его от массива')
-			// console.log('--------------------')
+			console.log('numbers:', numbers)
 		} else {
 			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1)
 			tempOutput = title.innerText
 			outLast = tempOutput.slice(-1)
-			temp = (temp).substring(0, (temp).length - 1)			
-
-			// if ((outLast != '*') === true && (outLast != '/') === true && (outLast != '-') === true && (outLast != '+') === true) {
-			// 	temp = outLast + temp
-			// 	console.log('1) сканиовать до плюса')
-			// 	console.log('2) занести в темп')
-			// 	console.log('--------------------')
-			// } else {
-			// 	console.log('ничего не делать', outLast)
-			// 	console.log('--------------------')
-			// }
+			temp = (temp).substring(0, (temp).length - 1)
+			saveNum = temp
 		}
 	},
 	equally: function () {

@@ -49,4 +49,12 @@ button {
 	height: 54px;
 }
 
+.not-active {
+	cursor: not-allowed;
+	background-color: #b3b3b3;
+    border: 2px #949494 solid;
+}
 
+.not-active:focus {
+	outline: none;
+}
