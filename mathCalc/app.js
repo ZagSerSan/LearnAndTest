@@ -752,23 +752,38 @@ let calculator = {
 			console.log('не число')
 		} else if (outLast === '+') {
 			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1)
-			
 			tempOutput = title.innerText
-			outLast = tempOutput.slice(-1)
-			temp = outLast
-			tempOutput = (tempOutput).substring(0, (tempOutput).length - 1)
-			outLast = tempOutput.slice(-1)
+			// outLast = title.innerText.slice(-1); 
 
-				if ((outLast != '*') === true && (outLast != '/') === true && (outLast != '-') === true && (outLast != '+') === true) {
-					temp = outLast + temp
-					tempOutput = (tempOutput).substring(0, (tempOutput).length - 1)
-					outLast = tempOutput.slice(-1)
-					console.log('цикл остан')
+			// outLast = tempOutput.slice(-1)
+			// temp = outLast
+			// tempOutput = (tempOutput).substring(0, (tempOutput).length - 1)
+			// outLast = tempOutput.slice(-1)
+
+				// if ((tempOutput.slice(-1) != '*') === true && (tempOutput.slice(-1) != '/') === true && (tempOutput.slice(-1) != '-') === true && (tempOutput.slice(-1) != '+') === true) {
+				// 	outLast = tempOutput.slice(-1)
+				// 	temp = outLast + temp
+				// 	tempOutput = (tempOutput).substring(0, (tempOutput).length - 1)
+				// 	// outLast = tempOutput.slice(-1)
+				// 	console.log('цикл остан')
+				// }
+				outLast = tempOutput.slice(-1)
+
+				for (outLast; outLast != '+'; outLast = tempOutput.slice(-1)) {
+						// outLast = title.innerText.slice(-1)
+						temp = outLast + temp
+						tempOutput = (tempOutput).substring(0, (tempOutput).length - 1)
+
+						console.log('temp = ', temp)
 				}
-			console.log('1) отменить гл сост "плюс"')
-			console.log('2) проскан всё след')
-			console.log('3) отнять его от массива')
-			console.log('--------------------')
+
+				numbers[0] -= parseInt(temp)
+				console.log('numbers:', numbers)
+
+			// console.log('1) отменить гл сост "плюс"')
+			// console.log('2) проскан всё след')
+			// console.log('3) отнять его от массива')
+			// console.log('--------------------')
 		} else {
 			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1)
 			tempOutput = title.innerText
