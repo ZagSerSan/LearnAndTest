@@ -742,7 +742,6 @@ let calculator = {
 	back: function () {
 		tempOutput = title.innerText
 		outLast = tempOutput.slice(-1)
-		// console.log('outLast = ', typeof outLast)
 
 		if ((title.innerText).length === 1) {
 			title.innerText = 0
@@ -754,17 +753,13 @@ let calculator = {
 			outLast = tempOutput.slice(-1)
 
 			for (outLast; outLast != '*' && outLast != '/' && outLast != '-' && outLast != '+' && outLast != ''; outLast = tempOutput.slice(-1)) {
-					// outLast = title.innerText.slice(-1)
-					temp = outLast + temp
-					saveNum = parseInt(temp)
-					tempOutput = (tempOutput).substring(0, (tempOutput).length - 1)
-
-					console.log('temp = ', temp)
+				temp = outLast + temp
+				saveNum = parseInt(temp)
+				tempOutput = (tempOutput).substring(0, (tempOutput).length - 1)
+				console.log('temp = ', temp)
 			}
-
+			
 			if (outLast === '+' && tempMultPlus === false && tempSplitPlus === false) {
-				// console.log('outLast = ', outLast)
-				// console.log('нужно отнимать')
 				numbers[0] -= parseInt(temp)
 				tempMult = false
 				tempSplit = false
@@ -773,9 +768,6 @@ let calculator = {
 				tempSplitPlus = false
 				tempPlus = true
 			} else if (outLast === '+' && tempMultPlus === true) {
-				// console.log('outLast = ', outLast)
-				// console.log('нужно отнимать')
-				// numbers[0] -= parseInt(temp)
 				tempMult = false
 				tempSplit = false
 				tempMinus = false
@@ -783,8 +775,6 @@ let calculator = {
 				tempSplitPlus = false
 				tempPlus = true
 			} else if (outLast === '+' && tempSplitPlus === false && tempMultPlus === false) {
-				// console.log('outLast = ', outLast)
-				// console.log('нужно отнимать')
 				numbers[0] -= parseInt(temp)
 				tempMult = false
 				tempSplit = false
@@ -793,18 +783,13 @@ let calculator = {
 				tempSplitPlus = false
 				tempPlus = true
 			} else if (outLast === '+' && tempSplitPlus === true) {
-				// console.log('outLast = ', outLast)
-				// console.log('нужно отнимать')
-				// numbers[0] -= parseInt(temp)
 				tempMult = false
 				tempSplit = false
-				tempMinus = false
 				tempMultPlus = false
 				tempSplitPlus = false
 				tempPlus = true
 			} else if (outLast === '-' && tempMultMinus === false && tempSplitMinus === false) {
 				// console.log('outLast = ', outLast)
-				// console.log('нужно плюсовать')
 				numbers[0] += parseInt(temp)
 				tempMult = false
 				tempSplit = false
@@ -813,9 +798,6 @@ let calculator = {
 				tempSplitMinus = false
 				tempMinus = true
 			} else if (outLast === '-' && tempMultMinus === true) {
-				// console.log('outLast = ', outLast)
-				// console.log('нужно плюсовать')
-				// numbers[0] += parseInt(temp)
 				tempMult = false
 				tempSplit = false
 				tempPlus = false
@@ -823,8 +805,6 @@ let calculator = {
 				tempSplitMinus = false
 				tempMinus = true
 			} else if (outLast === '-' && tempSplitMinus === false && tempMultMinus === false) {
-				// console.log('outLast = ', outLast)
-				// console.log('нужно плюсовать')
 				numbers[0] += parseInt(temp)
 				tempMult = false
 				tempSplit = false
@@ -833,9 +813,6 @@ let calculator = {
 				tempSplitMinus = false
 				tempMinus = true
 			} else if (outLast === '-' && tempSplitMinus === true) {
-				// console.log('outLast = ', outLast)
-				// console.log('нужно плюсовать')
-				// numbers[0] += parseInt(temp)
 				tempMult = false
 				tempSplit = false
 				tempPlus = false
@@ -843,16 +820,12 @@ let calculator = {
 				tempSplitMinus = false
 				tempMinus = true
 			} else if (outLast === '*') {
-				// console.log('outLast = ', outLast)
-				// console.log('нужно делить')
 				numbers[0] /= parseInt(temp)
 				tempSplit = false
 				tempMinus = false
 				tempPlus = false
 				tempMult = true
 			} else if (outLast === '/') {
-				// console.log('outLast = ', outLast)
-				// console.log('нужно множить')
 				numbers[0] *= parseInt(temp)
 				tempMult = false
 				tempMinus = false
@@ -868,8 +841,6 @@ let calculator = {
 				tempMinus = false
 				tempFirstStatus = true
 			}
-
-			console.log('numbers:', numbers)
 		} else {
 			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1)
 			tempOutput = title.innerText
