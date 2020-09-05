@@ -773,15 +773,17 @@ let calculator = {
 			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1)
 			tempOutput = title.innerText
 			outLast = tempOutput.slice(-1)
+			temp = (temp).substring(0, (temp).length - 1)			
 
-			if ((outLast != '*') === true && (outLast != '/') === true && (outLast != '-') === true && (outLast != '+') === true) {
-				console.log('1) сканиовать до плюса')
-				console.log('2) занести в темп')
-				console.log('--------------------')
-			} else {
-				console.log('ничего не делать', outLast)
-				console.log('--------------------')
-			}
+			// if ((outLast != '*') === true && (outLast != '/') === true && (outLast != '-') === true && (outLast != '+') === true) {
+			// 	temp = outLast + temp
+			// 	console.log('1) сканиовать до плюса')
+			// 	console.log('2) занести в темп')
+			// 	console.log('--------------------')
+			// } else {
+			// 	console.log('ничего не делать', outLast)
+			// 	console.log('--------------------')
+			// }
 		}
 	},
 	equally: function () {
