@@ -29,6 +29,9 @@
 
 	let numbers = []
 
+	let tempOutput
+	let outLast
+
 let calculator = {
 // input 1-9
 	input0: function () {
@@ -737,55 +740,35 @@ let calculator = {
 		tempPlus = false
 	},
 	back: function () {
-		if ((title.innerText).length === 1) {
-			temp = ''
-			title.textContent = 0
-		} else if (title.innerText.endsWith('*') === true && tempMult === true) {
+		tempOutput = title.innerText
+		outLast = tempOutput.slice(-1)
+		// console.log('outLast = ', typeof outLast)
+
+		if (outLast === '*') {
+			console.log('не число')
+		} else if (outLast === '/') {
+			console.log('не число')
+		} else if (outLast === '-') {
+			console.log('не число')
+		} else if (outLast === '+') {
 			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1)
-			temp = parseInt(title.innerText)
-			saveNum = temp
-			// numbers.length = 0
-			tempMult = false
-		} else if (title.innerText.endsWith('*') === true && tempMultPlus === true) {
-			// то значание saveMultPlus присвоить temp'у
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1)
-			temp = saveMultPlus
-			saveNum = temp
-			// numbers.length = 0
-			tempMultPlus = false
-			tempPlus = true
-		} else if (title.innerText.endsWith('*') === true && tempMultMinus === true) {
-			// то значание saveMultPlus присвоить temp'у
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1)
-			temp = saveMultMinus
-			saveNum = temp
-			// numbers.length = 0
-			tempMultMinus = false
-			tempMinus = true
-		} else if (title.innerText.endsWith('/') === true && tempSplit === true) {
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1)
-			temp = parseInt(title.innerText)
-			saveNum = temp
-			numbers.length = 0
-			tempSplit = false
-		} else if (title.innerText.endsWith('-') === true && tempMinus === true) {
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1)
-			temp = parseInt(title.innerText)
-			saveNum = temp
-			numbers.length = 0
-			tempMinus = false
-		} else if (title.innerText.endsWith('+') === true && tempPlus === true) {
-			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1)
-			temp = parseInt(title.innerText)
-			saveNum = temp
-			numbers.length = 0
-			tempPlus = false
+			console.log('1) отменить гл сост "плюс"')
+			console.log('2) проскан всё след')
+			console.log('3) отнять его от массива')
+			console.log('--------------------')
 		} else {
 			title.innerText = (title.innerText).substring(0, (title.innerText).length - 1)
-			temp = (temp).substring(0, (temp).length - 1)
-			// temp = parseInt(title.innerText)
-			saveNum = temp
-			console.log('тут')
+			tempOutput = title.innerText
+			outLast = tempOutput.slice(-1)
+
+			if ((outLast != '*') === true && (outLast != '/') === true && (outLast != '-') === true && (outLast != '+') === true) {
+				console.log('1) сканиовать до плюса')
+				console.log('2) занести в темп')
+				console.log('--------------------')
+			} else {
+				console.log('ничего не делать', outLast)
+				console.log('--------------------')
+			}
 		}
 	},
 	equally: function () {
