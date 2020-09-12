@@ -823,15 +823,32 @@ let calculator = {
 				// 2 + 2 * 4 '+ 2'
 				// стираю '+', сканируется 4ка в temp, доходит до '*', outLast = '*'
 				// если outLast === '*' (это тот блок кода где написаны эти коментарии)
-				// то про просканировать следущее и если перед ним плюс
-				// то это следущее засунуть в saveMultPlus 
-				// взять темп, умножить на следущее и отнять от массива, 
+				// то про просканировать следущее и 
+
+				tempOutput = (tempOutput).substring(0, (tempOutput).length - 1)
+				outLast = tempOutput.slice(-1)
+				saveMultPlus = ''
+
+				for (outLast; outLast != '*' && outLast != '/' && outLast != '-' && outLast != '+' && outLast != ''; outLast = tempOutput.slice(-1)) {
+					saveMultPlus = parseInt(outLast + saveMultPlus)
+					tempOutput = (tempOutput).substring(0, (tempOutput).length - 1)
+					console.log('saveMultPlus = ', saveMultPlus)
+				}
+
+				// если перед ним плюс
+				if (outLast === '+') {
+					// то это следущее засунуть в saveMultPlus 
+					// взять темп, умножить на следущее и отнять от number, 
+					numbers[0] = numbers[0] - (saveMultPlus * temp)
+					console.log('numbers[0] = ',numbers)
+				}
 				// включить состояние tempMultPlus
-				numbers[0] /= parseInt(temp)
+
 				tempSplit = false
 				tempMinus = false
 				tempPlus = false
-				tempMult = true
+				tempMult = false
+				tempMultPlus = true
 			} else if (outLast === '/') {
 				numbers[0] *= parseInt(temp)
 				tempMult = false
