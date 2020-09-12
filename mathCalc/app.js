@@ -827,34 +827,71 @@ let calculator = {
 
 				tempOutput = (tempOutput).substring(0, (tempOutput).length - 1)
 				outLast = tempOutput.slice(-1)
-				saveMultPlus = ''
+				saveMult = ''
 
 				for (outLast; outLast != '*' && outLast != '/' && outLast != '-' && outLast != '+' && outLast != ''; outLast = tempOutput.slice(-1)) {
-					saveMultPlus = parseInt(outLast + saveMultPlus)
+					saveMult = parseInt(outLast + saveMult)
 					tempOutput = (tempOutput).substring(0, (tempOutput).length - 1)
-					console.log('saveMultPlus = ', saveMultPlus)
+					console.log('saveMult = ', saveMult)
 				}
-
 				// если перед ним плюс
 				if (outLast === '+') {
-					// то это следущее засунуть в saveMultPlus 
+					// то это следущее засунуть в saveMult 
 					// взять темп, умножить на следущее и отнять от number, 
-					numbers[0] = numbers[0] - (saveMultPlus * temp)
+					saveMultPlus = saveMult
+					numbers[0] = numbers[0] - (saveMult * temp)
 					console.log('numbers[0] = ',numbers)
-				}
-				// включить состояние tempMultPlus
 
-				tempSplit = false
-				tempMinus = false
-				tempPlus = false
-				tempMult = false
-				tempMultPlus = true
+					// включить состояние tempMultPlus
+					tempSplit = false
+					tempMinus = false
+					tempPlus = false
+					tempMult = false
+					tempMultPlus = true
+				}
+				if (outLast === '-') {
+					saveMultMinus = saveMult
+					numbers[0] = numbers[0] + (saveMult * temp)
+					tempSplit = false
+					tempMinus = false
+					tempPlus = false
+					tempMult = false
+					tempMultMinus = true
+				}
 			} else if (outLast === '/') {
-				numbers[0] *= parseInt(temp)
-				tempMult = false
-				tempMinus = false
-				tempPlus = false
-				tempSplit = true
+				tempOutput = (tempOutput).substring(0, (tempOutput).length - 1)
+				outLast = tempOutput.slice(-1)
+				saveSplit = ''
+
+				for (outLast; outLast != '*' && outLast != '/' && outLast != '-' && outLast != '+' && outLast != ''; outLast = tempOutput.slice(-1)) {
+					saveSplit = parseInt(outLast + saveSplit)
+					tempOutput = (tempOutput).substring(0, (tempOutput).length - 1)
+					console.log('saveSplit = ', saveSplit)
+				}
+				// если перед ним плюс
+				if (outLast === '+') {
+					saveSplitPlus = saveSplit
+					// то это следущее засунуть в saveSplit 
+					// взять темп, умножить на следущее и отнять от number, 
+					numbers[0] = numbers[0] - (saveSplit / temp)
+					console.log('numbers[0] = ',numbers)
+
+					// включить состояние tempMultPlus
+					tempSplit = false
+					tempMinus = false
+					tempPlus = false
+					tempMult = false
+					tempSplitPlus = true
+				}
+				if (outLast === '-') {
+					saveSplitMinus = saveSplit
+					numbers[0] = numbers[0] + (saveSplit / temp)
+					tempSplit = false
+					tempMinus = false
+					tempPlus = false
+					tempMult = false
+					tempSplitMinus = true
+				}
 			} else if (outLast === '') {
 				numbers.length = 0
 				tempMult = false
