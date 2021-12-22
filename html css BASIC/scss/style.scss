@@ -1,6 +1,17 @@
+.container {
+   width: 100%;
+   max-width: 700px;
+
+   margin: 0px auto;
+}
+
+//===========================
+.title {
+   text-align: center;
+}
 .bg {
    background-color: #23be1e4b;
    &2 {
-      background-color: rgba(53, 20, 114, 0.623);
+      background-color: rgba(204, 122, 167, 0.623);
    }
 }
