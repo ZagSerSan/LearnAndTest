@@ -8,6 +8,7 @@
 	let tempFirstStatus = true
 	let tempQ = false
 
+	// Статусные переменные
 	let statusMult = false
 	let statusMultPlus = false
 	let statusMultMinus = false
@@ -27,6 +28,7 @@
 	let saveMinus
 	let savePlus
 
+	// Массив чисел для конечного вычесления кнопки "равно"
 	let numbers = []
 
 	let tempOutput
