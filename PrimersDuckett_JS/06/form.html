@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>JavaScript и jQuery - Глава 6</title>
+    <link rel="stylesheet" href="css/c06.css" />
+  </head>
+  <body>
+    <div id="page">
+      <h1>Король вкуса</h1>
+      <form method="post" action="http://xanadu.myjino.ru/example/" id="formSignup">
+        <h2>План подписки</h2>
+
+        <label for="package" class="selectbox"> Выберите план: </label>
+        <select id="package">
+          <option value="annual">1 год (500 ₽)</option>
+          <option value="monthly">1 месяц (50 ₽)</option>
+        </select>
+        <div id="packageHint" class="tip"></div>
+
+        <input type="checkbox" id="terms" />
+        <label for="terms" class="checkbox"> Принимаю условия соглашения</label>
+        <div id="termsHint" class="warning"></div>
+
+        <input type="submit" value="Далее" />
+
+        </form>
+      </div>
+      <script src="js/form.js"></script>
+    </body>
+</html>

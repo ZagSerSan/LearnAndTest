@@ -1,0 +1,37 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>JavaScript и jQuery - Глава 9</title>
+    <link rel="stylesheet" href="css/c09.css" />
+    <link rel="stylesheet" href="css/pepper-grinder/jquery-ui-1.10.3.custom.min.css" />
+  </head>
+  <body> 
+    <header><h1>МОЗГОВОЙ ШТУРМ</h1></header>
+    <h2>Призы</h2>
+    <div class="third img"><img src="img/toys1.jpg" alt="Печатные платы" /></div>
+    <div class="two-thirds">
+      <div id="prizes">
+        <h3>1 приз</h3>
+        <div>
+          <p>Квадрокоптер DJI Phantom – это комбинация последних технологий и минималистичного дизайна. Реальный полет на кончиках ваших пальцев.</p>
+        </div>
+        <h3>2 приз</h3>
+        <div>
+          <p>Второй приз - Arduino Robot - открытая платформа для сборки роботов. Как обычно, конструктор не требует пайки, собирается без особых инструментов, легко программируется по USB и поддерживает подключение разнообразных периферийных устройств.</p>
+        </div>
+        <h3>3 приз</h3>
+        <div>
+            <p>Коллекция книг для мотивации. В их числе <i>Первому игроку приготовиться</i> Эрнеста Клайна, <i>Город золотых теней</i> Тэда Уильяма и <i>Младший брат</i> Кора Доктороу.</p>
+        </div>
+      </div><!-- #prizes -->
+    </div><!-- #two-thirds -->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script>
+        $(function() {
+          $('#prizes').accordion();
+        });
+    </script>
+  </body>
+</html>

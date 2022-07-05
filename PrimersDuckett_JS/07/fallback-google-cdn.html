@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">    <title>Загрузка jQuery</title>
+  </head>
+  <body>
+    <h1>Загрузка jQuery из Google</h1>
+    <p>Страница демонстрирует пример загрузки jQuery из Google CDN с локальным восстановлением.</p>
+    <p id="test">Данный код функционирует только на сервере. Локальная работа невозможна, так как отсутствует протокол http: в начале сценария.</p>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+      window.jQuery || document.write('<script src="js/jquery-1.10.2.js"><\/script>')
+    </script>
+    <script src="js/jq-loaded.js"></script>
+  </body>
+</html>

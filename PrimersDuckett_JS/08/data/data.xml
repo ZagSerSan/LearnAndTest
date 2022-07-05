@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<events>
+  <event>
+    <location>Москва, Россия</location>
+    <date>1 июля</date>
+    <map>img/map-ca.png</map>
+  </event>
+  <event>
+    <location>Пекин, Китай</location>
+    <date>15 июля</date>
+    <map>img/map-tx.png</map>
+  </event>
+  <event>
+    <location>Анкара, Турция</location>
+    <date>30 июля</date>
+    <map>img/map-ny.png</map>
+  </event>
+</events>

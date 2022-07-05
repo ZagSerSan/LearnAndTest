@@ -8,22 +8,22 @@
 	let tempFirstStatus = true
 	let tempQ = false
 
-	let tempMult = false
-	let tempMultPlus = false
-	let tempMultMinus = false
+	let statusMult = false
+	let statusMultPlus = false
+	let statusMultMinus = false
 	let saveMult
 	let saveMultPlus
 	let saveMultMinus
 
-	let tempSplit = false
-	let tempSplitPlus = false
-	let tempSplitMinus = false
+	let statusSplit = false
+	let statusSplitPlus = false
+	let statusSplitMinus = false
 	let saveSplit
 	let saveSplitPlus
 	let saveSplitMinus
 
-	let tempMinus = false
-	let tempPlus = false
+	let statusMinus = false
+	let statusPlus = false
 	let saveMinus
 	let savePlus
 
@@ -236,6 +236,8 @@ let calculator = {
 			saveNum = parseInt(temp)
 		}
 	},
+
+
 // input cucl
 	multiply: function () {
 		if (title.innerText === '0') {
@@ -244,27 +246,27 @@ let calculator = {
 			title.innerText = '-0'
 		} else if (title.innerText.endsWith('*') === true) {
 			title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1)) + '*'
-		} else if (title.innerText.endsWith('/') === true && tempSplit === true) {
+		} else if (title.innerText.endsWith('/') === true && statusSplit === true) {
 			title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1)) + '*'
-			tempSplit = false
-			tempMult = true
-		} else if (title.innerText.endsWith('-') === true && tempMinus === true) {
+			statusSplit = false
+			statusMult = true
+		} else if (title.innerText.endsWith('-') === true && statusMinus === true) {
 			title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1)) + '*'
-			tempMinus = false
-			tempMult = true
-		} else if (title.innerText.endsWith('+') === true && tempPlus === true) {
+			statusMinus = false
+			statusMult = true
+		} else if (title.innerText.endsWith('+') === true && statusPlus === true) {
 			title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1)) + '*'
-			tempPlus = false
-			tempMult = true
+			statusPlus = false
+			statusMult = true
 		} else {
 			if (tempQ === true) {
 				numbers[numbers.length] = parseInt(title.innerText)
 				temp = ''
 				output = title.innerText + '*'
 				title.innerText = output
-				tempMult = true
+				statusMult = true
 				tempQ = false
-			} else if (tempMult === true) {
+			} else if (statusMult === true) {
 				saveMult = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveMult) * parseInt(temp))
 				temp = ''
@@ -273,7 +275,7 @@ let calculator = {
 				title.innerText = output
 				tempFirstStatus = false
 			} else {
-				if (tempSplit === true) {
+				if (statusSplit === true) {
 					saveSplit = numbers.pop()
 					numbers[numbers.length] = (parseInt(saveSplit) / parseInt(temp))
 					temp = ''
@@ -281,63 +283,64 @@ let calculator = {
 					output = title.innerText + '*'
 					title.innerText = output
 		
-					tempSplit = false
-					tempMult = true
+					statusSplit = false
+					statusMult = true
 					tempFirstStatus = false
-				} else if (tempMinus === true) {
+				} else if (statusMinus === true) {
 					saveMultMinus = temp
-					tempMultMinus = true
+					statusMultMinus = true
 					temp = ''
 
 					output = title.innerText + '*'
 					title.innerText = output
 
-					tempMinus = false
-					tempMultMinus = true
+					statusMinus = false
+					statusMultMinus = true
 					tempFirstStatus = false
-				} else if (tempPlus === true) {
+				} else if (statusPlus === true) {
 					saveMultPlus = temp
 					temp = ''
 
 					output = title.innerText + '*'
 					title.innerText = output
 
-					tempPlus = false
-					tempMultPlus = true
+					statusPlus = false
+					statusMultPlus = true
 					tempFirstStatus = false
-				} else if (tempMultPlus === true) {
+				} else if (statusMultPlus === true) {
 					saveMultPlus = parseInt(saveMultPlus) * parseInt(temp)
+					
 					temp = ''
 
 					output = title.innerText + '*'
 					title.innerText = output
 					tempFirstStatus = false
-				} else if (tempMultMinus === true) {
+				} else if (statusMultMinus === true) {
 					saveMultMinus = parseInt(saveMultMinus) * parseInt(temp)
 					temp = ''
 
 					output = title.innerText + '*'
 					title.innerText = output
 					tempFirstStatus = false
-				} else if (tempSplitPlus === true) {
+				} else if (statusSplitPlus === true) {
 					saveMultPlus = parseInt(saveSplitPlus) / parseInt(temp)
 					temp = ''
 
 					output = title.innerText + '*'
 					title.innerText = output
 
-					tempSplitPlus = false
-					tempMultPlus = true
+					statusSplitPlus = false
+					statusMultPlus = true
 					tempFirstStatus = false
-				} else if (tempSplitMinus === true) {
+				} else if (statusSplitMinus === true) {
 					saveMultMinus = parseInt(saveSplitMinus) / parseInt(temp)
 					temp = ''
 
 					output = title.innerText + '*'
 					title.innerText = output
 
-					tempSplitMinus = false
-					tempMultMinus = true
+					statusSplitMinus = false
+					statusMultMinus = true
 					tempFirstStatus = false
 				} else {
 					numbers[numbers.length] = saveNum
@@ -346,9 +349,9 @@ let calculator = {
 					output = title.innerText + '*'
 					title.innerText = output
 
-					tempMult = true
-					tempMinus = false
-					tempSplit = false
+					statusMult = true
+					statusMinus = false
+					statusSplit = false
 					tempFirstStatus = false
 				}
 			}
@@ -361,27 +364,27 @@ let calculator = {
 			title.innerText = '-0'
 		} else if (title.innerText.endsWith('/') === true) {
 			title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1)) + '/'
-		} else if (title.innerText.endsWith('*') === true && tempMult === true) {
+		} else if (title.innerText.endsWith('*') === true && statusMult === true) {
 			title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1)) + '/'
-			tempMult = false
-			tempSplit = true
-		} else if (title.innerText.endsWith('-') === true && tempMinus === true) {
+			statusMult = false
+			statusSplit = true
+		} else if (title.innerText.endsWith('-') === true && statusMinus === true) {
 			title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1)) + '/'
-			tempMinus = false
-			tempSplit = true
-		} else if (title.innerText.endsWith('+') === true && tempPlus === true) {
+			statusMinus = false
+			statusSplit = true
+		} else if (title.innerText.endsWith('+') === true && statusPlus === true) {
 			title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1)) + '/'
-			tempPlus = false
-			tempSplit = true
+			statusPlus = false
+			statusSplit = true
 		} else {
 			if (tempQ === true) {
 				numbers[numbers.length] = parseInt(title.innerText)
 				temp = ''
 				output = title.innerText + '/'
 				title.innerText = output
-				tempSplit = true
+				statusSplit = true
 				tempQ = false
-			} else if (tempSplit === true) {
+			} else if (statusSplit === true) {
 				saveSplit = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveSplit) / parseInt(temp))
 				temp = ''
@@ -390,7 +393,7 @@ let calculator = {
 				title.innerText = output
 				tempFirstStatus = false
 			} else {
-				if (tempMult === true) {
+				if (statusMult === true) {
 					saveMult = numbers.pop()
 					numbers[numbers.length] = (parseInt(saveMult) * parseInt(temp))
 					temp = ''
@@ -398,57 +401,57 @@ let calculator = {
 					output = title.innerText + '/'
 					title.innerText = output
 
-					tempMult = false
-					tempSplit = true
+					statusMult = false
+					statusSplit = true
 					tempFirstStatus = false
-				} else if (tempMinus === true) {
+				} else if (statusMinus === true) {
 					saveSplitMinus = temp
-					tempSplitMinus = true
+					statusSplitMinus = true
 					temp = ''
 
 					output = title.innerText + '/'
 					title.innerText = output
 
-					tempMinus = false
+					statusMinus = false
 					tempFirstStatus = false
-				} else if (tempPlus === true) {
+				} else if (statusPlus === true) {
 					saveSplitPlus = temp
-					tempSplitPlus = true
+					statusSplitPlus = true
 					temp = ''
 
 					output = title.innerText + '/'
 					title.innerText = output
 
-					tempPlus = false
+					statusPlus = false
 					tempFirstStatus = false
-				} else if (tempMultPlus === true) {
+				} else if (statusMultPlus === true) {
 					saveSplitPlus = parseInt(saveMultPlus) * parseInt(temp)
 					temp = ''
 
 					output = title.innerText + '/'
 					title.innerText = output
 
-					tempMultPlus = false
-					tempSplitPlus = true
+					statusMultPlus = false
+					statusSplitPlus = true
 					tempFirstStatus = false
-				} else if (tempMultMinus === true) {
+				} else if (statusMultMinus === true) {
 					saveSplitMinus = parseInt(saveMultMinus) * parseInt(temp)
 					temp = ''
 
 					output = title.innerText + '/'
 					title.innerText = output
 
-					tempMultMinus = false
-					tempSplitMinus = true
+					statusMultMinus = false
+					statusSplitMinus = true
 					tempFirstStatus = false
-				} else if (tempSplitPlus === true) {
+				} else if (statusSplitPlus === true) {
 					saveSplitPlus = parseInt(saveSplitPlus) / parseInt(temp)
 					temp = ''
 
 					output = title.innerText + '/'
 					title.innerText = output
 					tempFirstStatus = false
-				} else if (tempSplitMinus === true) {
+				} else if (statusSplitMinus === true) {
 					saveSplitMinus = parseInt(saveSplitMinus) / parseInt(temp)
 					temp = ''
 
@@ -462,9 +465,9 @@ let calculator = {
 					output = title.innerText + '/'
 					title.innerText = output
 
-					tempMinus = false
-					tempMult = false
-					tempSplit = true
+					statusMinus = false
+					statusMult = false
+					statusSplit = true
 					tempFirstStatus = false
 				}
 			}
@@ -477,27 +480,27 @@ let calculator = {
 			title.innerText = '0'
 		} else if (title.innerText.endsWith('-') === true) {
 			title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1)) + '-'
-		} else if (title.innerText.endsWith('*') === true && tempMult === true) {
+		} else if (title.innerText.endsWith('*') === true && statusMult === true) {
 			title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1)) + '-'
-			tempMult = false
-			tempMinus = true
-		} else if (title.innerText.endsWith('/') === true && tempSplit === true) {
+			statusMult = false
+			statusMinus = true
+		} else if (title.innerText.endsWith('/') === true && statusSplit === true) {
 			title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1)) + '-'
-			tempSplit = false
-			tempMinus = true
-		} else if (title.innerText.endsWith('+') === true && tempPlus === true) {
+			statusSplit = false
+			statusMinus = true
+		} else if (title.innerText.endsWith('+') === true && statusPlus === true) {
 			title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1)) + '-'
-			tempPlus = false
-			tempMinus = true
+			statusPlus = false
+			statusMinus = true
 		} else {
 			if (tempQ === true) {
 				numbers[numbers.length] = parseInt(title.innerText)
 				temp = ''
 				output = title.innerText + '-'
 				title.innerText = output
-				tempMinus = true
+				statusMinus = true
 				tempQ = false
-			} else if (tempMinus === true) {
+			} else if (statusMinus === true) {
 				saveMinus = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveMinus) - parseInt(temp))
 				temp = ''
@@ -506,7 +509,7 @@ let calculator = {
 				title.innerText = output
 				tempFirstStatus = false
 			} else {
-				if (tempMult === true) {
+				if (statusMult === true) {
 					saveMult = numbers.pop()
 					numbers[numbers.length] = (parseInt(saveMult) * parseInt(temp))
 					temp = ''
@@ -514,10 +517,10 @@ let calculator = {
 					output = title.innerText + '-'
 					title.innerText = output
 
-					tempMult = false
-					tempMinus = true
+					statusMult = false
+					statusMinus = true
 					tempFirstStatus = false
-				} else if (tempSplit === true) {
+				} else if (statusSplit === true) {
 					saveSplit = numbers.pop()
 					numbers[numbers.length] = (parseInt(saveSplit) / parseInt(temp))
 					temp = ''
@@ -525,10 +528,10 @@ let calculator = {
 					output = title.innerText + '-'
 					title.innerText = output
 		
-					tempSplit = false
-					tempMinus = true
+					statusSplit = false
+					statusMinus = true
 					tempFirstStatus = false
-				} else if (tempPlus === true) {
+				} else if (statusPlus === true) {
 					savePlus = numbers.pop()
 					numbers[numbers.length] = (parseInt(savePlus) + parseInt(temp))
 					temp = ''
@@ -536,10 +539,10 @@ let calculator = {
 					output = title.innerText + '-'
 					title.innerText = output
 
-					tempPlus = false
-					tempMinus = true
+					statusPlus = false
+					statusMinus = true
 					tempFirstStatus = false
-				} else if (tempMultPlus === true) {
+				} else if (statusMultPlus === true) {
 					saveMult = numbers.pop()
 					numbers[numbers.length] = (parseInt(saveMult) + (parseInt(saveMultPlus) * parseInt(temp)))
 					temp = ''
@@ -547,10 +550,10 @@ let calculator = {
 					output = title.innerText + '-'
 					title.innerText = output
 
-					tempMultPlus = false
-					tempMinus = true
+					statusMultPlus = false
+					statusMinus = true
 					tempFirstStatus = false
-				} else if (tempMultMinus === true) {
+				} else if (statusMultMinus === true) {
 					saveMult = numbers.pop()
 					numbers[numbers.length] = (parseInt(saveMult) - (parseInt(saveMultMinus) * parseInt(temp)))
 					temp = ''
@@ -558,10 +561,10 @@ let calculator = {
 					output = title.innerText + '-'
 					title.innerText = output
 
-					tempMultMinus = false
-					tempMinus = true
+					statusMultMinus = false
+					statusMinus = true
 					tempFirstStatus = false
-				} else if (tempSplitPlus === true) {
+				} else if (statusSplitPlus === true) {
 					saveSplit = numbers.pop()
 					numbers[numbers.length] = (parseInt(saveSplit) + (parseInt(saveSplitPlus) / parseInt(temp)))
 					temp = ''
@@ -569,10 +572,10 @@ let calculator = {
 					output = title.innerText + '-'
 					title.innerText = output
 
-					tempSplitPlus = false
-					tempMinus = true
+					statusSplitPlus = false
+					statusMinus = true
 					tempFirstStatus = false
-				} else if (tempSplitMinus === true) {
+				} else if (statusSplitMinus === true) {
 					saveSplit = numbers.pop()
 					numbers[numbers.length] = (parseInt(saveSplit) - (parseInt(saveSplitMinus) / parseInt(temp)))
 					temp = ''
@@ -580,8 +583,8 @@ let calculator = {
 					output = title.innerText + '-'
 					title.innerText = output
 
-					tempSplitMinus = false
-					tempMinus = true
+					statusSplitMinus = false
+					statusMinus = true
 					tempFirstStatus = false
 				} else {
 					numbers[numbers.length] = saveNum
@@ -590,7 +593,7 @@ let calculator = {
 					output = title.innerText + '-'
 					title.innerText = output
 
-					tempMinus = true
+					statusMinus = true
 					tempFirstStatus = false
 				}
 			}
@@ -603,27 +606,27 @@ let calculator = {
 			title.innerText = '0'
 		} else if (title.innerText.endsWith('+') === true) {
 			title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1)) + '+'
-		} else if (title.innerText.endsWith('*') === true && tempMult === true) {
+		} else if (title.innerText.endsWith('*') === true && statusMult === true) {
 			title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1)) + '+'
-			tempMult = false
-			tempPlus = true
-		} else if (title.innerText.endsWith('/') === true && tempSplit === true) {
+			statusMult = false
+			statusPlus = true
+		} else if (title.innerText.endsWith('/') === true && statusSplit === true) {
 			title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1)) + '+'
-			tempSplit = false
-			tempPlus = true
-		} else if (title.innerText.endsWith('-') === true && tempMinus === true) {
+			statusSplit = false
+			statusPlus = true
+		} else if (title.innerText.endsWith('-') === true && statusMinus === true) {
 			title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1)) + '+'
-			tempMinus = false
-			tempPlus = true
+			statusMinus = false
+			statusPlus = true
 		} else {
 			if (tempQ === true) {
 				numbers[numbers.length] = parseInt(title.innerText)
 				temp = ''
 				output = title.innerText + '+'
 				title.innerText = output
-				tempPlus = true
+				statusPlus = true
 				tempQ = false
-			} else if (tempPlus === true) {
+			} else if (statusPlus === true) {
 				savePlus = numbers.pop()
 				numbers[numbers.length] = (parseInt(savePlus) + parseInt(temp))
 				temp = ''
@@ -632,7 +635,7 @@ let calculator = {
 				title.innerText = output
 				tempFirstStatus = false
 			} else {
-				if (tempMult === true) {
+				if (statusMult === true) {
 					saveMult = numbers.pop()
 					numbers[numbers.length] = (parseInt(saveMult) * parseInt(temp))
 					temp = ''
@@ -640,10 +643,10 @@ let calculator = {
 					output = title.innerText + '+'
 					title.innerText = output
 
-					tempMult = false
-					tempPlus = true
+					statusMult = false
+					statusPlus = true
 					tempFirstStatus = false
-				} else if (tempSplit === true) {
+				} else if (statusSplit === true) {
 					saveSplit = numbers.pop()
 					numbers[numbers.length] = (parseInt(saveSplit) / parseInt(temp))
 					temp = ''
@@ -651,10 +654,10 @@ let calculator = {
 					output = title.innerText + '+'
 					title.innerText = output
 
-					tempSplit = false
-					tempPlus = true
+					statusSplit = false
+					statusPlus = true
 					tempFirstStatus = false
-				} else if (tempMinus === true) {
+				} else if (statusMinus === true) {
 					saveMinus = numbers.pop()
 					numbers[numbers.length] = (parseInt(saveMinus) - parseInt(temp))
 					temp = ''
@@ -662,21 +665,32 @@ let calculator = {
 					output = title.innerText + '+'
 					title.innerText = output
 
-					tempMinus = false
-					tempPlus = true
+					statusMinus = false
+					statusPlus = true
 					tempFirstStatus = false
-				} else if (tempMultPlus === true) {
+				} else if (statusMultPlus === true && title.innerText.endsWith('*') === true) {
+					
+					temp = saveMultPlus
+					savePlus = numbers.pop()
+					numbers[numbers.length] = (parseInt(savePlus) + parseInt(temp))
+					temp = ''
+					
+					title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1)) + '+'
+					output = title.innerText
+
+					statusMultPlus = false
+					statusPlus = true
+					tempFirstStatus = false
+				} else if (statusMultPlus === true) {
 					saveMult = numbers.pop()
 					numbers[numbers.length] = (parseInt(saveMult) + (parseInt(saveMultPlus) * parseInt(temp)))
 					temp = ''
 
 					output = title.innerText + '+'
 					title.innerText = output
-
-					tempMultPlus = false
-					tempPlus = true
-					tempFirstStatus = false
-				} else if (tempMultMinus === true) {
+				}
+				
+				else if (statusMultMinus === true) {
 					saveMult = numbers.pop()
 					numbers[numbers.length] = (parseInt(saveMult) - (parseInt(saveMultMinus) * parseInt(temp)))
 					temp = ''
@@ -684,10 +698,10 @@ let calculator = {
 					output = title.innerText + '+'
 					title.innerText = output
 
-					tempMultMinus = false
-					tempPlus = true
+					statusMultMinus = false
+					statusPlus = true
 					tempFirstStatus = false
-				} else if (tempSplitPlus === true) {
+				} else if (statusSplitPlus === true) {
 					saveSplit = numbers.pop()
 					numbers[numbers.length] = (parseInt(saveSplit) + (parseInt(saveSplitPlus) / parseInt(temp)))
 					temp = ''
@@ -695,10 +709,10 @@ let calculator = {
 					output = title.innerText + '+'
 					title.innerText = output
 
-					tempSplitPlus = false
-					tempPlus = true
+					statusSplitPlus = false
+					statusPlus = true
 					tempFirstStatus = false
-				} else if (tempSplitMinus === true) {
+				} else if (statusSplitMinus === true) {
 					saveSplit = numbers.pop()
 					numbers[numbers.length] = (parseInt(saveSplit) - (parseInt(saveSplitMinus) / parseInt(temp)))
 					temp = ''
@@ -706,8 +720,8 @@ let calculator = {
 					output = title.innerText + '+'
 					title.innerText = output
 
-					tempSplitMinus = false
-					tempPlus = true
+					statusSplitMinus = false
+					statusPlus = true
 					tempFirstStatus = false
 				} else {
 					numbers[numbers.length] = parseInt(temp)
@@ -716,7 +730,7 @@ let calculator = {
 					output = title.innerText + '+'
 					title.innerText = output
 
-					tempPlus = true
+					statusPlus = true
 					tempFirstStatus = false
 				}
 			}
@@ -728,16 +742,16 @@ let calculator = {
 		saveNum = 0
 		numbers.length=0
 
-		tempMult = false
-		tempMultPlus = false
-		tempMultMinus = false
+		statusMult = false
+		statusMultPlus = false
+		statusMultMinus = false
 
-		tempSplit = false
-		tempSplitPlus = false
-		tempSplitMinus = false
+		statusSplit = false
+		statusSplitPlus = false
+		statusSplitMinus = false
 
-		tempMinus = false
-		tempPlus = false
+		statusMinus = false
+		statusPlus = false
 	},
 	back: function () {
 		tempOutput = title.innerText
@@ -759,66 +773,66 @@ let calculator = {
 				console.log('temp = ', temp)
 			}
 
-			if (outLast === '+' && tempMultPlus === false && tempSplitPlus === false) {
+			if (outLast === '+' && statusMultPlus === false && statusSplitPlus === false) {
 				numbers[0] -= parseInt(temp)
-				tempMult = false
-				tempSplit = false
-				tempMinus = false
-				tempMultPlus = false
-				tempSplitPlus = false
-				tempPlus = true
-			} else if (outLast === '+' && tempMultPlus === true) {
-				tempMult = false
-				tempSplit = false
-				tempMinus = false
-				tempMultPlus = false
-				tempSplitPlus = false
-				tempPlus = true
-			} else if (outLast === '+' && tempSplitPlus === false && tempMultPlus === false) {
+				statusMult = false
+				statusSplit = false
+				statusMinus = false
+				statusMultPlus = false
+				statusSplitPlus = false
+				statusPlus = true
+			} else if (outLast === '+' && statusMultPlus === true) {
+				statusMult = false
+				statusSplit = false
+				statusMinus = false
+				statusMultPlus = false
+				statusSplitPlus = false
+				statusPlus = true
+			} else if (outLast === '+' && statusSplitPlus === false && statusMultPlus === false) {
 				numbers[0] -= parseInt(temp)
-				tempMult = false
-				tempSplit = false
-				tempMinus = false
-				tempMultPlus = false
-				tempSplitPlus = false
-				tempPlus = true
-			} else if (outLast === '+' && tempSplitPlus === true) {
-				tempMult = false
-				tempSplit = false
-				tempMultPlus = false
-				tempSplitPlus = false
-				tempPlus = true
-			} else if (outLast === '-' && tempMultMinus === false && tempSplitMinus === false) {
+				statusMult = false
+				statusSplit = false
+				statusMinus = false
+				statusMultPlus = false
+				statusSplitPlus = false
+				statusPlus = true
+			} else if (outLast === '+' && statusSplitPlus === true) {
+				statusMult = false
+				statusSplit = false
+				statusMultPlus = false
+				statusSplitPlus = false
+				statusPlus = true
+			} else if (outLast === '-' && statusMultMinus === false && statusSplitMinus === false) {
 				// console.log('outLast = ', outLast)
 				numbers[0] += parseInt(temp)
-				tempMult = false
-				tempSplit = false
-				tempPlus = false
-				tempMultMinus = false
-				tempSplitMinus = false
-				tempMinus = true
-			} else if (outLast === '-' && tempMultMinus === true) {
-				tempMult = false
-				tempSplit = false
-				tempPlus = false
-				tempMultMinus = false
-				tempSplitMinus = false
-				tempMinus = true
-			} else if (outLast === '-' && tempSplitMinus === false && tempMultMinus === false) {
+				statusMult = false
+				statusSplit = false
+				statusPlus = false
+				statusMultMinus = false
+				statusSplitMinus = false
+				statusMinus = true
+			} else if (outLast === '-' && statusMultMinus === true) {
+				statusMult = false
+				statusSplit = false
+				statusPlus = false
+				statusMultMinus = false
+				statusSplitMinus = false
+				statusMinus = true
+			} else if (outLast === '-' && statusSplitMinus === false && statusMultMinus === false) {
 				numbers[0] += parseInt(temp)
-				tempMult = false
-				tempSplit = false
-				tempPlus = false
-				tempMultMinus = false
-				tempSplitMinus = false
-				tempMinus = true
-			} else if (outLast === '-' && tempSplitMinus === true) {
-				tempMult = false
-				tempSplit = false
-				tempPlus = false
-				tempMultMinus = false
-				tempSplitMinus = false
-				tempMinus = true
+				statusMult = false
+				statusSplit = false
+				statusPlus = false
+				statusMultMinus = false
+				statusSplitMinus = false
+				statusMinus = true
+			} else if (outLast === '-' && statusSplitMinus === true) {
+				statusMult = false
+				statusSplit = false
+				statusPlus = false
+				statusMultMinus = false
+				statusSplitMinus = false
+				statusMinus = true
 			} else if (outLast === '*') {
 				// 2 + 2 * 4 '+ 2'
 				// стираю '+', сканируется 4ка в temp, доходит до '*', outLast = '*'
@@ -842,21 +856,21 @@ let calculator = {
 					numbers[0] = numbers[0] - (saveMult * temp)
 					console.log('numbers[0] = ',numbers)
 
-					// включить состояние tempMultPlus
-					tempSplit = false
-					tempMinus = false
-					tempPlus = false
-					tempMult = false
-					tempMultPlus = true
+					// включить состояние statusMultPlus
+					statusSplit = false
+					statusMinus = false
+					statusPlus = false
+					statusMult = false
+					statusMultPlus = true
 				}
 				if (outLast === '-') {
 					saveMultMinus = saveMult
 					numbers[0] = numbers[0] + (saveMult * temp)
-					tempSplit = false
-					tempMinus = false
-					tempPlus = false
-					tempMult = false
-					tempMultMinus = true
+					statusSplit = false
+					statusMinus = false
+					statusPlus = false
+					statusMult = false
+					statusMultMinus = true
 				}
 			} else if (outLast === '/') {
 				tempOutput = (tempOutput).substring(0, (tempOutput).length - 1)
@@ -876,30 +890,30 @@ let calculator = {
 					numbers[0] = numbers[0] - (saveSplit / temp)
 					console.log('numbers[0] = ',numbers)
 
-					// включить состояние tempMultPlus
-					tempSplit = false
-					tempMinus = false
-					tempPlus = false
-					tempMult = false
-					tempSplitPlus = true
+					// включить состояние statusMultPlus
+					statusSplit = false
+					statusMinus = false
+					statusPlus = false
+					statusMult = false
+					statusSplitPlus = true
 				}
 				if (outLast === '-') {
 					saveSplitMinus = saveSplit
 					numbers[0] = numbers[0] + (saveSplit / temp)
-					tempSplit = false
-					tempMinus = false
-					tempPlus = false
-					tempMult = false
-					tempSplitMinus = true
+					statusSplit = false
+					statusMinus = false
+					statusPlus = false
+					statusMult = false
+					statusSplitMinus = true
 				}
 			} else if (outLast === '') {
 				numbers.length = 0
-				tempMult = false
-				tempSplit = false
-				tempPlus = false
-				tempMultPlus = false
-				tempSplitPlus = false
-				tempMinus = false
+				statusMult = false
+				statusSplit = false
+				statusPlus = false
+				statusMultPlus = false
+				statusSplitPlus = false
+				statusMinus = false
 				tempFirstStatus = true
 			}
 		} else {
@@ -917,27 +931,27 @@ let calculator = {
 		} else if (tempQ === true) {
 			title.innerText = temp
 		} else {
-			if (tempMult === true) {
+			if (statusMult === true) {
 				saveMult = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveMult) * parseInt(temp))
-			} else if (tempMultPlus === true){
+			} else if (statusMultPlus === true){
 				saveMult = numbers.pop()
 				numbers[numbers.length] =(parseInt(saveMultPlus) * parseInt(temp)) + parseInt(saveMult)
-			} else if (tempMultMinus === true) {
+			} else if (statusMultMinus === true) {
 				saveMult = numbers.pop()
 				numbers[numbers.length] = parseInt(saveMult) - (parseInt(saveMultMinus) * parseInt(temp))
-			} else if (tempSplit === true) {
+			} else if (statusSplit === true) {
 				saveSplit = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveSplit) / parseInt(temp))
-			} else if (tempSplitPlus === true) {
+			} else if (statusSplitPlus === true) {
 				saveSplit = numbers.pop()
 				numbers[numbers.length] = parseInt(saveSplit) + (parseInt(saveSplitPlus) / parseInt(temp))
-			} else if (tempSplitMinus === true) {
+			} else if (statusSplitMinus === true) {
 				saveSplit = numbers.pop()
 				numbers[numbers.length] = parseInt(saveSplit) - (parseInt(saveSplitMinus) / parseInt(temp))
-			} else if (tempPlus === true) {
+			} else if (statusPlus === true) {
 				numbers[0] = numbers[0] + parseInt(temp)
-			} else if (tempMinus === true) {
+			} else if (statusMinus === true) {
 				numbers[0] = numbers[0] - parseInt(temp)
 			} else {
 				title.innerText = 0
@@ -950,16 +964,16 @@ let calculator = {
 			saveNum = ''
 			numbers.length=0
 
-			tempMult = false
-			tempMultPlus = false
-			tempMultMinus = false
+			statusMult = false
+			statusMultPlus = false
+			statusMultMinus = false
 
-			tempSplit = false
-			tempSplitPlus = false
-			tempSplitMinus = false
+			statusSplit = false
+			statusSplitPlus = false
+			statusSplitMinus = false
 
-			tempMinus = false
-			tempPlus = false
+			statusMinus = false
+			statusPlus = false
 		}
 	}
 }

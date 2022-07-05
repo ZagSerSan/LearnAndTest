@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>JavaScript и jQuery - Глава 9</title>
+    <link rel="stylesheet" href="css/c09.css" />
+  </head>
+  <body>
+    <header><h1>МОЗГОВОЙ ШТУРМ</h1></header>
+    <div id="content">
+      <h2>Чем вы любите заниматься?</h2>
+      <div class="third"><img src="img/toys1.jpg" alt="Печатные платы" /></div>
+      <div class="two-thirds">
+        <form id="application" action="apply.php">
+        <!-- Файл apply.php для данного примера недоступен.
+             Вы можете вернуться назад после отправки данных формы и увидеть введенные имя и ответ -->
+          <label for="username">Имя</label><input type="text" id="username" name="username" /><br />
+          <label for="answer">Ответ</label><textarea id="answer" name="answer"></textarea>
+          <input type="submit" value="Сохранить" />
+          </form>
+        </form>
+      </div>
+    </div>
+    <script src="js/modernizr.2.7.1.js"></script>
+    <script src="js/session-storage.js"></script>
+  </body>
+</html>

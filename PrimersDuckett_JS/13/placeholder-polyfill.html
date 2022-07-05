@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>JavaScript и jQuery - Глава 13</title>
+    <link rel="stylesheet" href="css/c13.css" />
+  </head>
+  <body>
+  <div class="container">
+    <form method="post" action="/register">
+      <div class="one-third column">
+        <img src="img/logo.png" alt="логотип" id="logo" />
+      </div>
+      <div class="two-thirds column" id="main">
+        <fieldset>
+          <legend>Регистрация</legend>
+          <label for="username">Логин:</label>
+          <input type="text" id="username" name="username" placeholder="имя_пользователя" />
+          <label for="email">Адрес электронной почты:</label>
+          <input type="email" id="email" name="email" placeholder="mail@mail.ru" />
+          <label for="dob">Дата рождения:</label>
+          <input type="text" id="dob" name="dob" placeholder="гггг-мм-дд" />
+          <input type="submit" value="Регистрация" />
+        </fieldset>
+      </div><!-- .two-thirds -->
+    </form>
+  </div><!-- .container -->
+  <script src="js/jquery-1.9.1.js"></script>
+  <script src="js/utilities.js"></script>
+  <script src="js/placeholder-polyfill.js"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+  <meta charset="UTF-8">
+  <title>JavaScript и jQuery - Глава 9</title>
+    <link rel="stylesheet" href="css/c09.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+  </head>
+  <body>
+    <header><h1>МОЗГОВОЙ ШТУРМ</h1></header>
+    <div class="third">
+      <p class="welcome">Сообщите своим друзьям о мероприятии "Мозговой штурм"!</p>
+      <form>
+        Получатель:<br>
+        <input ng-model="name" type="text" /><br>
+        Сообщение:<br>
+        <textarea ng-model="message"></textarea>
+        <input type="submit" value="отправить" />
+      </form>
+    </div>
+    <div class="two-thirds">
+      <div class="postcard">
+        <div>{{ name }}</div>
+        <p>{{ message }}</p>
+      </div>
+    </div>
+  </body>
+</html>

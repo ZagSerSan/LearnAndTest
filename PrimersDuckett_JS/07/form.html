@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>JavaScript и jQuery - Глава 7</title>
+    <link rel="stylesheet" href="css/c07.css" />
+  </head>
+  <body>
+    <div id="page">
+      <h1 id="header">Список</h1>
+      <h2>Продовольственная лавка</h2>
+      <ul>
+        <li id="one" class="hot"><em>свежий</em> инжир</li>
+        <li id="two" class="hot">кедровые орешки</li>
+        <li id="three" class="hot">пчелиный мед</li>
+        <li id="four">бальзамический уксус</li>
+      </ul>
+      <div id="newItemButton"><button href="#" id="showForm">новый элемент</button></div>
+      <form id="newItemForm">
+        <input type="text" id="itemDescription" placeholder="Добавьте описание..." />
+        <input type="submit" id="addButton" value="добавить" />
+      </form>
+    </div>
+    <script src="js/jquery-1.11.0.js"></script>
+    <script src="js/form.js"></script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>JavaScript и jQuery - Глава 13</title>
+    <link rel="stylesheet" href="css/c13.css" />
+  </head>
+  <body>
+    <div class="container login">
+      <form id="newPwd" action="/login" method="post">
+        <div class="one-third column">
+          <img src="img/logo.png" alt="логотип" id="logo" />
+        </div>
+        <div class="two-thirds column" id="main">
+          <fieldset>
+            <legend>Сброс пароля</legend>
+            <label for="pwd">Новый пароль:</label>
+            <input type="password" id="pwd" />
+            <input type="submit" id="submit" value="Подтвердить" />
+          </fieldset>
+        </div><!-- .two-thirds -->
+      </form>
+    </div><!-- .container -->
+    <script src="js/utilities.js"></script>
+    <script src="js/disable-submit.js"></script>
+  </body>
+</html>

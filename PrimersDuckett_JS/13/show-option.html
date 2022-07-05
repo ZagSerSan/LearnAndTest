@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>JavaScript и jQuery - Глава 13</title>
+    <link rel="stylesheet" href="css/c13.css" />
+  </head>
+  <body>
+    <div class="container login">
+      <form id="how-heard" action="/heard" method="post">
+        <div class="one-third column">
+          <img src="img/logo.png" alt="логотип" id="logo" />
+        </div>
+        <div class="two-thirds column" id="main">
+          <fieldset>
+            <legend>Откуда вы узнали о нас?</legend>
+
+            <input type="radio" name="heard" value="search" id="search" />
+            <label for="search">Поисковая система</label><br>
+
+            <input type="radio" name="heard" value="print" id="print" />
+            <label for="print">Газета или журнал</label><br>
+
+            <input type="radio" name="heard" value="other" id="other" />
+            <label for="other">Другое</label><br>
+            <input type="text" name="other-input" id="other-text" />
+  
+            <input id="submit" type="submit" value="Подтвердить" />
+          </fieldset>
+        </div><!-- .two-thirds -->
+      </form>
+    </div><!-- .container -->
+    <script src="js/utilities.js"></script>
+    <script src="js/show-option.js"></script>
+  </body>
+</html>

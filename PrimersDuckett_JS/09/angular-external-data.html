@@ -1,0 +1,25 @@
+<!doctype html>
+<html ng-app>
+  <head>
+  <meta charset="UTF-8">
+  <title>JavaScript и jQuery - Глава 9</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+    <script src="js/angular-external-data.js"></script>
+    <link rel="stylesheet" href="css/c09.css">
+  </head>
+  <body>
+    <header><h1>МОЗГОВОЙ ШТУРМ</h1></header>
+    <h2>Программа мероприятия</h2>
+    <div class="third"><img src="img/toys1.jpg" alt="Печатные платы" /></div>
+    <div class="two-thirds" id="timetable">
+      <table ng-controller="TimetableCtrl">
+        <tr><th>время</th><th>название</th><th>описание</th></tr>
+        <tr ng-repeat="session in sessions">
+          <td>{{ session.time }}</td>
+          <td>{{ session.title }}</td>
+          <td>{{ session.detail }}</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

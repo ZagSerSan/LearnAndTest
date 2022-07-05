@@ -1,0 +1,1 @@
+﻿var itemTwo = document.getElementById('two');  // Получаем второй элемент из спискаvar elText  = itemTwo.firstChild.nodeValue;    // Получаем его текстовое содержимоеelText = elText.replace('кедровые орешки', 'белокочанная капуста');  // Меняем кедровые орешки на белокочанную капустуitemTwo.firstChild.nodeValue = elText;         // Обновляем элемент списка

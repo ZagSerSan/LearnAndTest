@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>JavaScript и jQuery - Глава 9</title>
+    <link rel="stylesheet" href="css/c09.css" />
+    <link rel="stylesheet" href="css/pepper-grinder/jquery-ui-1.10.3.custom.min.css" />
+  </head>
+  <body>
+    <header><h1>МОЗГОВОЙ ШТУРМ</h1></header>
+    <h2>Призы</h2>
+    <div class="third img"><img src="img/toys1.jpg" alt="Печатные платы" /></div>
+    <div class="two-thirds">
+      <div id="prizes">
+        <ul>
+          <li><a href="#tab-1">1 приз</a></li>
+          <li><a href="#tab-2">2 приз</a></li>
+          <li><a href="#tab-3">3 приз</a></li>
+        </ul>
+        <div id="tab-1">
+          <p>Квадрокоптер DJI Phantom – это комбинация последних технологий и минималистичного дизайна. Реальный полет на кончиках ваших пальцев.</p>
+        </div>
+        <div id="tab-2">
+          <p>Второй приз - Arduino Robot - открытая платформа для сборки роботов. Как обычно, конструктор не требует пайки, собирается без особых инструментов, легко программируется по USB и поддерживает подключение разнообразных периферийных устройств.</p>
+        </div>
+        <div id="tab-3">
+          <p>Коллекция книг для мотивации. В их числе <i>Первому игроку приготовиться</i> Эрнеста Клайна, <i>Город золотых теней</i> Тэда Уильяма и <i>Младший брат</i> Кора Доктороу.</p>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script>
+      $(function() {
+        $('#prizes').tabs();
+      });
+    </script>
+  </body>
+</html>

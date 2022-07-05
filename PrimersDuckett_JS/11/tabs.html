@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>JavaScript и jQuery - Глава 11</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/tabs.css" />
+  </head>
+
+  <body>
+
+    <header><h1>Сладкоежка</h1></header>
+
+    <section class="page">
+
+      <div class="tabs">
+
+        <ul class="tab-list">
+          <li class="active"><a class="tab-control" href="#tab-1"><h3>Описание</h3></a></li>
+          <li><a class="tab-control" href="#tab-2"><h3>Состав</h3></a></li>
+          <li><a class="tab-control" href="#tab-3"><h3>Доставка</h3></a></li>
+        </ul>
+
+        <div class="tab-panel active" id="tab-1">
+           <p>Попробуйте необычайно вкусную пастилу "Сладкоежка" с удивительными ароматами. В продаже появились три новых вкуса: <strong>Бузина</strong>, <strong>Роза</strong> и <strong>Хризантема</strong>. Пастила изготовлена исключительно из натуральных ингредиентов. Ощутите вкус лета в любое время года!</p>
+        </div>
+
+        <div class="tab-panel" id="tab-2">
+            <p><strong>БУЗИНА:</strong> сахар - песок, пюре яблочное, пюре бузины, патока, пудра сахарная, агар, белок яичный, ароматизатор натуральный, пищевой краситель - кармуазин <strong>РОЗА:</strong> сахар - песок, пюре яблочное, ароматизатор - роза, патока, пудра сахарная, агар, белок яичный, пищевой краситель - кармуазин <strong>ХРИЗАНТЕМА:</strong> сахар - песок, пюре яблочное, ароматизатор - хризантема, патока, пудра сахарная, агар, белок яичный, пищевой краситель - кармуазин</p>
+        </div>
+
+        <div class="tab-panel" id="tab-3">
+            <p>Бесплатная доставка для всех заказов! В зависимости от города, доступна доставка с помощью курьерской службы, транспортной компании или Почты России.</p>
+        </div>
+
+      </div><!-- .tabs -->
+
+    </section><!-- .page -->
+
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/tabs.js"></script>
+
+  </body>
+</html>

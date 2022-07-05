@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>JavaScript и jQuery - Глава 13</title>
+    <link rel="stylesheet" href="css/c13.css" />
+  </head>
+  <body>
+    <div class="container login">
+      <form name="howHeard" id="howHeard" action="/heard" method="post">
+        <div class="one-third column">
+          <img src="img/logo.png" alt="логотип" id="logo" />
+        </div>
+        <div class="two-thirds column" id="main">
+          <fieldset>
+            <legend>Оборудование</legend>
+              <label for="equipmentType">Тип</label>
+              <select id="equipmentType" name="equipmentType">
+                <option value="choose">  Выберите вариант</option>
+                <option value="cameras">Камера</option>
+                <option value="projectors">Проектор</option>
+              </select><br>
+              <label for="model">Модель</label>
+              <select id="model" name="model">
+                <option>Сначала выберите тип</option>
+              </select>
+              <input id="submit" type="submit" value="Подтвердить" />
+          </fieldset>
+        </div><!-- .two-thirds -->
+      </form>
+    </div><!-- .container -->
+    <script src="js/utilities.js"></script>
+    <script src="js/populate-selectbox.js"></script>
+  </body>
+</html>

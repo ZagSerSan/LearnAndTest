@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>JavaScript и jQuery - Глава 13</title>
+    <link rel="stylesheet" href="css/c13.css" />
+  </head>
+  <body>
+    <div class="container login">
+      <form id="interests" action="/login" method="post">
+        <div class="one-third column">
+          <img src="img/logo.png" alt="логотип" id="logo" />
+        </div>
+        <div class="two-thirds column" id="main">
+          <fieldset>
+            <legend>Жанры</legend>
+            <label><input type="checkbox" value="all" id="all">Любые</label>
+            <label><input type="checkbox" name="genre" value="animation">Анимационные</label>
+            <label><input type="checkbox" name="genre" value="docs">Документальные</label>
+            <label><input type="checkbox" name="genre" value="shorts">Короткометражные</label>
+          </fieldset>
+        </div><!-- .two-thirds -->
+      </form>
+    </div><!-- .container -->
+    <script src="js/utilities.js"></script>
+    <script src="js/all-checkboxes.js"></script>
+  </body>
+</html>
