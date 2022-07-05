@@ -17,7 +17,7 @@ var total = price * quantity;
 
 // Записываем результат в элемент с идентификатором cost
 var el = document.getElementById('cost');  // Получаем элемент с идентификатором cost
-el.textContent = total + ' ₽';              // Заменяем содержимое этого элемента
+el.textContent = total + '$';              // Заменяем содержимое этого элемента
 
 /* 
 ПРИМЕЧАНИЕ: textContent не работает в браузере IE8 и версии ниже
