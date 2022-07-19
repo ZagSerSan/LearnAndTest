@@ -90,6 +90,8 @@ h3  {
    padding: 20px;
 }
 .box {
+   background-color: #ccc;
+   width: 300 / 960 * 100%;
    .box__text {
       padding: 20px;
       font-size: $fz;

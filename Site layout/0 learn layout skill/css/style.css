@@ -69,6 +69,11 @@ h3 {
   padding: 20px;
 }
 
+.box {
+  background-color: #ccc;
+  width: 31.25%;
+}
+
 .box .box__text {
   padding: 20px;
   font-size: 60px;
