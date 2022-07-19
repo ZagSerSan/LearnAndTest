@@ -74,11 +74,32 @@ h3  {
    padding: 20px;
 }
 .box {
-   font-size: 40px;
-   padding: 30px;
+   .box__text {
+      padding: 20px;
+   
+      font-size: 50px;
+      color: yellow;
+      span{
+         color: blue;
+         font-size: 60px;
+      }
+   }
+   &.box--big {
+      font-size: 30px;
+   }
+}
 
-   span{
-      color: green;
+.link {
+   color: blue;
+   text-decoration: underline;
+   font-size: 30px;
+
+   .box & {
+      font-size: 60px;
+   }
+
+   &:hover {
+      text-decoration: none;
    }
 }
 //todo -Intro
