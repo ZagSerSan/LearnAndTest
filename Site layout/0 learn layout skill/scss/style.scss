@@ -70,9 +70,14 @@ $fz:60px;
 $color1: rgb(206, 188, 26);
 $color2: rgb(26, 26, 121);
 
-
 %tplborder {
    border-bottom: 5px dashed red;
+}
+
+@mixin fontz($fz,$c,$bz) {
+   font-size: $fz;
+   color: $c;
+   border-bottom: $bz red dashed;
 }
 .main-title {
    font-size: 40px;
@@ -117,6 +122,7 @@ h3  {
 .link2  {
    font-size: $fz;
    @extend %tplborder;
+   @include fontz(20px, green, 2px);
 }
 
 //todo -Intro

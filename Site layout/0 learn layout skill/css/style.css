@@ -102,4 +102,7 @@ h3 {
 
 .link2 {
   font-size: 60px;
+  font-size: 20px;
+  color: green;
+  border-bottom: 2px red dashed;
 }
