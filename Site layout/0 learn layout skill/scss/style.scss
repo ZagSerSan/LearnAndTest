@@ -36,12 +36,15 @@
    // &.loaded {
    // }
 }
-// .empty-space {
-//    height: 700px;
-//    width: 100%;
-//    background-color: #fff;
-//    text-align: center;
-// }
+.empty-space {
+   height: 700px;
+   width: 100%;
+   background-color: rgba(255, 255, 255, 0.89);
+   text-align: center;
+   color: #ccc;
+   border-top: 1px #ccc solid;
+   margin-top: 10px;
+}
 
 //* <ОСНОВНАЯ СЕТКА>===========================================================================================================
 .container {
@@ -67,12 +70,15 @@ $fz:60px;
 $color1: rgb(206, 188, 26);
 $color2: rgb(26, 26, 121);
 
+
+%tplborder {
+   border-bottom: 5px dashed red;
+}
 .main-title {
    font-size: 40px;
    font-weight: 400;
    text-align: center;
 }
-
 h3  {
    font-size: 35px;
    text-align: center;
@@ -81,7 +87,6 @@ h3  {
 .box {
    .box__text {
       padding: 20px;
-   
       font-size: $fz;
       color: $color1;
       span{
@@ -93,21 +98,27 @@ h3  {
       font-size: $fz;
    }
 }
-
 .link {
    color: $color2;
    text-decoration: underline;
    font-size: $fz;
+   @extend %tplborder;
+   border-bottom: 5px solid red;
 
    .box & {
       font-size: $fz;
    }
-
    &:hover {
       text-decoration: none;
       color: $color1;
    }
 }
+
+.link2  {
+   font-size: $fz;
+   @extend %tplborder;
+}
+
 //todo -Intro
 
 //* </ДОПОЛНИТЕЛЬНЫЙ БЛОК>====================================================================================================

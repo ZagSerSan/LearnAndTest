@@ -37,10 +37,24 @@ a:hover {
   overflow: hidden;
 }
 
+.empty-space {
+  height: 700px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.89);
+  text-align: center;
+  color: #ccc;
+  border-top: 1px #ccc solid;
+  margin-top: 10px;
+}
+
 .container {
   max-width: 1170px;
   width: 100%;
   margin: 0 auto;
+}
+
+.link, .link2 {
+  border-bottom: 5px dashed red;
 }
 
 .main-title {
@@ -74,6 +88,7 @@ h3 {
   color: #1a1a79;
   text-decoration: underline;
   font-size: 60px;
+  border-bottom: 5px solid red;
 }
 
 .box .link {
@@ -83,4 +98,8 @@ h3 {
 .link:hover {
   text-decoration: none;
   color: #cebc1a;
+}
+
+.link2 {
+  font-size: 60px;
 }
