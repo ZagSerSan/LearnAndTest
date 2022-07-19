@@ -62,6 +62,11 @@
 
 //* <ОСНОВНОЙ БЛОК>====================================================================================================
 //todo -Header
+// Variables
+$fz:60px;
+$color1: rgb(206, 188, 26);
+$color2: rgb(26, 26, 121);
+
 .main-title {
    font-size: 40px;
    font-weight: 400;
@@ -77,29 +82,30 @@ h3  {
    .box__text {
       padding: 20px;
    
-      font-size: 50px;
-      color: yellow;
+      font-size: $fz;
+      color: $color1;
       span{
-         color: blue;
-         font-size: 60px;
+         color: $color2;
+         font-size:$fz;
       }
    }
    &.box--big {
-      font-size: 30px;
+      font-size: $fz;
    }
 }
 
 .link {
-   color: blue;
+   color: $color2;
    text-decoration: underline;
-   font-size: 30px;
+   font-size: $fz;
 
    .box & {
-      font-size: 60px;
+      font-size: $fz;
    }
 
    &:hover {
       text-decoration: none;
+      color: $color1;
    }
 }
 //todo -Intro

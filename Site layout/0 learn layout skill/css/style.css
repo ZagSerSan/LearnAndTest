@@ -57,23 +57,23 @@ h3 {
 
 .box .box__text {
   padding: 20px;
-  font-size: 50px;
-  color: yellow;
+  font-size: 60px;
+  color: #cebc1a;
 }
 
 .box .box__text span {
-  color: blue;
+  color: #1a1a79;
   font-size: 60px;
 }
 
 .box.box--big {
-  font-size: 30px;
+  font-size: 60px;
 }
 
 .link {
-  color: blue;
+  color: #1a1a79;
   text-decoration: underline;
-  font-size: 30px;
+  font-size: 60px;
 }
 
 .box .link {
@@ -82,4 +82,5 @@ h3 {
 
 .link:hover {
   text-decoration: none;
+  color: #cebc1a;
 }
