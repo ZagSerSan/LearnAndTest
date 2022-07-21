@@ -42,10 +42,28 @@ a:hover {
 .header-inner {
   display: flex;
   justify-content: space-between;
-  padding: 35px 0;
-  border-bottom: 1px #505369 solid;
-  background-color: #ccc;
+  padding: 38px 0;
+  border-bottom: 1px solid #505369;
+  background-color: #30334d;
 }
+.header-inner__link {
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  color: #fff;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-left: 58px;
+  transition: opacity 0.1s linear;
+}
+.header-inner__link:first-child {
+  margin-left: 0;
+}
+.header-inner__link:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
 /*
 	Стиль иконки бургера
 	.icon-menu{
