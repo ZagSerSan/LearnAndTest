@@ -31,6 +31,21 @@ a:hover {
   text-decoration: underline;
 }
 
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 35px 0;
+  border-bottom: 1px #505369 solid;
+  background-color: #ccc;
+}
 /*
 	Стиль иконки бургера
 	.icon-menu{
