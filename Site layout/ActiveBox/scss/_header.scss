@@ -3,7 +3,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 100;
+	z-index: 1000;
 	width: 100%;
 }
 .header-inner {
@@ -11,9 +11,8 @@
 	justify-content: space-between;
 
 	padding: 38px 0;
-	border-bottom: 1px solid 505369;
-
-	background-color: #30344e;
+	background-color: #30334d;
+	border-bottom: 1px solid #505268;
 	&__logo {}
 	&__nav {}
 	&__link {
@@ -21,21 +20,21 @@
 		font-weight: 700;
 		font-size: 13px;
 		color: #fff;
+
 		text-transform: uppercase;
-
-		margin-left: 58px;
 		opacity: .75;
+		margin-left: 58px;
 		transition: opacity .1s linear;
-
 		&:first-child {
 			margin-left: 0;
 		}
 		&:hover {
-			text-decoration: none;
 			opacity: 1;
+			text-decoration: none;
 		}
 	}
 }
+
 
 //====================================================================================================
 /*
