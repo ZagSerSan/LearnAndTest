@@ -44,12 +44,12 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   padding: 38px 0;
-  border-bottom: 1px solid #505268;
+  background-color: #32354f;
 }
 .header-inner__link {
   font-family: "Raleway", sans-serif;
-  font-weight: 600;
   font-size: 13px;
+  font-weight: 600;
   color: #fff;
   text-transform: uppercase;
   opacity: 0.75;
@@ -60,8 +60,8 @@ a:hover {
   margin-left: 0;
 }
 .header-inner__link:hover {
-  opacity: 1;
   text-decoration: none;
+  opacity: 1;
 }
 
 /*
@@ -97,13 +97,4 @@ a:hover {
   max-width: 1170px;
   width: 100%;
   margin: 0 auto;
-}
-
-.intro-main {
-  background: url("../img/intro/intro-bg.jpg") #313550 center/cover no-repeat;
-}
-
-.intro {
-  height: 750px;
-  padding-top: 100px;
 }
