@@ -1,41 +1,4 @@
 //====================================================================================================
-.header {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 1000;
-
-	width: 100%;
-}
-.header-inner {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	
-	padding: 38px 0;
-	border-bottom: 1px solid #4f5268;
-		&__logo {}
-		&__nav {}
-		&__link {
-			font-family: 'Raleway', sans-serif;
-			font-size: 13px;
-			font-weight: 600;
-			color: #fff;
-			text-transform: uppercase;
-
-			opacity: .75;
-			margin-left: 58px;
-			transition: opacity .1s linear;
-
-			&:first-child  {
-				margin-left: 0;
-			}
-			&:hover {
-				text-decoration: none;
-				opacity: 1;
-			}
-		}
-}
 
 //====================================================================================================
 /*
