@@ -31,6 +31,18 @@ a:hover {
   text-decoration: underline;
 }
 
+.header {
+  background-color: #ccc;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.header-inner {
+  background-color: #caa;
+}
 /*
 	Стиль иконки бургера
 	.icon-menu{
