@@ -32,7 +32,6 @@ a:hover {
 }
 
 .header {
-  background-color: #ccc;
   position: absolute;
   top: 0;
   left: 0;
@@ -41,8 +40,30 @@ a:hover {
 }
 
 .header-inner {
-  background-color: #caa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 38px 0;
+  border-bottom: 1px solid #505268;
 }
+.header-inner__link {
+  font-family: "Raleway", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  margin-left: 58px;
+  opacity: 0.75;
+  transition: opacity 0.1s linear;
+}
+.header-inner__link:first-child {
+  margin-left: 0;
+}
+.header-inner__link:hover {
+  text-decoration: none;
+  opacity: 1;
+}
+
 /*
 	Стиль иконки бургера
 	.icon-menu{
@@ -76,4 +97,53 @@ a:hover {
   max-width: 1170px;
   width: 100%;
   margin: 0 auto;
+}
+
+.intro {
+  height: 750px;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background: url("../img/intro/intro-bg.jpg") #30324b center/cover no-repeat;
+}
+
+.intro-inner__title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 65px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+.intro-inner__subtitle {
+  font-family: "Raleway", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.5;
+  margin-top: 42px;
+  max-width: 970px;
+}
+.intro-inner__link {
+  display: inline-block;
+  font-family: "Raleway", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 77px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+}
+.intro-inner__link_red {
+  background-color: #e84545;
+  padding: 19px 48px;
+  transition: background-color 0.1s linear;
+}
+.intro-inner__link_red:hover {
+  background-color: #be3434;
+  text-decoration: none;
 }
