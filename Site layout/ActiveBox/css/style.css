@@ -161,17 +161,17 @@ a:hover {
 }
 .features__title {
   margin-top: 33px;
-  font-family: "Raleway", sans-serif;
-  font-size: 14px;
+  font-family: "$f", sans-serif;
   font-weight: 700;
+  font-size: 14px;
   color: #000;
   text-transform: uppercase;
 }
 .features__text {
   margin-top: 27px;
-  font-family: "Raleway", sans-serif;
-  font-size: 14px;
+  font-family: "$f", sans-serif;
   font-weight: 400;
+  font-size: 14px;
   color: #6c7279;
   line-height: 1.5;
 }

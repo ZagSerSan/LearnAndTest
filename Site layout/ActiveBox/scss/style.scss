@@ -1,5 +1,5 @@
 //* <МИКСИНЫ>===============================================================================================
-   //@import "mixins.scss";
+   @import "_mixins";
 
 //* <ШРИФТЫ>===============================================================================================
 //<Подключаем шрифты>=======================================================================================
@@ -121,9 +121,24 @@
 }
 
 //todo -Features
- // variables
+ // variables and mixins
  $featuresPadd_inner: 47px 0px 124px;
  $featuresPadd_item: 73px 40px 0;
+
+//  @mixin fontFWSC($f,$w,$s,$c) {
+//    font-family: '$f', sans-serif;
+//    font-weight: $w;
+//    font-size: $s;
+//    color: $c;
+//  }
+//  @mixin fontFWSCL($f,$w,$s,$c,$l) {
+//    font-family: '$f', sans-serif;
+//    font-weight: $w;
+//    font-size: $s;
+//    color: $c;
+//    line-height: $l;
+//  }
+
 .features {
    &__inner {
       display: flex;
@@ -137,22 +152,12 @@
    }
    &__title {
       margin-top: 33px;
-
-      font-family: 'Raleway', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      color: #000;
+      @include fontFWSC('Raleway',700,14px,#000);
       text-transform: uppercase;
    }
    &__text {
-      // max-width: 330px;
       margin-top: 27px;
-
-      font-family: 'Raleway', sans-serif;
-      font-size: 14px;
-      font-weight: 400;
-      color: #6c7279;
-      line-height: 1.5;
+      @include fontFWSCL('Raleway',400,14px,#6c7279,1.5);
    }
 }
 
