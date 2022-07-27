@@ -121,19 +121,20 @@
 }
 
 //todo -Features
+ // variables
+ $featuresPadd_inner: 47px 0px 124px;
+ $featuresPadd_item: 73px 40px 0;
 .features {
    &__inner {
       display: flex;
       flex-wrap: wrap;
       text-align: center;
-      padding: 47px 0px 124px 0px;
-
+      padding: $featuresPadd_inner;
    }
    &__item {
       width: 33.333%;
-      margin-top: 73px;
+      padding: $featuresPadd_item;
    }
-   &__icon {}
    &__title {
       margin-top: 33px;
 
@@ -144,7 +145,7 @@
       text-transform: uppercase;
    }
    &__text {
-      max-width: 330px;
+      // max-width: 330px;
       margin-top: 27px;
 
       font-family: 'Raleway', sans-serif;

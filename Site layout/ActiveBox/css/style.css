@@ -153,11 +153,11 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  padding: 47px 0px 124px 0px;
+  padding: 47px 0px 124px;
 }
 .features__item {
   width: 33.333%;
-  margin-top: 73px;
+  padding: 73px 40px 0;
 }
 .features__title {
   margin-top: 33px;
@@ -168,7 +168,6 @@ a:hover {
   text-transform: uppercase;
 }
 .features__text {
-  max-width: 330px;
   margin-top: 27px;
   font-family: "Raleway", sans-serif;
   font-size: 14px;
