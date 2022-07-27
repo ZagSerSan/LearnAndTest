@@ -83,6 +83,7 @@
       color: #fff;
       line-height: 1.1;
       text-transform: uppercase;
+      max-width: 970px;
    }
    &__subtitle {
       font-family: 'Raleway', sans-serif;
@@ -116,6 +117,41 @@
             text-decoration: none;
          }
       }
+   }
+}
+
+//todo -Features
+.features {
+   &__inner {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+      padding: 47px 0px 124px 0px;
+
+   }
+   &__item {
+      width: 33.333%;
+      margin-top: 73px;
+   }
+   &__icon {}
+   &__title {
+      margin-top: 33px;
+
+      font-family: 'Raleway', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #000;
+      text-transform: uppercase;
+   }
+   &__text {
+      max-width: 300px;
+      margin-top: 27px;
+
+      font-family: 'Raleway', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #6c7279;
+      line-height: 1.5;
    }
 }
 
