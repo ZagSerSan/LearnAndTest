@@ -121,7 +121,29 @@
 }
 
 //todo -Features
- 
+//variables
+   $featuresPadding_inner: 43px 0 123px;
+   $featuresPadding_item: 73px 40px 0;
+
+.features-inner {
+   display: flex;
+   flex-wrap: wrap;
+   padding: $featuresPadding_inner;
+   &__item {
+      width: 33.333%;
+      padding: $featuresPadding_item;
+      text-align: center;
+   }
+   &__title {
+      margin-top: 34px;
+      @include fontFWSC('Paleway',700,14px,#000);
+      text-transform: uppercase;
+   }
+   &__text {
+      margin-top: 27px;
+      @include fontFWSCL('Raleway',400,14px,#6c7279,1.5);
+   }
+}
 
 //* </ДОПОЛНИТЕЛЬНЫЙ БЛОК>====================================================================================================
 // -Test---------------------------------
