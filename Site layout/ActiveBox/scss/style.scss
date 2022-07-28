@@ -75,7 +75,6 @@
    background: url('../img/intro/intro-bg.jpg') #30324b center / cover no-repeat;
 }
 .intro-inner {
-   
    &__title {
       font-family: 'Open Sans', sans-serif;
       font-size: 65px;
@@ -125,7 +124,7 @@
    $featuresPadding_inner: 43px 0 123px;
    $featuresPadding_item: 73px 40px 0;
 
-.features-inner {
+.features {
    display: flex;
    flex-wrap: wrap;
    padding: $featuresPadding_inner;

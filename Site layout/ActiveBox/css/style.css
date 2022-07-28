@@ -149,17 +149,17 @@ a:hover {
   text-decoration: none;
 }
 
-.features-inner {
+.features {
   display: flex;
   flex-wrap: wrap;
   padding: 43px 0 123px;
 }
-.features-inner__item {
+.features__item {
   width: 33.333%;
   padding: 73px 40px 0;
   text-align: center;
 }
-.features-inner__title {
+.features__title {
   margin-top: 34px;
   font-family: "$f", sans-serif;
   font-weight: 700;
@@ -167,7 +167,7 @@ a:hover {
   color: #000;
   text-transform: uppercase;
 }
-.features-inner__text {
+.features__text {
   margin-top: 27px;
   font-family: "$f", sans-serif;
   font-weight: 400;
