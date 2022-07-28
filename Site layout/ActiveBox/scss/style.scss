@@ -139,28 +139,6 @@
 //    line-height: $l;
 //  }
 
-.features {
-   &__inner {
-      display: flex;
-      flex-wrap: wrap;
-      text-align: center;
-      padding: $featuresPadd_inner;
-   }
-   &__item {
-      width: 33.333%;
-      padding: $featuresPadd_item;
-   }
-   &__title {
-      margin-top: 33px;
-      @include fontFWSC('Raleway',700,14px,#000);
-      text-transform: uppercase;
-   }
-   &__text {
-      margin-top: 27px;
-      @include fontFWSCL('Raleway',400,14px,#6c7279,1.5);
-   }
-}
-
 //* </ДОПОЛНИТЕЛЬНЫЙ БЛОК>====================================================================================================
 // -Test---------------------------------
 // .test {

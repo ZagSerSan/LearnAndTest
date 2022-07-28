@@ -148,30 +148,3 @@ a:hover {
   background-color: #be3434;
   text-decoration: none;
 }
-
-.features__inner {
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-  padding: 47px 0px 124px;
-}
-.features__item {
-  width: 33.333%;
-  padding: 73px 40px 0;
-}
-.features__title {
-  margin-top: 33px;
-  font-family: "$f", sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  color: #000;
-  text-transform: uppercase;
-}
-.features__text {
-  margin-top: 27px;
-  font-family: "$f", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  color: #6c7279;
-  line-height: 1.5;
-}
