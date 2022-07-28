@@ -93,6 +93,13 @@ a:hover {
   overflow: hidden;
 }
 
+.empty-space {
+  height: 700px;
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+}
+
 .container {
   max-width: 1170px;
   width: 100%;
@@ -174,4 +181,51 @@ a:hover {
   font-size: 14px;
   color: #6c7279;
   line-height: 1.5;
+}
+
+.works {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 2600px;
+  margin: 0 auto;
+}
+.works__item {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 25%;
+  max-width: 648px;
+  height: 350px;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: #e84545;
+  border-bottom: 1px #fff solid;
+  border-right: 1px #fff solid;
+}
+.works__item:hover img {
+  opacity: 0.1;
+}
+.works__img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+  transform: translateX(-50%);
+  transition: opacity 0.2s linear;
+}
+.works__title {
+  font-family: "$f", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+}
+.works__text {
+  font-family: "$f", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+  margin-top: 14px;
 }

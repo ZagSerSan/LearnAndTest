@@ -37,12 +37,12 @@
    // &.loaded {
    // }
 }
-// .empty-space {
-//    height: 700px;
-//    width: 100%;
-//    background-color: #fff;
-//    text-align: center;
-// }
+.empty-space {
+   height: 700px;
+   width: 100%;
+   background-color: #fff;
+   text-align: center;
+}
 
 //* <ОСНОВНАЯ СЕТКА>===========================================================================================================
 .container {
@@ -141,6 +141,53 @@
    &__text {
       margin-top: 27px;
       @include fontFWSCL('Raleway',400,14px,#6c7279,1.5);
+   }
+}
+
+//todo -Works
+.works {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   max-width: 2600px;
+   margin: 0 auto;
+   &__item {
+      position: relative;
+      z-index: 2;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      width: 25%;
+      max-width: 648px;
+      height: 350px;
+
+      cursor: pointer;
+      overflow: hidden;
+
+      background-color: #e84545;
+      border-bottom: 1px #fff solid ;
+      border-right: 1px #fff solid ;
+      &:hover img {
+         opacity: .1;
+      }
+   }
+   &__img {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      z-index: 1;
+
+      transform: translateX(-50%);
+      transition: opacity .2s linear;
+   }
+   &__title {
+      @include fontFWSC('Raleway',700,14px,#fff);
+   }
+   &__text {
+      @include fontFWSC('Raleway',400,14px,#fff);
+      margin-top: 14px;
    }
 }
 
