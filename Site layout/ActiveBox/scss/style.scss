@@ -145,50 +145,7 @@
 }
 
 //todo -Works
-.works {
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   max-width: 2600px;
-   margin: 0 auto;
-   &__item {
-      position: relative;
 
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-      width: 25%;
-      max-width: 648px;
-      height: 350px;
-
-      cursor: pointer;
-      overflow: hidden;
-
-      background-color: #e84545;
-      border-bottom: 1px #fff solid ;
-      border-right: 1px #fff solid ;
-      &:hover img {
-         opacity: .1;
-      }
-   }
-   &__img {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      z-index: 1;
-
-      transform: translateX(-50%);
-      transition: opacity .2s linear;
-   }
-   &__title {
-      @include fontFWSC('Raleway',700,14px,#fff);
-   }
-   &__text {
-      @include fontFWSC('Raleway',400,14px,#fff);
-      margin-top: 14px;
-   }
-}
 
 //* </ДОПОЛНИТЕЛЬНЫЙ БЛОК>====================================================================================================
 // -Test---------------------------------
