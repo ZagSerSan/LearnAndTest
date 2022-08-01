@@ -98,6 +98,7 @@ a:hover {
   width: 100%;
   background-color: #fff;
   text-align: center;
+  border-top: 1px solid #ccc;
 }
 
 .container {
@@ -181,4 +182,50 @@ a:hover {
   font-size: 14px;
   color: #6c7279;
   line-height: 1.5;
+}
+
+.works {
+  width: 100%;
+  max-width: 1900px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+.works__item {
+  position: relative;
+  width: 25%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #e84545;
+  border-bottom: 1px #fff solid;
+  border-right: 1px #fff solid;
+  cursor: pointer;
+}
+.works__item:hover img {
+  opacity: 0.1;
+}
+.works__photo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.2s linear;
+}
+.works__name {
+  font-family: "$f", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.works__about {
+  margin-top: 12px;
+  font-family: "$f", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
 }

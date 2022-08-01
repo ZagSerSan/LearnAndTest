@@ -42,6 +42,7 @@
    width: 100%;
    background-color: #fff;
    text-align: center;
+   border-top: 1px solid #ccc;
 }
 
 //* <ОСНОВНАЯ СЕТКА>===========================================================================================================
@@ -145,6 +146,48 @@
 }
 
 //todo -Works
+.works {
+   width: 100%;
+   max-width: 1900px;
+
+   display: flex;
+   flex-wrap: wrap;
+   margin: 0 auto;
+   &__item {
+      position: relative;
+      width: 25%;
+      height: 350px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      overflow: hidden;
+      background-color: #e84545;
+      border-bottom: 1px #fff solid;
+      border-right: 1px #fff solid;
+      cursor: pointer;
+      &:hover img {
+         opacity: .1;
+      }
+   }
+   &__photo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: opacity .2s linear;
+   }
+   &__name {
+      @include fontFWSC('Raleway',700,14px,#fff);
+      text-transform: uppercase;
+   }
+   &__about {
+      margin-top: 12px;
+      @include fontFWSC('Raleway',400,14px,#fff);
+   }
+}
 
 
 //* </ДОПОЛНИТЕЛЬНЫЙ БЛОК>====================================================================================================
