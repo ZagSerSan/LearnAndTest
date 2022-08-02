@@ -225,7 +225,21 @@
    }
 }
 .social {
-   &__link {}
+   margin-top: 20px;
+   display: flex;
+   &__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border: 1px solid #c6cacc;
+
+      margin-right: 4px;
+   }
+   &__svg {
+      
+   }
 }
 
 
