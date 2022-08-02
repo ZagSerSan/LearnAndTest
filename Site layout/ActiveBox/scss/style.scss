@@ -234,11 +234,25 @@
       width: 40px;
       height: 40px;
       border: 1px solid #c6cacc;
+      background-color: #fff;
 
       margin-right: 4px;
+      transition: background-color .15s linear;
+
+      &:hover {
+         background-color: #c6cacc;;
+         svg { 
+            fill: #005aff;
+         }
+      }
+
    }
    &__svg {
-      
+      display: block;
+      height: 18px;
+
+      fill: #c6cacc;
+      transition: fill .15s linear;
    }
 }
 
