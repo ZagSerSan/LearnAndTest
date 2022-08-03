@@ -290,12 +290,22 @@ a:hover {
 .social__item:hover {
   background-color: #c6cacc;
 }
-.social__item:hover svg {
+.social__item:hover svg.facebook {
   fill: #005aff;
+}
+.social__item:hover svg.twitter {
+  fill: #76A9EA;
+}
+.social__item:hover svg.linkedin {
+  fill: #0077B7;
+  background-color: #fff;
 }
 .social__svg {
   display: block;
   height: 18px;
   fill: #c6cacc;
   transition: fill 0.15s linear;
+}
+.social__svg.linkedin {
+  max-width: 18px;
 }

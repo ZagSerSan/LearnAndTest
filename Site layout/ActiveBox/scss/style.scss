@@ -241,14 +241,17 @@
 
       &:hover {
          background-color: #c6cacc;;
-         svg { 
-            //todo svg .facebook = color 1
-            //todo svg .twitter = color 2
-            //todo svg .linkedin = color 3
+         svg.facebook { 
             fill: #005aff;
          }
+         svg.twitter {
+            fill:#76A9EA;
+         }
+         svg.linkedin {
+            fill:#0077B7;
+            background-color: #fff;
+         }
       }
-
    }
    &__svg {
       display: block;
@@ -256,6 +259,9 @@
 
       fill: #c6cacc;
       transition: fill .15s linear;
+      &.linkedin {
+         max-width: 18px;
+      }
    }
 }
 
