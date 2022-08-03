@@ -64,7 +64,7 @@
 }
 
 //* <ОСНОВНОЙ БЛОК>====================================================================================================
-//todo -Intro
+//todo -Intro -------------------
 .intro {
    height: 750px;
    padding-top: 100px;
@@ -120,13 +120,12 @@
       }
    }
 }
-
-//todo -Features
-//variables
+//todo -Features ---------------
+.features {
+   //variables
    $featuresPadding_inner: 43px 0 123px;
    $featuresPadding_item: 73px 40px 0;
 
-.features {
    display: flex;
    flex-wrap: wrap;
    padding: $featuresPadding_inner;
@@ -145,8 +144,7 @@
       @include fontFWSCL('Raleway',400,14px,#6c7279,1.5);
    }
 }
-
-//todo -Works
+//todo -Works ---------------
 .works {
    width: 100%;
    max-width: 1900px;
@@ -189,8 +187,7 @@
       @include fontFWSC('Raleway',400,14px,#fff);
    }
 }
-
-//todo -Team
+//todo -Team ---------------
 .team {
    display: flex;
    flex-wrap: wrap;
@@ -258,8 +255,7 @@
       }
    }
 }
-
-//todo -Reviews
+//todo -Reviews ---------------
 
 //* </ДОПОЛНИТЕЛЬНЫЙ БЛОК>====================================================================================================
 // -Test---------------------------------
