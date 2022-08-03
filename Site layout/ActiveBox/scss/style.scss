@@ -191,9 +191,73 @@
 }
 
 //todo -Team
+.team {
+   display: flex;
+   flex-wrap: wrap;
+   padding: 70px 0;
+   margin: 0 -15px;
+   &__item {
+      width: 25%;
+      padding: 0 15px;
+      margin: 30px 0;
+   }
+   &__photo {
+      display: block;
+      width: 100%;
+      height: auto;
+   }
+   &__name {
+      @include fontFWSC('Raleway',400,22px,#2d3033);
+      margin-top: 30px;
+   }
+   &__speciality {
+      @include fontFWSC('Raleway',400,13px,#e84545);
+      margin-top: 16px;
+      text-transform: uppercase;
+   }
+   &__about {
+      @include fontFWSCL('Raleway',400,14px,#6c7279,1.5);
+      margin-top: 29px;
+   }
+}
+.social {
+   display: flex;
+   margin-top: 30px;
+   &__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-// twitter: style="fill:#76A9EA;"
-// linkedin: style="fill:#0077B7;"
+      width: 40px;
+      height: 40px;
+
+      margin-right: 4px;
+      border: 1px solid #e8ecee;
+      transition: background-color .12s linear;
+      &:hover {
+         background-color: #e8ecee;
+         svg.facebook {
+            fill:#418bec;
+         }
+         svg.twitter {
+            fill:#76A9EA;
+         }
+         svg.linkedin {
+            fill:#0077B7;
+         }
+      }
+   }
+   &__svg {
+      fill: #c6cacc;
+      height: 18px;
+      width: 100%;
+      transition: fill .12s linear;
+      &.linkedin {
+         max-width: 18px;
+         background-color: #fff;
+      }
+   }
+}
 
 //* </ДОПОЛНИТЕЛЬНЫЙ БЛОК>====================================================================================================
 // -Test---------------------------------
