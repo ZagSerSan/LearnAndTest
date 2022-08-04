@@ -257,22 +257,10 @@
 }
 //todo -Reviews ---------------
 .reviews {
-   width: 100%;
-   max-width: 1900px;
-
-   margin: 0 auto;
-   background-color: #53354a;
-   &__col {
-      display: flex;
-      flex-direction: row-reverse;
-      width: 50%;
-      img {
-         display: block;
-      }
-   }
-
+   &__item {}
+   &__photo {}
+   &__text {}
 }
-
 
 
 //* </ДОПОЛНИТЕЛЬНЫЙ БЛОК>====================================================================================================
