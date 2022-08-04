@@ -308,3 +308,19 @@ a:hover {
   max-width: 18px;
   background-color: #fff;
 }
+
+.reviews {
+  width: 100%;
+  max-width: 1900px;
+  background-color: #53354a;
+}
+.reviews__item {
+  display: flex;
+  flex-wrap: wrap;
+}
+.reviews__photo {
+  width: 50%;
+}
+.reviews__text {
+  width: 50%;
+}

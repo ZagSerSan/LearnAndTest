@@ -257,9 +257,22 @@
 }
 //todo -Reviews ---------------
 .reviews {
-   &__item {}
-   &__photo {}
-   &__text {}
+   width: 100%;
+   max-width: 1900px;
+
+   background-color: #53354a;
+   &__item {
+      display: flex;
+      flex-wrap: wrap;
+   }
+   &__photo {
+      width: 50%;
+
+   }
+   &__text {
+      width: 50%;
+
+   }
 }
 
 
