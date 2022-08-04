@@ -331,6 +331,8 @@ a:hover {
   right: 0;
   z-index: 2;
   transform: translateY(-50%);
+  height: 120%;
+  width: auto;
 }
 .reviews__content {
   display: flex;
