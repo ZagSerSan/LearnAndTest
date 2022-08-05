@@ -299,6 +299,33 @@ $reviews-width_photo-content: 50%;
       text-transform: uppercase;
    }
 }
+//todo -Download ---------------
+.download {
+   text-align: center;
+   padding: 100px 0;
+   &__title {
+      @include fontFWSC('Raleway',300,28px,#2d3033);
+   }
+   &__subtitle {
+      @include fontFWSC('Raleway',700,13px,#2d3033);
+      margin-top: 20px;
+      text-transform: uppercase;
+   }
+   &__link {
+      display: inline-block;
+      @include fontFWSC('Raleway',600,13px,#fff);
+      text-transform: uppercase;
+      margin-top: 40px;
+      padding: 18px 80px;
+      background-color: #e84545;
+      transition: background-color .1s linear;
+      &:hover {
+         background-color: #be3434;
+         text-decoration: none;
+      }
+   }
+}
+
 
 //* </ДОПОЛНИТЕЛЬНЫЙ БЛОК>====================================================================================================
 // -Test---------------------------------
