@@ -256,6 +256,49 @@
    }
 }
 //todo -Reviews ---------------
+$reviews-width_photo-content: 50%;
+.reviews {
+   width: 100%;
+   max-width: 1900px;
+   margin: 0px auto;
+   background-color: #53354a;
+   overflow: hidden;
+   &__item {
+      display: flex;
+      flex-wrap: wrap;
+   }
+   &__photo {
+      position: relative;
+
+      width: $reviews-width_photo-content;
+      height: 500px;
+      img {
+         position: absolute;
+         top: 50%;
+         right: 0;
+         transform: translateY(-50%);
+
+         display: block;
+         height: 123%;
+         width: auto;
+      }
+   }
+   &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 80px;
+      width: $reviews-width_photo-content;
+   }
+   &__text {
+      @include fontFWSCL('Cardo',300,36px,#fff,1.16);
+   }
+   &__author {
+      @include fontFWSC('Raleway',700,13px,#fff);
+      margin-top: 30px;
+      text-transform: uppercase;
+   }
+}
 
 //* </ДОПОЛНИТЕЛЬНЫЙ БЛОК>====================================================================================================
 // -Test---------------------------------

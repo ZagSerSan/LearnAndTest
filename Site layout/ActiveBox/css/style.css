@@ -308,3 +308,51 @@ a:hover {
   max-width: 18px;
   background-color: #fff;
 }
+
+.reviews {
+  width: 100%;
+  max-width: 1900px;
+  margin: 0px auto;
+  background-color: #53354a;
+  overflow: hidden;
+}
+.reviews__item {
+  display: flex;
+  flex-wrap: wrap;
+}
+.reviews__photo {
+  position: relative;
+  width: 50%;
+  height: 500px;
+}
+.reviews__photo img {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: block;
+  height: 123%;
+  width: auto;
+}
+.reviews__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 80px;
+  width: 50%;
+}
+.reviews__text {
+  font-family: "Cardo", sans-serif;
+  font-weight: 300;
+  font-size: 36px;
+  color: #fff;
+  line-height: 1.16;
+}
+.reviews__author {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: #fff;
+  margin-top: 30px;
+  text-transform: uppercase;
+}
