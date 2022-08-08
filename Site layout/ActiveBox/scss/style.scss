@@ -344,6 +344,10 @@ $reviews-width_photo-content: 50%;
    &__text {
       display: inline-block;
       max-width: 160px;
+
+      @include fontFWSCL('Raleway',400,14px,#fff,1.6);
+      font-style: normal;
+      opacity: .5;
    }
 }
 .footer-social {
@@ -359,7 +363,7 @@ $reviews-width_photo-content: 50%;
    .social {
       margin-top: 0;
       &__item {
-         border: 2px #fff solid;
+         border: 3px #fff solid;
       }
       &__svg {
          fill: #fff;
@@ -379,6 +383,9 @@ $reviews-width_photo-content: 50%;
    &__text {
       display: inline-block;
       max-width: 360px;
+
+      @include fontFWSCL('Raleway',400,14px,#fff,1.6);
+      opacity: .5;
    }
 }
 

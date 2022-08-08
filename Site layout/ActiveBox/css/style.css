@@ -415,6 +415,13 @@ a:hover {
 .footer-location__text {
   display: inline-block;
   max-width: 160px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.6;
+  font-style: normal;
+  opacity: 0.5;
 }
 
 .footer-social {
@@ -435,7 +442,7 @@ a:hover {
   margin-top: 0;
 }
 .footer-social .social__item {
-  border: 2px #fff solid;
+  border: 3px #fff solid;
 }
 .footer-social .social__svg {
   fill: #fff;
@@ -458,4 +465,10 @@ a:hover {
 .footer-about__text {
   display: inline-block;
   max-width: 360px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.6;
+  opacity: 0.5;
 }
