@@ -326,6 +326,23 @@ $reviews-width_photo-content: 50%;
    }
 }
 //todo -Footer ---------------
+.footer {
+}
+.footer-location {
+   &__title {}
+   &__text {}
+}
+.footer-social {
+   &__title {}
+   .social {
+      &__item {}
+      &__svg {}
+   }
+}
+.footer-about {
+   &__title {}
+   &__text {}
+}
 
 
 //* </ДОПОЛНИТЕЛЬНЫЙ БЛОК>====================================================================================================
