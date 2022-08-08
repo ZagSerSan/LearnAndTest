@@ -360,7 +360,6 @@ $reviews-width_photo-content: 50%;
    &__text {
       display: inline-block;
       max-width: 160px;
-
       @include fontFWSCL('Raleway',400,14px,#fff,1.6);
       font-style: normal;
       opacity: .5;
@@ -400,11 +399,11 @@ $reviews-width_photo-content: 50%;
    &__text {
       display: inline-block;
       max-width: 360px;
-
       @include fontFWSCL('Raleway',400,14px,#fff,1.6);
       opacity: .5;
    }
 }
+
 //* </ДОПОЛНИТЕЛЬНЫЙ БЛОК>====================================================================================================
 // -Test---------------------------------
 // .test {
