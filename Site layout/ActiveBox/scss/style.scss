@@ -327,21 +327,59 @@ $reviews-width_photo-content: 50%;
 }
 //todo -Footer ---------------
 .footer {
+   background-color: #3a3e64;
+   padding: 70px 0px 85px 0px;
+   text-align: center;
+   &__inner {
+      display: flex;
+   }
 }
 .footer-location {
-   &__title {}
-   &__text {}
+   width: 33.333%;
+   &__title {
+      @include fontFWSC('Raleway',700,14px,#fff);
+      margin-bottom: 23px;
+      text-transform: uppercase;
+   }
+   &__text {
+      display: inline-block;
+      max-width: 160px;
+   }
 }
 .footer-social {
-   &__title {}
+   width: 33.333%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   &__title {
+      @include fontFWSC('Raleway',700,14px,#fff);
+      margin-bottom: 23px;
+      text-transform: uppercase;
+   }
    .social {
-      &__item {}
-      &__svg {}
+      margin-top: 0;
+      &__item {
+         border: 2px #fff solid;
+      }
+      &__svg {
+         fill: #fff;
+         &.linkedin{
+            background-color: rgba(255, 255, 255, 0);
+         }   
+      }
    }
 }
 .footer-about {
-   &__title {}
-   &__text {}
+   width: 33.333%;
+   &__title {
+      @include fontFWSC('Raleway',700,14px,#fff);
+      margin-bottom: 23px;
+      text-transform: uppercase;
+   }
+   &__text {
+      display: inline-block;
+      max-width: 360px;
+   }
 }
 
 
