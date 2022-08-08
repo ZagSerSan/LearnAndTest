@@ -394,11 +394,31 @@ a:hover {
 
 .footer {
   background-color: #3a3e64;
-  padding: 70px 0px 85px 0px;
   text-align: center;
 }
 .footer__inner {
   display: flex;
+  padding: 70px 0px 85px 0px;
+}
+.footer__copyright {
+  padding: 30px 0;
+  background-color: #313454;
+  text-align: center;
+}
+.footer__copyright p {
+  display: inline-block;
+  max-width: 320px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #808080;
+  line-height: 1.6;
+}
+.footer__copyright p span {
+  color: #fff;
+}
+.footer__copyright p span.heart {
+  color: #e84545;
 }
 
 .footer-location {
@@ -472,25 +492,4 @@ a:hover {
   color: #fff;
   line-height: 1.6;
   opacity: 0.5;
-}
-
-.copyright {
-  padding: 30px 0;
-  background-color: #313454;
-  text-align: center;
-}
-.copyright p {
-  display: inline-block;
-  max-width: 320px;
-  font-family: "Raleway", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  color: #808080;
-  line-height: 1.6;
-}
-.copyright p span {
-  color: #fff;
-}
-.copyright p span.heart {
-  color: #e84545;
 }
