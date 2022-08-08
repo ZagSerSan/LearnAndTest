@@ -364,11 +364,12 @@ $reviews-width_photo-content: 50%;
       margin-top: 0;
       &__item {
          border: 3px #fff solid;
+         border-radius: 2px;
       }
       &__svg {
          fill: #fff;
          &.linkedin{
-            background-color: rgba(255, 255, 255, 0);
+            background: none;
          }   
       }
    }
@@ -389,7 +390,22 @@ $reviews-width_photo-content: 50%;
    }
 }
 
-
+.copyright {
+   padding: 30px 0;
+   background-color: #313454;
+   text-align: center;
+   p {
+      display: inline-block;
+      max-width: 320px;
+      @include fontFWSCL('Raleway',400,14px,#808080,1.6);
+      span {
+         color: #fff;
+         &.heart {
+            color: #e84545;
+         }
+      }
+   }
+}
 //* </ДОПОЛНИТЕЛЬНЫЙ БЛОК>====================================================================================================
 // -Test---------------------------------
 // .test {

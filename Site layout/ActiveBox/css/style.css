@@ -443,12 +443,13 @@ a:hover {
 }
 .footer-social .social__item {
   border: 3px #fff solid;
+  border-radius: 2px;
 }
 .footer-social .social__svg {
   fill: #fff;
 }
 .footer-social .social__svg.linkedin {
-  background-color: rgba(255, 255, 255, 0);
+  background: none;
 }
 
 .footer-about {
@@ -471,4 +472,25 @@ a:hover {
   color: #fff;
   line-height: 1.6;
   opacity: 0.5;
+}
+
+.copyright {
+  padding: 30px 0;
+  background-color: #313454;
+  text-align: center;
+}
+.copyright p {
+  display: inline-block;
+  max-width: 320px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #808080;
+  line-height: 1.6;
+}
+.copyright p span {
+  color: #fff;
+}
+.copyright p span.heart {
+  color: #e84545;
 }
