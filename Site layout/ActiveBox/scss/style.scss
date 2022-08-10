@@ -330,15 +330,23 @@ $footer-item_width: 33.3333%;
 .footer {
    background-color: #3a3e64;
    &__inner {
-      padding: 80px 0;
+      padding: 70px 0;
       display: flex;
       flex-wrap: wrap;
       text-align: center;
    }
    &__copyright {
-      span {}
-      p {}
-      .heart {}
+      background-color: #313454;
+      padding: 28px 0;
+      text-align: center;
+      p {
+         max-width: 330px;
+         @include fontFWSCL('Raleway',400,14px,#808080,1.6);
+         span {
+            color: #fff;
+            &.heart {color: #e84545;}
+         }   
+      }
    }
 }
 .footer-address {
@@ -352,7 +360,7 @@ $footer-item_width: 33.3333%;
       @include fontFWSCL('Raleway',400,14px,#fff,1.6);
       display: inline-block;
       opacity: .5;
-      max-width: 150px;
+      max-width: 170px;
    }
 }
 .footer-social {
@@ -386,7 +394,7 @@ $footer-item_width: 33.3333%;
       @include fontFWSCL('Raleway',400,14px,#fff,1.6);
       display: inline-block;
       opacity: .5;
-      max-width: 310px;
+      max-width: 360px;
    }
 }
 
