@@ -326,6 +326,70 @@ $reviews-width_photo-content: 50%;
    }
 }
 //todo -Footer ---------------
+$footer-item_width: 33.3333%;
+.footer {
+   background-color: #3a3e64;
+   &__inner {
+      padding: 80px 0;
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+   }
+   &__copyright {
+      span {}
+      p {}
+      .heart {}
+   }
+}
+.footer-address {
+   width: $footer-item_width;
+   &__title {
+      @include fontFWSC('Raleway',700,14px,#fff);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+   }
+   &__text {
+      @include fontFWSCL('Raleway',400,14px,#fff,1.6);
+      display: inline-block;
+      opacity: .5;
+      max-width: 150px;
+   }
+}
+.footer-social {
+   width: $footer-item_width;
+   &__title {
+      @include fontFWSC('Raleway',700,14px,#fff);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+   }
+   .social {
+      margin: 0 auto;
+      justify-content: center;
+      &__item {
+         border: 3px #fff solid;
+         border-radius: 2px;
+      }
+      &__svg {
+         fill: #fff;
+         background-color: transparent;
+      }
+   }
+}
+.footer-about {
+   width: $footer-item_width;
+   &__title {
+      @include fontFWSC('Raleway',700,14px,#fff);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+   }
+   &__text {
+      @include fontFWSCL('Raleway',400,14px,#fff,1.6);
+      display: inline-block;
+      opacity: .5;
+      max-width: 310px;
+   }
+}
+
 
 
 
