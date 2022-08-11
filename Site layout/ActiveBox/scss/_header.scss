@@ -1,4 +1,40 @@
 //====================================================================================================
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+}
+.header-inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100px;
+	border-bottom: 1px #505369 solid;
+	&__logo {
+		display: block;
+	}
+}
+.header-nav {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	&__link {
+		@include fontFWSC('Raleway',600,13px,#fff);
+		text-transform: uppercase;
+		opacity: .75;
+		margin-left: 58px;
+		transition: opacity .2s linear;
+		&:first-child {
+			margin-left: 0;
+		}
+		&:hover {
+			text-decoration: none;
+			opacity: 1;
+		}
+	}
+}
 
 
 //====================================================================================================
