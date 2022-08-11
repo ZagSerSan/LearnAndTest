@@ -167,3 +167,36 @@ a:hover {
   text-decoration: none;
   background-color: #a82626;
 }
+
+.features-inner {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 85px 0;
+}
+
+.features-item {
+  width: 33.3333%;
+  margin: 35px 0;
+  padding: 0 35px;
+  text-align: center;
+}
+.features-item__icon {
+  display: inline-block;
+}
+.features-item__title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #2d3033;
+  text-transform: uppercase;
+  margin-top: 33px;
+}
+.features-item__text {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #6c7279;
+  line-height: 1.5;
+  max-width: 320px;
+  margin-top: 27px;
+}

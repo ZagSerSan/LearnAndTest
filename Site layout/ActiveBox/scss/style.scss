@@ -105,6 +105,30 @@
       }
 }
 
+//todo -Features -------------------
+.features {}
+.features-inner {
+   display: flex;
+   flex-wrap: wrap;
+   padding: 85px 0;
+}
+.features-item {
+   width: 33.3333%;
+   margin: 35px 0;
+   padding: 0 35px;
+   text-align: center;
+		&__icon {display: inline-block;}
+		&__title {
+         @include fontFWSC('Raleway',700,14px,#2d3033);
+         text-transform: uppercase;
+         margin-top: 33px;
+      }
+		&__text {
+         @include fontFWSCL('Raleway',400,14px,#6c7279,1.5);
+         max-width: 320px;
+         margin-top: 27px;
+      }
+}
 
 // .footer {
 //    background-color: #3a3e64;
