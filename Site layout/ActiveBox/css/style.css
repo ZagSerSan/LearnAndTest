@@ -117,3 +117,53 @@ a:hover {
   margin: 0 auto;
   padding: 0 15px;
 }
+
+.intro {
+  background: url("../img/intro/intro-bg.jpg") #31354f no-repeat center;
+  background-size: cover;
+}
+
+.intro-inner {
+  height: 750px;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.intro-inner__title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 65px;
+  color: #fff;
+  line-height: 1.1;
+  text-transform: uppercase;
+  max-width: 920px;
+}
+.intro-inner__subtitle {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  color: #fff;
+  line-height: 1.5;
+  max-width: 960px;
+  margin-top: 40px;
+}
+.intro-inner__link {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 18px 45px;
+  margin-top: 80px;
+  background-color: #e84545;
+  border-radius: 2px;
+  transition: background-color 0.2s linear;
+  cursor: pointer;
+}
+.intro-inner__link:hover {
+  text-decoration: none;
+  background-color: #a82626;
+}

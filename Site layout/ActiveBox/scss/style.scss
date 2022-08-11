@@ -65,6 +65,45 @@
 
 //* <ОСНОВНОЙ БЛОК>====================================================================================================
 //todo -Intro -------------------
+.intro {
+   background: url("../img/intro/intro-bg.jpg") #31354f no-repeat center;
+   background-size: cover;
+}
+.intro-inner {
+   height: 750px;
+   padding-top: 100px;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+		&__title {
+         @include fontFWSCL('Open Sans',700,65px,#fff,1.1);
+         text-transform: uppercase;
+         max-width: 920px;
+      }
+		&__subtitle {
+         @include fontFWSCL('Raleway',400,22px,#fff,1.5);
+         max-width: 960px;
+         margin-top: 40px;
+      }
+		&__link {
+         @include fontFWSC('Raleway',600,13px,#fff);
+         text-transform: uppercase;
+         padding: 18px 45px;
+         margin-top: 80px;
+
+         background-color: #e84545;
+         border-radius: 2px;
+         transition: background-color .2s linear;
+         cursor: pointer;
+         &:hover {
+            text-decoration: none;
+            background-color: #a82626;
+         }
+      }
+}
 
 
 // .footer {
