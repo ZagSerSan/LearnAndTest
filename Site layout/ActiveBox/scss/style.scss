@@ -129,6 +129,52 @@
       }
 }
 
+//todo -Works -------------------
+.works {
+   width: 100%;
+   max-width: 1900px;
+   display: flex;
+   flex-wrap: wrap;
+   margin: 0px auto;
+}
+.works-item {
+   width: 25%;
+   height: 350px;
+   
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: center;
+
+   background-color: #e84545;
+   border-right: 1px #fff solid;
+   border-bottom: 1px #fff solid;
+   overflow: hidden;
+   position: relative;
+   &:hover &__photo{
+      opacity: .1;
+   }
+   &__photo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      z-index: 2;
+      transform: translateX(-50%);
+      transition: opacity .2s linear;
+   }
+   &__title {
+      @include fontFWSC('Raleway',700,14px,#fff);
+      text-transform: uppercase;
+   }
+   &__text {
+      @include fontFWSC('Raleway',400,14px,#fff);
+      margin-top: 14px;
+   }
+}
+
+//todo -Team -------------------
+
+
 // .footer {
 //    background-color: #3a3e64;
 //    text-align: center;

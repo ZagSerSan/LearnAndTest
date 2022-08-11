@@ -200,3 +200,50 @@ a:hover {
   max-width: 320px;
   margin-top: 27px;
 }
+
+.works {
+  width: 100%;
+  max-width: 1900px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px auto;
+}
+
+.works-item {
+  width: 25%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: #e84545;
+  border-right: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  overflow: hidden;
+  position: relative;
+}
+.works-item:hover .works-item__photo {
+  opacity: 0.1;
+}
+.works-item__photo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 2;
+  transform: translateX(-50%);
+  transition: opacity 0.2s linear;
+}
+.works-item__title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.works-item__text {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+  margin-top: 14px;
+}
