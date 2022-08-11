@@ -32,39 +32,6 @@ a:hover {
   text-decoration: underline;
 }
 
-.header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  width: 100%;
-}
-
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 38px 0;
-  border-bottom: 1px solid #505268;
-}
-.header-inner__link {
-  font-family: "Raleway", sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  color: #fff;
-  text-transform: uppercase;
-  margin-left: 58px;
-  opacity: 0.75;
-  transition: opacity 0.1s linear;
-}
-.header-inner__link:first-child {
-  margin-left: 0;
-}
-.header-inner__link:hover {
-  text-decoration: none;
-  opacity: 1;
-}
-
 /*
 	Стиль иконки бургера
 	.icon-menu{
