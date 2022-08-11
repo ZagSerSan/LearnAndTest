@@ -173,6 +173,33 @@
 }
 
 //todo -Team -------------------
+.team {
+   padding: 85px 0;
+   margin: 0 -15px;
+}
+.team-item {
+   width: 25%;
+   padding: 0 15px;
+   margin: 15px 0;
+   &__avatar {display: block;}
+   &__title {
+      @include fontFWSC('Raleway',400,22px,#2d3033);
+      margin-top: 30px;
+   }
+   &__speciality {
+      @include fontFWSC('Raleway',400,13px,#e84545);
+      text-transform: uppercase;
+      margin-top: 16px;
+   }
+   &__text {
+      @include fontFWSCL('Raleway',400,14px,#6c7279,1.5);
+      margin-top: 29px;
+   }
+}
+.social {
+   margin-top: 30px;
+		&__link {}
+}
 
 
 // .footer {

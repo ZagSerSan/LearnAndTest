@@ -247,3 +247,44 @@ a:hover {
   color: #fff;
   margin-top: 14px;
 }
+
+.team {
+  padding: 85px 0;
+  margin: 0 -15px;
+}
+
+.team-item {
+  width: 25%;
+  padding: 0 15px;
+  margin: 15px 0;
+}
+.team-item__avatar {
+  display: block;
+}
+.team-item__title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  color: #2d3033;
+  margin-top: 30px;
+}
+.team-item__speciality {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: #e84545;
+  text-transform: uppercase;
+  margin-top: 16px;
+}
+.team-item__text {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #6c7279;
+  line-height: 1.5;
+  margin-top: 29px;
+}
+
+.social {
+  margin-top: 30px;
+}
