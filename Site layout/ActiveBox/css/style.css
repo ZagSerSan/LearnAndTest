@@ -168,7 +168,7 @@ a:hover {
   background-color: #a82626;
 }
 
-.features-inner {
+.features {
   display: flex;
   flex-wrap: wrap;
   padding: 85px 0;
