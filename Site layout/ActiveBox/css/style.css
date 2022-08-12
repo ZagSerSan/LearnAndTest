@@ -321,3 +321,47 @@ a:hover {
   fill: #0077B7;
   background-color: #fff;
 }
+
+.reviews {
+  display: flex;
+  width: 100%;
+  max-width: 1900px;
+  margin: 0px auto;
+  background-color: #53354a;
+}
+.reviews__photo {
+  width: 50%;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+.reviews__photo img {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 2;
+  transform: translateY(-50%);
+}
+.reviews__content {
+  width: 50%;
+  padding-left: 85px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.reviews__text {
+  font-family: "Cardo", sans-serif;
+  font-weight: 300;
+  font-size: 36px;
+  color: #fff;
+  line-height: 1.16;
+  max-width: 510px;
+}
+.reviews__author {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 35px;
+}

@@ -227,8 +227,44 @@
       }
 }
 
-//twitter fill #76A9EA
-//In fill #
+//todo -Reviews -------------------
+.reviews {
+   display: flex;
+   width: 100%;
+   max-width: 1900px;
+   margin: 0px auto;
+   background-color: #53354a;
+   &__photo {
+      width: 50%;
+      height: 500px;
+      overflow: hidden;
+      position: relative;
+      img {
+         position: absolute;
+         top: 50%;
+         right: 0;
+         z-index: 2;
+         transform: translateY(-50%);
+      }
+   }
+   &__content {
+      width: 50%;
+      padding-left: 85px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+   }
+   &__text {
+      @include fontFWSCL('Cardo',300,36px,#fff,1.16);
+      max-width: 510px;
+   }
+   &__author {
+      @include fontFWSC('Raleway',700,13px,#fff);
+      text-transform: uppercase;
+      margin-top: 35px;
+   }
+}
+
 
 // .footer {
 //    background-color: #3a3e64;
