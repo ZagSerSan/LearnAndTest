@@ -206,19 +206,29 @@
          height: 40px;
          border: 1px #c6cacc solid;
          margin-right: 4px;
+         transition: background-color .15s linear;
 
          display: flex;
          flex-direction: column;
          justify-content: center;
+         align-items: center;
          svg {
             height: 18px;
+            width: 18px;
             fill: #c6cacc;
+            transition: fill .15s linear;
+         }
+         &:hover {
+            background-color: #c6cacc;
+            svg.facebook {fill: #385898;}
+            svg.twitter {fill: #76A9EA;}
+            svg.linkedin {fill: #0077B7;background-color: #fff;}
          }
       }
 }
 
 //twitter fill #76A9EA
-//In fill #0077B7
+//In fill #
 
 // .footer {
 //    background-color: #3a3e64;
