@@ -365,3 +365,43 @@ a:hover {
   text-transform: uppercase;
   margin-top: 35px;
 }
+
+.download {
+  padding: 100px 0;
+}
+.download .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.download__title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: 28px;
+  color: #2d3033;
+}
+.download__subtitle {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: #2d3033;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+.download__link {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 20px 80px;
+  margin-top: 40px;
+  background-color: #e84545;
+  border-radius: 2px;
+  transition: background-color 0.2s linear;
+  cursor: pointer;
+}
+.download__link:hover {
+  text-decoration: none;
+  background-color: #a82626;
+}

@@ -265,6 +265,39 @@
    }
 }
 
+//todo -Download -------------------
+
+.download {
+   padding: 100px 0;
+   .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+   &__title {
+      @include fontFWSC('Raleway',300,28px,#2d3033);
+   }
+   &__subtitle {
+      @include fontFWSC('Raleway',700,13px,#2d3033);
+      text-transform: uppercase;
+      margin-top: 20px;
+   }
+   &__link {
+      @include fontFWSC('Raleway',600,13px,#fff);
+      text-transform: uppercase;
+      padding: 20px 80px;
+      margin-top: 40px;
+
+      background-color: #e84545;
+      border-radius: 2px;
+      transition: background-color .2s linear;
+      cursor: pointer;
+      &:hover {
+         text-decoration: none;
+         background-color: #a82626;
+      }
+   }
+}
 
 // .footer {
 //    background-color: #3a3e64;
