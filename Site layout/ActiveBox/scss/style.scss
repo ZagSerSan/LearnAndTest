@@ -266,7 +266,6 @@
 }
 
 //todo -Download -------------------
-
 .download {
    padding: 100px 0;
    .container {
@@ -298,6 +297,53 @@
       }
    }
 }
+
+//todo -Footer -------------------
+.footer {
+   padding: 65px 0 85px;
+   background-color: #3a3e64;
+   .container {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+   }
+}
+.footer-item {
+   width: 33%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   &__title {
+      @include fontFWSC('Raleway',700,14px,#fff);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+   }
+   &__text {
+      @include fontFWSCL('Raleway',400,14px,rgba(255, 255, 255, 0.5),1.6);
+      &.address {
+         max-width: 160px;
+      }
+      &.about {
+         max-width: 360px;
+      }
+   }
+   .social {
+      margin-top: 0;
+      &__item {
+         border: 2px #fff solid;
+         svg {
+            fill: #fff;
+         }
+         &:hover {
+            background-color: #fff;
+         }
+      }
+   }
+}
+
+//todo -Copyright -------------------
+
+
 
 // .footer {
 //    background-color: #3a3e64;
