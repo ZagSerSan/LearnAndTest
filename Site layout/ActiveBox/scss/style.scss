@@ -37,13 +37,13 @@
    // &.loaded {
    // }
 }
-.empty-space {
-   height: 700px;
-   width: 100%;
-   background-color: #fff;
-   text-align: center;
-   border-top: 1px solid #ccc;
-}
+// .empty-space {
+//    height: 700px;
+//    width: 100%;
+//    background-color: #fff;
+//    text-align: center;
+//    border-top: 1px solid #ccc;
+// }
 
 //* <ОСНОВНАЯ СЕТКА>===========================================================================================================
 .container {
@@ -342,6 +342,18 @@
 }
 
 //todo -Copyright -------------------
+.copyright {
+   padding: 30px 0;
+   background-color: #313454;
+   text-align: center;
+   &__text {
+      @include fontFWSCL('Raleway',400,14px,#808080,1.6);
+      max-width: 320px;
+      .heart {color: #e84545;}
+      span {color: #fff;}
+   }
+}
+
 
 
 

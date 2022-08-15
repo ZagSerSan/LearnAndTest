@@ -103,14 +103,6 @@ a:hover {
   overflow: hidden;
 }
 
-.empty-space {
-  height: 700px;
-  width: 100%;
-  background-color: #fff;
-  text-align: center;
-  border-top: 1px solid #ccc;
-}
-
 .container {
   max-width: 1200px;
   width: 100%;
@@ -454,4 +446,24 @@ a:hover {
 }
 .footer-item .social__item:hover {
   background-color: #fff;
+}
+
+.copyright {
+  padding: 30px 0;
+  background-color: #313454;
+  text-align: center;
+}
+.copyright__text {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #808080;
+  line-height: 1.6;
+  max-width: 320px;
+}
+.copyright__text .heart {
+  color: #e84545;
+}
+.copyright__text span {
+  color: #fff;
 }
