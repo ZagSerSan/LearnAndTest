@@ -56,14 +56,13 @@ a:hover {
   align-items: center;
 }
 
-a {
-  margin-top: 50px;
-  font-size: 40px;
+p {
+  display: inline-block;
+  color: rgb(44, 55, 94);
 }
-a.active {
+p:hover[data-index="1"] {
   color: red;
 }
-
-[data-link=link2] {
-  color: #ccc;
+p:hover[data-index="2"] {
+  color: blue;
 }
