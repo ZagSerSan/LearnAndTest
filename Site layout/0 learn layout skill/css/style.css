@@ -13,8 +13,7 @@ body {
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -26,7 +25,6 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
 a:hover {
   text-decoration: underline;
 }
@@ -53,7 +51,7 @@ a:hover {
   margin: 0 auto;
 }
 
-.link, .link2 {
+.link2, .link {
   border-bottom: 5px dashed red;
 }
 
@@ -73,36 +71,31 @@ h3 {
   background-color: #ccc;
   width: 31.25%;
 }
-
 .box .box__text {
   padding: 20px;
   font-size: 60px;
-  color: #cebc1a;
+  color: rgb(206, 188, 26);
 }
-
 .box .box__text span {
-  color: #1a1a79;
+  color: rgb(26, 26, 121);
   font-size: 60px;
 }
-
 .box.box--big {
   font-size: 60px;
 }
 
 .link {
-  color: #1a1a79;
+  color: rgb(26, 26, 121);
   text-decoration: underline;
   font-size: 60px;
   border-bottom: 5px solid red;
 }
-
 .box .link {
   font-size: 60px;
 }
-
 .link:hover {
   text-decoration: none;
-  color: #cebc1a;
+  color: rgb(206, 188, 26);
 }
 
 .link2 {
