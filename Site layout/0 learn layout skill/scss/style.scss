@@ -51,6 +51,11 @@
    max-width: $mw + px;
    width: 100%;
    margin: 0 auto;
+   padding: 100px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
    // @media (max-width: $md1+px) {
    // 	max-width: 970px;
    // }
@@ -65,69 +70,10 @@
 
 //* <ОСНОВНОЙ БЛОК>====================================================================================================
 //todo -Header
-// Variables
-$fz:60px;
-$color1: rgb(206, 188, 26);
-$color2: rgb(26, 26, 121);
-
-%tplborder {
-   border-bottom: 5px dashed red;
-}
-
-@mixin fontz($fz,$c,$bz) {
-   font-size: $fz;
-   color: $c;
-   border-bottom: $bz red dashed;
-}
-.main-title {
+a {
+   margin-top: 50px;
    font-size: 40px;
-   font-weight: 400;
-   text-align: center;
 }
-h3  {
-   font-size: 35px;
-   text-align: center;
-   padding: 20px;
-}
-.box {
-   background-color: #ccc;
-   width: 300 / 960 * 100%;
-   .box__text {
-      padding: 20px;
-      font-size: $fz;
-      color: $color1;
-      span{
-         color: $color2;
-         font-size:$fz;
-      }
-   }
-   &.box--big {
-      font-size: $fz;
-   }
-}
-.link {
-   color: $color2;
-   text-decoration: underline;
-   font-size: $fz;
-   @extend %tplborder;
-   border-bottom: 5px solid red;
-
-   .box & {
-      font-size: $fz;
-   }
-   &:hover {
-      text-decoration: none;
-      color: $color1;
-   }
-}
-
-.link2  {
-   font-size: $fz;
-   @extend %tplborder;
-   @include fontz(20px, green, 2px);
-}
-
-//todo -Intro
 
 //* </ДОПОЛНИТЕЛЬНЫЙ БЛОК>====================================================================================================
 // -Test---------------------------------
