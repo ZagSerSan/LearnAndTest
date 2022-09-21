@@ -60,6 +60,9 @@ a {
   margin-top: 50px;
   font-size: 40px;
 }
+a.active {
+  color: red;
+}
 
 [data-link=link2] {
   color: #ccc;
