@@ -60,3 +60,7 @@ a {
   margin-top: 50px;
   font-size: 40px;
 }
+
+[data-link=link2] {
+  color: #ccc;
+}
