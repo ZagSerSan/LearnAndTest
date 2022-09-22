@@ -1,10 +1,9 @@
-// this
 
-const test = {
-   cost: 200,
-   func: function() {
-      return this.cost;
-   }
-};
+var linkEl = document.getElementById('link');
+var p = document.getElementById('p');
+var p2 = document.getElementById('p2');
 
-console.log(test.func());
+linkEl.addEventListener('click', function () {
+   p.classList.toggle('active');
+   p2.classList.toggle('active');
+ });
