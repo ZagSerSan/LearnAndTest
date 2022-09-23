@@ -1,9 +1,15 @@
+/*
+var el = document.getElementById('link');
+var elData = el.dataset.link;
 
-var linkEl = document.getElementById('link');
-var p = document.getElementById('p');
-var p2 = document.getElementById('p2');
+el.onclick = function() {
+  this.classList.toggle('active');
+}
+console.log(elData);*/
+let linkEl = $('#link');
 
-linkEl.addEventListener('click', function () {
-   p.classList.toggle('active');
-   p2.classList.toggle('active');
- });
+$('[data-link]').on('click', function (even) {
+  even.preventDefault();
+  var $this = $(this);
+  $this.toggleClass('active');
+});

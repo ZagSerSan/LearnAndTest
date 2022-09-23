@@ -69,22 +69,10 @@
 }
 
 //* <ОСНОВНОЙ БЛОК>====================================================================================================
-//todo -Header
-p {
-   margin-top: 30px;
-   display: inline-block;
-   color: rgb(44, 55, 94);
-   &:hover[data-index='1'] {
-      color: red;
-   }
-   &:hover[data-index='2'] {
-      color: blue;
-   }
-   &.active[data-index='2'] {
-      color: blue;
-   }
-   &.active[data-index='1'] {
-      color: red;
+a {
+   font-size: 40px;
+   &.active {
+      color: #d3770e;
    }
 }
 
