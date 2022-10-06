@@ -27,6 +27,7 @@
 	var statusMinusAfterPlus = false
 	var statusMinusAfterMultiPlus = false
 	let statusPlus = false
+	var statusPlusAfterMinus = false
 	let saveMinus
 	let savePlus
 
@@ -84,39 +85,18 @@ let calculator = {
 			temp = title.innerText
 			saveNum = parseInt(temp)
 			tempQ = false
-
-			console.log("temp:");
-			console.log(temp);
-			console.log("saveNum:");
-			console.log(saveNum);
 		} else if (title.innerText === '0') {
 			title.innerText = '2'
 			temp = '2'
 			saveNum = parseInt(temp)
-
-			console.log('else if (title.innerText === 0');
-			console.log("temp:");
-			console.log(temp);
-			console.log("saveNum:");
-			console.log(saveNum);
 		} else if (title.innerText === '-0') {
 			title.innerText = '-2'
 			temp = -2
 			saveNum = parseInt(temp)
-
-			console.log("temp:");
-			console.log(temp);
-			console.log("saveNum:");
-			console.log(saveNum);
 		} else {
 			title.innerText += '2'
 			temp += '2'
 			saveNum = parseInt(temp)
-
-			console.log("temp:");
-			console.log(temp);
-			console.log("saveNum:");
-			console.log(saveNum);
 		}
 	},
 	input3: function () {
@@ -262,7 +242,6 @@ let calculator = {
 		}
 	},
 
-
 // input cucl
 	multiply: function () {
 		if (title.innerText === '0') {
@@ -347,6 +326,13 @@ let calculator = {
 					statusPlus = false
 					statusMultPlus = true
 					tempFirstStatus = false
+				} else if (statusPlusAfterMinus === true) {
+					title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1)) + '*'
+					saveMultPlus = parseInt(saveNum)
+					temp = ''
+
+					statusPlusAfterMinus = false
+					statusMultPlus = true
 				} else if (statusMultPlus === true) {
 					saveMultPlus = parseInt(saveMultPlus) * parseInt(temp)
 					
@@ -701,28 +687,32 @@ let calculator = {
 					statusPlus = true
 					tempFirstStatus = false
 				} else if (statusMinus === true) {
-					saveMinus = numbers.pop()
-					numbers[numbers.length] = (parseInt(saveMinus) - parseInt(temp))
+					console.log('here 4');
+					console.log(saveNum);
+					saveMinus = parseInt(saveNum)
 					temp = ''
 
 					output = title.innerText + '+'
 					title.innerText = output
 
+					statusPlusAfterMinus = true
 					statusMinus = false
-					statusPlus = true
 					tempFirstStatus = false
 				} else if (statusMultPlus === true && title.innerText.endsWith('*') === true) {
 					
-					temp = saveMultPlus
-					savePlus = numbers.pop()
-					numbers[numbers.length] = (parseInt(savePlus) + parseInt(temp))
+					// temp = saveMultPlus
+					// savePlus = numbers.pop()
+					// numbers[numbers.length] = (parseInt(savePlus) + parseInt(temp))
+					savePlus = parseInt(saveNum)
 					temp = ''
 					
 					title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1)) + '+'
 					output = title.innerText
+					console.log('here');
 
 					statusMultPlus = false
-					statusPlus = true
+					// statusPlus = true
+					statusPlusAfterMinus = true
 					tempFirstStatus = false
 				} else if (statusMultPlus === true) {
 					saveMult = numbers.pop()
@@ -734,15 +724,20 @@ let calculator = {
 				}
 				
 				else if (statusMultMinus === true) {
-					saveMult = numbers.pop()
-					numbers[numbers.length] = (parseInt(saveMult) - (parseInt(saveMultMinus) * parseInt(temp)))
+					// saveMult = numbers.pop()
+					// numbers[numbers.length] = (parseInt(saveMult) - (parseInt(saveMultMinus) * parseInt(temp)))
+					console.log('here');
+
+					title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1))
+					saveMinus = saveNum
 					temp = ''
 
 					output = title.innerText + '+'
 					title.innerText = output
 
 					statusMultMinus = false
-					statusPlus = true
+					// statusPlus = true
+					statusPlusAfterMinus = true
 					tempFirstStatus = false
 				} else if (statusSplitPlus === true) {
 					saveSplit = numbers.pop()
@@ -979,8 +974,9 @@ let calculator = {
 				saveMult = numbers.pop()
 				numbers[numbers.length] = (parseInt(saveMult) * parseInt(temp))
 			} else if (statusMultPlus === true){
-				saveMult = numbers.pop()
-				numbers[numbers.length] =(parseInt(saveMultPlus) * parseInt(temp)) + parseInt(saveMult)
+				// saveMult = numbers.pop()
+				// numbers[numbers.length] =(parseInt(saveMultPlus) * parseInt(temp)) + parseInt(saveMult)
+				numbers[0] = numbers[0] + (parseInt(saveMultPlus) * parseInt(saveNum))
 				console.log('here 3');
 			} else if (statusMultMinus === true) {
 				saveMult = numbers.pop()
@@ -996,6 +992,8 @@ let calculator = {
 				numbers[numbers.length] = parseInt(saveSplit) - (parseInt(saveSplitMinus) / parseInt(temp))
 			} else if (statusPlus === true) {
 				numbers[0] = numbers[0] + parseInt(temp)
+			} else if(statusPlusAfterMinus === true) {
+				numbers[0] = numbers[0] - parseInt(saveMinus) + parseInt(temp)
 			} else if (statusMinus === true) {
 				numbers[0] = numbers[0] - parseInt(temp)
 			} else if (statusMinusAfterMultiPlus === true) {
