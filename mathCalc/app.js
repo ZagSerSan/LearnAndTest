@@ -24,6 +24,8 @@
 	let saveSplitMinus
 
 	let statusMinus = false
+	var statusMinusAfterPlus = false
+	var statusMinusAfterMultiPlus = false
 	let statusPlus = false
 	let saveMinus
 	let savePlus
@@ -82,18 +84,39 @@ let calculator = {
 			temp = title.innerText
 			saveNum = parseInt(temp)
 			tempQ = false
+
+			console.log("temp:");
+			console.log(temp);
+			console.log("saveNum:");
+			console.log(saveNum);
 		} else if (title.innerText === '0') {
 			title.innerText = '2'
 			temp = '2'
 			saveNum = parseInt(temp)
+
+			console.log('else if (title.innerText === 0');
+			console.log("temp:");
+			console.log(temp);
+			console.log("saveNum:");
+			console.log(saveNum);
 		} else if (title.innerText === '-0') {
 			title.innerText = '-2'
 			temp = -2
 			saveNum = parseInt(temp)
+
+			console.log("temp:");
+			console.log(temp);
+			console.log("saveNum:");
+			console.log(saveNum);
 		} else {
 			title.innerText += '2'
 			temp += '2'
 			saveNum = parseInt(temp)
+
+			console.log("temp:");
+			console.log(temp);
+			console.log("saveNum:");
+			console.log(saveNum);
 		}
 	},
 	input3: function () {
@@ -299,6 +322,21 @@ let calculator = {
 					statusMinus = false
 					statusMultMinus = true
 					tempFirstStatus = false
+				} else if (statusMinusAfterPlus === true) {
+					title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1)) + '*'
+					saveMultPlus = parseInt(saveNum)
+					statusMinusAfterPlus = false
+					statusMultPlus = true
+				} else if (statusMinusAfterMultiPlus === true) {
+					saveMultMinus = saveNum
+					temp = ''
+
+					title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1))
+					output = title.innerText + '*'
+					title.innerText = output
+
+					statusMultPlus = true
+					statusMinusAfterMultiPlus = false
 				} else if (statusPlus === true) {
 					saveMultPlus = temp
 					temp = ''
@@ -534,26 +572,29 @@ let calculator = {
 					statusMinus = true
 					tempFirstStatus = false
 				} else if (statusPlus === true) {
-					savePlus = numbers.pop()
-					numbers[numbers.length] = (parseInt(savePlus) + parseInt(temp))
+					// savePlus = numbers.pop()
+					// numbers[numbers.length] = (parseInt(savePlus) + parseInt(temp))
+					savePlus = parseInt(temp)
 					temp = ''
 
 					output = title.innerText + '-'
 					title.innerText = output
 
 					statusPlus = false
-					statusMinus = true
+					statusMinusAfterPlus = true
 					tempFirstStatus = false
 				} else if (statusMultPlus === true) {
-					saveMult = numbers.pop()
-					numbers[numbers.length] = (parseInt(saveMult) + (parseInt(saveMultPlus) * parseInt(temp)))
+					// saveMult = numbers.pop()
+					// numbers[numbers.length] = (parseInt(saveMult) +  parseInt(temp))
 					temp = ''
 
+					title.innerText = ((title.innerText).substring(0, (title.innerText).length - 1))
 					output = title.innerText + '-'
 					title.innerText = output
 
 					statusMultPlus = false
-					statusMinus = true
+					// statusMinus = true
+					statusMinusAfterMultiPlus = true
 					tempFirstStatus = false
 				} else if (statusMultMinus === true) {
 					saveMult = numbers.pop()
@@ -753,6 +794,7 @@ let calculator = {
 		statusSplitMinus = false
 
 		statusMinus = false
+		statusMinusAfterMultiPlus = false
 		statusPlus = false
 	},
 	back: function () {
@@ -939,6 +981,7 @@ let calculator = {
 			} else if (statusMultPlus === true){
 				saveMult = numbers.pop()
 				numbers[numbers.length] =(parseInt(saveMultPlus) * parseInt(temp)) + parseInt(saveMult)
+				console.log('here 3');
 			} else if (statusMultMinus === true) {
 				saveMult = numbers.pop()
 				numbers[numbers.length] = parseInt(saveMult) - (parseInt(saveMultMinus) * parseInt(temp))
@@ -955,6 +998,9 @@ let calculator = {
 				numbers[0] = numbers[0] + parseInt(temp)
 			} else if (statusMinus === true) {
 				numbers[0] = numbers[0] - parseInt(temp)
+			} else if (statusMinusAfterMultiPlus === true) {
+				numbers[0] = numbers[0] + parseInt(saveMultPlus) - parseInt(temp)
+				console.log('here');
 			} else {
 				title.innerText = 0
 			}
