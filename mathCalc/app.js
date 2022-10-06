@@ -1,3 +1,5 @@
+//todo 2 + 4 * -> поменять на 2+4+ и равно, будет ошибка, исправить
+
 // переменные
 	let title = document.getElementById('block-title')
 	let output
