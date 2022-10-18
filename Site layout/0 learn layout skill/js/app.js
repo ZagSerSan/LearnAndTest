@@ -1,14 +1,17 @@
 
-var text = document.getElementById('textJS');
-var width = 3;
-var height = 5;
+var text1 = document.getElementById('text1JS');
+var text2 = document.getElementById('text2JS');
+var width1 = 3;
+var height1 = 5;
+var wallH = 10;
+var wallW = 10;
 
-function getArea(width,height) {
-  return width * height
+function getArea(parametr1,parametr2) {
+  return parametr1 * parametr2
 }
-text.textContent = getArea(width,height);
+text1.textContent = getArea(width1,height1);
+text2.textContent = getArea(wallH,wallW);
 
-console.log(getArea(width,height));
 
 /* КНОПКИ ССЫЛКИ (data-*)
 var el = document.getElementById('link');
