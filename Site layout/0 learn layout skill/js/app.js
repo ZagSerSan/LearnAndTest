@@ -2,17 +2,21 @@
 var log1 = document.getElementById('text1JS');
 var log2 = document.getElementById('text2JS');
 
-var width = 4;
+var hotel = {
+  name: 'Tula',
+  rooms: 40,
+  booked: 25,
+  gym: true,
+  roomTypes: ['twin', 'double', 'suite'],
+  
+  checkFreerooms: function () {
+    return this.rooms - this.booked;
+  }
+};
 
-function getArea () {
-  var width = 3;
-  var height = 5;
-  var size = [width, height];
-  return size
-}
 
-log1.textContent = getArea()[0];
-log2.textContent = width;
+log1.textContent = 'Hotel name: '+ hotel.name;
+log2.textContent = 'Free rooms: '+hotel.checkFreerooms();
 
 
 /* КНОПКИ ССЫЛКИ (data-*)
