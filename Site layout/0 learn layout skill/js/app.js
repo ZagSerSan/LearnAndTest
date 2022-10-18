@@ -1,16 +1,28 @@
 
-var text1 = document.getElementById('text1JS');
-var text2 = document.getElementById('text2JS');
-var width1 = 3;
-var height1 = 5;
-var wallH = 10;
-var wallW = 10;
+var log1 = document.getElementById('text1JS');
+var log2 = document.getElementById('text2JS');
 
-function getArea(parametr1,parametr2) {
-  return parametr1 * parametr2
+log1.textContent = getArea(3,3,2)[0];
+
+function getArea (width,height,depth) {
+  var area = width * height;
+  var volume = width * height * depth;
+  var sizes = [area, volume];
+  return sizes;
 }
-text1.textContent = getArea(width1,height1);
-text2.textContent = getArea(wallH,wallW);
+
+/*
+var getArea = function (width,height,depth) {
+  var area = width * height;
+  var volume = width * height * depth;
+  var sizes = [area, volume];
+  return sizes;
+}
+*/
+
+
+log2.textContent = getArea(3,3,2)[1];
+
 
 
 /* КНОПКИ ССЫЛКИ (data-*)
