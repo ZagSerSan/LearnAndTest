@@ -2,27 +2,17 @@
 var log1 = document.getElementById('text1JS');
 var log2 = document.getElementById('text2JS');
 
-log1.textContent = getArea(3,3,2)[0];
-
-function getArea (width,height,depth) {
-  var area = width * height;
-  var volume = width * height * depth;
-  var sizes = [area, volume];
-  return sizes;
-}
-
-/*
-var getArea = function (width,height,depth) {
-  var area = width * height;
-  var volume = width * height * depth;
-  var sizes = [area, volume];
-  return sizes;
-}
-*/
+var getArea = (function () {
+  var width = 3;
+  var height = 5;
+  var size = width * height;
+  console.log(size);
+  return size
+}())
 
 
-log2.textContent = getArea(3,3,2)[1];
-
+// log1.textContent = out1;
+// log2.textContent = getArea(3,3,2)[1];
 
 
 /* КНОПКИ ССЫЛКИ (data-*)
