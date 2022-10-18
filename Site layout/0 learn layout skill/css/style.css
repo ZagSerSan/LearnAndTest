@@ -1,6 +1,7 @@
+@charset "UTF-8";
 body {
   font-family: "Raleway", sans-serif;
-  font-size: 14px;
+  font-size: 64px;
   -webkit-font-smoothing: antialiased;
   color: black;
 }
@@ -56,9 +57,10 @@ a:hover {
   align-items: center;
 }
 
+/* КНОПКИ ССЫЛКИ (data-*)
 a {
-  font-size: 40px;
-}
-a.active {
-  color: #d3770e;
-}
+   font-size: 40px;
+   &.active {
+      color: #d3770e;
+   }
+}*/
