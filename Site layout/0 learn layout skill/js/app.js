@@ -1,4 +1,27 @@
 
+
+function getArea(rooms,booked) {
+  return rooms - booked
+};
+
+var getRooms = (rooms,booked) => rooms-booked;
+
+console.log(getArea(40,25));
+console.log(getRooms(40,25));
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 var log1 = document.getElementById('text1JS');
 var log2 = document.getElementById('text2JS');
 
@@ -13,11 +36,9 @@ var hotel = {
     return this.rooms - this.booked;
   }
 };
-
-
 log1.textContent = 'Hotel name: '+ hotel.name;
 log2.textContent = 'Free rooms: '+hotel.checkFreerooms();
-
+*/
 
 /* КНОПКИ ССЫЛКИ (data-*)
 var el = document.getElementById('link');

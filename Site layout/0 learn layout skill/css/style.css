@@ -1,7 +1,7 @@
 @charset "UTF-8";
 body {
   font-family: "Raleway", sans-serif;
-  font-size: 55px;
+  font-size: 15px;
   -webkit-font-smoothing: antialiased;
   color: black;
 }
@@ -36,16 +36,6 @@ a:hover {
   overflow: hidden;
 }
 
-.empty-space {
-  height: 700px;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.89);
-  text-align: center;
-  color: #ccc;
-  border-top: 1px #ccc solid;
-  margin-top: 10px;
-}
-
 .container {
   max-width: 1170px;
   width: 100%;
@@ -64,10 +54,34 @@ a {
       color: #d3770e;
    }
 }*/
-div {
-  color: #ccc;
+.cols {
+  display: flex;
 }
 
-span {
-  color: #000;
+.col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  border: 1px solid black;
+  background-color: #5e0000;
+  color: #fff;
+}
+
+h2 {
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+h2:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+button {
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
 }
