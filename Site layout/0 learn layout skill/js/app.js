@@ -67,34 +67,25 @@ el.forEach((this).onclick = function() {
   });
 
 }*/
-// const linkSelector = document.querySelectorAll('#link');
-// console.log(linkSelector);
 
-function activeLink() {
-  const links = document.querySelectorAll('#link');
-  console.log(links);
+activeLink('#link','active');
 
-  links.forEach((link) => {
+function activeLink(linkSelector,classActive) {
+  const links = document.querySelectorAll(linkSelector);
+  links.forEach(link => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
-      links.forEach((item) => {
-        item.classlist.remove('active');
+      links.forEach(item => {
+        item.classList.remove(classActive);
       });
-      link.classlist.add('active');
+      link.classList.add(classActive);
     });
   });
-};
+}
 
-activeLink();
+
+
 /*
-
-
-
-
-
-
-
-
 $(function () {
 let linkEl = $('#link');
 let linkEl = $('[data-link]');
