@@ -1,21 +1,21 @@
 
 
-function getArea(rooms,booked) {
+var getRooms = function (rooms,booked) {
   return rooms - booked
 };
 
-var getRooms = (rooms,booked) => rooms-booked;
+var getArea = (width,height,depth) => {
+  var area=width*height;
+  var volume=width*height*depth;
+  var sizes = [area,volume];
+  return sizes
+};
 
-console.log(getArea(40,25));
+var consol = p => console.log(p)
+consol('some text and some text');
+
+console.log(getArea(2,3,5)[1]);
 console.log(getRooms(40,25));
-
-
-
-
-
-
-
-
 
 
 
@@ -50,6 +50,7 @@ el.forEach((this).onclick = function() {
 
 /*
 var linkSelector = document.getElementById('link');
+
 function activeLink(linkSelector) {
   const links = document.querySelectorAll(linkSelector);
   links.forEach((link) => {
