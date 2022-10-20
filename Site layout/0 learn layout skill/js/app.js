@@ -1,5 +1,11 @@
 
 
+/*
+*/
+
+
+
+/*
 var getRooms = function (rooms,booked) {
   return rooms - booked
 };
@@ -16,9 +22,7 @@ consol('some text and some text');
 
 console.log(getArea(2,3,5)[1]);
 console.log(getRooms(40,25));
-
-
-
+*/
 
 
 /*
@@ -46,13 +50,12 @@ var elData = el.dataset.link;
 el.forEach((this).onclick = function() {
   this.classList.add('active');
 })
-/*
+*/
 
-/*
-var linkSelector = document.getElementById('link');
 
-function activeLink(linkSelector) {
+/*function activeLink(linkSelector) {
   const links = document.querySelectorAll(linkSelector);
+
   links.forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
@@ -62,12 +65,38 @@ function activeLink(linkSelector) {
       link.classlist.add(linkSelector);
     });
   });
-}
-activeLink(linkSelector);
 
+}*/
+// const linkSelector = document.querySelectorAll('#link');
+// console.log(linkSelector);
+
+function activeLink() {
+  const links = document.querySelectorAll('#link');
+  console.log(links);
+
+  links.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      links.forEach((item) => {
+        item.classlist.remove('active');
+      });
+      link.classlist.add('active');
+    });
+  });
+};
+
+activeLink();
 /*
+
+
+
+
+
+
+
+
 $(function () {
-// let linkEl = $('#link');
+let linkEl = $('#link');
 let linkEl = $('[data-link]');
 linkEl.on('click', function (even) {
   even.preventDefault();

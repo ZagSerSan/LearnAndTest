@@ -47,41 +47,43 @@ a:hover {
   align-items: center;
 }
 
-/* КНОПКИ ССЫЛКИ (data-*)
+/* КНОПКИ ССЫЛКИ (data-*) */
 a {
-   font-size: 40px;
-   &.active {
-      color: #d3770e;
-   }
-}*/
+  font-size: 40px;
+}
+a.active {
+  color: #d3770e;
+}
+
+/*
 .cols {
-  display: flex;
+   display: flex;
 }
+.col{
+   flex: 1;
 
-.col {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  height: 100vh;
-  border: 1px solid black;
-  background-color: #5e0000;
-  color: #fff;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: center;
+
+   height: 100vh;
+   border: 1px solid black;
+   background-color: #5e0000;
+   color: #fff;
 }
-
 h2 {
-  padding: 10px;
-  border-radius: 10px;
-  cursor: pointer;
+   padding: 10px;
+   border-radius: 10px;
+   cursor: pointer;
 }
-
 h2:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+   background-color: rgba(0,0,0,0.3);
 }
+button{
+   font-size: 20px;
+   border-radius: 10px;
+   cursor: pointer;
 
-button {
-  font-size: 20px;
-  border-radius: 10px;
-  cursor: pointer;
 }
+*/
