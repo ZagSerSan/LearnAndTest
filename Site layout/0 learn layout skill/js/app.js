@@ -68,8 +68,7 @@ el.forEach((this).onclick = function() {
 
 }*/
 
-activeLink('#link','active');
-
+/*
 function activeLink(linkSelector,classActive) {
   const links = document.querySelectorAll(linkSelector);
   links.forEach(link => {
@@ -82,8 +81,22 @@ function activeLink(linkSelector,classActive) {
     });
   });
 }
+*/
 
+function activeLink (linkSelector, classActive) {
+  const links = document.querySelectorAll(linkSelector);
+  links.forEach(linksElement1 => {
+    linksElement1.addEventListener('click', (e) =>{
+      e.preventDefault();
+      links.forEach(linksElement2 => {
+        linksElement1.classList.remove('active');
+      });
+      element.classList.add('active')
+    });
+  });
+}
 
+activeLink('#link','active');
 
 /*
 $(function () {
