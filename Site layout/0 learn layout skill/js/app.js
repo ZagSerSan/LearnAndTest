@@ -89,9 +89,9 @@ function activeLink (linkSelector, classActive) {
     linksElement1.addEventListener('click', (e) =>{
       e.preventDefault();
       links.forEach(linksElement2 => {
-        linksElement1.classList.remove('active');
+        linksElement2.classList.remove('active');
       });
-      element.classList.add('active')
+      linksElement1.classList.add('active')
     });
   });
 }
