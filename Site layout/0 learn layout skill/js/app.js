@@ -11,8 +11,27 @@ function activeLink (linkSelector, classActive) {
     });
   });
 }
-
 activeLink('#link','active');
 
-var links = document.querySelectorAll('a[href^="#"]');
-console.log(links);
+
+// scroll
+
+// const links = [].slice.call(document.querySelectorAll('a[href^="#"]')),
+const links = document.querySelectorAll('a[href^="#"]'),
+      animationTime = 300,
+      framesCount = 20;
+
+links.forEach((item) => {
+  item.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    console.log(item);
+    let coordY = item.getAttribute('href');
+    console.log(coordY);
+
+  });
+});
+
+// console.log(links);
+
+
