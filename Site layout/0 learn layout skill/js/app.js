@@ -14,3 +14,5 @@ function activeLink (linkSelector, classActive) {
 
 activeLink('#link','active');
 
+var links = document.querySelectorAll('a[href^="#"]');
+console.log(links);

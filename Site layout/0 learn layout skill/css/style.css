@@ -57,6 +57,14 @@ a.active {
   color: #d3770e;
 }
 
+h1[data-css] {
+  color: red;
+}
+
+h1[data-css^="#"] {
+  color: green;
+}
+
 .blockto, .blockto2, .blockto3 {
   margin: 10px 0 700px;
   background-color: #ccc;
