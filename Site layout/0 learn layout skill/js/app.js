@@ -26,7 +26,7 @@ links.forEach((item) => {
     e.preventDefault();
 
     console.log(item);
-    let coordY = document.querySelector(item.getAttribute('href'));
+    var coordY = document.querySelector(item.getAttribute('href'));
     console.log(coordY);
 
   });
