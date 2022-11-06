@@ -14,24 +14,29 @@ function activeLink (linkSelector, classActive) {
 activeLink('#link','active');
 
 
+
 // scroll
 
-// const links = [].slice.call(document.querySelectorAll('a[href^="#"]')),
-const links = document.querySelectorAll('a[href^="#"]'),
+// const anchors = [].slice.call(document.querySelectorAll('a[href*="#"]')),
+const anchors = document.querySelectorAll('a[href^="#"]'),
       animationTime = 300,
       framesCount = 20;
 
-links.forEach((item) => {
+anchors.forEach((item) => {
+  // console.log(item);
   item.addEventListener('click', (e) => {
     e.preventDefault();
-
-    console.log(item);
+    
+    // var coordY2 = item.dataset.scroll;
+    // var coordY = document.querySelector(item.dataset.scroll);
     var coordY = document.querySelector(item.getAttribute('href'));
+
+    // console.log(coordY2);
     console.log(coordY);
 
   });
 });
 
-// console.log(links);
+// console.log(anchors);
 
 
