@@ -23,17 +23,12 @@ const anchors = document.querySelectorAll('a[href^="#"]'),
       framesCount = 20;
 
 anchors.forEach((item) => {
-  // console.log(item);
   item.addEventListener('click', (e) => {
     e.preventDefault();
     
-    // var coordY2 = item.dataset.scroll;
-    // var coordY = document.querySelector(item.dataset.scroll);
-    var coordY = document.querySelector(item.getAttribute('href'));
+    var coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top + window.scrollY;
 
-    // console.log(coordY2);
     console.log(coordY);
-
   });
 });
 
