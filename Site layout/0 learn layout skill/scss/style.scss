@@ -47,17 +47,15 @@
 // }
 
 //* <ОСНОВНАЯ СЕТКА>===========================================================================================================
+body {background-color: #456c3e;}
+
 .container {
    max-width: $mw + px;
    width: 100%;
    margin: 0 auto;
-   padding: 100px;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   background-color: #456c3e;
    border-top: 4px solid #ccc;
+
+   
    // @media (max-width: $md1+px) {
    // 	max-width: 970px;
    // }
@@ -72,6 +70,23 @@
 
 //* <ОСНОВНОЙ БЛОК>====================================================================================================
 /* КНОПКИ ССЫЛКИ (data-*) */
+h1 {
+   text-align: center;
+   padding: 100px 0;
+
+}
+.nav {
+   position: fixed;
+   top: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   background-color: #5ea54f;
+   border: 1px #ccc solid;
+}
+
 a {
    font-size: 40px;
    &.active {

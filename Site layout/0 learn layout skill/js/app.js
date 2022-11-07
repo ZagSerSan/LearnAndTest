@@ -27,8 +27,7 @@ anchors.forEach((item) => {
     e.preventDefault();
     
     var coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top + window.scrollY;
-
-    console.log(coordY);
+   
   });
 });
 
