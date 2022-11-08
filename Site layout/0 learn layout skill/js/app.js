@@ -18,16 +18,18 @@ activeLink('#link','active');
 // scroll
 
 // const anchors = [].slice.call(document.querySelectorAll('a[href*="#"]')),
-const anchors = document.querySelectorAll('a[href^="#"]'),
-      animationTime = 300,
-      framesCount = 20;
+const anchors = document.querySelectorAll('a[href^="#"]');
 
 anchors.forEach((item) => {
   item.addEventListener('click', (e) => {
     e.preventDefault();
     
     var coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top + window.scrollY;
-   
+    window.scrollTo({
+      top: coordY,
+      behavior: "smooth"
+    });
+  
   });
 });
 
