@@ -17,7 +17,7 @@
    $md2: 991.98;
    $md3: 768.98;
    $md4: 479.98;
-
+   $md5: 379.98;
 //* <ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
    @import "null";
 //* <ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
@@ -46,7 +46,7 @@
    // }
 }
 //* <ОСНОВНОЙ БЛОК>====================================================================================================
-//todo -Intro
+//todo -Intro ----------------------------
 .intro {
    padding-top: 100px;
    background: url('../img/intro/intro-bg.jpg') #2b2e48 center no-repeat ;
@@ -85,7 +85,7 @@
       }
    }
 }
-//todo -Features
+//todo -Features ----------------------------
 .features {
    padding: 50px 0 120px;
    .container {
@@ -111,7 +111,7 @@
          padding: 0 10px;
       }
 }
-//todo -Works
+//todo -Works ----------------------------
 .works {
    width: 100%;
    max-width: 1900px;
@@ -153,7 +153,7 @@
       opacity: .1;
    }
 }
-//todo -Team
+//todo -Team ----------------------------
 .team-main {
    padding: 50px 0 100px;
 }
@@ -223,7 +223,7 @@
       }
    }
 }
-//todo -reviews
+//todo -reviews ----------------------------
 .reviews {
    width: 100%;
    max-width: 1900px;
@@ -298,7 +298,7 @@
       button {opacity: 1;}
    }
 }
-//todo -download
+//todo -download ----------------------------
 .download {
    .container {
       display: flex;
@@ -330,7 +330,7 @@
       }
    }
 }
-//todo -footer
+//todo -footer ----------------------------
 .footer {
    background-color: #3a3e64;
    &__inner {
@@ -388,7 +388,7 @@
       max-width: 370px;
    }
 }
-//todo -copyright
+//todo -copyright ----------------------------
 .copyright {
    background-color: #313454;
    padding: 30px 0;
@@ -495,8 +495,8 @@
       width: 100%;
       &__text{max-width: 90%;}
    }
-}
    .slick-dots{width: 100%;}
+}
 //? Point 4 ----------------------------------
    @media (max-width: $md4+px) {
    // intro
@@ -519,3 +519,5 @@
       .download__title{padding: 0 20px;text-align: center;}
       .download__subtitle{margin-top: 30px;}
 }
+//? Point 5 ----------------------------------
+@media (max-width: $md5+px) {}
