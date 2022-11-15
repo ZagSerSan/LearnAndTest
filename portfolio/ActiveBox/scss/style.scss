@@ -2,7 +2,7 @@
    @import "mixins";
 //* <ШРИФТЫ>===============================================================================================
 //<Подключаем шрифты>=======================================================================================
-@import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Open+Sans:wght@700&family=Raleway:wght@300;400;600;700&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Open+Sans:wght@700&family=Raleway:wght@300;400;600;700&display=swap');
 //<Шрифт по умолчанию>==========================================================================================
    body {
       font-family: "Raleway", sans-serif;
@@ -34,16 +34,6 @@
    width: 100%;
    margin: 0 auto;
    padding: 0px 15px;
-   // @media (max-width: $md1+px) {
-   // 	max-width: 970px;
-   // }
-   // @media (max-width: $md2+px) {
-   // 	max-width: 750px;
-   // }
-   // @media (max-width: $md3+px) {
-   // 	max-width: none;
-   // 	padding: 0 10px;
-   // }
 }
 //* <ОСНОВНОЙ БЛОК>====================================================================================================
 //todo -Intro ----------------------------
@@ -473,6 +463,9 @@
          img{
             position: relative;
             width: 100%;
+            // width: 130%;
+            // left: 40%;
+            // transform: translate3d(-50%,-50%,0);
             height: auto;
          }
       }
@@ -498,26 +491,67 @@
    .slick-dots{width: 100%;}
 }
 //? Point 4 ----------------------------------
-   @media (max-width: $md4+px) {
-   // intro
-      .intro-inner__title{font-size: 40px;max-width: 400px;}
-      .intro-inner__subtitle{font-size: 20px;}
-   // features
-      .features-item{width: 100%;}
-   // works
-      .works-item {width: 100%;}
-   // team
-      .team-item{
-         width: 100%;
-         text-align: center;
-         img{width: 80%; margin: 0px auto;}
-         .social{justify-content: center;}
-      }
-   // reviews
-      .reviews-content__text{font-size: 31px;}
-   // download
-      .download__title{padding: 0 20px;text-align: center;}
-      .download__subtitle{margin-top: 30px;}
+@media (max-width: $md4+px) {
+// intro
+   .intro-inner__title{font-size: 40px;max-width: 400px;}
+   .intro-inner__subtitle{font-size: 20px;}
+// features
+   .features-item{width: 100%;}
+// works
+   .works-item {width: 100%;}
+// team
+   .team-item {
+      width: 100%;
+      text-align: center;
+      img {width: 80%; margin: 0px auto;}
+      .social {justify-content: center;}
+   }
+// reviews
+.reviews {
+   &__item {flex-wrap: wrap;}
+}
+.reviews-photo img {
+   width: 130%;
+   left: 40%;
+   transform: translate3d(-50%,-50%,0);
+}
+   .reviews-content__text{font-size: 31px;}
+// download
+   .download__title{padding: 0 20px;text-align: center;}
+   .download__subtitle{margin-top: 30px;}
 }
 //? Point 5 ----------------------------------
-@media (max-width: $md5+px) {}
+@media (max-width: $md5+px) {
+// header
+   .header {
+      &__inner{height: 70px;}
+      &__logo {height: 23px;}
+   }
+   .header-burger{
+      
+      &__icon {
+         width: 35px;
+         &:after {width: 35px;}
+         &:before {width: 35px;}
+      }
+   }
+// intro
+.intro {padding-top: 70px;}
+.intro-inner {
+   height: 100vh;
+   &__title {font-size: 30px;max-width: none;}
+   &__subtitle {font-size: 16px;}
+   &__link {padding: 13px 34px;}
+}
+// features
+.features-item {
+   &__title {margin-top: 20px;}
+   &__text {margin-top: 20px;}
+}
+// reviews
+.reviews-content__text{font-size: 23px;}
+
+
+
+}
+//* <THE END>====================================================================================================

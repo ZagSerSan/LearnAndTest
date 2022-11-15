@@ -701,11 +701,10 @@ a:hover {
   .footer-abuot__text {
     max-width: 90%;
   }
+  .slick-dots {
+    width: 100%;
+  }
 }
-.slick-dots {
-  width: 100%;
-}
-
 @media (max-width: 479.98px) {
   .intro-inner__title {
     font-size: 40px;
@@ -731,6 +730,14 @@ a:hover {
   .team-item .social {
     justify-content: center;
   }
+  .reviews__item {
+    flex-wrap: wrap;
+  }
+  .reviews-photo img {
+    width: 130%;
+    left: 40%;
+    transform: translate3d(-50%, -50%, 0);
+  }
   .reviews-content__text {
     font-size: 31px;
   }
@@ -740,5 +747,47 @@ a:hover {
   }
   .download__subtitle {
     margin-top: 30px;
+  }
+}
+@media (max-width: 379.98px) {
+  .header__inner {
+    height: 70px;
+  }
+  .header__logo {
+    height: 23px;
+  }
+  .header-burger__icon {
+    width: 35px;
+  }
+  .header-burger__icon:after {
+    width: 35px;
+  }
+  .header-burger__icon:before {
+    width: 35px;
+  }
+  .intro {
+    padding-top: 70px;
+  }
+  .intro-inner {
+    height: 100vh;
+  }
+  .intro-inner__title {
+    font-size: 30px;
+    max-width: none;
+  }
+  .intro-inner__subtitle {
+    font-size: 16px;
+  }
+  .intro-inner__link {
+    padding: 13px 34px;
+  }
+  .features-item__title {
+    margin-top: 20px;
+  }
+  .features-item__text {
+    margin-top: 20px;
+  }
+  .reviews-content__text {
+    font-size: 23px;
   }
 }
