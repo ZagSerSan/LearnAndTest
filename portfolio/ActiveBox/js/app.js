@@ -15,6 +15,7 @@ $(window).on('scroll load resize', function(even) {
    scrollPos = $(window).scrollTop();
    checkScroll(scrollPos, introH);
    nav.removeClass('active');
+   burger.removeClass('active');
 });
 function checkScroll(scrollPos, introH) {
    if (scrollPos > introH) {
@@ -28,6 +29,7 @@ function checkScroll(scrollPos, introH) {
 burger.on('click', function(even) {
    even.preventDefault();
    nav.toggleClass('active');
+   burger.toggleClass('active');
 });
 
 // smooth scroll by navigation links

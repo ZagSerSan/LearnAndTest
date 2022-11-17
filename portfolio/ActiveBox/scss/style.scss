@@ -442,9 +442,6 @@
 }
 //? Point 3 ----------------------------------
    @media (max-width: $md3+px) {
-   //m-header
-      .header-nav{display: none;}
-      .header-burger{display: block;}
    // m3-intro
       .intro-inner {
          width: 100%;
@@ -522,19 +519,6 @@
 }
 //? Point 5 ----------------------------------
 @media (max-width: $md5+px) {
-// header
-   .header {
-      &__inner{height: 70px;}
-      &__logo {height: 23px;}
-   }
-   .header-burger{
-      
-      &__icon {
-         width: 35px;
-         &:after {width: 35px;}
-         &:before {width: 35px;}
-      }
-   }
 // intro
 .intro {padding-top: 70px;}
 .intro-inner {
