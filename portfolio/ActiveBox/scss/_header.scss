@@ -90,8 +90,11 @@
    }
 }
 }
-
-
+//*=====АДАПТ=======================================================================================
+//? Point 2 ----------------------------------
+@media (max-width: $md2+px) {
+   .header-nav__link{margin-left: 30px;}
+}
 //? Point 3 ----------------------------------
 @media (max-width: $md3+px) {
    .header-burger{display: block;}
@@ -113,12 +116,26 @@
       & a {
          margin-left: 0;
          font-size: 30px;
-         margin: 0px auto;
+         margin: 15px auto;
       }
       &.active {
          height: 350px;
       }
    }
+   @media (max-height: 450px) {
+      .header-nav {
+         flex-wrap: wrap;
+         a {font-size: 25px;}
+         &.active{
+            height: 70vh;
+         }
+      }
+   }
+
+
+
+
+
 }
 //? Point 4 ----------------------------------
 @media (max-width: $md4+px) {

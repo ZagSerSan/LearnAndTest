@@ -130,6 +130,11 @@ a:hover {
   transition: transform 0.2s linear;
 }
 
+@media (max-width: 991.98px) {
+  .header-nav__link {
+    margin-left: 30px;
+  }
+}
 @media (max-width: 768.98px) {
   .header-burger {
     display: block;
@@ -152,10 +157,21 @@ a:hover {
   .header-nav a {
     margin-left: 0;
     font-size: 30px;
-    margin: 0px auto;
+    margin: 15px auto;
   }
   .header-nav.active {
     height: 350px;
+  }
+}
+@media (max-width: 768.98px) and (max-height: 450px) {
+  .header-nav {
+    flex-wrap: wrap;
+  }
+  .header-nav a {
+    font-size: 25px;
+  }
+  .header-nav.active {
+    height: 70vh;
   }
 }
 @media (max-width: 479.98px) {
@@ -658,9 +674,6 @@ a:hover {
   }
 }
 @media (max-width: 991.98px) {
-  .header-nav__link {
-    margin-left: 30px;
-  }
   .intro-inner__title {
     font-size: 55px;
     max-width: 740px;
