@@ -532,7 +532,12 @@
 }
 // reviews
 .reviews-content__text{font-size: 23px;}
-
+// download
 .download__title {font-size: 20px;}
+.download__subtitle {
+   max-width: 240px;
+   text-align: center;
+}
+.download__link {padding: 13px 34px;}
 }
 //* <THE END>====================================================================================================
