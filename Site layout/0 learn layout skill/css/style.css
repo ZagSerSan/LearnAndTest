@@ -1,4 +1,3 @@
-@charset "UTF-8";
 body {
   font-family: "Raleway", sans-serif;
   font-size: 15px;
@@ -34,6 +33,7 @@ a:hover {
   width: 100%;
   min-height: 100%;
   overflow: hidden;
+  padding-top: 100px;
 }
 
 body {
@@ -47,4 +47,36 @@ body {
   border-top: 4px solid #ccc;
 }
 
-/* КНОПКИ ССЫЛКИ (data-*) */
+.portfolio__inner {
+  background-color: #fff;
+  padding: 0 20px 20px;
+}
+
+.portfolio-filter {
+  width: 40%;
+  margin: 0px auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #e0e0e0;
+}
+.portfolio-filter__link {
+  font-size: 20px;
+}
+
+.portfolio-projects {
+  background-color: #e0e0e0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+.portfolio-projects__item {
+  width: 30.333%;
+  height: 100px;
+  background-color: #9b9b9b;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
