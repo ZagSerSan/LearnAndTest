@@ -73,6 +73,13 @@ body {background-color: #456c3e;}
    background-color: #e0e0e0;
 		&__link {
          font-size: 20px;
+         &.app {color: blue;}
+         &.green {color: green;}
+         &.red {color: red;}
+
+         &:hover {
+            background-color: #9b9b9b;
+         }
       }
 }
 .portfolio-projects {
@@ -81,15 +88,21 @@ body {background-color: #456c3e;}
    flex-wrap: wrap;
    justify-content: space-between;
    padding: 20px;
-		&__item {
-         width: 30.333%;
-         height: 100px;
-         background-color: #9b9b9b;
-         margin: 20px 0;
-         display: flex;
-         justify-content: center;
-         align-items: center;
-      }
+   &__item {
+      width: 30.333%;
+      height: 100px;
+      background-color: #9b9b9b;
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &.app {color: blue;}
+      &.green {color: green;}
+      &.red {color: red;}
+
+      &.hide {display: none;}
+   }
 }
 
 

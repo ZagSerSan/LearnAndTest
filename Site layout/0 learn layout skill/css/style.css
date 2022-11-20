@@ -63,6 +63,18 @@ body {
 .portfolio-filter__link {
   font-size: 20px;
 }
+.portfolio-filter__link.app {
+  color: blue;
+}
+.portfolio-filter__link.green {
+  color: green;
+}
+.portfolio-filter__link.red {
+  color: red;
+}
+.portfolio-filter__link:hover {
+  background-color: #9b9b9b;
+}
 
 .portfolio-projects {
   background-color: #e0e0e0;
@@ -79,4 +91,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.portfolio-projects__item.app {
+  color: blue;
+}
+.portfolio-projects__item.green {
+  color: green;
+}
+.portfolio-projects__item.red {
+  color: red;
+}
+.portfolio-projects__item.hide {
+  display: none;
 }
