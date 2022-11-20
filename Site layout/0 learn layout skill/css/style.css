@@ -75,6 +75,9 @@ body {
 .portfolio-filter__link:hover {
   background-color: #9b9b9b;
 }
+.portfolio-filter__link.active {
+  font-weight: 700;
+}
 
 .portfolio-projects {
   background-color: #e0e0e0;
@@ -82,6 +85,9 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 20px;
+  height: auto;
+  max-height: 460px;
+  transition: max-height 0.2s linear;
 }
 .portfolio-projects__item {
   width: 30.333%;

@@ -71,16 +71,15 @@ body {background-color: #456c3e;}
    display: flex;
    justify-content: space-between;
    background-color: #e0e0e0;
-		&__link {
-         font-size: 20px;
-         &.app {color: blue;}
-         &.green {color: green;}
-         &.red {color: red;}
+   &__link {
+      font-size: 20px;
+      &.app {color: blue;}
+      &.green {color: green;}
+      &.red {color: red;}
 
-         &:hover {
-            background-color: #9b9b9b;
-         }
-      }
+      &:hover {background-color: #9b9b9b;}
+      &.active {font-weight: 700;}
+   }
 }
 .portfolio-projects {
    background-color: #e0e0e0;
@@ -88,6 +87,11 @@ body {background-color: #456c3e;}
    flex-wrap: wrap;
    justify-content: space-between;
    padding: 20px;
+
+   height: auto;
+   max-height: 460px;
+   transition: max-height .2s linear;
+
    &__item {
       width: 30.333%;
       height: 100px;

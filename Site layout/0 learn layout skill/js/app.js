@@ -13,6 +13,12 @@ var content_interaction = document.querySelectorAll('#content_interaction');
 // function
   // all
 btn_all.addEventListener('click', (e) => {
+  e.preventDefault();
+  btn_all.classList.add('active');
+  btn_app.classList.remove('active');
+  btn_website.classList.remove('active');
+  btn_interaction.classList.remove('active');
+
   content_app.forEach(item => {
     item.classList.remove('hide');
   });
@@ -26,6 +32,11 @@ btn_all.addEventListener('click', (e) => {
 
   // app
 btn_app.addEventListener('click', (e) => {
+  btn_app.classList.add('active');
+  btn_all.classList.remove('active');
+  btn_website.classList.remove('active');
+  btn_interaction.classList.remove('active');
+
   content_website.forEach(item => {
     item.classList.add('hide');
   });
@@ -37,8 +48,13 @@ btn_app.addEventListener('click', (e) => {
   });
 });
 
-  // app
+  // website
 btn_website.addEventListener('click', (e) => {
+  btn_website.classList.add('active');
+  btn_all.classList.remove('active');
+  btn_app.classList.remove('active');
+  btn_interaction.classList.remove('active');
+
   content_app.forEach(item => {
     item.classList.add('hide');
   });
@@ -50,8 +66,13 @@ btn_website.addEventListener('click', (e) => {
   });
 });
 
-  // app
+  // interaction
 btn_interaction.addEventListener('click', (e) => {
+  btn_interaction.classList.add('active');
+  btn_all.classList.remove('active');
+  btn_app.classList.remove('active');
+  btn_website.classList.remove('active');
+
   content_website.forEach(item => {
     item.classList.add('hide');
   });
