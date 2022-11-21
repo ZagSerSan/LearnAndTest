@@ -85,27 +85,28 @@ body {background-color: #456c3e;}
    background-color: #e0e0e0;
    display: flex;
    flex-wrap: wrap;
-   justify-content: space-between;
-   padding: 20px;
-
-   height: auto;
-   max-height: 460px;
-   transition: max-height .2s linear;
-
+   justify-content: center;
    &__item {
-      width: 30.333%;
+      width: 31%;
       height: 100px;
       background-color: #9b9b9b;
-      margin: 20px 0;
+      margin: 20px 10px;
       display: flex;
       justify-content: center;
       align-items: center;
+      transition: all .3s linear;
 
       &.app {color: blue;}
       &.green {color: green;}
       &.red {color: red;}
 
-      &.hide {display: none;}
+      &.hide {
+         font-size: 0;
+         width: 0;
+         height: 0;
+         margin: 0;
+         overflow: hidden;
+      }
    }
 }
 
