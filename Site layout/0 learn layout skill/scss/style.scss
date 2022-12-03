@@ -57,58 +57,7 @@ body {background-color: #456c3e;}
    border-top: 4px solid #ccc;
 }
 //* <ОСНОВНОЙ БЛОК>====================================================================================================
-.portfolio {
-   &__inner {
-      background-color: #fff;
-      padding: 0 20px 20px;
-   }
-}
-.portfolio-filter {
-   width: 40%;
-   margin: 0px auto;
-   padding: 20px;
 
-   display: flex;
-   justify-content: space-between;
-   background-color: #e0e0e0;
-   &__link {
-      font-size: 20px;
-      &.app {color: blue;}
-      &.green {color: green;}
-      &.red {color: red;}
-
-      &:hover {background-color: #9b9b9b;}
-      &.active {font-weight: 700;}
-   }
-}
-.portfolio-projects {
-   background-color: #e0e0e0;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   &__item {
-      width: 31%;
-      height: 100px;
-      background-color: #9b9b9b;
-      margin: 20px 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: all .3s linear;
-
-      &.app {color: blue;}
-      &.green {color: green;}
-      &.red {color: red;}
-
-      &.hide {
-         font-size: 0;
-         width: 0;
-         height: 0;
-         margin: 0;
-         overflow: hidden;
-      }
-   }
-}
 
 
 //* </ДОПОЛНИТЕЛЬНЫЙ БЛОК>====================================================================================================
