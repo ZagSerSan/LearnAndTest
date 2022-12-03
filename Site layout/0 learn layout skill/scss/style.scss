@@ -54,9 +54,30 @@ body {background-color: #456c3e;}
    max-width: $mw + px;
    width: 100%;
    margin: 0 auto;
+   padding-top: 40px;
    border-top: 4px solid #ccc;
 }
 //* <ОСНОВНОЙ БЛОК>====================================================================================================
+
+h1 {
+   font-size: 24px;
+
+   span {
+      font-size: 0;
+      animation-name: anim;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-delay: 4s;
+      // animation-iteration-count: infinite;
+
+      @keyframes anim {
+         0% {font-size: 0;}
+         100% {font-size: 24px;}
+      }
+   }
+
+   
+}
 
 
 
