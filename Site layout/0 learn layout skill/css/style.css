@@ -32,12 +32,13 @@ a:hover {
 .wrapper {
   width: 100%;
   min-height: 100%;
-  overflow: hidden;
+  overflow: clip;
   padding-top: 100px;
 }
 
 body {
   background-color: #456c3e;
+  height: 10000px;
 }
 
 .container {
@@ -57,14 +58,15 @@ body {
 .filter {
   background-color: #b4b4b4;
   padding: 20px;
+  position: sticky;
+  top: 0px;
 }
 
 .work {
   background-color: #969696;
   width: 700px;
-  height: 200px;
-  padding: 10px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -72,4 +74,22 @@ body {
   width: 30%;
   height: 100px;
   background-color: green;
+  margin: 10px;
+}
+
+.block1 {
+  height: 1000px;
+  background-color: #fff;
+}
+
+.sticky {
+  height: 40px;
+  background-color: green;
+  position: sticky;
+  top: 0px;
+}
+
+.block2 {
+  height: 10000px;
+  background-color: #ccc;
 }
