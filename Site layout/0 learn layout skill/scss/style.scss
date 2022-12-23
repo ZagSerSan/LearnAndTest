@@ -59,6 +59,28 @@ body {background-color: #456c3e;}
 }
 //* <ОСНОВНОЙ БЛОК>====================================================================================================
 
+.container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.filter {
+   background-color: #b4b4b4;
+   padding: 20px;
+}
+.work {
+   background-color: #969696;
+   width: 700px;
+   height: 200px;
+   padding: 10px;
+   display: flex;
+   justify-content: space-between;
+}
+.work-item {
+   width: 30%;
+   height: 100px;
+   background-color: green;
+}
 
 
 
