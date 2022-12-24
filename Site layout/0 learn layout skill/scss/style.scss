@@ -64,40 +64,6 @@ body {background-color: #456c3e; height: 10000px;}
    flex-direction: column;
    align-items: center;
 }
-.filter {
-   background-color: #b4b4b4;
-   padding: 20px;
-   position: sticky;
-   top: 0px;
-}
-.work {
-   background-color: #969696;
-   width: 700px;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: space-between;
-}
-.work-item {
-   width: 30%;
-   height: 100px;
-   background-color: green;
-   margin: 10px;
-}
-
-.block1 {
-   height: 1000px;
-   background-color: #fff;
-}
-.sticky {
-   height: 40px;
-   background-color: green;
-   position: sticky;
-   top: 0px;
-}
-.block2 {
-   height: 10000px;
-   background-color: #ccc;
-}
 
 
 //* </ДОПОЛНИТЕЛЬНЫЙ БЛОК>====================================================================================================
