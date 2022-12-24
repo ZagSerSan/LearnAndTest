@@ -49,7 +49,7 @@
 // }
 
 //* <ОСНОВНАЯ СЕТКА>===========================================================================================================
-body {background-color: #456c3e; height: 10000px;}
+body {background-color: #456c3e;}
 .container {
    max-width: $mw + px;
    width: 100%;
@@ -64,7 +64,12 @@ body {background-color: #456c3e; height: 10000px;}
    flex-direction: column;
    align-items: center;
 }
+.test {
+   width: 200px;
+   height: 200px;
 
+   background-color: green;
+}
 
 //* </ДОПОЛНИТЕЛЬНЫЙ БЛОК>====================================================================================================
 // -Test---------------------------------
