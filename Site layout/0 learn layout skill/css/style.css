@@ -48,14 +48,20 @@ body {
   border-top: 4px solid #ccc;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.modal {
+  width: 600px;
+  height: 600px;
+  margin: 0px auto;
+  background-color: #ccc;
+  border: 2px #000 solid;
 }
 
-.test {
-  width: 200px;
-  height: 200px;
-  background-color: green;
+.preview {
+  width: 100%;
+  max-width: 700px;
+  margin: 0px auto;
+}
+
+img {
+  width: 100%;
 }
