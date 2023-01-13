@@ -3,34 +3,34 @@
    1 Пропорциональное изменение высоты изображения относительно его ширины.
 */
 
-
 let item = document.querySelector('.item');
 let modal = document.querySelector('.modal');
+let modal_bg = document.querySelector('.modal-bg');
 let close = document.querySelector('.close');
-
-setTimeout(() => {
-   // modal.style.display = 'none';
-   // modal.style.transform = 'scale(0)';
-   modal.style.opacity = '1';
-}, 1000);
 
 
 item.addEventListener('click', () => {
    modal.classList.add('active');
-   // modal.style.display = 'block';
+
+   modal_bg.classList.add('active');
+   setTimeout(() => {
+      modal_bg.classList.add('bg');
+   }, 10);
 });
 
 close.addEventListener('click', () => {
    modal.classList.remove('active');
-   // modal.style.display = 'none';
+
+   modal_bg.classList.remove('bg');
+   setTimeout(() => {
+      modal_bg.classList.remove('active');
+   }, 100);
 });
 
 $(function() {
-
    $('.slider').slick({
       // arrows: false
    });
-
 });
 
 

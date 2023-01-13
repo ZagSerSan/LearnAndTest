@@ -76,6 +76,23 @@ body {
   box-shadow: 5px 5px 5px #000;
 }
 
+.modal-bg {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  transition: background-color 0.2s linear;
+}
+.modal-bg.active {
+  display: block;
+}
+.modal-bg.bg {
+  background-color: rgba(0, 0, 0, 0.66);
+}
+
 .modal {
   position: fixed;
   top: 50%;
@@ -94,6 +111,7 @@ body {
 }
 .modal.active {
   transform: translate3d(-50%, -50%, 0) scale(1);
+  opacity: 1;
 }
 
 .preview {

@@ -1,6 +1,5 @@
 //* <МИКСИНЫ>===============================================================================================
    @import "mixins";
-
 //* <ШРИФТЫ>===============================================================================================
 //<Подключаем шрифты>=======================================================================================
 
@@ -20,23 +19,17 @@
    // $md2: 991.98;
    // $md3: 767.98;
    // $md4: 479.98;
-
 //* <ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
    @import "null";
-
 //* <ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
    // @import "header.scss";
    // @import "footer.scss";
-
 //* <ОБОЛОЧКА>===========================================================================================================
 .wrapper {
    width: 100%;
    min-height: 100%;
    overflow: clip;
-
    padding-top: 100px;
-   // &.loaded {
-   // }
 }
 .empty-space {
    height: 700px;
@@ -47,7 +40,6 @@
    border-top: 1px #ccc solid;
    margin-top: 10px;
 }
-
 //* <ОСНОВНАЯ СЕТКА>===========================================================================================================
 body {background-color: #456c3e;}
 .container {
@@ -75,10 +67,25 @@ body {background-color: #456c3e;}
    right: 10px;
    box-shadow: 5px 5px 5px #000;
  }
- 
- .modal {
-   
+ .modal-bg {
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   background-color: transparent;
+   transition: background-color .2s linear;
 
+   &.active {
+      display: block;
+   }
+   &.bg {
+      background-color: rgb(0 0 0 / 66%);
+   }
+
+ }
+ .modal {
    position: fixed;
    top: 50%;
    left: 50%;
@@ -98,23 +105,20 @@ body {background-color: #456c3e;}
 
    &.active {
       transform: translate3d(-50%, -50%, 0) scale(1);
+      opacity: 1;
    }
  }
- 
  .preview {
    width: 100%;
  }
- 
  .content {
    text-align: center;
    padding-top: 30px;
  }
- 
  img {
    width: 70%;
    margin: 0px auto;
  }
- 
  button {
    font-size: 30px;
    margin-top: 30px;
