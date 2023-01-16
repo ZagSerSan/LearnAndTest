@@ -24,6 +24,7 @@
 //* <ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
    // @import "header.scss";
    // @import "footer.scss";
+   @import "slick";
 //* <ОБОЛОЧКА>===========================================================================================================
 .wrapper {
    width: 100%;
@@ -78,7 +79,9 @@ body {background-color: #456c3e;}
    transition: background-color .2s linear;
 
    &.active {
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
    }
    &.bg {
       background-color: rgb(0 0 0 / 66%);
@@ -86,11 +89,12 @@ body {background-color: #456c3e;}
 
  }
  .modal {
-   position: fixed;
-   top: 50%;
-   left: 50%;
+   // position: fixed;
+   // top: 50%;
+   // left: 50%;
    z-index: 10;
-   transform: translate3d(-50%, -50%, 0) scale(0);
+   // transform: translate3d(-50%, -50%, 0) scale(0);
+   transform: scale(0);
    transition: transform .2s linear;
 
    display: block;
@@ -104,7 +108,8 @@ body {background-color: #456c3e;}
    border: 2px #000 solid;
 
    &.active {
-      transform: translate3d(-50%, -50%, 0) scale(1);
+      // transform: translate3d(-50%, -50%, 0) scale(1);
+      transform: scale(1);
       opacity: 1;
    }
  }

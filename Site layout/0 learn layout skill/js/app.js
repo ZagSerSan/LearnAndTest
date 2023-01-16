@@ -6,10 +6,13 @@
 let item = document.querySelector('.item');
 let modal = document.querySelector('.modal');
 let modal_bg = document.querySelector('.modal-bg');
-let close = document.querySelector('.close');
+let btn_close = document.querySelector('.close');
 
 
 item.addEventListener('click', () => {
+   $(function() {
+      $('.slider').slick('setPosition');
+   });
    modal.classList.add('active');
 
    modal_bg.classList.add('active');
@@ -18,7 +21,7 @@ item.addEventListener('click', () => {
    }, 10);
 });
 
-close.addEventListener('click', () => {
+btn_close.addEventListener('click', () => {
    modal.classList.remove('active');
 
    modal_bg.classList.remove('bg');
