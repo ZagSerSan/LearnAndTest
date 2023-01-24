@@ -13,8 +13,8 @@ body {
    color: black;
 }
 //* <ПЕРЕМЕННЫЕ>===========================================================================================================
-$minwidth: 320px;
-$mw: 1170;
+// $minwidth: 320px;
+// $mw: 1170;
 // $md1: $mw + 12;
 // $md2: 991.98;
 // $md3: 767.98;
@@ -45,7 +45,7 @@ body {
    background-color: #456c3e;
 }
 .container {
-   max-width: $mw + px;
+   max-width: 1200px;
    width: 100%;
    margin: 0 auto;
    padding-top: 40px;
