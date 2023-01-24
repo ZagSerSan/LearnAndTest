@@ -61,7 +61,7 @@ body {
 .container {
   width: 100%;
   max-width: 1200px;
-  margin: 0px auto;
+  margin: 40px auto 0;
   padding: 0 20px;
 }
 
@@ -171,4 +171,28 @@ body {
 }
 .courses__table td:nth-child(1) {
   text-decoration: underline;
+}
+
+.social {
+  background-color: #e7e7e7;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+.social__inner {
+  display: flex;
+  justify-content: center;
+}
+.social__inner a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0 20px;
+}
+.social__inner a:hover {
+  border: 1px solid #000;
+}
+.social__inner a svg {
+  width: 100%;
+  height: 100%;
 }
