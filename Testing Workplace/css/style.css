@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 body {
   font-family: "Raleway", sans-serif;
   font-size: 15px;
@@ -29,13 +30,19 @@ a:hover {
   text-decoration: underline;
 }
 
-.wrapper {
+.empty-space {
+  height: 700px;
   width: 100%;
-  min-height: 100%;
-  overflow: clip;
+  background-color: #ccc;
+  text-align: center;
+  color: #ccc;
+  border-top: 1px #ccc solid;
+  margin-top: 10px;
 }
 
 body {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
   background-color: #ccc;
 }
 
@@ -44,4 +51,98 @@ body {
   width: 100%;
   margin: 0 auto;
   padding-top: 40px;
+}
+
+.projectname {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 0 20px;
+}
+
+.biography {
+  display: flex;
+  background-color: #e7e7e7;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.biography__avatar img {
+  display: block;
+  width: 300px;
+  height: auto;
+  border-radius: 20px;
+}
+.biography__info {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+}
+
+.biography-item__title {
+  margin-bottom: 3px;
+}
+.biography-item__subtitle {
+  font-weight: 700;
+  font-size: inherit;
+}
+.biography-item__subtitle.name {
+  font-size: 17px;
+}
+.biography-item__text {
+  font-style: italic;
+}
+
+.goals-and-time {
+  display: flex;
+}
+
+.block-title {
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.goals {
+  width: 50%;
+  background-color: #e7e7e7;
+  padding: 20px;
+  border-radius: 20px;
+  margin-right: 20px;
+}
+.goals__list {
+  margin: 0;
+}
+.goals__list li {
+  margin-bottom: 5px;
+}
+
+.learttime {
+  width: 50%;
+  background-color: #e7e7e7;
+  padding: 20px;
+  border-radius: 20px;
+}
+.learttime__table {
+  width: 50%;
+  margin: 0px auto;
+}
+.learttime__table td.hover--title {
+  cursor: help;
+  text-decoration: underline;
+}
+.learttime__table td.hover--title:hover {
+  text-decoration: none;
+}
+.learttime__table td:nth-child(even) {
+  width: 30%;
+  text-align: center;
 }

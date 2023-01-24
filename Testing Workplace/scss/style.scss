@@ -2,15 +2,15 @@
 @import "mixins";
 //* <ШРИФТЫ>===============================================================================================
 //<Подключаем шрифты>=======================================================================================
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 //<Иконочные шрифты>==========================================================================================
 
 //<Шрифт по умолчанию>==========================================================================================
 body {
-   font-family: "Raleway", sans-serif;
-   font-size: 15px;
-   -webkit-font-smoothing: antialiased;
-   color: black;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  color: black;
 }
 //* <ПЕРЕМЕННЫЕ>===========================================================================================================
 // $minwidth: 320px;
@@ -25,34 +25,157 @@ body {
 // @import "header.scss";
 // @import "footer.scss";
 //* <ОБОЛОЧКА>===========================================================================================================
-.wrapper {
-   width: 100%;
-   min-height: 100%;
-   overflow: clip;
-   // padding-top: 50px;
-}
-// .empty-space {
-//    height: 700px;
+// .wrapper {
 //    width: 100%;
-//    background-color: #456c3e;
-//    text-align: center;
-//    color: #ccc;
-//    border-top: 1px #ccc solid;
-//    margin-top: 10px;
+//    min-height: 100%;
+//    overflow: clip;
+//    // padding-top: 50px;
 // }
+.empty-space {
+  height: 700px;
+  width: 100%;
+  background-color: #ccc;
+  text-align: center;
+  color: #ccc;
+  border-top: 1px #ccc solid;
+  margin-top: 10px;
+}
 //* <ОСНОВНАЯ СЕТКА>===========================================================================================================
 body {
-   background-color: #ccc;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+
+  background-color: #ccc;
 }
 .container {
-   max-width: 1200px;
-   width: 100%;
-   margin: 0 auto;
-   padding-top: 40px;
-   // border-top: 4px solid #ccc;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 40px;
+  // border-top: 4px solid #ccc;
 }
 //* <ОСНОВНОЙ БЛОК>====================================================================================================
+.projectname {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 0 20px;
+}
+// biography ------------------------------
+.biography {
+  display: flex;
 
+  background-color: #e7e7e7;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  &__avatar {
+    img {
+      display: block;
+      width: 300px;
+      height: auto;
+
+      border-radius: 20px;
+    }
+  }
+  &__info {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    position: relative;
+  }
+}
+.biography-item {
+  &__title {
+    margin-bottom: 3px;
+  }
+  &__subtitle {
+    font-weight: 700;
+    font-size: inherit;
+    &.name {
+      font-size: 17px;
+    }
+  }
+  &__text {
+    font-style: italic;
+  }
+}
+// goals ------------------------------
+.goals-and-time {
+  display: flex;
+  // justify-content: space-between;
+}
+.block-title {
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.goals {
+  width: 50%;
+  background-color: #e7e7e7;
+  padding: 20px;
+  border-radius: 20px;
+  margin-right: 20px;
+
+  &__list {
+    margin: 0;
+    li {
+      margin-bottom: 5px;
+    }
+  }
+}
+.learttime {
+  width: 50%;
+  background-color: #e7e7e7;
+  padding: 20px;
+  border-radius: 20px;
+
+  &__table {
+    width: 50%;
+    margin: 0px auto;
+    td {
+      &.hover--title {
+        cursor: help;
+        text-decoration: underline;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      &:nth-child(even) {
+        width: 30%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+// .social {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   z-index: 1;
+//   display: flex;
+//   &__link {
+//     display: block;
+//     width: 40px;
+//     height: 40px;
+
+//     &:hover {
+//       border: 1px solid #000;
+//     }
+//     svg {
+//       width: 100%;
+//       height: 100%;
+//     }
+//   }
+// }
 //* </ДОПОЛНИТЕЛЬНЫЙ БЛОК>====================================================================================================
 // -Test---------------------------------
 // .test {
