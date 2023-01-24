@@ -109,10 +109,10 @@ body {
 // goals ------------------------------
 .goals-and-time {
   display: flex;
-  // justify-content: space-between;
+  margin-bottom: 20px;
 }
 .block-title {
-  font-weight: 700;
+  font-weight: 400;
   font-size: 20px;
   text-align: center;
   margin-bottom: 15px;
@@ -151,6 +151,31 @@ body {
       &:nth-child(even) {
         width: 30%;
         text-align: center;
+      }
+    }
+  }
+}
+// courses ------------------------------
+.courses {
+  background-color: #e7e7e7;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  &__table {
+    text-align: center;
+    border-collapse: collapse;
+    width: 70%;
+    margin: 0px auto;
+    tr:first-child {
+      border-bottom: 1px solid #000;
+    }
+    th {
+      padding-bottom: 20px;
+    }
+    td {
+      padding-top: 20px;
+      &:nth-child(1) {
+        text-decoration: underline;
       }
     }
   }
