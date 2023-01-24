@@ -33,11 +33,10 @@ a:hover {
   width: 100%;
   min-height: 100%;
   overflow: clip;
-  padding-top: 100px;
 }
 
 body {
-  background-color: #456c3e;
+  background-color: #ccc;
 }
 
 .container {
@@ -45,5 +44,4 @@ body {
   width: 100%;
   margin: 0 auto;
   padding-top: 40px;
-  border-top: 4px solid #ccc;
 }
