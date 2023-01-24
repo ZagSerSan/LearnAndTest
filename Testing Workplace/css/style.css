@@ -82,10 +82,15 @@ body {
   margin-left: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   position: relative;
 }
 
+.biography-item {
+  margin-bottom: 15px;
+}
+.biography-item:last-child {
+  margin-bottom: 0;
+}
 .biography-item__title {
   margin-bottom: 3px;
 }
@@ -133,7 +138,8 @@ body {
   border-radius: 20px;
 }
 .learttime__table {
-  width: 50%;
+  width: 100%;
+  text-align: center;
   margin: 0px auto;
 }
 .learttime__table td.hover--title {
@@ -142,10 +148,6 @@ body {
 }
 .learttime__table td.hover--title:hover {
   text-decoration: none;
-}
-.learttime__table td:nth-child(even) {
-  width: 30%;
-  text-align: center;
 }
 
 .courses {
@@ -189,10 +191,56 @@ body {
   height: 40px;
   margin: 0 20px;
 }
-.social__inner a:hover {
-  border: 1px solid #000;
+.social__inner a.mail svg {
+  stroke: #000;
+}
+.social__inner a:hover.telegram svg {
+  fill: #2a84fa;
+}
+.social__inner a:hover.instagram svg {
+  fill: #e34d1c;
+}
+.social__inner a:hover.mail svg {
+  stroke: #7cb128;
 }
 .social__inner a svg {
+  transition: fill 0.1s linear, stroke 0.1s linear;
   width: 100%;
   height: 100%;
+}
+
+@media (max-width: 700px) {
+  .biography {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .biography__avatar {
+    margin-bottom: 30px;
+  }
+  .biography__info {
+    margin-left: 0;
+    text-align: center;
+  }
+  .goals-and-time {
+    flex-wrap: wrap;
+  }
+  .goals-and-time .goals {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+  .goals-and-time .learttime {
+    width: 100%;
+  }
+  .courses__table {
+    width: 100%;
+  }
+}
+@media (max-width: 380px) {
+  .biography__avatar {
+    width: 100%;
+  }
+  .biography__avatar img {
+    width: 100%;
+  }
 }
