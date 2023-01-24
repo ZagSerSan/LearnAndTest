@@ -1,0 +1,160 @@
+//* <МИКСИНЫ>===============================================================================================
+@import "mixins";
+//* <ШРИФТЫ>===============================================================================================
+//<Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+body {
+   font-family: "Raleway", sans-serif;
+   font-size: 15px;
+   -webkit-font-smoothing: antialiased;
+   color: black;
+}
+//* <ПЕРЕМЕННЫЕ>===========================================================================================================
+$minwidth: 320px;
+$mw: 1170;
+// $md1: $mw + 12;
+// $md2: 991.98;
+// $md3: 767.98;
+// $md4: 479.98;
+//* <ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null";
+//* <ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+// @import "header.scss";
+// @import "footer.scss";
+@import "slick";
+//* <ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+   width: 100%;
+   min-height: 100%;
+   overflow: clip;
+   padding-top: 100px;
+}
+.empty-space {
+   height: 700px;
+   width: 100%;
+   background-color: #456c3e;
+   text-align: center;
+   color: #ccc;
+   border-top: 1px #ccc solid;
+   margin-top: 10px;
+}
+//* <ОСНОВНАЯ СЕТКА>===========================================================================================================
+body {
+   background-color: #456c3e;
+}
+.container {
+   max-width: $mw + px;
+   width: 100%;
+   margin: 0 auto;
+   padding-top: 40px;
+   border-top: 4px solid #ccc;
+}
+//* <ОСНОВНОЙ БЛОК>====================================================================================================
+
+.item {
+   position: relative;
+   background: #ccc url("../img/Penguins.jpg") center no-repeat;
+   background-size: cover;
+   width: 300px;
+   height: 300px;
+   margin: 0px auto;
+   cursor: pointer;
+   font-size: 50px;
+   color: #148500;
+}
+.item:hover {
+   bottom: 10px;
+   right: 10px;
+   box-shadow: 5px 5px 5px #000;
+}
+.modal-bg {
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   background-color: transparent;
+   transition: background-color 0.2s linear;
+
+   &.active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   &.bg {
+      background-color: rgb(0 0 0 / 66%);
+   }
+}
+.modal {
+   // position: fixed;
+   // top: 50%;
+   // left: 50%;
+   z-index: 10;
+   // transform: translate3d(-50%, -50%, 0) scale(0);
+   transform: scale(0);
+   transition: transform 0.2s linear;
+
+   display: block;
+   opacity: 0;
+
+   width: 800px;
+   height: 800px;
+   margin: 0px auto;
+   padding: 30px;
+   background-color: #ccc;
+   border: 2px #000 solid;
+
+   &.active {
+      // transform: translate3d(-50%, -50%, 0) scale(1);
+      transform: scale(1);
+      opacity: 1;
+   }
+}
+.preview {
+   width: 100%;
+}
+.content {
+   text-align: center;
+   padding-top: 30px;
+}
+img {
+   width: 70%;
+   margin: 0px auto;
+}
+button {
+   font-size: 30px;
+   margin-top: 30px;
+   cursor: pointer;
+}
+
+//* </ДОПОЛНИТЕЛЬНЫЙ БЛОК>====================================================================================================
+// -Test---------------------------------
+// .test {
+//    padding: 40px 0;
+//    border-top: 1px #ccc solid;
+// }
+// .test__row {
+//    display: flex;
+//    justify-content: flex-start;
+//    flex-direction: row;
+//    flex-wrap: wrap;
+//    align-content: space-between;
+
+//    border: 2px solid red;
+//    height: 500px;
+// }
+// .test__string  {
+//    display: inline-flex;
+//    align-items: center;
+//    flex-direction: column;
+//    width: 300px;
+//    height: 100px;
+//    margin: 20px 10px;
+
+//    border: 1px solid rgb(0, 0, 0);
+//    background-color: #ccc;
+// }
