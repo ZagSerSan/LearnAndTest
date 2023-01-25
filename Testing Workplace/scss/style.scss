@@ -45,6 +45,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 15px;
 
+  padding-top: 40px;
   background-color: #ccc;
 }
 .container {
@@ -52,10 +53,25 @@ body {
   width: 100%;
   margin: 0 auto;
   padding-top: 40px;
-  // border-top: 4px solid #ccc;
+  border-top: 4px solid #ccc;
 }
 //* <ОСНОВНОЙ БЛОК>====================================================================================================
-
+html {
+  font-family: sans-serif;
+}
+body {
+  width: 50%;
+  max-width: 800px;
+  min-width: 480px;
+  margin: 0 auto;
+}
+.form input[type="number"] {
+  width: 200px;
+}
+.lastResult {
+  color: white;
+  padding: 3px;
+}
 //* </ДОПОЛНИТЕЛЬНЫЙ БЛОК>====================================================================================================
 // -Test---------------------------------
 // .test {
