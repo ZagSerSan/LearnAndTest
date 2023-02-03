@@ -29,6 +29,29 @@ console.log(userName);
 alert(`Вас зовут ${userName}.`)
 
 
+console.log('----------------- Задание #4 -------------------')
+
+let userAge = prompt('Сколько вам лет?');
+userAge = Number((userAge).trim());
+alert(`Вас зовут ${userName} и вам ${userAge} лет.`);
+
+
+console.log('----------------- Задание #5 -------------------')
+
+let userString = (prompt('Введите текст для обрезки:')).trim();
+let startSliceIndex = Number(prompt('Введите индекс, с которого нужно начать обрезку строки:'));
+let endSliceIndex = Number(prompt('Введите индекс, которым нужно закончить обрезку строки:'));
+
+let string = (userString.slice(startSliceIndex, endSliceIndex)).trim();
+
+alert(string);
+
+
+
+
+
+
+
 
 
 
