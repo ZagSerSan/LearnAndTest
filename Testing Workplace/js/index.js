@@ -1,5 +1,5 @@
 //TODO ========= 1й Модуль - 5.Работа со строками ==============
-
+/* 
 console.log('----------------- Задание #1 -------------------')
 
 const myName = 'Сегрей';
@@ -9,6 +9,7 @@ const reasonText = 'хочу изменить свою жизнь';
 const numberOfMonth = 12;
 
 let myInfoText = `Всем привет! Меня зовут ${myName}. Сейчас я изучаю язык программирования ${programmingLanguage} на курсе по ${programmingLanguage} у ${courseCreatorName}. Я хочу стать веб-разработчиком, потому что ${reasonText}. До этого я изучал(а) ${programmingLanguage} ${numberOfMonth} месяцев. Я уверен, что пройду данный курс до конца!`;
+
 console.log(myInfoText);
 
 
@@ -43,15 +44,22 @@ let startSliceIndex = Number(prompt('Введите индекс, с котор�
 let endSliceIndex = Number(prompt('Введите индекс, которым нужно закончить обрезку строки:'));
 
 let string = (userString.slice(startSliceIndex, endSliceIndex)).trim();
-
 alert(string);
 
+*/
+console.log('----------------- Задание #6 -------------------')
 
+let userText = (prompt('Введите текст:')).trim();
+let wordFromText = (prompt('Введите слово из текста:')).trim();
 
+indexOfWord = userText.indexOf(wordFromText);
 
+let string = userText.slice(0, indexOfWord);
+alert(`Результат: ${string}`);
 
-
-
+/*
+Обрезка осуществляется здесь, дальше ничего нету.
+*/
 
 
 
