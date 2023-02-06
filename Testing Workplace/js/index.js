@@ -143,6 +143,14 @@ do {
 while (i < 3)
 */
 
+console.log('----------------- Задание #5 -------------------')
+let sum = 0;
+for (let i = 0; i <= 100; i++) {
+   sum += i;
+}
+
+console.log(sum);
+alert(sum)
 
 
 /*
@@ -150,7 +158,7 @@ while (i < 3)
    #2 https://codepen.io/ZagSerSan/pen/YzjMKjB?editors=0011
    #3 https://codepen.io/ZagSerSan/pen/dyjLygY?editors=0011
    #4 https://codepen.io/ZagSerSan/pen/yLqryyG?editors=0011
-   #5 
+   #5 https://codepen.io/ZagSerSan/pen/LYBvVNQ?editors=0011
 */
 
 
