@@ -19,7 +19,6 @@ if (userLogin === existingUserLogin && userPassword === existingUserPassword) {
 } else {
    alert('Логин и (или) Пароль введены неверно!');
 }
-*/
 
 console.log('----------------- Задание #2 -------------------')
 // Вопросы
@@ -86,12 +85,30 @@ if (userAnswer_5 === answer_5) {
 
 // Конечный результат
 alert(`Конец теста! Правильных ответов: ${correctAnswers}, неправильных ответов: ${incorrectAnswers}.`)
+*/
+
+console.log('----------------- Задание #3 -------------------')
+
+// Вопрос №1
+let question_1 = confirm('1. JavaScript появился в 1995 году?')
+alert(question_1 ? 'Верно!' : 'Неверно!');
+
+// Вопрос №2
+let question_2 = confirm('1. Спецификация JavaScript называется ECMAScript?')
+alert(question_2 ? 'Верно!' : 'Неверно!');
+
+// Вопрос №3
+let question_3 = confirm('1. JavaScript был создан за 1 месяц?')
+alert(question_3 ? 'Верно!' : 'Неверно!');
 
 
-
-
-
-
+/*
+   #1 https://codepen.io/ZagSerSan/pen/MWBRgrJ
+   #2 https://codepen.io/ZagSerSan/pen/YzjMKjB?editors=0011
+   #3 
+   #4 
+   #5 
+*/
 
 
 
