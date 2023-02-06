@@ -85,7 +85,6 @@ if (userAnswer_5 === answer_5) {
 
 // Конечный результат
 alert(`Конец теста! Правильных ответов: ${correctAnswers}, неправильных ответов: ${incorrectAnswers}.`)
-*/
 
 console.log('----------------- Задание #3 -------------------')
 
@@ -100,13 +99,57 @@ alert(question_2 ? 'Верно!' : 'Неверно!');
 // Вопрос №3
 let question_3 = confirm('1. JavaScript был создан за 1 месяц?')
 alert(question_3 ? 'Верно!' : 'Неверно!');
+*/
+
+/* 
+
+console.log('----------------- Задание #4 -------------------')
+// for (let i = 0; i < 3; i += 1) {
+//    let newStudent = prompt('Введите имя нового студента!');
+//    if (newStudent) {
+//      newStudent = newStudent.trim();
+//      alert(`Добро пожаловать, ${newStudent}!`)
+//    }
+// }
+
+// while
+let i = 0;
+let number = 1;
+while (i < 3) {
+   let newStudent = prompt('Введите имя нового студента!');
+   if (newStudent) {
+      newStudent = newStudent.trim();
+      alert(`Добро пожаловать, ${newStudent}!`)
+      console.log(`Студент ${number}: ${newStudent}`);
+   }
+   i++
+   number++
+}
+
+// do while
+console.log('do while');
+let i = 0;
+let number = 1;
+do {
+   let newStudent = prompt('Введите имя нового студента!');
+   if (newStudent) {
+      newStudent = newStudent.trim();
+      alert(`Добро пожаловать, ${newStudent}!`)
+      console.log(`Студент ${number}: ${newStudent}`);
+   }
+   i++
+   number++
+}
+while (i < 3)
+*/
+
 
 
 /*
    #1 https://codepen.io/ZagSerSan/pen/MWBRgrJ
    #2 https://codepen.io/ZagSerSan/pen/YzjMKjB?editors=0011
-   #3 
-   #4 
+   #3 https://codepen.io/ZagSerSan/pen/dyjLygY?editors=0011
+   #4 https://codepen.io/ZagSerSan/pen/yLqryyG?editors=0011
    #5 
 */
 
