@@ -1,7 +1,6 @@
 //TODO ========= 1й Модуль - 6. Введение в основы JavaScript ==============
 
 /*
-*/
 
 console.log('----------------- Задание #1 -------------------')
 
@@ -11,8 +10,8 @@ if (health <= 0 || !health) {
 } else {
   alert(`Параметр "здоровье" равен ${health}`);
 }
+*/
 
-/*
 console.log('----------------- Задание #2 -------------------')
 
 const temperatureInCelsius = Number(prompt('Введите температуру в градусах Цельсия').trim());
@@ -38,7 +37,6 @@ if (!temperatureInCelsius && temperatureInCelsius !== 0) {
 }
 console.log('!temperatureInCelsius: ', !temperatureInCelsius);
 console.log('!temperatureInCelsius && temperatureInCelsius !== 0): ', !temperatureInCelsius && temperatureInCelsius !== 0);
-*/
 
 
 
