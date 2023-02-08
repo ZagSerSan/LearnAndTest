@@ -36,7 +36,6 @@ if (!temperatureInCelsius && temperatureInCelsius !== 0) {
 }
 console.log('!temperatureInCelsius: ', !temperatureInCelsius);
 console.log('!temperatureInCelsius && temperatureInCelsius !== 0): ', !temperatureInCelsius && temperatureInCelsius !== 0);
-*/
 
 
 console.log('----------------- Задание #3 -------------------')
@@ -53,11 +52,36 @@ for (let i = 0; i < numberOfJuniorDevelopers; i += 1) {
    console.log(totalJuniorDevelopersSalary);
 }
 console.log('totalJuniorDevelopersSalary', totalJuniorDevelopersSalary);
+*/
+
+console.log('----------------- Задание #4 -------------------')
+
+let numbers = [10, 4, 100, -5, 54, 2]
+let sum = 0;
+
+// Через цикл for
+for (let i = 0; i < numbers.length; i += 1) {
+    numbers[i] = numbers[i] ** 3;
+    sum += numbers[i];
+} 
+console.log(sum); // 1158411
+
+// Через цикл for of
+sum = 0;
+for (let num of numbers){
+   // возврат исходного числа в массиве
+   num = Math.cbrt(num); 
+   console.log(num);
+
+   num = num ** 3;
+   sum += num;
+   console.log(num);
+} 
+console.log(sum); // 1158411
 
 /*
    #1 https://codepen.io/ZagSerSan/pen/VwBOwPO?editors=0011
    #2 https://codepen.io/ZagSerSan/pen/RwBmNGK?editors=0011
-   #3
-   #4
-   #5
+   #3 https://codepen.io/ZagSerSan/pen/BaPeWRm?editors=0011
+   #4 https://codepen.io/ZagSerSan/pen/eYjavEo?editors=0011
 */
