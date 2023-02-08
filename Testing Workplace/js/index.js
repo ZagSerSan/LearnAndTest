@@ -10,7 +10,6 @@ if (health <= 0 || !health) {
 } else {
   alert(`Параметр "здоровье" равен ${health}`);
 }
-*/
 
 console.log('----------------- Задание #2 -------------------')
 
@@ -37,8 +36,23 @@ if (!temperatureInCelsius && temperatureInCelsius !== 0) {
 }
 console.log('!temperatureInCelsius: ', !temperatureInCelsius);
 console.log('!temperatureInCelsius && temperatureInCelsius !== 0): ', !temperatureInCelsius && temperatureInCelsius !== 0);
+*/
 
 
+console.log('----------------- Задание #3 -------------------')
+
+const salaryOfJuniorDeveloper = 500;
+const numberOfJuniorDevelopers = 3;
+let taxPercentage = 13;
+let totalJuniorDevelopersSalary = 0; // тип переменной был не определена
+console.log(totalJuniorDevelopersSalary);
+                
+for (let i = 0; i < numberOfJuniorDevelopers; i += 1) {
+   const salaryWithTax = salaryOfJuniorDeveloper-(salaryOfJuniorDeveloper*taxPercentage/100);
+   totalJuniorDevelopersSalary += salaryWithTax;
+   console.log(totalJuniorDevelopersSalary);
+}
+console.log('totalJuniorDevelopersSalary', totalJuniorDevelopersSalary);
 
 /*
    #1 https://codepen.io/ZagSerSan/pen/VwBOwPO?editors=0011
