@@ -57,28 +57,40 @@ console.log(getSumOfNumbers(logNum, 10, 'even')); // 30
 console.log(getSumOfNumbers(logNum, 10, '')); // 55
 */
 
-let numbers = [10, 4, 100, -5, 54, 2]
-let sum = 0;
+console.log('----------------- Задание #3 -------------------')
 
-// Через цикл for
-for (let i = 0; i < numbers.length; i += 1) {
-    sum += numbers[i] ** 3;
-   //  console.log(numbers[i]);
+
+// let num = 102.3;
+// console.log(Number.isInteger(num));
+
+
+
+function getDivisorsCount(number) {
+   let count = 0;
+
+   if (!number || isNaN(Number(number))) {
+      count = NaN;
+   } else if (number < 0 || !Number.isInteger(number)) {
+      alert(`'${number}' должен быть целым числом и больше нуля!`)
+      count = NaN;
+   }   else {
+      for (let i = 0; i <= number; i++) {
+         if (Number.isInteger(number / i)) {
+            count += 1;
+         }
+      }
+   }
+   return count;
 }
-console.log('Цикл for, sum =', sum); // 1158411
-console.log(numbers); // без изменений
-
-// Через цикл for of
-sum = 0;
-for (let num of numbers){
-    sum += num ** 3;;
-   //  console.log(num);
-}
-console.log('Цикл for of, sum =', sum); // 1158411
-console.log(numbers); // без изменений
-
-
-
+console.log(getDivisorsCount(4)); // 3
+console.log(getDivisorsCount(5)); // 2
+console.log(getDivisorsCount(12)); // 6
+console.log(getDivisorsCount(30)); // 8
+console.log(getDivisorsCount()); // NaN
+console.log(getDivisorsCount('')); // NaN
+console.log(getDivisorsCount('dasd')); // NaN
+console.log(getDivisorsCount(36.23)); // alert
+console.log(getDivisorsCount(-36.23)); // alert
 
 
 
