@@ -19,7 +19,6 @@ const getName3 = name => {
 console.log('getName1', getName1('Serhii'));
 console.log('getName2', getName2('Serhii'));
 console.log('getName3', getName3('Serhii'));
-*/
 
 
 console.log('----------------- Задание #2 -------------------')
@@ -56,14 +55,68 @@ const logNum = msg => console.log(msg);
 console.log(getSumOfNumbers(logNum, 10, 'odd')); // 25
 console.log(getSumOfNumbers(logNum, 10, 'even')); // 30
 console.log(getSumOfNumbers(logNum, 10, '')); // 55
+*/
+
+let numbers = [10, 4, 100, -5, 54, 2]
+let sum = 0;
+
+// Через цикл for
+for (let i = 0; i < numbers.length; i += 1) {
+    sum += numbers[i] ** 3;
+   //  console.log(numbers[i]);
+}
+console.log('Цикл for, sum =', sum); // 1158411
+console.log(numbers); // без изменений
+
+// Через цикл for of
+sum = 0;
+for (let num of numbers){
+    sum += num ** 3;;
+   //  console.log(num);
+}
+console.log('Цикл for of, sum =', sum); // 1158411
+console.log(numbers); // без изменений
 
 
-// console.log('----------------- Задание #3 -------------------')
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+// Через цикл for of
+// sum = 0;
+// for (let num of numbers){
+//    sum += (Math.cbrt(num) ** 3);
+//    console.log(num); // без изменений
+// }
+// console.log(sum); // 1158411
+// console.log(numbers); // без изменений
+
+/**
+// Через цикл for of
+sum = 0;
+for (let num of numbers){
+   // возврат исходного числа в массиве
+   num = Math.cbrt(num); 
+   console.log(num);
+
+   num = num ** 3;
+   sum += num;
+   console.log(num);
+} 
+console.log('цикл for of: ', sum); // 1158411
+ */
 
 
 
