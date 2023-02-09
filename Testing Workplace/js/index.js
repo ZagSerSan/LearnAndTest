@@ -27,23 +27,30 @@ console.log('----------------- Задание #2 -------------------')
 function getSumOfNumbers(callback, number, type) {
    let sum = 0;
 
-   callback(`Sum ${number} by ${type}:`);
-  // logNum(`Sum ${number} by ${type}:`)
-   for (let i = 0; i <= number; i++) {
-      // определение type
-      if (type === '') sum += i;
-      if (type === 'even') {
-         sum += i;
-         i++;
-      }
-      if (type === 'odd' && i !== number) {
-         sum += (i+1);
-         i++;
+   callback(`Sum '${number}' by ${type}:`);
+   number = Number(number);
+
+   if (isNaN(number)) {
+      sum = number;
+   } else if (number === 0) {
+      sum = NaN;
+   } else {
+      for (let i = 0; i <= number; i++) {
+         // определение type
+         if (type === '') sum += i;
+         if (type === 'even') {
+            sum += i;
+            i++;
+         }
+         if (type === 'odd' && i !== number) {
+            sum += (i+1);
+            i++;
+         }
       }
    }
    return sum;
 }
-
+// callback
 const logNum = msg => console.log(msg);
 
 console.log(getSumOfNumbers(logNum, 10, 'odd')); // 25
