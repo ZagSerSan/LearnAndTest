@@ -33,30 +33,35 @@ for (let i = peopleWaiting.length; i > 0; i--) {
    leaveQueueWithoutParcel()
 }
 
-*/
 console.log('----------------- Задание #2 -------------------')
 
-function getSumOfSequence(number) {
-   const array = [];
-      
-   for (let i = 1; i <= number; i++) {
-      array.push(i);
-   }
-   let sum = array[0]+array[array.length-1]
-   return sum
+const array = ['1', '2', '3', '4', '5'];
+
+for (let i = 0; i < array.length; i++) {
+   console.log(array[i] += '_edited');
 }
+*/
 
-console.log(getSumOfSequence(5));
+console.log('----------------- Задание #3 -------------------')
 
+const coffees = ['Latte', 'Cappuccino', 'Americano'];
+let coffeeName = prompt('Поиск кофе по названию:').trim(); 
 
+console.log(coffeeName);
 
+let isContains = coffees.some(item => {
+   return item.toLowerCase() === coffeeName.toLowerCase();
+});
+let index = coffees.findIndex(item => {
+   return item.toLowerCase() === coffeeName.toLowerCase();
+});
+console.log(isContains);
 
-
-
-
-
-
-
+if (isContains) {
+   alert(`Держите ваш любимый кофе ${coffees[index]}. Он ${index+1}-й по популярности в нашей кофейне.`)
+} else {
+   alert('К сожалению, такого вида кофе нет в наличии.');
+}
 
 
 
