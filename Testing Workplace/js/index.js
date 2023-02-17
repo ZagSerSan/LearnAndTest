@@ -1,5 +1,7 @@
 //TODO ========= 1й Модуль ==============
 
+/** 
+
 console.log('----------------- Задание #1 -------------------')
 
 const peopleWaiting = ['Кристина', 'Олег', 'Кирилл', 'Мария', 'Светлана', 'Артем', 'Глеб'];
@@ -30,6 +32,28 @@ giveParcel();
 for (let i = peopleWaiting.length; i > 0; i--) {
    leaveQueueWithoutParcel()
 }
+
+*/
+console.log('----------------- Задание #2 -------------------')
+
+function getSumOfSequence(number) {
+   const array = [];
+      
+   for (let i = 1; i <= number; i++) {
+      array.push(i);
+   }
+   let sum = array[0]+array[array.length-1]
+   return sum
+}
+
+console.log(getSumOfSequence(5));
+
+
+
+
+
+
+
 
 
 
