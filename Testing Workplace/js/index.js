@@ -40,7 +40,6 @@ const array = ['1', '2', '3', '4', '5'];
 for (let i = 0; i < array.length; i++) {
    console.log(array[i] += '_edited');
 }
-*/
 
 console.log('----------------- Задание #3 -------------------')
 
@@ -62,15 +61,23 @@ if (isContains) {
 } else {
    alert('К сожалению, такого вида кофе нет в наличии.');
 }
+*/
 
+console.log('----------------- Задание #4 -------------------')
 
+const coffees = ['Latte', 'Cappuccino', 'Americano'];
+const prices = [1.5, 1, 2];
 
+const updatedPrices = prices.map(item => {
+   // 0.5 не увеличивает цену, подставленно своё число: 1.5
+   return item * 1.5;
+});
+console.log(updatedPrices);
 
-
-
-
-
-
+coffees.forEach( (item, index) => {
+   // let index = item.findIndex();
+   alert(`Кофе ${item} сейчас стоит ${updatedPrices[index]} евро.`)
+});
 
 
 
