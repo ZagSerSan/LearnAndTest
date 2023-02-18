@@ -111,6 +111,22 @@ alert(`Всего положительных оценок: ${goodEstimations.len
 
 console.log('----------------- Задание #6 -------------------')
 
+const numbers = [10, 4, 100, -5, 54, 2];
+
+// 1) Решение через цикл for:
+for (let i = 0; i < numbers.length; i++) {
+   numbers[i] = numbers[i]**3;
+}
+console.log('после цикла', numbers);
+
+let sum = numbers.reduce( (acc, item) => {
+   return acc += item;
+}, 0);
+console.log('после reduce', sum);
+console.log('?', sum === 1158411);
+
+
+
 
 
 
