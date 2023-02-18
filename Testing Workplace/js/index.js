@@ -138,14 +138,18 @@ for (let num of numbers) {
    sum += num;
 }
 console.log('после цикла', numbers);
-console.log('после reduce', sum);
+console.log('sum', sum);
 console.log('sum = 1158411:', sum === 1158411);
 */
 
-
 //---- 3) Решение через метод forEach() ----------
+const numbers = [10, 4, 100, -5, 54, 2];
+let sum = 0;
 
-
+numbers.forEach(item => {
+   sum += item**3
+});
+console.log('sum === 1158411: is', sum === 1158411);
 
 
 
