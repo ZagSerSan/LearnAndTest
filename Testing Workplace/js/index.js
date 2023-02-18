@@ -61,7 +61,6 @@ if (isContains) {
 } else {
    alert('К сожалению, такого вида кофе нет в наличии.');
 }
-*/
 
 console.log('----------------- Задание #4 -------------------')
 
@@ -79,6 +78,38 @@ coffees.forEach( (item, index) => {
    alert(`Кофе ${item} сейчас стоит ${updatedPrices[index]} евро.`)
 });
 
+console.log('----------------- Задание #5 -------------------')
+
+let clientsEstimations = [];
+
+function askClientToGiveEstimation () {
+   let userEstimation = Number(prompt('Как вы оцениваете нашу кофейню от 1 до 10?').trim());
+
+   if (userEstimation >= 1 && userEstimation <= 10) {
+      clientsEstimations.push(userEstimation);
+   }
+   return clientsEstimations;
+}
+
+for (let i = 0; i < 5; i++) {
+   askClientToGiveEstimation();
+}
+console.log('clientsEstimations', clientsEstimations);
+
+let goodEstimations = clientsEstimations.filter(item => {
+   return item > 5;
+});
+let notGoodEstimations = clientsEstimations.filter(item => {
+   return item <= 5;
+});
+
+console.log('goodEstimations', goodEstimations);
+console.log('notGoodEstimations', notGoodEstimations);
+
+alert(`Всего положительных оценок: ${goodEstimations.length}; Всего отрицательных оценок: ${notGoodEstimations.length}.`);
+*/
+
+console.log('----------------- Задание #6 -------------------')
 
 
 
