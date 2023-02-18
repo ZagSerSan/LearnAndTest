@@ -111,36 +111,55 @@ alert(`Всего положительных оценок: ${goodEstimations.len
 
 console.log('----------------- Задание #6 -------------------')
 
-// 1) Решение через цикл for:
+//---- 1) Решение через цикл for ----------
 /*
 const numbers = [10, 4, 100, -5, 54, 2];
+let sum = 0;
 for (let i = 0; i < numbers.length; i++) {
    numbers[i] = numbers[i]**3;
+   sum += numbers[i];
 }
 console.log('после цикла', numbers);
-
-let sum = numbers.reduce( (acc, item) => {
-   return acc += item;
-}, 0);
-console.log('после reduce', sum);
-console.log('?', sum === 1158411);
+console.log('sum', sum);
+console.log('sum = 1158411:', sum === 1158411);
 */
 
-// 2) Решение через цикл for...of:
-const numbers = [10, 4, 100, -5, 54, 2];
 
+//---- 2) Решение через цикл for...of ----------
+/*
+const numbers = [10, 4, 100, -5, 54, 2];
+let sum = 0;
 for (let num of numbers) {
    let index = numbers.findIndex( item => {return item === num});
    num = num**3;
    // console.log(index);
    numbers[index] = num;
    // console.log(num);
+   sum += num;
 }
 console.log('после цикла', numbers);
-
-let sum = numbers.reduce( (acc, item) => {
-   return acc += item;
-}, 0);
 console.log('после reduce', sum);
 console.log('sum = 1158411:', sum === 1158411);
+*/
+
+
+//---- 3) Решение через метод forEach() ----------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
