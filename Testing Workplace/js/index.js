@@ -46,8 +46,8 @@ for (obj of onlineUsers) {
   usersOnlineNames.push(obj.username);
 }
 usersOnlineNames = usersOnlineNames.join(', ');
-console.log('usersOnlineNames:', usersOnlineNames);
+// console.log('usersOnlineNames:', usersOnlineNames);
 
-
+alert(`Сейчас в онлайн следующие пользователи: ${usersOnlineNames}`)
 
 
