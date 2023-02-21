@@ -1,53 +1,101 @@
 //TODO ========= 1й Модуль ==============
 
-console.log('----------------- Задание #1 -------------------')
 
-const users = [
-	{
-    username: 'David',
-    status: 'online',
-    lastActivity: 10
-	},
-	{
-    username: 'Lucy',
-    status: 'offline',
-    lastActivity: 22
-	},
-	{
-    username: 'Bob',
-    status: 'online',
-    lastActivity: 104
-  },
-  // {
-  //   username: 'Serhii',
-  //   status: 'online',
-  //   lastActivity: 134
-  // },
-  // {
-  //   username: 'Ivan',
-  //   status: 'offline',
-  //   lastActivity: 64
-  // }
+const orders = [4, 2, 1, 3];
+const patients = [
+   { id: 1, name: "Максим" },
+   { id: 2, name: "Николай" },
+   { id: 3, name: "Ангелина" },
+   { id: 4, name: "Виталий" },
 ];
-// console log with for...of
-// let i = 0;
-// for (item of users) {
-//   console.log(`users${i}`, users[i]);
-//   i++;
-// }
 
-let onlineUsers = users.filter(item => {
-  return item.status === 'online'
-});
-// console.log('onlineUsers', onlineUsers);
+function giveTalonsInOrder(patients, orders) {
+  // новый массив для эл-в с новым порядком
+  const newArray = [];
 
-let usersOnlineNames = [];
-for (obj of onlineUsers) {
-  usersOnlineNames.push(obj.username);
+  // получение текущего индекса нового порядка
+  let index = 0;
+  for (number of orders) {
+    index = number;
+    // console.log(index);
+    
+    // заполнение нового массива посредством тек. индекса
+    newArray.push(patients.find(item => {
+      return item.id === index;
+    }));
+  }
+  // возвращение массива с новым порядком
+  return newArray;
 }
-usersOnlineNames = usersOnlineNames.join(', ');
-// console.log('usersOnlineNames:', usersOnlineNames);
 
-alert(`Сейчас в онлайн следующие пользователи: ${usersOnlineNames}`)
+const result = giveTalonsInOrder(patients, orders)
+console.log('result', result);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
