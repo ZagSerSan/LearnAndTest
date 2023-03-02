@@ -7,27 +7,64 @@ class Dictionary {
     this.keys = [];
   }
   add(word, description) {
+    // проверка на наличие такого слова
     if (this.keys.some(item => {return item === word})) {
       console.log(`Слово '${word}' уже есть!`);
     } else {
-      // console.log(this.keys);
+      // добавление слова в words, если такого не было при проверке
       this.words[word] = {
         word: word,
         description: description
       }
+      console.log(`Слово '${word}' добавлено.`);
     }
+    // массив ключей words, для провекри наличия слова
     this.keys = Object.keys(this.words);
+  }
+  remove(word) {
+    // проверка на наличие такого слова
+    if (this.keys.some(item => {return item === word})) {
+      // удаление слова из объекта
+      delete this.words[word];
+      // удаление их массива наличия посредством индекса
+      let indexArr = this.keys.findIndex(item => {return item === word});
+      this.keys.splice(indexArr,1);
+
+      console.log(`Слово '${word}' удалено.`);
+    } else {
+      console.log(`Слова ${word} не существует.`);
+    }
+  }
+  get(word) {
+    // проверка на наличие такого слова
+    if (this.keys.some(item => {return item === word})) {
+      return this.words[word];
+    } else {
+      console.log(`Слова ${word} не найдено...`);
+    }
+    return this.words
   }
 }
 
-const obj = new Dictionary('словарь');
+const dictionary = new Dictionary('словарь');
+// dictionary.add('JavaScript', 'популярный язык программирования');
+// dictionary.add('Веб-разработчик', 'Человек, который создает новые сервисы и сайты или поддерживает и дополняет существующие');
 
-obj.add('js', 'язык программирования')
-obj.add('css', 'таблицы стилей')
-obj.add('html', 'язык разметки')
-obj.add('html', 'язык разметки 2')
+// add()
+dictionary.add('js', 'язык программирования')
+dictionary.add('css', 'таблицы стилей')
+dictionary.add('html', 'язык разметки')
+dictionary.add('html', 'язык разметки 2')
 
-console.log(obj);
+// remove()
+dictionary.remove('html')
+dictionary.remove('html')
+
+// get()
+console.log(dictionary.get('js'));
+console.log(dictionary.get('html'));
+
+console.log(dictionary);
 
 
 
