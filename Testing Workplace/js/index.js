@@ -19,6 +19,7 @@ class Woman extends Man {
   }
 }
 
+class Anyclass {};
 
 const man1 = new Man('Alex', 34);
 const man2 = new Man('John', 23);
@@ -28,7 +29,9 @@ man1.sayHello();
 man2.sayHello();
 woman.sayHello();
 
-
+console.log(man1 instanceof Man);
+console.log(woman instanceof Man);
+console.log(woman instanceof Anyclass);
 
 
 
