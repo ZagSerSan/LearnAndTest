@@ -5,6 +5,14 @@ class Dictionary {
     this.name = name;
     this.words = {};
     this.keys = [];
+
+    //todo --------------------
+    // this.keysAndValue = [];
+    /*
+      тут можно написать массив, который будет содержать ключи и значение,
+      и в предыдущий выводить просто ключи, а в массив для вывода всех слов выводить ключ и значение.
+     */
+
   }
   add(word, description) {
     // проверка на наличие такого слова
@@ -20,6 +28,9 @@ class Dictionary {
     }
     // массив ключей words, для провекри наличия слова
     this.keys = Object.keys(this.words);
+    //todo
+    // this.keysAndValue = Object.entries(this.words);
+    // console.log(...this.keysAndValue);
   }
   remove(word) {
     // проверка на наличие такого слова
@@ -32,7 +43,7 @@ class Dictionary {
 
       console.log(`Слово '${word}' удалено.`);
     } else {
-      console.log(`Слова ${word} не существует.`);
+      console.log(`Слова '${word}' не существует.`);
     }
   }
   get(word) {
@@ -40,9 +51,22 @@ class Dictionary {
     if (this.keys.some(item => {return item === word})) {
       return this.words[word];
     } else {
-      console.log(`Слова ${word} не найдено...`);
+      console.log(`Слова '${word}' не найдено...`);
     }
     return this.words
+  }
+  showAllWords() {
+
+    let arr = [];
+
+    // for (let item in this.words) {
+      // console.log(this.words);
+      // console.log(item, item);
+      Object.entries(this.words).forEach(arr => 
+        // console.log(`${arr[0]}: ${arr[1]}`)
+        console.log(`${arr[1].word}: ${arr[1].description}`)
+      );
+    return this.words;
   }
 }
 
@@ -57,14 +81,17 @@ dictionary.add('html', 'язык разметки')
 dictionary.add('html', 'язык разметки 2')
 
 // remove()
-dictionary.remove('html')
-dictionary.remove('html')
+// dictionary.remove('html')
+// dictionary.remove('html')
 
 // get()
-console.log(dictionary.get('js'));
-console.log(dictionary.get('html'));
+// console.log(dictionary.get('js'));
+// console.log(dictionary.get('html'));
 
-console.log(dictionary);
+console.log(`------------------`);
+dictionary.showAllWords();
+
+// console.log(dictionary);
 
 
 
