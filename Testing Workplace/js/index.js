@@ -5,14 +5,6 @@ class Dictionary {
     this.name = name;
     this.words = {};
     this.keys = [];
-
-    //todo --------------------
-    // this.keysAndValue = [];
-    /*
-      тут можно написать массив, который будет содержать ключи и значение,
-      и в предыдущий выводить просто ключи, а в массив для вывода всех слов выводить ключ и значение.
-     */
-
   }
   add(word, description) {
     // проверка на наличие такого слова
@@ -29,8 +21,6 @@ class Dictionary {
     // массив ключей words, для провекри наличия слова
     this.keys = Object.keys(this.words);
     //todo
-    // this.keysAndValue = Object.entries(this.words);
-    // console.log(...this.keysAndValue);
   }
   remove(word) {
     // проверка на наличие такого слова
