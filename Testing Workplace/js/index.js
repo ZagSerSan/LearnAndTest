@@ -56,20 +56,25 @@ class Dictionary {
     return this.words
   }
   showAllWords() {
-
     let arr = [];
-
-    // for (let item in this.words) {
-      // console.log(this.words);
-      // console.log(item, item);
       Object.entries(this.words).forEach(arr => 
-        // console.log(`${arr[0]}: ${arr[1]}`)
         console.log(`${arr[1].word}: ${arr[1].description}`)
       );
     return this.words;
   }
 }
 
+const dictionary = new Dictionary('Толковый словарь');
+dictionary.add('JavaScript', 'популярный язык программирования');
+dictionary.add('Веб-разработчик', 'Человек, который создает новые сервисы и сайты или поддерживает и дополняет существующие');
+
+dictionary.remove('JavaScript');
+dictionary.showAllWords();
+// Веб-разработчик - Человек, который создает новые сервисы и сайты или поддерживает // и дополняет существующие
+console.log(dictionary);
+
+
+/**
 const dictionary = new Dictionary('словарь');
 // dictionary.add('JavaScript', 'популярный язык программирования');
 // dictionary.add('Веб-разработчик', 'Человек, который создает новые сервисы и сайты или поддерживает и дополняет существующие');
@@ -81,17 +86,18 @@ dictionary.add('html', 'язык разметки')
 dictionary.add('html', 'язык разметки 2')
 
 // remove()
-// dictionary.remove('html')
-// dictionary.remove('html')
+dictionary.remove('html')
+dictionary.remove('html')
 
 // get()
-// console.log(dictionary.get('js'));
-// console.log(dictionary.get('html'));
+console.log(dictionary.get('js'));
+console.log(dictionary.get('html'));
 
 console.log(`------------------`);
 dictionary.showAllWords();
 
-// console.log(dictionary);
+console.log(dictionary);
+ */
 
 
 
