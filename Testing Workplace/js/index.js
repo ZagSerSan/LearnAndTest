@@ -94,9 +94,9 @@ form.addEventListener('submit', (event) => {
   }
   
   const errorBlock = document.createElement('span')
-  errorBlock.className = 'error-message-block'
-  errorBlock.textContent = 'Задача с таким названием уже существует.'
-  let isError = document.querySelector('.error-message-block');
+    errorBlock.className = 'error-message-block'
+    errorBlock.textContent = 'Задача с таким названием уже существует.'
+  let isError = target.querySelector('.error-message-block');
 
   // логика при наличии ошибки
   if (isError) { // если есть ошибка
@@ -113,15 +113,14 @@ form.addEventListener('submit', (event) => {
     }
   // БЕЗ ОШИБКИ: если пустая строка 
   } else if (taskName.value === '') {
-    console.log('пустая строка');
+    // console.log('пустая строка');
     errorBlock.textContent = 'Название задачи не должно быть пустым.'
-    tasksList.append(errorBlock);
+    target.append(errorBlock);
   } else if (!itContain) {
   // если такой задачи нету 
     addTaskToHtml()
   } else {
   // если такая задача есть 
-    tasksList.append(errorBlock);
+    target.append(errorBlock);
   }
-
 });
