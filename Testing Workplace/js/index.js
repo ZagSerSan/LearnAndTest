@@ -19,7 +19,6 @@ const tasks = [
 ];
 // получение блока для добавления задач
 const tasksList = document.querySelector('.tasks-list');
-
 // функция для добавления задач из массива
 function createElementByArray(array) {
   array.forEach((item)=> {
@@ -43,7 +42,7 @@ function createElementByArray(array) {
      </div>`
      tasksList.append(taskItem);
   });
-  return console.log('Элементы были добавлены из массива.');
+  // return console.log('Элементы были добавлены из массива.');
 }
 createElementByArray(tasks);
 
@@ -51,18 +50,19 @@ createElementByArray(tasks);
 const form = document.querySelector('.create-task-block');
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  
   // получение формы и инпута
   const {target} = event;
-  let {taskName} = target;
+  const {taskName} = target;
   
-  // массив задач += новая задача
+  // шаблон новой задачи для массива
   let newTask = {
     id: `113846507806${tasks.length+1}`,
     completed: false,
     text: `${taskName.value}`,
   }
+  // проверка, существует ли такая задача в массиве
   const itContain = tasks.some(item => {
+    // поиск и сравнение ведённого задания в массиве задач
     return item.text === taskName.value;
   })
   // функция добавления элемента на страницу
@@ -92,35 +92,38 @@ form.addEventListener('submit', (event) => {
     console.log(tasks);
     return tasks
   }
-  
+  // создание и получение блока ошибки
   const errorBlock = document.createElement('span')
     errorBlock.className = 'error-message-block'
     errorBlock.textContent = 'Задача с таким названием уже существует.'
   let isError = target.querySelector('.error-message-block');
-
-  // логика при наличии ошибки
-  if (isError) { // если есть ошибка
-    // если активирована ошибка и пустая строка
-    if (isError && taskName.value === '') {
-      isError.textContent = 'Название задачи не должно быть пустым.'
-    } else if (isError && taskName.value !== '' && !itContain) {
-    // если ошибка, пустая строка и такой задачи нету
-      isError.remove();
-      addTaskToHtml();
-    } else if (isError && taskName.value !== '' && itContain) {
-    // если ошибка, пустая строка и такая задача есть
-      isError.textContent = 'Задача с таким названием уже существует.'
+  
+  // функция проверяющая валидпацию значение инпута
+  const checkInputValueOnValid = (inputValue) => {
+    // if (inputValue === '' || itContain) {
+    if (inputValue === '') {
+      return {bollean: false, type: 'empty'}
+    } else if (itContain) {
+      return {bollean: false, type: 'isContain'}
     }
-  // БЕЗ ОШИБКИ: если пустая строка 
-  } else if (taskName.value === '') {
-    // console.log('пустая строка');
-    errorBlock.textContent = 'Название задачи не должно быть пустым.'
-    target.append(errorBlock);
-  } else if (!itContain) {
-  // если такой задачи нету 
-    addTaskToHtml()
+    return {bollean: true}
+  }
+  //перемення, означающая валидпацию значение инпута
+  const isValid = checkInputValueOnValid(taskName.value);
+
+  // если значени инпута валидно
+  if (isValid.bollean) {
+    // если блок ошибки есть, то удалить его и добавить задачу, в прот случае просто добавить задачу
+    isError ? (isError.remove(), addTaskToHtml()) : addTaskToHtml();
   } else {
-  // если такая задача есть 
-    target.append(errorBlock);
+    // если блок ошибки есть, то не добавлять снова, в прот случае добавить
+    isError ? console.log('блок ошибки уже есть') : target.append(errorBlock);
+    if (isValid.type === 'empty') {
+      // если блок ошибки уже есть, то изменить текст сообщения ему, если нету, то создаваемому блоку ошибки
+      isError ? isError.textContent = 'Название задачи не должно быть пустым.' : errorBlock.textContent = 'Название задачи не должно быть пустым.'
+    } else if (isValid.type === 'isContain') {
+      // если блок ошибки уже есть, то изменить текст сообщения ему, если нету, то создаваемому блоку ошибки
+      isError ? isError.textContent = 'Задача с таким названием уже существует.' : errorBlock.textContent = 'Задача с таким названием уже существует.'
+    }
   }
 });
