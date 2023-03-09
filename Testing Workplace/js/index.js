@@ -117,7 +117,7 @@ form.addEventListener('submit', (event) => {
     isError ? (isError.remove(), addTaskToHtml()) : addTaskToHtml();
   } else {
     // если блок ошибки есть, то не добавлять снова, в прот случае добавить
-    isError ? console.log('блок ошибки уже есть') : target.append(errorBlock);
+    if(!isError) {target.append(errorBlock);}
     if (isValid.type === 'empty') {
       // если блок ошибки уже есть, то изменить текст сообщения ему, если нету, то создаваемому блоку ошибки
       isError ? isError.textContent = 'Название задачи не должно быть пустым.' : errorBlock.textContent = 'Название задачи не должно быть пустым.'
