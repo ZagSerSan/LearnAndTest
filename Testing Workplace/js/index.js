@@ -36,7 +36,7 @@ function createElementByArray(array) {
              ${item.text}
          </span>
      </div>
-     <button class="task-item__delete-button default-button delete-button" data-delete-task-id="5">
+     <button class="task-item__delete-button default-button delete-button" data-delete-task-id="${item.id}">
          Удалить
      </button>
      </div>`
@@ -83,7 +83,7 @@ form.addEventListener('submit', (event) => {
             ${newTask.text}
         </span>
     </div>
-    <button class="task-item__delete-button default-button delete-button" data-delete-task-id="5">
+    <button class="task-item__delete-button default-button delete-button" data-delete-task-id="${newTask.id}">
         Удалить
     </button>
     </div>`
@@ -127,3 +127,61 @@ form.addEventListener('submit', (event) => {
     }
   }
 });
+
+// удаление задачи
+// создание модального окна
+const modalForDeleteTask = document.createElement('div');
+modalForDeleteTask.className = 'modal-overlay modal-overlay_hidden'
+modalForDeleteTask.innerHTML =
+`<div class="delete-modal">
+    <h3 class="delete-modal__question">
+        Вы действительно хотите удалить эту задачу?
+    </h3>
+    <div class="delete-modal__buttons">
+        <button class="delete-modal__button delete-modal__cancel-button">
+            Отмена
+        </button>
+        <button class="delete-modal__button delete-modal__confirm-button">
+            Удалить
+        </button>
+    </div>
+</div>
+</div>`;
+
+// получения блока родителя всех кнопок
+tasksList.addEventListener('click', (event) => {
+  event.stopPropagation()
+  
+  const {target} = event;
+  const dataId = target.dataset.deleteTaskId;
+  // const elementToDelete = document.querySelector(`[data-task-id='${dataId}']`);
+  const button = event.target.closest("button");
+  
+  if (button) {
+    document.querySelector('body').append(modalForDeleteTask);
+    modalForDeleteTask.classList.remove('modal-overlay_hidden')
+  }
+
+  // todo
+  const modalOnHtml = document.querySelector('.modal-overlay');
+  modalOnHtml.addEventListener('click', (event) => {
+    const button = event.target.closest("button");
+
+    if (button.className.includes('delete-modal__confirm-button')) {
+      // поиск и удаление из массива
+      const index = tasks.findIndex( item => {
+        return item.id === dataId
+      })
+      tasks.splice(index, 1)
+    } else {
+      modalOnHtml.classList.add('modal-overlay_hidden');
+    }
+  });
+  
+
+  
+});
+
+
+
+
