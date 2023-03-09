@@ -154,7 +154,7 @@ tasksList.addEventListener('click', (event) => {
   
   const {target} = event;
   const dataId = target.dataset.deleteTaskId;
-  // const elementToDelete = document.querySelector(`[data-task-id='${dataId}']`);
+  const elementToDelete = document.querySelector(`[data-task-id='${dataId}']`);
   const button = event.target.closest("button");
   
   if (button) {
@@ -164,20 +164,31 @@ tasksList.addEventListener('click', (event) => {
 
   // todo
   const modalOnHtml = document.querySelector('.modal-overlay');
-  modalOnHtml.addEventListener('click', (event) => {
-    const button = event.target.closest("button");
+  const modalbuttons = modalOnHtml.querySelectorAll("button");
 
-    if (button.className.includes('delete-modal__confirm-button')) {
-      // поиск и удаление из массива
-      const index = tasks.findIndex( item => {
-        return item.id === dataId
-      })
-      tasks.splice(index, 1)
-    } else {
-      modalOnHtml.classList.add('modal-overlay_hidden');
-    }
-  });
+  console.log(modalbuttons);
+
+  modalbuttons.forEach(button => {
+    button.addEventListener('click', (event) => {
+      // несколько раз удаляет из массива -> потому что удаляет для каждой кнопки, две кнопки = два удаления, два раза срабатывает функция удаления из массива
+      
+      if (event.target.className.includes('delete-modal__confirm-button')) {
+        // поиск и удаление из массива
+        const index = tasks.findIndex( item => {
+          console.log(item.id);
+          return item.id === dataId
+        });
+        elementToDelete.remove();
+        tasks.splice(index, 1)
+        modalOnHtml.classList.add('modal-overlay_hidden');
   
+        console.log(tasks);
+      } else {
+        modalOnHtml.classList.add('modal-overlay_hidden');
+      }
+    })
+    
+  })
 
   
 });
