@@ -147,6 +147,8 @@ modalForDeleteTask.innerHTML =
     </div>
 </div>
 </div>`;
+// добавление модального окна на страницу
+document.querySelector('body').append(modalForDeleteTask);
 
 // получения блока родителя всех кнопок
 tasksList.addEventListener('click', (event) => {
@@ -154,45 +156,34 @@ tasksList.addEventListener('click', (event) => {
   
   const {target} = event;
   const dataId = target.dataset.deleteTaskId;
-  const elementToDelete = document.querySelector(`[data-task-id='${dataId}']`);
-  const button = event.target.closest("button");
+  const deleteButton = event.target.closest(".delete-button");
   
-  if (button) {
-    document.querySelector('body').append(modalForDeleteTask);
+  if (deleteButton) {
     modalForDeleteTask.classList.remove('modal-overlay_hidden')
+    modalForDeleteTask.dataset.taskId = dataId;
   }
-
-  // todo
-  const modalOnHtml = document.querySelector('.modal-overlay');
-  const modalbuttons = modalOnHtml.querySelectorAll("button");
-
-  console.log(modalbuttons);
-
-  modalbuttons.forEach(button => {
-    button.addEventListener('click', (event) => {
-      // несколько раз удаляет из массива -> потому что удаляет для каждой кнопки, две кнопки = два удаления, два раза срабатывает функция удаления из массива
-      
-      if (event.target.className.includes('delete-modal__confirm-button')) {
-        // поиск и удаление из массива
-        const index = tasks.findIndex( item => {
-          console.log(item.id);
-          return item.id === dataId
-        });
-        elementToDelete.remove();
-        tasks.splice(index, 1)
-        modalOnHtml.classList.add('modal-overlay_hidden');
-  
-        console.log(tasks);
-      } else {
-        modalOnHtml.classList.add('modal-overlay_hidden');
-      }
-    })
-    
-  })
-
-  
 });
 
+// ослеживание клика по модальному окну
+const modalOnHtml = document.querySelector('.modal-overlay');
+modalOnHtml.addEventListener('click', (event) => {
+  const buttonModal = event.target.closest("button");
+  const dataId = modalOnHtml.dataset.taskId;
+  const elementToDelete = document.querySelector(`[data-task-id='${dataId}']`);
+
+  if (buttonModal.className.includes('delete-modal__cancel-button')) {
+    modalForDeleteTask.classList.add('modal-overlay_hidden')
+  } else if (buttonModal.className.includes('delete-modal__confirm-button')) {
+    const index = tasks.findIndex( item => {
+      return item.id === dataId
+    });
+    elementToDelete.remove();
+    tasks.splice(index, 1)
+    modalOnHtml.classList.add('modal-overlay_hidden');
+
+    console.log(tasks);
+  }
+});
 
 
 
