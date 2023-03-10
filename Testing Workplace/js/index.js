@@ -128,7 +128,7 @@ form.addEventListener('submit', (event) => {
   }
 });
 
-// удаление задачи
+// УДАЛЕНИЕ ЗАДАЧИ ---------------------------------------------------------
 // создание модального окна
 const modalForDeleteTask = document.createElement('div');
 modalForDeleteTask.className = 'modal-overlay modal-overlay_hidden'
@@ -184,6 +184,10 @@ modalOnHtml.addEventListener('click', (event) => {
     console.log(tasks);
   }
 });
+
+//todo СМЕНА ТЕМЫ ---------------------------------------------------------
+
+
 
 
 
