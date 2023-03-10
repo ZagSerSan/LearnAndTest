@@ -186,7 +186,27 @@ modalOnHtml.addEventListener('click', (event) => {
 });
 
 //todo СМЕНА ТЕМЫ ---------------------------------------------------------
+let nightTheme = false;
 
+document.addEventListener('keydown', event => {
+  const body = document.querySelector('body');
+  const allTaskItems = document.querySelectorAll('.task-item');
+  const allButtons = document.querySelectorAll('button ');
+
+  if (event.key === 'Tab' && !nightTheme) {
+    nightTheme = true
+
+    body.style.background = '#24292E';
+    allTaskItems.forEach(item => {item.style.color = '#ffffff'});
+    allButtons.forEach(item => {item.style.border = '1px solid #ffffff'});
+  } else if (event.key === 'Tab' && nightTheme) {
+    nightTheme = false
+
+    body.style.background = 'initial';
+    allTaskItems.forEach(item => {item.style.color = 'initial'});
+    allButtons.forEach(item => {item.style.border = 'none'});
+  }
+});
 
 
 
