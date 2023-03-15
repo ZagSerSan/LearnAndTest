@@ -1,3 +1,31 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** 
 // контейнер для вывода пользователей в html
 const dataContainerHTML = document.querySelector('#data-container');
 
@@ -46,3 +74,4 @@ function getUsersByIds(arrayOfIds) {
 }
 
 getUsersByIds([5, 6, 2, 1])
+*/
