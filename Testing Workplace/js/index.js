@@ -25,62 +25,24 @@ function toggleLoaderHTML() {
 }
 toggleLoaderHTML()
 
-/** 
-// функция getUsersByIds
-function getUsersByIds(arrayForIndexes, arrayOfUsers) {
-  let newArray = [];
-  for (let i = 0; i < arrayForIndexes.length; i++) {
-    newArray.push(arrayOfUsers.find(item => {
-      return item.id === arrayForIndexes[i];
+function getUsersByIds(arrayOfIds) {
+  Promise.all(arrayOfIds.map(item => fetch(`https://jsonplaceholder.typicode.com/users/${item}`)))
+    .then(responses => {
+      // обработка ошибки
+      let isOk = responses.every(response => response.ok === true)
+      if (!isOk) {
+        throw new Error('Ошибка запроса!');
+      }
+      return Promise.all(responses.map(response => response.json()));
+    }).then(users => users.forEach(userItem => {
+      dataContainerHTML.append(creatUserElement(userItem.name));
     }))
-  }
-
-  newArray.forEach(userItem => {
-    dataContainerHTML.append(creatUserElement(userItem.name));
-  });
-}
-*/
-
-function getUsersByIds(linksArray) {
-  let newArray = [];
-  for (item of linksArray) {
-    newArray.push(fetch(`https://jsonplaceholder.typicode.com/users/${item}`))
-  }
-  return newArray
-}
-
-Promise.all(getUsersByIds([5, 6, 2, 1]))
-  .then(responses => {
-    const results = responses.map(response => response.json());
-    return Promise.all(results);
-  })
-  .then(results => {
-    results.forEach(userObj => {
-      dataContainerHTML.append(creatUserElement(userObj.name));
+    .catch(error => {
+      console.error(error);
     })
-  })
+    .finally( () => {
+      toggleLoaderHTML()
+    })
+}
 
-/** 
-fetch('https://jsonplaceholder.typicode.com/users/1')
-  .then( response => {
-    if (!response.ok) {
-      throw new Error('Ошибка запроса!');
-    }
-    return response.json()
-  }).then(array => {
-
-    // console.log(array);
-    //todo
-    // getUsersByIds([5, 6, 2, 1], array)
-    dataContainerHTML.append(creatUserElement(array.name));
-
-  })
-  */
-
-  .catch(error => {
-    console.error(error);
-  })
-  .finally( () => {
-    toggleLoaderHTML()
-  })
-
+getUsersByIds([5, 6, 2, 1])
