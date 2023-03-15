@@ -1,17 +1,18 @@
-const POSTS_URL = "https://jsonplaceholder.typicode.com/posts";
-let isLoading = false;
 
-const createNewPost =  async () => {
+const TODOS_URL = 'https://jsonplaceholder.typicode.com/todos';
+
+const getTodosByIds = async (ids) => {
   try {
-    isLoading = true;
-    const respons = await fetch(POSTS_URL, {method: "POST"});
-    const result = await response.json();
-    console.log("result", result);
-  } catch { 
-    error => console.log("error", error)
+    console.log('Загрузка...');
+    const requests = await ids.map(id => fetch(`${TODOS_URL}/${id}`));
+    const responses = await Promise.all(requests)
+    const dataResults = responses.map(data => data.json());
+    const allTasks = await Promise.all(dataResults);
+    console.log('Результат:');
+    console.log('allTasks:', allTasks);
+  } catch { error => console.log('error', error);
   } finally {
-    isLoading = false;
+    console.log('finally');
   }
 }
-
-createNewPost();
+getTodosByIds([43, 21, 55, 100, 10]);
