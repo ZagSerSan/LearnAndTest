@@ -1,57 +1,35 @@
 :root {
-   --text-shadow-color: rgba(255, 255, 255, 0.5);
-   --link-background: #dad2ca;
-   --text-color: #444;
-   --circle-background: #8fd4c1;
-   --border-color: #ffffff;
+   --list-item-text-color: white;
+   --list-item-counter-background: #d66786;
+   --list-item-background: #e3dedc;
 }
 
-body {
-   padding: 20px;
-}
-
-#data-container {
-   counter-reset: li;
+.data-container {
+   margin-left: 0;
    list-style: none;
-   font: 14px "Trebuchet MS", "Lucida Sans";
-   padding: 0;
-   text-shadow: 0 1px 0 var(--text-shadow-color);
+   counter-reset: li;
 }
-
-#data-container a {
+.data-container li {
+   padding: 10px 0;
    position: relative;
-   display: block;
-   padding: 0.4em 0.4em 0.4em 2em;
-   margin: 0.5em 0;
-   background: var(--link-background);
-   color: var(--text-color);
-   text-decoration: none;
-   border-radius: 0.3em;
-   transition: 0.3s ease-out;
+   left: 1.5em;
+   margin-bottom: 0.75em;
+   padding-left: 1em;
+   background: var(--list-item-background);
 }
-
-#data-container a:hover {
-   background: var(--link-background);
-}
-
-#data-container a:hover:before {
-   transform: rotate(360deg);
-}
-
-#data-container a:before {
-   content: counter(li);
-   counter-increment: li;
+.data-container li:before {
+   padding: 10px 0;
    position: absolute;
-   left: -1.3em;
-   top: 50%;
-   margin-top: -1.3em;
-   background: var(--circle-background);
-   height: 2em;
-   width: 2em;
-   line-height: 2em;
-   border: 0.3em solid var(--border-color);
+   top: 0;
+   bottom: 0;
+   left: -1.5em;
+   width: 1.875em;
    text-align: center;
+   color: var(--list-item-text-color);
    font-weight: bold;
-   border-radius: 2em;
-   transition: all 0.3s ease-out;
+   background: var(--list-item-counter-background);
+   border-bottom-left-radius: 70em;
+   border-top-left-radius: 70em;
+   counter-increment: li;
+   content: counter(li);
 }
