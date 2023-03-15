@@ -1,31 +1,13 @@
 
+/**html шаблон 
+<li class="photo-item">
+  <img class="photo-item__image" src="https://via.placeholder.com/600/92c952">
+  <h3 class="photo-item__title">
+    accusamus beatae ad facilis cum similique qui sunt
+  </h3>
+</li>
+*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/** 
 // контейнер для вывода пользователей в html
 const dataContainerHTML = document.querySelector('#data-container');
 
@@ -53,7 +35,11 @@ function toggleLoaderHTML() {
 }
 toggleLoaderHTML()
 
-function getUsersByIds(arrayOfIds) {
+//todo
+function getFastestLoadedPhoto(ids) {
+  const URL = 'https://jsonplaceholder.typicode.com/photos/1'
+
+
   Promise.all(arrayOfIds.map(item => fetch(`https://jsonplaceholder.typicode.com/users/${item}`)))
     .then(responses => {
       // обработка ошибки
@@ -73,5 +59,4 @@ function getUsersByIds(arrayOfIds) {
     })
 }
 
-getUsersByIds([5, 6, 2, 1])
-*/
+// getUsersByIds([5, 6, 2, 1])
