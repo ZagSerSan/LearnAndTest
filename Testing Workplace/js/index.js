@@ -1,5 +1,6 @@
 
 const ALBUMS_URL = 'https://jsonplaceholder.typicode.com/albums';
+// const ALBUMS_URL = 'https://jsonplaceholder.typicode.com/albumsERROR';
 const dataContainerHTML = document.querySelector('#data-container');
 
 // функция создания html-элемента
