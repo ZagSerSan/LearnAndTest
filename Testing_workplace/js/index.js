@@ -29,18 +29,3 @@ async function renderAlbums() {
 }
 
 renderAlbums()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
