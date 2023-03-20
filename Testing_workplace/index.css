@@ -1,47 +1,74 @@
+:root {
+	--background: #007af7;
+	--white-text: #fff;
+	--hover-text: #222;
+	--button-background: #fff;
+	--button-background-hover: #000;
+	--button-text: #007af7;	
+}
+
 *, *::after, *::before {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.button {
-  appearance: button;
-  backface-visibility: hidden;
-  background-color: #405cf5;
-  border-radius: 6px;
-  border-width: 0;
-  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
-  font-size: 100%;
-  height: 44px;
-  line-height: 1.15;
-  outline: none;
-  overflow: hidden;
-  padding: 0 25px;
-  position: relative;
-  text-align: center;
-  text-transform: none;
-  transform: translateZ(0);
-  transition: all .2s,box-shadow .08s ease-in;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
 }
 
-.button:disabled {
-  cursor: default;
+.cookie-consent {
+	display: flex;
+	align-content: center;
+	align-items: center;
+	padding: 1rem 2rem;
+	background: var(--background);
+	color: var(--white-text);
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	font-size: 1rem;
+	gap: 2rem;
+	opacity: 1;
+	visibility: visible;
+	flex-wrap: wrap;
 }
 
-.button:focus {
-  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+.cookie-consent.hide {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.cookie-consent a {
+	color: var(--white-color);
+}
+
+.cookie-consent a:hover {
+	color: var(--hover-text);
+}
+
+.cookie-consent__text {
+	flex: 8 768px;
+}
+
+.cookie-consent__button {
+	display: block;
+	flex: 1 150px;
+	background: var(--button-background);
+	color: var(--button-text);
+	border: none;
+	padding: 0.4rem 1.2rem;
+	cursor: pointer;
+	border-radius: 20px;
+	font-size: 1rem;
+}
+
+.cookie-consent__button:hover {
+	background: var(--button-background-hover);
+		color: var(--white-text);
 }
