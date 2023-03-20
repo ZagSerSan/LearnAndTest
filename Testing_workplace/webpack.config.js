@@ -1,44 +1,44 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-module.exports = ({ development }) => ({
-    mode: development ? 'development' : 'production',
-    entry: `${__dirname}/index.js`,
-    devServer: {
-        contentBase: `${__dirname}/dist`,
-        open: true,
-        compress: true,
-        port: 4000,
-    },
+module.exports = (env, { mode }) => ({
+    mode,
+    entry: path.resolve(__dirname, 'index.js'),
     output: {
-        path: `${__dirname}/dist`,
+        path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js',
+        clean: true
+    },
+    devServer: {
+        static: path.resolve(__dirname, 'build'),
+        port: 8080,
+        open: true,
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'index.html'
+            template: path.resolve(__dirname, 'index.html'),
         }),
-        new CleanWebpackPlugin(),
     ],
     module: {
         rules: [
             {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: ['babel-loader'],
-            },
-            {
-                test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-                type: 'asset/resource',
-            },
-            {
-                test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-                type: 'asset/inline',
-            },
-            {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
             },
-        ],
-    },
-});
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
+            {
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                  loader: 'babel-loader',
+                  options: {
+                    presets: ['@babel/preset-env']
+                  }
+                }
+            },
+        ]
+    }
+})

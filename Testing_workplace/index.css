@@ -1,67 +1,47 @@
-:root {
-    --main-background: black;
-    --text-color: #ffffff;
-    --js-image-size: 200px;
-}
-
-h2 {
-    margin: 0;
+*, *::after, *::before {
+    box-sizing: border-box;
 }
 
 body {
     padding: 0;
     margin: 0;
-    background: var(--main-background);
-    min-height: 100vh;
     height: 100vh;
-
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-    color: var(--text-color);
+    justify-content: center;
 }
 
-.js-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.button {
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: #405cf5;
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+  font-size: 100%;
+  height: 44px;
+  line-height: 1.15;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all .2s,box-shadow .08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-.js-image {
-    width: var(--js-image-size);
-    height: var(--js-image-size);
+.button:disabled {
+  cursor: default;
 }
 
-.main-title {
-    color: var(--text-color);
-    font-size: 5rem;
-    line-height: 5.5rem;
-    margin-bottom: 10px;
-}
-
-.founded-text {
-    color: var(--text-color);
-    font-size: 2rem;
-    line-height: 2.5rem;
-}
-
-.today-date {
-    color: var(--text-color);
-    font-size: 2rem;
-    line-height: 2.5rem;
-    font-style: italic;
-}
-
-#timer {
-    color: var(--text-color);
-    font-size: 2.5rem;
-    line-height: 3rem;
-    font-weight: bold;
-}
-
-.timer-text {
-    line-height: 3rem;
-    margin-bottom: 15px;
-    padding: 0 20px;
+.button:focus {
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
 }
