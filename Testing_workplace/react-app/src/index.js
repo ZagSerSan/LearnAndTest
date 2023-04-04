@@ -9,5 +9,3 @@ const App = () => {
 }
 
 reactDom.render(<App/>, document.querySelector('#root'));
-
-
