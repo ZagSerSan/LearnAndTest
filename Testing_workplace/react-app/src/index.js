@@ -1,9 +1,13 @@
 import React from 'react'
 import reactDom from 'react-dom'
 import 'bootstrap/dist/css/bootstrap.css'
+// components
+import Counter from './components/counter'
 
-const element = <h2>Hello word!</h2>
+const App = () => {
+   return <Counter/>
+}
 
-reactDom.render(element, document.querySelector('#root'));
+reactDom.render(<App/>, document.querySelector('#root'));
 
 
