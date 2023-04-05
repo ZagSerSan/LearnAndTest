@@ -2,7 +2,12 @@ import React,{useState} from "react"
 
 const Counter = () => {
   const [count, setCount] = useState(0)
-  const [tags, setTag] = useState(['tag1', 'tag2', 'tag3'])
+  const [menuItems, setMenuItems] = useState([
+    "Главная",
+    "Блог",
+    "Контакты",
+  ]);
+  let [open, setOpen] = useState(false) 
 
   const formatCount = () => {
     return count === 0 ? 'empty' : count
@@ -21,18 +26,21 @@ const Counter = () => {
     count === 0 ? console.log('count не может быть меньше нуля') : setCount( (prevState) => prevState - 1)
   }
   const handleTagChange = () => {
-    setTag(['tag4', 'tag5'])
-    // console.log('тут');
+  }
+  const toggleOpen = () => {
+    setOpen(prevState => !prevState)
+    // console.log(!open);
+    // open = !open
+    // return open
   }
 
   return (
     <>
-      <ul>{
-            tags.map(tag => (
-              <li key={tag} 
-                className="btn btn-primary btn-sm m-1" onClick={handleTagChange}>{tag}</li>)
-            )
-          }
+      <h3><button onClick={toggleOpen}>Menu</button></h3>
+      <ul>
+        {(
+          open && menuItems.map(item => <li key={item}><a href="#">{item}</a></li>)
+        )}
       </ul>
       <span className={getBageClasses()}>{formatCount()}</span>
       <button 
