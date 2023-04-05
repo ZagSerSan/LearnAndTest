@@ -2,13 +2,13 @@ import React,{useState} from "react"
 
 const Counter = () => {
   const [count, setCount] = useState(0)
-  const [tags, setTags] = useState(['tag11', 'tag22', 'tag33'])
-  // const [menuItems, setMenuItems] = useState([
-  //   "Главная",
-  //   "Блог",
-  //   "Контакты",
-  // ]);
-  // let [open, setOpen] = useState(false) 
+  // const [tags, setTags] = useState(['tag11', 'tag22', 'tag33'])
+  const [menuItems, setMenuItems] = useState([
+    "Главная",
+    "Блог",
+    "Контакты"
+  ]);
+  let [open, setOpen] = useState(false) 
 
   const formatCount = () => {
     return count === 0 ? 'empty' : count
@@ -26,23 +26,27 @@ const Counter = () => {
   function handleDecrement() {
     count === 0 ? console.log('count не может быть меньше нуля') : setCount( (prevState) => prevState - 1)
   }
-  const handleTagChange = (id) => {
-    console.log(id);
-    setTags(prevState => prevState.filter(item => item !== id))
-  }
-  // const toggleOpen = () => {
-  //   setOpen(prevState => !prevState)
+  // const handleTagChange = (id) => {
+  //   console.log(id);
+  //   setTags(prevState => prevState.filter(item => item !== id))
   // }
+  const toggleOpen = () => {
+    setOpen(prevState => !prevState)
+  }
+  const handleMenuItems = (item) => {
+    console.log(item);
+  }
 
   return (
     <>
-      {/* <h3><button onClick={toggleOpen}>Menu</button></h3> */}
-      {/* <ul>
+      <h3><button onClick={toggleOpen}>Menu</button></h3>
+      {<ul>
         {(
-          open && menuItems.map(item => <li key={item}><a href="#">{item}</a></li>)
+          open && menuItems.map(item => <li onClick={()=>handleMenuItems(item)} key={item}><a href="#">{item}</a></li>)
         )}
-      </ul> */}
-      {
+      </ul>
+      }
+      {/* {
         tags.map(item => (
           <li 
           key={item}
@@ -51,7 +55,7 @@ const Counter = () => {
             {item}
           </li>
         ))
-      }
+      } */}
       <span className={getBageClasses()}>{formatCount()}</span>
       <button 
         className="badge btn btn-primary btn-sm m-1"
