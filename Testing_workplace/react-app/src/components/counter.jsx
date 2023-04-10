@@ -19,7 +19,7 @@ const Counter = () => {
   }
  
   return (
-    <>
+    <div>
       <span className={getBageClasses()}>{formatCount()}</span>
       <button 
         className="badge btn btn-primary btn-sm m-1"
@@ -29,7 +29,7 @@ const Counter = () => {
         className="badge btn btn-primary btn-sm m-1"
         onClick={handleDecrement}
       >-</button>
-    </>
+    </div>
   )
 }
 export default Counter
