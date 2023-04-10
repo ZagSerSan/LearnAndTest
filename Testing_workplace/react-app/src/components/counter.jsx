@@ -2,7 +2,6 @@ import React,{useState} from "react"
 
 const Counter = () => {
   const [count, setCount] = useState(0)
-  // const [tags, setTags] = useState(['tag11', 'tag22', 'tag33'])
   const [menuItems, setMenuItems] = useState([
     "Главная",
     "Блог",
@@ -52,31 +51,10 @@ const Counter = () => {
   }
   function handleIncrement() {
     count === 10 ? console.log('count не может быть больше 10') : setCount( (prevState) => prevState + 1)
-    // setCount( (prevState) => prevState + 1)
   }
   function handleDecrement() {
     count === 0 ? console.log('count не может быть меньше нуля') : setCount( (prevState) => prevState - 1)
   }
-
-  // теги
-  // const handleTagChange = (id) => {
-  //   console.log(id);
-  //   setTags(prevState => prevState.filter(item => item !== id))
-  // }
-  // const renderTags = () => {
-  //   return tags.length !== 0 
-  //     ? tags.map(item => (
-  //       <li 
-  //       key={item}
-  //       className="btn btn-primary btn-sm m-1"
-  //       onClick={()=>handleTagChange(item)}>
-  //         {item}
-  //       </li>
-  //   )): 'No tags'
-  // }
-  // if (tags.length !== 0) {
-  //   return <ul>{renderTags()}</ul>
-  // }
 
   // меню
   const toggleOpen = () => {
@@ -135,6 +113,6 @@ const Counter = () => {
         onClick={handleDecrement}
       >-</button>
     </>
-  );
+  )
 }
 export default Counter
