@@ -1,40 +1,39 @@
 import React,{useState} from "react"
+import NavLink from "./navLink";
 
 const Navbar = () => {
-   const [open, setOpen] = useState(false);
-   const [menuItems, setMenuItems] = useState(["Главная", "Блог", "Контакты"]);
+  const [open, setOpen] = useState(false);
+  const [menuItems, setMenuItems] = useState([
+    {id: 'main', text: 'Главная', active: true},
+    {id: 'blog', text: 'Блог', active: false},
+    {id: 'contacts', text: 'Контакты', active: false},
+  ]);
  
-   const handleMenuClick = () => {
-     setOpen((prevState) => !prevState);
-   };
+  const handleMenuClick = () => {
+    setOpen((prevState) => !prevState);
+  };
  
-   const handleItemClick = (id) => {
-     console.log(id);
-   };
- 
-   return (
-     <div>
-       <button
-         className="btn btn-sm btn-primary"
-         onClick={handleMenuClick}
-       >
-         меню
-       </button>
-       {open && (
-         <ul className="list-group">
-           {menuItems.map((item) => (
-             <li
-               className="list-group-item"
-               key={item}
-               onClick={() => handleItemClick(item)}
-             >
-               {item}
-             </li>
-           ))}
-         </ul>
-       )}
-     </div>
-   );
- };
+  return (
+    <div>
+      <button
+        className="btn btn-sm btn-primary"
+        onClick={handleMenuClick}
+      >
+        меню
+      </button>
+      {open && (
+        <ul className="list-group">
+          {menuItems.map((item) => (
+            <NavLink
+              key={item.id}
+              text={item.text}
+              active={item.active}
+              />
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
  
  export default Navbar;
