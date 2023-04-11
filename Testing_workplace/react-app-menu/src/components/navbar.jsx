@@ -4,9 +4,24 @@ import NavLink from "./navLink";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [menuItems, setMenuItems] = useState([
-    {id: 'main', text: 'Главная', active: true},
-    {id: 'blog', text: 'Блог', active: false},
-    {id: 'contacts', text: 'Контакты', active: false},
+    {
+      id: 'main',
+      text: 'Главная',
+      active: true,
+      link: "#main"
+    },
+    {
+      id: 'blog',
+      text: 'Блог',
+      active: false,
+      link: "#blog"
+    },
+    {
+      id: 'contacts',
+      text: 'Контакты',
+      active: false,
+      link: "#contacts"
+    },
   ]);
  
   const handleMenuClick = () => {
@@ -28,7 +43,8 @@ const Navbar = () => {
               key={item.id}
               text={item.text}
               active={item.active}
-              />
+              link={item.link}
+            />
           ))}
         </ul>
       )}
