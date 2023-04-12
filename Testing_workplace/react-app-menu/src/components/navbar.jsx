@@ -51,10 +51,7 @@ const Navbar = () => {
           {menuItems.map((item) => (
             <NavLink
               key={item.id}
-              id={item.id}
-              text={item.text}
-              active={item.active}
-              link={item.link}
+              {...item}
               onActiveChange={handleItemClick}
             />
           ))}
