@@ -10,11 +10,11 @@ const CountersList = () => {
       {id: 4, value: 0, name: 'Набор минималиста'}
    ])
    
-   // const handleDelete = (id) => {
-   //    setCounters(prevState => 
-   //       prevState.filter(item => item._id !== id)
-   //    )
-   // }
+   const handleDelete = (id) => {
+      setCounters(prevState => 
+         prevState.filter(item => item.id !== id)
+      )
+   }
 
    return <>
       {counters.map(count => 
@@ -22,7 +22,7 @@ const CountersList = () => {
             key={count.id}
             value={count.value}
             name={count.name}
-            onDelete={handleDelete}
+            onDelete={()=>handleDelete(count.id)}
          />
       )}
    </>
