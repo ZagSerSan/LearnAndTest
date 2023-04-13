@@ -1,23 +1,27 @@
 import React, {useState} from "react";
 
 const NavLink = (props) => {
-  const [active, setActive] = useState(props.active)
 
   // Отслеживание нажатия
   const handleClick = () => {
-    // setActive((prevState) => !prevState)
+    props.onActiveChange(props.id)
   }
 
   // Создание стиля
   const getClasses = () => {
-    let classes = "list-group-item"
+    let classes = "nav-link"
     return classes += (props.active ? " active" : "")
   }
 
   return (
-    <li style={{cursor: 'pointer'}} className={getClasses()} onClick={handleClick}>
-      <button onClick={()=>props.onActiveChange(props.id)}>toggle active</button>
-      {/* <a style={{color: "black"}} href={props.link}>{props.text}</a> */}
+    <li
+      className="nav-item"
+      onClick={handleClick}
+      style={{listStyle: 'none'}}
+        >
+          <a href={props.link} className={getClasses()}>
+              {props.text}
+          </a>
     </li>
   );
 };
