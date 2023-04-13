@@ -18,10 +18,10 @@ const NavLink = (props) => {
       className="nav-item"
       onClick={handleClick}
       style={{listStyle: 'none'}}
-        >
-          <a href={props.link} className={getClasses()}>
-              {props.text}
-          </a>
+      >
+        <a href={props.link} className={getClasses()}>
+            {props.text}
+        </a>
     </li>
   );
 };

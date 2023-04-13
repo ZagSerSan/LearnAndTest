@@ -17,7 +17,7 @@ const Breadcrumbs = (props) => {
         )}
       </ol>
     </nav>
-   )
+  )
 }
 
 export default Breadcrumbs
