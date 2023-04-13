@@ -1,7 +1,7 @@
 import React,{useState} from "react"
 
 const Counter = (props) => {
-  const [value, setValue] = useState(props.value)
+  const {value} = props
 
   const formatValue = () => {
     return value === 0 ? 'empty' : value
@@ -11,10 +11,12 @@ const Counter = (props) => {
     return classes += (value === 0 ? 'text-bg-warning' : 'text-bg-primary')
   }
   function handleIncrement() {
-    value === 10 ? console.log('value не может быть больше 10') : setValue( (prevState) => prevState + 1)
+    // value === 10 ? console.log('value не может быть больше 10') : setValue( (prevState) => prevState + 1)
+    console.log('handleIncrement()');
   }
   function handleDecrement() {
-    value === 0 ? console.log('value не может быть меньше нуля') : setValue( (prevState) => prevState - 1)
+    // value === 0 ? console.log('value не может быть меньше нуля') : setValue( (prevState) => prevState - 1)
+    console.log('handleDecrement()');
   }
  
   const handleDelete = () => {
