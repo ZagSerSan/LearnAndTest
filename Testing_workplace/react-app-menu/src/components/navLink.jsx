@@ -1,16 +1,16 @@
 import React, {useState} from "react";
 
-const NavLink = (props) => {
+const NavLink = ({id, active, link, text, onActiveChange}) => {
 
   // Отслеживание нажатия
   const handleClick = () => {
-    props.onActiveChange(props.id)
+    onActiveChange(id)
   }
 
   // Создание стиля
   const getClasses = () => {
     let classes = "nav-link"
-    return classes += (props.active ? " active" : "")
+    return classes += (active ? " active" : "")
   }
 
   return (
@@ -19,8 +19,8 @@ const NavLink = (props) => {
       onClick={handleClick}
       style={{listStyle: 'none'}}
       >
-        <a href={props.link} className={getClasses()}>
-            {props.text}
+        <a href={link} className={getClasses()}>
+            {text}
         </a>
     </li>
   );

@@ -1,16 +1,16 @@
 import React from "react"
 import NavLink from "./navLink";
 
-const Navbar = (props) => {
- 
+const Navbar = ({menuItems, onItemClick}) => {
+  
   return (
     <div>
       <ul className="nav nav-pills flex-column mb-auto">
-        {props.menuItems.map((item) => (
+        {menuItems.map((item) => (
           <NavLink
             key={item.id}
             {...item}
-            onActiveChange={props.onItemClick}
+            onActiveChange={onItemClick}
           />
         ))}
       </ul>
