@@ -10,18 +10,10 @@ const Counter = (props) => {
     let classes = 'badge m-2 '
     return classes += (value === 0 ? 'text-bg-warning' : 'text-bg-primary')
   }
-  function handleIncrement() {
-    // value === 10 ? console.log('value не может быть больше 10') : setValue( (prevState) => prevState + 1)
-    console.log('handleIncrement()');
-  }
-  function handleDecrement() {
-    // value === 0 ? console.log('value не может быть меньше нуля') : setValue( (prevState) => prevState - 1)
-    console.log('handleDecrement()');
-  }
  
   const handleDelete = () => {
     console.log('handleDelete')
- }
+  }
   return (
     <div>
       <span>{props.name}</span>

@@ -19,15 +19,15 @@ const CountersList = () => {
   const handleClear = () => {
     setCounters(initialState)
   }
-  const testUpdValue = () => {
-    const updatedlState = [
-      {id: 0, value: 1, name: 'Ненужная вещь'},
-      {id: 1, value: 4, name: 'Ложка'},
-      {id: 2, value: 3, name: 'Вилка'},
-      {id: 3, value: 6, name: 'Тарелка'},
-      {id: 4, value: 9, name: 'Набор минималиста'}
-    ]
-    setCounters(updatedlState)
+
+  //todo
+  function handleIncrement() {
+    // value === 10 ? console.log('value не может быть больше 10') : setValue( (prevState) => prevState + 1)
+    console.log('handleIncrement()');
+  }
+  function handleDecrement() {
+    // value === 0 ? console.log('value не может быть меньше нуля') : setValue( (prevState) => prevState - 1)
+    console.log('handleDecrement()');
   }
 
   return <>
@@ -40,7 +40,6 @@ const CountersList = () => {
       />
     )}
     <button className="btn btn-primary btn-sm m-1" onClick={handleClear}>clear</button>
-    <button className="btn btn-primary btn-sm m-1" onClick={testUpdValue}>update</button>
   </>
 }
 
