@@ -22,22 +22,20 @@ const CountersList = () => {
 
   //todo
   function handleIncrement(id) {
-    const newState = counters.map(item => {
+    setCounters(counters.map(item => {
       return ({
         ...item,
         value: item.id === id ? item.value += 1 : item.value
       })
-    })
-    setCounters(newState);
+    }))
   }
   function handleDecrement(id) {
-    const newState = counters.map(item => {
+    setCounters(counters.map(item => {
       return ({
         ...item,
-        value: item.id === id ? item.value = 1 : item.value
+        value: item.id === id ? item.value -= 1 : item.value
       })
-    })
-    setCounters(newState);
+    }))
   }
 
   return <>
