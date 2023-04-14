@@ -1,7 +1,6 @@
 import React,{useState} from "react"
 
-const Counter = (props) => {
-  const {value} = props
+const Counter = ({value,name,onIncrement,onDecrement,onDelete}) => {
 
   const formatValue = () => {
     return value === 0 ? 'empty' : value
@@ -16,21 +15,21 @@ const Counter = (props) => {
   }
   return (
     <div>
-      <span>{props.name}</span>
+      <span>{name}</span>
       <span className={getBageClasses()}>{formatValue()}</span>
       <button 
         className="badge btn btn-primary btn-sm m-1"
-        onClick={handleIncrement}
+        onClick={onIncrement}
       >
         +
       </button>
       <button 
         className="badge btn btn-primary btn-sm m-1"
-        onClick={handleDecrement}
+        onClick={onDecrement}
       >
         -
       </button>
-      <button className="btn btn-danger btn-sm m-1" onClick={props.onDelete}>delete</button>
+      <button className="btn btn-danger btn-sm m-1" onClick={onDelete}>delete</button>
     </div>
   )
 }

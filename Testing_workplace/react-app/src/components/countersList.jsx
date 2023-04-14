@@ -21,13 +21,23 @@ const CountersList = () => {
   }
 
   //todo
-  function handleIncrement() {
-    // value === 10 ? console.log('value не может быть больше 10') : setValue( (prevState) => prevState + 1)
-    console.log('handleIncrement()');
+  function handleIncrement(id) {
+    const newState = counters.map(item => {
+      return ({
+        ...item,
+        value: item.id === id ? item.value += 1 : item.value
+      })
+    })
+    setCounters(newState);
   }
-  function handleDecrement() {
-    // value === 0 ? console.log('value не может быть меньше нуля') : setValue( (prevState) => prevState - 1)
-    console.log('handleDecrement()');
+  function handleDecrement(id) {
+    const newState = counters.map(item => {
+      return ({
+        ...item,
+        value: item.id === id ? item.value = 1 : item.value
+      })
+    })
+    setCounters(newState);
   }
 
   return <>
@@ -37,6 +47,8 @@ const CountersList = () => {
         value={count.value}
         name={count.name}
         onDelete={()=>handleDelete(count.id)}
+        onIncrement={()=>handleIncrement(count.id)}
+        onDecrement={()=>handleDecrement(count.id)}
       />
     )}
     <button className="btn btn-primary btn-sm m-1" onClick={handleClear}>clear</button>
