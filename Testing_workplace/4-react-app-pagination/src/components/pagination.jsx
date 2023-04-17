@@ -1,8 +1,7 @@
 import React from 'react';
 import _ from "lodash";
 
-const Pagination = (props) => {
-  const { itemsCount, pageSize } = props;
+const Pagination = ({itemsCount,pageSize,currentPage,onPageChange}) => {
   const pageCount = Math.ceil(itemsCount / pageSize) // кол-во страниц
   const pages = _.range(1, pageCount + 1) // массив страниц
   // если кол-во страниц = 1, убираем пагинацию
@@ -12,8 +11,16 @@ const Pagination = (props) => {
     <nav>
       <ul className="pagination">
         {pages.map(page => (
-          <li className="page-item" key={'page_'+page}>
-            <a className="page-link">{page}</a>
+          <li
+            className={"page-item" + (currentPage===page?' active':'')}
+            key={'page_'+page}
+          >
+            <button
+              className="page-link"
+              onClick={()=>onPageChange(page)}
+            >
+              {page}
+            </button>
           </li>
         ))}
       </ul>

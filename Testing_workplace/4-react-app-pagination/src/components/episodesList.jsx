@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import {episodes} from "./fakeStorage/episodes"
 import Episode from "./episode";
 import Pagination from "./pagination";
@@ -6,8 +6,10 @@ import Pagination from "./pagination";
 const EpisodesList = () => {
   const counter = episodes.length
   const pageSize = 8 // кол-во элем на странице
+  const [currentPage, setCurrentPage] = useState(1)
+
   const handlePageChange = (pageIndex) => {
-    console.log('pageIndex', pageIndex)
+    setCurrentPage(pageIndex)
   }
 
   return (
@@ -21,6 +23,7 @@ const EpisodesList = () => {
         <Pagination
           itemsCount={counter}
           pageSize={pageSize}
+          currentPage={currentPage}
           onPageChange={handlePageChange}
         />
       </div>
