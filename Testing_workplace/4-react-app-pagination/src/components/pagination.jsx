@@ -1,8 +1,8 @@
-import React from 'react';
-import _ from "lodash";
-import PropTypes from 'prop-types';
+import React from 'react'
+import _ from 'lodash'
+import PropTypes from 'prop-types'
 
-const Pagination = ({itemsCount,pageSize,currentPage,onPageChange}) => {
+const Pagination = ({ itemsCount, pageSize, currentPage, onPageChange }) => {
   const pageCount = Math.ceil(itemsCount / pageSize) // кол-во страниц
   const pages = _.range(1, pageCount + 1) // массив страниц
   // если кол-во страниц = 1, убираем пагинацию
@@ -11,22 +11,19 @@ const Pagination = ({itemsCount,pageSize,currentPage,onPageChange}) => {
   return (
     <nav>
       <ul className="pagination">
-        {pages.map(page => (
+        {pages.map((page) => (
           <li
-            className={"page-item" + (currentPage===page?' active':'')}
-            key={'page_'+page}
+            className={'page-item' + (currentPage === page ? ' active' : '')}
+            key={'page_' + page}
           >
-            <button
-              className="page-link"
-              onClick={()=>onPageChange(page)}
-            >
+            <button className="page-link" onClick={() => onPageChange(page)}>
               {page}
             </button>
           </li>
         ))}
       </ul>
     </nav>
-  );
+  )
 }
 Pagination.propTypes = {
   itemsCount: PropTypes.number.isRequired,
@@ -34,4 +31,4 @@ Pagination.propTypes = {
   currentPage: PropTypes.number.isRequired,
   onPageChange: PropTypes.func.isRequired
 }
-export default Pagination;
+export default Pagination

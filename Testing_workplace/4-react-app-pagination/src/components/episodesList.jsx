@@ -1,8 +1,8 @@
-import React,{useState} from "react";
-import {episodes} from "./fakeStorage/episodes"
-import Episode from "./episode";
-import Pagination from "./pagination";
-import {paginate} from '../utils/paginate'
+import React, { useState } from 'react'
+import { episodes } from './fakeStorage/episodes'
+import Episode from './episode'
+import Pagination from './pagination'
+import { paginate } from '../utils/paginate'
 
 const EpisodesList = () => {
   const counter = episodes.length
@@ -12,14 +12,14 @@ const EpisodesList = () => {
   const handlePageChange = (pageIndex) => {
     setCurrentPage(pageIndex)
   }
-  
+
   const episodCorp = paginate(episodes, currentPage, pageSize)
 
   return (
-    <div className="container" style={{paddingTop: '15px'}}>
+    <div className="container" style={{ paddingTop: '15px' }}>
       <div className="row">
-        {episodCorp.map(episode => (
-          <Episode key={episode.id} {...episode}/>
+        {episodCorp.map((episode) => (
+          <Episode key={episode.id} {...episode} />
         ))}
       </div>
       <div className="row">
@@ -34,4 +34,4 @@ const EpisodesList = () => {
   ) // return
 }
 
-export default EpisodesList;
+export default EpisodesList
