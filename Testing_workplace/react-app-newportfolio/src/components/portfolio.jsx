@@ -9,7 +9,8 @@ import IMG_Calc from "../img/works/4-calculator/preview.png"
 import IMG_TodoList from "../img/works/5-TodoList/preview.png"
 
 const Portfolio = () => {
-  //todo функионал кнопок фильтра
+  //? Идея: переключать класс 'hide' по фильтру а не ренендерить, для анимации
+
   // состояние фильтра, может быть: all || lending || app
   const [filterState, setFilterState] = useState('all')
   // кнопки фильтра

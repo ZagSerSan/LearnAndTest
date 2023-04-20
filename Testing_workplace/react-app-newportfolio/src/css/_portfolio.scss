@@ -68,6 +68,7 @@
   transition: bottom 0.1s linear, right 0.1s linear, box-shadow 0.1s linear, width 0.3s linear, max-height 0.3s linear,
     font-size 0.3s linear;
   margin: 0 15px 30px;
+
   &:hover {
     bottom: 5px;
     right: 5px;
@@ -95,5 +96,15 @@
     @include fontFWSC("Montserrat", 700, 16px, #2b2a2c);
     text-transform: uppercase;
     margin: 16px 10px 15px;
+  }
+
+  animation: 0.5s appearanceItem;
+}
+@keyframes appearanceItem {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
