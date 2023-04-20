@@ -1,14 +1,21 @@
 import React from 'react';
+import AVATAR from '../img/header/avatarSmall.png'
 
 const Header = () => {
   return (
     <header className='header'>
       <div  className='container'>
         <div className='header__inner'>
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAAXNSR0IArs4c6QAACh5JREFUeF7tXGtQVdcV/q4aREXF+EAU0UTjI0iIKAYRRQUEDT7AQKeN1moaG42jdkyqjU1MjHlVHVPrI22nOp04k0YUqiKCgPhANL5aH4kvFEUUwRitogiCp7O2ntvDgXv3ORfYc5jZ+5/3rH3W2t+3116PfcRW8uE8BXJYBgGbJMQyXDBDJCHW4kMSYjE+JCGSEKshYDF7ZAyRhFgMAYuZIz1EEmIxBCxmjvQQSYjFELCYOdJDJCEWQ8Bi5kgPkYRYDAGLmSM9RBJiMQQsZo70EEmIxRCwmDnSQyQhFkPAYuZID5GEWAwBi5kjPUQSYjEELGaO9BBJiMUQsJg50kMkIRZDwGLmSA+RhFgMAYuZYyv+cJ5iM2nUw0eVOFRwDUmnzuFoYRHyfrzN3uDv3QnBvl0wwa83An06o1mTJibf3HjFKx8/xqqco/h8dy6mDvLHx1FhcH+mmakF0X/Usf1igJ/yXngIOnm04k6mCTn5V7E0Mwf/vlbsVH5AVy8sjR6BQd28YZZwriEWFMi9XIjZ/9qFwjt3XSLkdtlDrD5wlGGlRPftiRUx4ejo0dLpUrVKjWDi49kGqyeORkgPHyPijVbm/M2fMGfrLhwvvMHWYNZDHlQ8wkcZOdhw5MQTQugl84YNxu9GBjs8Zi7duoNZyWl2pUbRC32uG9bERsG7jYfRKY1Kjo7redsycLjgut1uM4RUPVbw1cHj+ChjP5tvJ6R3x2fx9/hX0adT+xqA0KTlew9hxd7v7M96dWiHXw9+GbH9+8CzpTsURUFJ6QNsOXkWq3KOgFxQHSvHR+L1QL9GBTTPWNrFRwquY0FqNr6/cbOauBlCzpXcwhuJO0BeVo0Q+seSqOF4a0hgDVvoXPzNlp04crWIPaOA/eX4SPSthTw1zszdmsHOUxrjXnwBK8dHoI17c946G8XzisoqbDx+Gl9kH6y28VTjzRBC3vFB+j77um0JAf2UTSfOOAUu7dwl/PKbbUzGo7kb1ie8ihE9uzsEj0jZeOw05m/PZDJerVth488nIKBLp0YBuCMjHysKThaVYPmeQ9h1Pt8uRhvU090du/Mus9+MEnL3YTl+uy0T23+4wOYlBPSDbcPPYpRp36awH55v74n1CTF40auDXRmBu3LfYZbO0Rj+vC+LCQSys1Fw+y5mbEm1x5xlMeHM0MY8KAtakpFTbQlj+/XC0qjh+PbEGeYxZgih+PPm5lT7kUdHuy139lRF++NfXxuLif1725WWllewczLxqRfNHRaEhSND0LSJ82SWapX30/fiH0dPsXdNCwrAkqhhaN7MXG5+r7wCv0/NhurF5KErxoWz2OVo0CZKOnUW76bsBtlPg5e0GNkoFENV0Nu1cMeCkUMwObA/3Jo1ZfHVLCF7LxYg/uukas5gO79gpvJ2choynrrgovChINDVcet+GYsf+y4VsJ9Wx0Yx1zIy/rT/CD7JOsBEI3s/hzWx0fBsYT6OUMAjG9TgOdi3C9bFRaObZ5tazdCnoaSbYpiRWsvZugj0NbnHMC3oJcx4ZUC1U8IVQmiTzU5Ot588f5k0BraCRbMV7U6moP6HiKFwa9qUCerdKnFKHMJ6+hrhA5tPnsWspDQmG9TNG6SQahOzo7YdPytkIN4bFcJ2p3ZQTk/r+frYafZzfdZCBy4Xonu7tvBp27rGElwhRDsnPqAfvhg7Eqx1QkFq2Z5DTIk+IJ24XoLJ32xF8b377HnK9ATQDjUyDl65hgkbEpmoX+eO+NtrY0HpsitDWzzRfDq61sZGgYpadeiTCfr9/YhQzAwJbPA2jllCKqqqsDTzAKtBtLizbq+zl1HBE7N+E5tkNlvSzq0rIaRfX5zqi87/XC/G9E077Ok2BVzqQLRv1cKVPWBqjllC9DFWPZlqEDKyV3d8FTcG7Vq6M4PqAqp2rlnvcoRG8ulzmL89q0aw/m9ZOeanZCH1TJ79qKL0/OUuXqaAdVW4roRQgjA/7JUnf8lB+zKrE0JF2ae7c7E295jda/88cTROFd3Ex5n/T0lXjIvA5IH9hTU2G4wQfTZUXx5CZ37ilFgM9PF2dRPa5xXdLcXbyems80yja9vWoBijtmumDOzP2t8t3Z6psy6jL2gwQvRBXUtIbYWjM4PrQiYPiP35V1kGpyYbqjxVzasmjAb15kSOuhKi1nfcLOuH4h8xfVMKC6hm40B9Zll6cOlCaF3u8WrHFHnhsphRiPPvK+yoUu0ySwg1bD/PzgXVatWyLH0doq/E9XXI1mnxGNK9q6HNp61DhvbwwbpJY9CZ03Ix9OKnQtr300/1WXOYsYNkzRKin0MV/ydjRsCWt3Cmom1w6Sv12w8e4q2kncjOu8JsNFOpazuZdanUawNHX42rMvVVlYsgRLuhqEfIKvXv5vxKmbE5FVQA0tD3ssoeVWLRzj2s3UzDaC+rvLISH6TvZ7dgNFztZdUGjL5I1MssHBWCOaGDGrwY1Op1xUO0R7oan22JU+IUtcHlqPDT9qRG9eqBtXFReLal82Lrxr37mLllJ6jdQMPRXYvZnUjVOF2CqS0Zmk9eTUPtmxm5IjCrlyfvCiH5P92B1hnWxkXDNnWQv6J2ZB2Bre1KGl2s1h1pzj9fn2i45eJs8ZRk0CLUG7bxfi9geUwEHlVVscIw7exFNp3XgOQBbPa5K4ToO+nsPsSjuZuitqipUnwnLLhGa12/23k3hvQxxLspWfbPg4zeofBAuFNWjndSMrHt+ycXOpTa0hGr3t/oP8J4Y3AAFkcOM/05Ds+O2p67Qgi9h5yBsFKH/U6dMhRHrYba7tTpPmBOaBDiA/qio0crp3fqS6PD8GbwgDqlovqPAWgB+mpc+20UPTdyd+IK+PVJiMM7dd4Fjj79NbqQ+vrqRL/7HVXjJaX32bWoer8jqlB01UNoo9FNpBr/DH+XVdudBI+U+qoLbpY+qBYfeCDrq3jK8BZHhjZoK8VVQghD7fpMfblIl/w7zuThs9259vjgiJT6+nKxtmOIV43TnD9mH8KX+w/bzaMMZtJLDVfB14UQMpI8+9OsXNhuLJ6rNLGZ+9iT6oDMC5eReSG/xre9fl4dEOffB8G+XeslmO65eIXdcaiJh9Hdrm9A0n0MFV4N1eOqKyFECvu2V/7td97BK/a5JEQs3lxtkhAuRGIFJCFi8eZqk4RwIRIrIAkRizdXmySEC5FYAUmIWLy52iQhXIjECkhCxOLN1SYJ4UIkVkASIhZvrjZJCBcisQKSELF4c7VJQrgQiRWQhIjFm6tNEsKFSKyAJEQs3lxtkhAuRGIFJCFi8eZqk4RwIRIrIAkRizdXmySEC5FYAUmIWLy52iQhXIjECkhCxOLN1SYJ4UIkVkASIhZvrjZJCBcisQKSELF4c7VJQrgQiRWQhIjFm6tNEsKFSKyAJEQs3lxtkhAuRGIFJCFi8eZqk4RwIRIrIAkRizdXmySEC5FYgf8BEvz6cI3WE5UAAAAASUVORK5CYII=" alt="" />
-          <nav>
-            <a href="#">nav-link</a>
-            <a href="#">nav-link</a>
+          <div className='header-avatar'>
+            <img className='header-avatar__img' src={AVATAR} alt="avatar" />
+            <div className="header-avatar-info">
+              <h1>Serhii Zagorskyi</h1>
+              <p>Frontend developer</p>
+            </div>
+          </div>
+          <nav className='header-nav'>
+            <a className='header-nav__link' href="#">nav-link</a>
+            <a className='header-nav__link' href="#">nav-link</a>
           </nav>
         </div>
       </div>

@@ -1,0 +1,28 @@
+.header {
+  height: 100px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+}
+.header-avatar {
+  &__img {
+    display: block;
+    border-radius: 50%;
+    width: 60px;
+  }
+}
+
+.header-nav {
+  &__link {
+    @include fontFWSC("Raleway", 600, 18px, #000);
+    margin-left: 50px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
