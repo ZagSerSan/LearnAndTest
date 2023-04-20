@@ -4,8 +4,6 @@ const FilterButton = ({button, filterState, onFilterSwitch}) => {
   return (
     <button
       onClick={()=>onFilterSwitch(button)}
-      href="#all"
-      data-filter
       className={"filter__link btn_all" + (filterState===button.type ? ' active' : '')}
       >
         {button.name}

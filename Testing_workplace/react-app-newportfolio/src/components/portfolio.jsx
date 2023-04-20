@@ -9,6 +9,29 @@ import IMG_Calc from "../img/works/4-calculator/preview.png"
 import IMG_TodoList from "../img/works/5-TodoList/preview.png"
 
 const Portfolio = () => {
+  //todo функионал кнопок фильтра
+  // состояние фильтра, может быть: all || lending || app
+  const [filterState, setFilterState] = useState('all')
+  // кнопки фильтра
+  const filterButtons = [
+    {
+      description: 'filter the all page',
+      type: 'all',
+      name: 'All'
+    },
+    {
+      description: 'filter the landing page',
+      type: 'lending',
+      name: 'Lending'
+    },
+    {
+      description: 'filter the app page',
+      type: 'app',
+      name: 'App'
+    }
+  ]
+  
+  // айтемы и состояние айтемов для рендера
   const portfolioItems = [
     {
       id: 1,
@@ -62,30 +85,22 @@ const Portfolio = () => {
     },
     
   ]
-  //todo функионал кнопок фильтра
-  // состояние фильтра, может быть: all || lending || app
-  const [filterState, setFilterState] = useState('all')
-  const filterButtons = [
-    {
-      description: 'filter the all page',
-      type: 'all',
-      name: 'All'
-    },
-    {
-      description: 'filter the landing page',
-      type: 'lending',
-      name: 'Lending'
-    },
-    {
-      description: 'filter the app page',
-      type: 'app',
-      name: 'App'
-    }
-  ]
-
+  const [currentItemsState, setCurrentItemsState] = useState(portfolioItems)
+  
   function filterSwitch(button) {
-    setFilterState(button.type)
-    console.log(filterState);
+    // если состояние фильтра не 'all', то перебрать под другой фильтр
+    if (button.type !== 'all') {
+      // меняем статус фильтра на статус типа кнопки ('lending' || 'app')
+      setFilterState(button.type)
+      // меняем массив айтемов под статус фильтра и выводим в рендер
+      const newItemState = portfolioItems.filter( item => item.type === button.type)
+      setCurrentItemsState(newItemState)
+    } else {
+      // меняем статус фильтра на статус типа кнопки ('all')
+      setFilterState(button.type)
+      // если состояние фильтра 'all', то обновить состояние как "все айтемы"
+      setCurrentItemsState(portfolioItems)
+    }
   }
 
   return (
@@ -106,7 +121,7 @@ const Portfolio = () => {
         </div>
         
         <div className="portfolio portfolioJS">
-          {portfolioItems.map(item => (
+          {currentItemsState.map(item => (
             <PortfolioItem key={item.id} item={item}/>
           ))}
           {/* string 1 */}
