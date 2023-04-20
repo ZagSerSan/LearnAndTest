@@ -108,6 +108,10 @@ a:hover {
   width: 100%;
 }
 
+h1 {
+  color: green;
+}
+
 .wrapper {
   width: 100%;
   min-height: 100%;
