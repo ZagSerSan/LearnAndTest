@@ -2,10 +2,35 @@ import React from 'react';
 import IMG_ActiveBox from "../img/works/1-activebox/preview.png"
 import IMG_MoGo from "../img/works/2-mogo/preview.png"
 import IMG_DesignerPortfolio from "../img/works/3-designer-portfolio/preview.png"
-import IMG_Calc from "../img/works/4-calculator/preview.png"
-import IMG_TodoList from "../img/works/5-TodoList/preview.png"
+import PortfolioItem from './portfolioItem'
+// import IMG_Calc from "../img/works/4-calculator/preview.png"
+// import IMG_TodoList from "../img/works/5-TodoList/preview.png"
+// import PortfolioItem from './portfolio-item';
 
 const Portfolio = () => {
+  const portfolioItems = [
+    {
+      id: 1,
+      name: 'ActiveBox',
+      img: IMG_ActiveBox,
+      category: 'Lending',
+      date: 2022
+    },
+    {
+      id: 2,
+      name: 'MoGo',
+      img: IMG_MoGo,
+      category: 'Lending',
+      date: 2022
+    },
+    {
+      id: 3,
+      name: 'Designer Portfolio',
+      img: IMG_DesignerPortfolio,
+      category: 'Lending',
+      date: 2022
+    }
+  ]
   return (
     <div className="work" id="work">
       <div className="container">
@@ -18,7 +43,10 @@ const Portfolio = () => {
         
         <div className="portfolio portfolioJS">
           {/* string 1 */}
-          <div className="portfolio-item" id="lending" data-filter="#lending" data-modal="modal_1">
+          {portfolioItems.map(item => (
+            <PortfolioItem key={item.id} item={item}/>
+          ))}
+          {/* <div className="portfolio-item" id="lending" data-filter="#lending" data-modal="modal_1">
               <img className="portfolio-item__image" src={IMG_ActiveBox} alt="preview"/>
               <div className="portfolio-item__suptitle">CATEGORY: Lending</div>
               <div className="portfolio-item__title">
@@ -41,9 +69,9 @@ const Portfolio = () => {
                 Designer Portfolio
                 <time dateTime="2022-11-23">2022</time>
               </div>
-          </div>
+          </div> */}
           {/* string 2  */}
-          <div className="portfolio-item" id="app" data-filter="#app" data-modal="modal_4">
+          {/* <div className="portfolio-item" id="app" data-filter="#app" data-modal="modal_4">
               <img className="portfolio-item__image" src={IMG_Calc} alt="preview"/>
               <div className="portfolio-item__suptitle">CATEGORY: App</div>
               <div className="portfolio-item__title">
@@ -58,7 +86,7 @@ const Portfolio = () => {
                 Todo list
                 <time dateTime="2022-11-23">2023</time>
               </div>
-          </div>
+          </div> */}
           
         </div>
         {/* <button type="button" id="loadmoreworks" className="work__btn btn-black">LOAD MORE WORK</button> */}
