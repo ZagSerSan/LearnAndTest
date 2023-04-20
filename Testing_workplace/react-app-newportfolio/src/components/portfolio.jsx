@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PortfolioItem from './portfolio-item';
+import FilterButton from './filter-button';
 
 import IMG_ActiveBox from "../img/works/1-activebox/preview.png"
 import IMG_MoGo from "../img/works/2-mogo/preview.png"
@@ -61,14 +62,47 @@ const Portfolio = () => {
     },
     
   ]
+  //todo функионал кнопок фильтра
+  // состояние фильтра, может быть: all || lending || app
+  const [filterState, setFilterState] = useState('all')
+  const filterButtons = [
+    {
+      description: 'filter the all page',
+      type: 'all',
+      name: 'All'
+    },
+    {
+      description: 'filter the landing page',
+      type: 'lending',
+      name: 'Lending'
+    },
+    {
+      description: 'filter the app page',
+      type: 'app',
+      name: 'App'
+    }
+  ]
+
+  function filterSwitch(button) {
+    setFilterState(button.type)
+    console.log(filterState);
+  }
 
   return (
     <div className="work" id="work">
       <div className="container">
         <div className="filter">
-          <button href="#all" data-filter className="filter__link btn_all active">All</button>
-          <button href="#lending" data-filter className="filter__link btn_lending">Lending</button>
-          <button href="#app" data-filter className="filter__link btn_app">App</button>
+          {filterButtons.map(button => (
+            <FilterButton
+              key={button.type}
+              button={button}
+              onFilterSwitch={filterSwitch}
+              filterState={filterState}
+            />
+          ))}
+          {/* <button onClick={()=>filterSwitch()} href="#all" data-filter className="filter__link btn_all active">All</button> */}
+          {/* <button onClick={()=>filterSwitch()} href="#lending" data-filter className="filter__link btn_lending">Lending</button> */}
+          {/* <button onClick={()=>filterSwitch()} href="#app" data-filter className="filter__link btn_app">App</button> */}
         </div>
         
         <div className="portfolio portfolioJS">

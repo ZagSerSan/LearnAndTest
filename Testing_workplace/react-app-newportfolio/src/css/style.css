@@ -263,6 +263,9 @@ a:hover {
   transition: font-weight 0.1s linear;
   position: relative;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0;
 }
 .filter__link:first-child {
   margin-left: 0;
