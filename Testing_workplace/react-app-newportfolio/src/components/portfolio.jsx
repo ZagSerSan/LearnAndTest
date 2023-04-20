@@ -1,11 +1,11 @@
 import React from 'react';
+import PortfolioItem from './portfolio-item';
+
 import IMG_ActiveBox from "../img/works/1-activebox/preview.png"
 import IMG_MoGo from "../img/works/2-mogo/preview.png"
 import IMG_DesignerPortfolio from "../img/works/3-designer-portfolio/preview.png"
-import PortfolioItem from './portfolioItem'
-// import IMG_Calc from "../img/works/4-calculator/preview.png"
-// import IMG_TodoList from "../img/works/5-TodoList/preview.png"
-// import PortfolioItem from './portfolio-item';
+import IMG_Calc from "../img/works/4-calculator/preview.png"
+import IMG_TodoList from "../img/works/5-TodoList/preview.png"
 
 const Portfolio = () => {
   const portfolioItems = [
@@ -14,38 +14,68 @@ const Portfolio = () => {
       name: 'ActiveBox',
       img: IMG_ActiveBox,
       category: 'Lending',
-      date: 2022
+      type: 'lending',
+      date: 2022,
+      dataFilter: "lending",
+      dataModal: "modal_1"
     },
     {
       id: 2,
       name: 'MoGo',
       img: IMG_MoGo,
       category: 'Lending',
-      date: 2022
+      type: 'lending',
+      date: 2022,
+      dataFilter: "lending",
+      dataModal: "modal_2"
     },
     {
       id: 3,
       name: 'Designer Portfolio',
       img: IMG_DesignerPortfolio,
       category: 'Lending',
-      date: 2022
-    }
+      type: 'lending',
+      date: 2022,
+      dataFilter: "lending",
+      dataModal: "modal_3"
+    },
+    {
+      id: 4,
+      name: 'Custom calculator',
+      img: IMG_Calc,
+      category: 'App',
+      type: 'app',
+      date: 2021,
+      dataFilter: "app",
+      dataModal: "modal_4"
+    },
+    {
+      id: 5,
+      name: 'Todo list',
+      img: IMG_TodoList,
+      category: 'App',
+      type: 'app',
+      date: 2023,
+      dataFilter: "app",
+      dataModal: "modal_5"
+    },
+    
   ]
+
   return (
     <div className="work" id="work">
       <div className="container">
         <div className="filter">
-          <a href="#all" data-filter className="filter__link btn_all active">All</a>
-          <a href="#lending" data-filter className="filter__link btn_lending">Lending</a>
-          {/* <a href="#website" data-filter className="filter__link btn_website">Store</a> */}
-          <a href="#app" data-filter className="filter__link btn_app">App</a>
+          <button href="#all" data-filter className="filter__link btn_all active">All</button>
+          <button href="#lending" data-filter className="filter__link btn_lending">Lending</button>
+          <button href="#app" data-filter className="filter__link btn_app">App</button>
         </div>
         
         <div className="portfolio portfolioJS">
-          {/* string 1 */}
           {portfolioItems.map(item => (
             <PortfolioItem key={item.id} item={item}/>
           ))}
+          {/* string 1 */}
           {/* <div className="portfolio-item" id="lending" data-filter="#lending" data-modal="modal_1">
               <img className="portfolio-item__image" src={IMG_ActiveBox} alt="preview"/>
               <div className="portfolio-item__suptitle">CATEGORY: Lending</div>

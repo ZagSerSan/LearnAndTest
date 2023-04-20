@@ -1,7 +1,6 @@
 import React from 'react'
 
 const PortfolioItem = ({item}) => {
-  console.log(item);
   return (
     <div className="portfolio-item" id="lending" data-filter="#lending" data-modal="modal_1">
       <img className="portfolio-item__image" src={item.img} alt="preview"/>

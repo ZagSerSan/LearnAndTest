@@ -262,6 +262,7 @@ a:hover {
   -webkit-transition: font-weight 0.1s linear;
   transition: font-weight 0.1s linear;
   position: relative;
+  cursor: pointer;
 }
 .filter__link:first-child {
   margin-left: 0;
