@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap");
 body {
   font-family: "Raleway", sans-serif;
   font-size: 14px;
@@ -47,21 +48,64 @@ a:hover {
   padding: 20px 0;
 }
 
+.header-avatar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 .header-avatar__img {
   display: block;
   border-radius: 50%;
   width: 60px;
+  height: 60px;
+}
+.header-avatar__content {
+  padding-left: 10px;
+}
+.header-avatar__name {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #2b2a2c;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.header-avatar__prof {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #6a696b;
 }
 
 .header-nav__link {
   font-family: "Raleway", sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  color: #000;
-  margin-left: 50px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #2b2a2c;
+  text-transform: uppercase;
+  margin-left: 40px;
+  position: relative;
 }
 .header-nav__link:first-child {
   margin-left: 0;
+}
+.header-nav__link:before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #2b2a2c;
+  -webkit-transition: width 0.2s linear, color 0.2s linear;
+  transition: width 0.2s linear, color 0.2s linear;
+}
+.header-nav__link:hover {
+  text-decoration: none;
+  color: #000;
+}
+.header-nav__link:hover:before {
+  width: 100%;
 }
 
 .wrapper {
