@@ -1,6 +1,25 @@
 import React from 'react'
+import Slider from "react-slick"
+import IMAGE from "../img/works/2-mogo/slide-1.png"
 
 const Modal = ({currentModal, onCloseModal}) => {
+  //todo массив слайдов.
+  /*
+  * Сделать отдельный компонент слайдера,
+  * в который передавать определённые изображения
+  * активного модального окна
+  */
+  const slides = [
+  ]
+  // slider settings
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  }
+
   return (<>
     <svg style={{display: "none"}}>
       <symbol id="close" viewBox="0 0 330 330">
@@ -24,9 +43,30 @@ const Modal = ({currentModal, onCloseModal}) => {
           <svg><use href="#close"></use></svg>
       </button>
 
-      // todo slider
       <div className="modal-work__preview">
-        <div className="slider">
+        <Slider {...settings}>
+          <div>
+            <div className="modal-work__preview-item">
+              <img src={IMAGE} alt="slide_1"/>
+            </div>
+          </div>
+          <div>
+            <h3>2</h3>
+          </div>
+          <div>
+            <h3>3</h3>
+          </div>
+          <div>
+            <h3>4</h3>
+          </div>
+          <div>
+            <h3>5</h3>
+          </div>
+          <div>
+            <h3>6</h3>
+          </div>
+        </Slider>
+        {/* <div className="slider">
 
           <div>
             <div className="modal-work__preview-item">
@@ -59,7 +99,7 @@ const Modal = ({currentModal, onCloseModal}) => {
             </div>
           </div>
             
-        </div>
+        </div> */}
       </div>
 
       <div className="modal-work__content">
