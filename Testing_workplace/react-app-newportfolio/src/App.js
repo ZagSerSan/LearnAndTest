@@ -1,14 +1,15 @@
 // import logo from './logo.svg';
 import Header from './components/header'
 import Intro from './components/intro'
-import Portfolio from './components/portfolio'
+// import ModalsList from './components/modalsList';
+import PortfolioList from './components/portfolioList'
 
 function App() {
   return (
     <div className="App">
       <Header/>
       <Intro/>
-      <Portfolio/>
+      <PortfolioList/>
     </div>
   )
 }

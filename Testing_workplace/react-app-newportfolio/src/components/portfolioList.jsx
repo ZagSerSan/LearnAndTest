@@ -7,8 +7,9 @@ import IMG_MoGo from "../img/works/2-mogo/preview.png"
 import IMG_DesignerPortfolio from "../img/works/3-designer-portfolio/preview.png"
 import IMG_Calc from "../img/works/4-calculator/preview.png"
 import IMG_TodoList from "../img/works/5-TodoList/preview.png"
+import ModalsList from './modalsList';
 
-const Portfolio = () => {
+const PortfolioList = () => {
   //? Идея: переключать класс 'hide' по фильтру а не ренендерить, для анимации
 
   // состояние фильтра, может быть: all || lending || app
@@ -31,7 +32,6 @@ const Portfolio = () => {
       name: 'App'
     }
   ]
-  
   // айтемы и состояние айтемов для рендера
   const portfolioItems = [
     {
@@ -41,8 +41,7 @@ const Portfolio = () => {
       category: 'Lending',
       type: 'lending',
       date: 2022,
-      dataFilter: "lending",
-      dataModal: "modal_1"
+      modal: "activebox"
     },
     {
       id: 2,
@@ -51,8 +50,7 @@ const Portfolio = () => {
       category: 'Lending',
       type: 'lending',
       date: 2022,
-      dataFilter: "lending",
-      dataModal: "modal_2"
+      modal: "mogo"
     },
     {
       id: 3,
@@ -61,8 +59,7 @@ const Portfolio = () => {
       category: 'Lending',
       type: 'lending',
       date: 2022,
-      dataFilter: "lending",
-      dataModal: "modal_3"
+      modal: "designerPortfolio"
     },
     {
       id: 4,
@@ -71,8 +68,7 @@ const Portfolio = () => {
       category: 'App',
       type: 'app',
       date: 2021,
-      dataFilter: "app",
-      dataModal: "modal_4"
+      modal: "customCalculator"
     },
     {
       id: 5,
@@ -81,13 +77,11 @@ const Portfolio = () => {
       category: 'App',
       type: 'app',
       date: 2023,
-      dataFilter: "app",
-      dataModal: "modal_5"
+      modal: "todolist"
     },
     
   ]
   const [currentItemsState, setCurrentItemsState] = useState(portfolioItems)
-  
   function filterSwitch(button) {
     // если состояние фильтра не 'all', то перебрать под другой фильтр
     if (button.type !== 'all') {
@@ -104,6 +98,15 @@ const Portfolio = () => {
     }
   }
 
+  //todo
+  const [modalState, setModalState] = useState(null)
+  const testFunc = (itemModalState) => {
+    setModalState(itemModalState)
+  }
+  function closeModal() {
+    setModalState(null)
+  }
+
   return (
     <div className="work" id="work">
       <div className="container">
@@ -116,63 +119,24 @@ const Portfolio = () => {
               filterState={filterState}
             />
           ))}
-          {/* <button onClick={()=>filterSwitch()} href="#all" data-filter className="filter__link btn_all active">All</button> */}
-          {/* <button onClick={()=>filterSwitch()} href="#lending" data-filter className="filter__link btn_lending">Lending</button> */}
-          {/* <button onClick={()=>filterSwitch()} href="#app" data-filter className="filter__link btn_app">App</button> */}
         </div>
-        
         <div className="portfolio portfolioJS">
           {currentItemsState.map(item => (
-            <PortfolioItem key={item.id} item={item}/>
+            <PortfolioItem
+              key={item.id}
+              item={item}
+              onTestFunc={testFunc}
+            />
           ))}
-          {/* string 1 */}
-          {/* <div className="portfolio-item" id="lending" data-filter="#lending" data-modal="modal_1">
-              <img className="portfolio-item__image" src={IMG_ActiveBox} alt="preview"/>
-              <div className="portfolio-item__suptitle">CATEGORY: Lending</div>
-              <div className="portfolio-item__title">
-                ActiveBox
-                <time dateTime="2022-11-23">2022</time>
-              </div>
-          </div>
-          <div className="portfolio-item" id="lending" data-filter="#lending" data-modal="modal_2">
-              <img className="portfolio-item__image" src={IMG_MoGo}/>
-              <div className="portfolio-item__suptitle">CATEGORY: Lending</div>
-              <div className="portfolio-item__title">
-                MoGo
-                <time dateTime="2022-11-23">2022</time>
-              </div>
-          </div>
-          <div className="portfolio-item" id="lending" data-filter="#lending" data-modal="modal_3">
-              <img className="portfolio-item__image" src={IMG_DesignerPortfolio} alt="preview"/>
-              <div className="portfolio-item__suptitle">CATEGORY: Lending</div>
-              <div className="portfolio-item__title">
-                Designer Portfolio
-                <time dateTime="2022-11-23">2022</time>
-              </div>
-          </div> */}
-          {/* string 2  */}
-          {/* <div className="portfolio-item" id="app" data-filter="#app" data-modal="modal_4">
-              <img className="portfolio-item__image" src={IMG_Calc} alt="preview"/>
-              <div className="portfolio-item__suptitle">CATEGORY: App</div>
-              <div className="portfolio-item__title">
-                Custom calculator
-                <time dateTime="2022-11-23">2023</time>
-              </div>
-          </div>
-          <div className="portfolio-item" id="app" data-filter="#app" data-modal="modal_5">
-              <img className="portfolio-item__image" src={IMG_TodoList} alt="preview"/>
-              <div className="portfolio-item__suptitle">CATEGORY: App</div>
-              <div className="portfolio-item__title">
-                Todo list
-                <time dateTime="2022-11-23">2023</time>
-              </div>
-          </div> */}
-          
         </div>
+        {modalState
+          ? <ModalsList onCloseModal={closeModal} modalState={modalState} portfolioItems={portfolioItems}/>
+          : null
+        }
         {/* <button type="button" id="loadmoreworks" className="work__btn btn-black">LOAD MORE WORK</button> */}
       </div>
     </div>
   )
 }
  
-export default Portfolio
+export default PortfolioList

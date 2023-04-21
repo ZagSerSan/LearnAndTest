@@ -1,8 +1,9 @@
 import React from 'react'
 
-const PortfolioItem = ({item}) => {
+const PortfolioItem = ({item, onTestFunc}) => {
+  
   return (
-    <div className="portfolio-item" id="lending" data-filter="#lending" data-modal="modal_1">
+    <div onClick={()=>onTestFunc(item.modal)} className="portfolio-item" id="lending" data-filter="#lending" data-modal="modal_1">
       <img className="portfolio-item__image" src={item.img} alt="preview"/>
       <div className="portfolio-item__suptitle">{item.category}</div>
       <div className="portfolio-item__title">
