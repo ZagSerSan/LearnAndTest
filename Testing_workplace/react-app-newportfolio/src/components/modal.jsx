@@ -24,6 +24,7 @@ const Modal = ({currentModal, onCloseModal}) => {
           <svg><use href="#close"></use></svg>
       </button>
 
+      // todo slider
       <div className="modal-work__preview">
         <div className="slider">
 
