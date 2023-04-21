@@ -10,6 +10,12 @@ const Modal = ({currentModal, onCloseModal}) => {
   * активного модального окна
   */
   const slides = [
+    {
+      modalType: 'activebox',
+      images: {
+        slide: '../img/works/2-mogo/slide-1.png'
+      }
+    }
   ]
   // slider settings
   const settings = {
