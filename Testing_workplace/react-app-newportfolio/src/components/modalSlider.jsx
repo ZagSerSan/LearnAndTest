@@ -5,10 +5,14 @@ import Slider from "react-slick"
 import ActiveboxSlide_1 from "../img/works/1-activebox/slide_1.jpg"
 import ActiveboxSlide_2 from "../img/works/1-activebox/slide_2.jpg"
 import ActiveboxSlide_3 from "../img/works/1-activebox/slide_3.jpg"
+import ActiveboxSlide_4 from "../img/works/1-activebox/slide_4.jpg"
 // mogo
 import MogoSlide_1 from "../img/works/2-mogo/slide-1.png"
 import MogoSlide_2 from "../img/works/2-mogo/slide-2.png"
 import MogoSlide_3 from "../img/works/2-mogo/slide-3.png"
+import MogoSlide_4 from "../img/works/2-mogo/slide-4.png"
+import MogoSlide_5 from "../img/works/2-mogo/slide-5.png"
+import MogoSlide_6 from "../img/works/2-mogo/slide-6.png"
 
 const ModalSlider = ({currentModal}) => {
   // slider settings
@@ -21,31 +25,20 @@ const ModalSlider = ({currentModal}) => {
   }
 
   //todo массив слайдов.
-  /*
-  * Сделать отдельный компонент слайдера,
-  * в который передавать определённые изображения
-  * активного модального окна
-  */
-  // const slides = [
-  //   {
-  //     modalType: 'activebox',
-  //     images: {
-  //       slide: '../img/works/2-mogo/slide-1.png'
-  //     }
-  //   }
-  // ]
+  // добавить слайды остальных проектов
+
   const slidersArray = [
     {
       modalName: 'activebox',
-      modalSlides: [ActiveboxSlide_1, ActiveboxSlide_2, ActiveboxSlide_3]
+      modalSlides: [ActiveboxSlide_1, ActiveboxSlide_2, ActiveboxSlide_3, ActiveboxSlide_4]
     },
     {
       modalName: 'mogo',
-      modalSlides: [MogoSlide_1, MogoSlide_2, MogoSlide_3]
+      modalSlides: [MogoSlide_1, MogoSlide_2, MogoSlide_3, MogoSlide_4, MogoSlide_5, MogoSlide_6]
     }
   ]
+  // новый массив отобранных слайдов для текущего окна
   let currentSlidersArray = (slidersArray.find(item => item.modalName === currentModal.modal)).modalSlides
-  console.log(currentSlidersArray);
 
   return (
     <Slider {...settings}>
@@ -56,27 +49,6 @@ const ModalSlider = ({currentModal}) => {
           </div>
         </div>
       ))}
-      {/*
-      <div>
-        <div className="modal-work__preview-item">
-          <img src={MogoSlide_1} alt="slide_1"/>
-        </div>
-      </div>
-      <div>
-        <h3>2</h3>
-      </div>
-      <div>
-        <h3>3</h3>
-      </div>
-      <div>
-        <h3>4</h3>
-      </div>
-      <div>
-        <h3>5</h3>
-      </div>
-      <div>
-        <h3>6</h3>
-      </div> */}
     </Slider>
   )
 }
