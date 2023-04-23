@@ -60,7 +60,7 @@ const ModalSlider = ({currentModal}) => {
   return (
     <Slider {...settings}>
       {currentSlidersArray.map(src => (
-        <div>
+        <div key={src}>
           <div className="modal-work__preview-item">
             <img src={src} alt="slide_1"/>
           </div>
