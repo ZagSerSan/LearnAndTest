@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
+// api, utils
 import { episodes } from './fakeStorage/episodes'
+import { paginate } from '../utils/paginate'
+// components
 import Episode from './episode'
 import Pagination from './pagination'
-import { paginate } from '../utils/paginate'
+import GroupList from './GroupList'
 
 const EpisodesList = () => {
   const counter = episodes.length
@@ -16,19 +19,26 @@ const EpisodesList = () => {
   const episodCorp = paginate(episodes, currentPage, pageSize)
 
   return (
-    <div className="container" style={{ paddingTop: '15px' }}>
+    <div className="container pt-2" style={{ paddingTop: '15px' }}>
       <div className="row">
-        {episodCorp.map((episode) => (
-          <Episode key={episode.id} {...episode} />
-        ))}
-      </div>
-      <div className="row">
-        <Pagination
-          itemsCount={counter}
-          pageSize={pageSize}
-          currentPage={currentPage}
-          onPageChange={handlePageChange}
-        />
+        <div className="col-4">
+          <GroupList />
+        </div>
+        <div className='col-8'>
+          <div className="row">
+            {episodCorp.map((episode) => (
+              <Episode key={episode.id} {...episode} />
+            ))}
+          </div>
+          <div className="row">
+            <Pagination
+              itemsCount={counter}
+              pageSize={pageSize}
+              currentPage={currentPage}
+              onPageChange={handlePageChange}
+            />
+          </div>
+        </div>
       </div>
     </div>
   ) // return
