@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 // api, utils
-import { episodes } from './fakeStorage/episodes'
+import { episodes, fetchAll } from './fakeApi/episodesApi'
 import { paginate } from '../utils/paginate'
 // components
 import Episode from './episode'
@@ -11,6 +11,10 @@ const EpisodesList = () => {
   const counter = episodes.length
   const pageSize = 8 // кол-во элем на странице
   const [currentPage, setCurrentPage] = useState(1)
+
+  fetchAll().then(array => {
+    console.log(array);
+  })
 
   const handlePageChange = (pageIndex) => {
     setCurrentPage(pageIndex)
