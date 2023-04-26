@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 // api, utils
-import { episodes, fetchAll } from './fakeApi/episodesApi'
+import { episodesStartState, fetchAll, fetchYears } from './fakeApi/episodesApi'
 import { paginate } from '../utils/paginate'
 // components
 import Episode from './episode'
@@ -8,25 +8,52 @@ import Pagination from './pagination'
 import GroupList from './GroupList'
 
 const EpisodesList = () => {
-  const counter = episodes.length
-  const pageSize = 8 // кол-во элем на странице
+  const [episodes, setEpisodes] = useState(episodesStartState)
+  const [years, setYears] = useState([])
+  const [filter, setFilter] = useState()
+  
   const [currentPage, setCurrentPage] = useState(1)
+  const counter = episodes.length
+  const pageSize = 6 // кол-во элем на странице
 
-  fetchAll().then(array => {
-    console.log(array);
-  })
+  // Функция для получения эпизодов
+  const getEpisodes = (year) => {
+    // Вернет все эпизоды, фильтрация пока не работает
+    fetchAll(year).then((response) => setEpisodes(response))
+    setCurrentPage(1)
+  }
+  // Запрашиваем список эпизодов когда меняется фильтр
+  useEffect(()=>{
+    getEpisodes(filter)
+  },[filter])
+
+  useEffect(() => {
+    fetchYears().then((response) => setYears(response))
+  }, [])
+
+  const handleFilterChange = (filter) => {
+    setFilter(filter)
+  }
+  // функция очистка фильтра
+  const cleanFilter = () => {
+    setFilter()
+  }
 
   const handlePageChange = (pageIndex) => {
     setCurrentPage(pageIndex)
   }
-
   const episodCorp = paginate(episodes, currentPage, pageSize)
 
   return (
     <div className="container pt-2" style={{ paddingTop: '15px' }}>
       <div className="row">
         <div className="col-4">
-          <GroupList />
+          <GroupList 
+            items={years}
+            filter={filter}
+            onFilterChange={handleFilterChange}
+            onCleanFilter={cleanFilter}
+          />
         </div>
         <div className='col-8'>
           <div className="row">

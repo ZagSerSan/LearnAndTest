@@ -135,12 +135,20 @@ export const episodes = [
     created: '2017-11-10T12:56:35.772Z'
   }
 ]
+export const episodesStartState = episodes
 // Получение эпизодов
-export const fetchAll = () => 
+export const fetchAll = (year) => 
   new Promise(resolve => {
     // TODO добавим фильтрацию позже
-    setTimeout( () => {
-      resolve(episodes)
+    setTimeout(() => {
+      if (year === '2013' || year === '2014' || year === '2015') {
+        let filteredEpisodes = episodes.filter(({airDate}) => 
+          airDate.includes(year)
+        )
+        resolve(filteredEpisodes)
+      } else {
+        resolve(episodes)
+      }
     }, 2000)
   })
 
@@ -152,7 +160,7 @@ export const fetchYears = () => new Promise((resolve) => {
     ({ airDate }) => airDate.slice(-4)
   )
   const uniqYears = [...new Set(years)]
-
+  
   setTimeout(() => {
     resolve(uniqYears)
   }, 2000)
