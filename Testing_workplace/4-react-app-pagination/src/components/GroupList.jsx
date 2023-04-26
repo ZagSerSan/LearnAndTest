@@ -1,17 +1,25 @@
-import React from 'react'
+import React from "react"
+import PropTypes from "prop-types"
 
-const GroupList = ({items, filter, onFilterChange, onCleanFilter}) => {
+const GroupList = ({
+  items,
+  filter,
+  valueProperty,
+  contentProperty,
+  onFilterChange,
+  onCleanFilter
+}) => {
   return (
     <div className="list-group">
-      {items.map(item =>
-        <button key={item}
-          onClick={()=>onFilterChange(item)}
+      {items.map((item) =>
+        <button key={item[valueProperty]}
+          onClick={()=>onFilterChange(item[valueProperty])}
           className={
             "list-group-item list-group-item-action"+
-            (item===filter?' active':'')
+            (item[valueProperty]===filter?' active':'')
           }
         >
-          {item}
+          {item[contentProperty]}
         </button>
       )}
       {items.length > 0 && <button
@@ -25,11 +33,11 @@ const GroupList = ({items, filter, onFilterChange, onCleanFilter}) => {
   )
 }
 GroupList.propTypes = {
-  // массив строк
-  items: PropTypes.arrayOf(PropTypes.string).isRequired,
-  // строка
-  filter: PropTypes.string, 
-  // функция
+  items: PropTypes.array.isRequired,
+  filter: PropTypes.string,
+  valueProperty: PropTypes.string.isRequired,
+  contentProperty: PropTypes.string.isRequired,
+  // функции
   onFilterChange: PropTypes.func.isRequired,
   onCleanFilter: PropTypes.func.isRequired
 }

@@ -161,7 +161,17 @@ export const fetchYears = () => new Promise((resolve) => {
   )
   const uniqYears = [...new Set(years)]
   
+  const seasonsByYear = {
+    2013: "S01",
+    2014: "S01",
+    2015: "S02"
+  }
+  const filters = uniqYears.map(year => ({
+    id: year,
+    text: `${year} (${seasonsByYear[year]})`
+  }))
+
   setTimeout(() => {
-    resolve(uniqYears)
+    resolve(filters)
   }, 2000)
 })
