@@ -141,14 +141,12 @@ export const fetchAll = (year) =>
   new Promise(resolve => {
     // TODO добавим фильтрацию позже
     setTimeout(() => {
-      if (year === '2013' || year === '2014' || year === '2015') {
-        let filteredEpisodes = episodes.filter(({airDate}) => 
-          airDate.includes(year)
-        )
+        const filteredEpisodes = year
+        ? episodes.filter(({airDate}) => 
+          airDate.slice(-4) === year
+        ) 
+        : episodes
         resolve(filteredEpisodes)
-      } else {
-        resolve(episodes)
-      }
     }, 2000)
   })
 
