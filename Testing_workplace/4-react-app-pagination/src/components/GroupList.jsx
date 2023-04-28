@@ -26,7 +26,7 @@ const GroupList = ({
           onClick={()=>onCleanFilter()}
           className={"list-group-item list-group-item-action"}
         >
-          clear filter
+          Очистить фильтр
         </button>
       }
     </div>

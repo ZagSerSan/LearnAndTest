@@ -139,7 +139,6 @@ export const episodesStartState = episodes
 // Получение эпизодов
 export const fetchAll = (year) => 
   new Promise(resolve => {
-    // TODO добавим фильтрацию позже
     setTimeout(() => {
         const filteredEpisodes = year
         ? episodes.filter(({airDate}) => 
@@ -147,7 +146,7 @@ export const fetchAll = (year) =>
         ) 
         : episodes
         resolve(filteredEpisodes)
-    }, 2000)
+    }, 500)
   })
 
 // Получение списка годов
@@ -164,10 +163,12 @@ export const fetchYears = () => new Promise((resolve) => {
     2014: "S01",
     2015: "S02"
   }
-  const filters = uniqYears.map(year => ({
-    id: year,
-    text: `${year} (${seasonsByYear[year]})`
-  }))
+  const filters = uniqYears.map(year => (
+    {
+      id: year,
+      text: `${year} (${seasonsByYear[year]})`
+    }
+  ))
 
   setTimeout(() => {
     resolve(filters)
