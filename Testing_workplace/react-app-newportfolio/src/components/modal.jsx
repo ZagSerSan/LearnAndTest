@@ -1,6 +1,8 @@
 import React from 'react'
 import ModalSlider from './modalSlider'
 
+//? Идея: показывать используемые технологии в мод окне
+
 const Modal = ({currentModal, onCloseModal}) => {
   return (<>
     <svg style={{display: "none"}}>
