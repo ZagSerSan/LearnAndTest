@@ -14,7 +14,7 @@ function App() {
       <h1>App</h1>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/dashboard" render={(props) => (<Dashboard {...props} anyProp='anyProp'/>)} />
         <Route path="/login" component={Login} />
         <Route path="/posts" component={Posts} />
       </Switch>
